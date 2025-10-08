@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvpw6hut7wras"
-path="res://.godot/imported/pixilart-drawing(14).png-3290048a2d7ccbcf88894d8337769ae4.ctex"
+uid="uid://c1fmuap1wuamc"
+path="res://.godot/imported/z_idle.png-4c60ac8ee68c72d5b9f7c27cb964ad8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/pixilart-drawing(14).png"
-dest_files=["res://.godot/imported/pixilart-drawing(14).png-3290048a2d7ccbcf88894d8337769ae4.ctex"]
+source_file="res://assets/perso/z_idle.png"
+dest_files=["res://.godot/imported/z_idle.png-4c60ac8ee68c72d5b9f7c27cb964ad8e.ctex"]
 
 [params]
 

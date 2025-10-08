@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpirad5mu7r4b"
-path="res://.godot/imported/ChatGPT Image 26 sept. 2025, 16_15_33.png-17f0f784918ba19637b08d00038b96cc.ctex"
+uid="uid://b527rikoxwpl"
+path="res://.godot/imported/salle_de_bain.png-b96e1610b03c095b655f15a48773d5f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sol/ChatGPT Image 26 sept. 2025, 16_15_33.png"
-dest_files=["res://.godot/imported/ChatGPT Image 26 sept. 2025, 16_15_33.png-17f0f784918ba19637b08d00038b96cc.ctex"]
+source_file="res://assets/sol/salle_de_bain.png"
+dest_files=["res://.godot/imported/salle_de_bain.png-b96e1610b03c095b655f15a48773d5f2.ctex"]
 
 [params]
 

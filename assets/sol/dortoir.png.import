@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceccowdhjpi3j"
-path="res://.godot/imported/pixilart-drawing(13).png-d0c98097143f3ad77cb668aefc108172.ctex"
+uid="uid://dbt3ybh1n4pbt"
+path="res://.godot/imported/dortoir.png-03c1286de2573a25e70dc2bc13b6c144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/pixilart-drawing(13).png"
-dest_files=["res://.godot/imported/pixilart-drawing(13).png-d0c98097143f3ad77cb668aefc108172.ctex"]
+source_file="res://assets/sol/dortoir.png"
+dest_files=["res://.godot/imported/dortoir.png-03c1286de2573a25e70dc2bc13b6c144.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0l4c74blbvpd"
-path="res://.godot/imported/pixilart-drawing(15).png-da217df28d616fa6637e56864fb0364b.ctex"
+uid="uid://bpirad5mu7r4b"
+path="res://.godot/imported/salon.png-419854bdbb3ba32a522778115f30ea35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/pixilart-drawing(15).png"
-dest_files=["res://.godot/imported/pixilart-drawing(15).png-da217df28d616fa6637e56864fb0364b.ctex"]
+source_file="res://assets/sol/salon.png"
+dest_files=["res://.godot/imported/salon.png-419854bdbb3ba32a522778115f30ea35.ctex"]
 
 [params]
 
