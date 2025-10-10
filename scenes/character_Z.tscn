@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvgjt62768mco"]
+
+[ext_resource type="Texture2D" uid="uid://c1fmuap1wuamc" path="res://assets/perso/z_idle.png" id="1_1ujat"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yllb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1ujat")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27uhw"]
+size = Vector2(21.634615, 213)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-39, -79)
+sprite_frames = SubResource("SpriteFrames_0yllb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-37, -81.5)
+scale = Vector2(4.16, 1)
+shape = SubResource("RectangleShape2D_27uhw")

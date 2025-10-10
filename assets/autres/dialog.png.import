@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpirad5mu7r4b"
-path="res://.godot/imported/salon.png-419854bdbb3ba32a522778115f30ea35.ctex"
+uid="uid://bk3dhbog3k5pw"
+path="res://.godot/imported/dialog.png-811b272fa8b9d8a72579ed64187931a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sol/salon.png"
-dest_files=["res://.godot/imported/salon.png-419854bdbb3ba32a522778115f30ea35.ctex"]
+source_file="res://assets/autres/dialog.png"
+dest_files=["res://.godot/imported/dialog.png-811b272fa8b9d8a72579ed64187931a4.ctex"]
 
 [params]
 

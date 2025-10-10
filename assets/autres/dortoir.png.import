@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvlfwlr8jvyvr"
-path="res://.godot/imported/cuisine.png-f31513f9489c859a2af55d686d407be4.ctex"
+uid="uid://dbt3ybh1n4pbt"
+path="res://.godot/imported/dortoir.png-ba7b9334128acff4d9c6d52d1886360e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sol/cuisine.png"
-dest_files=["res://.godot/imported/cuisine.png-f31513f9489c859a2af55d686d407be4.ctex"]
+source_file="res://assets/autres/dortoir.png"
+dest_files=["res://.godot/imported/dortoir.png-ba7b9334128acff4d9c6d52d1886360e.ctex"]
 
 [params]
 
