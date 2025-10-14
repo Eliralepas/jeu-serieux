@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Archi Pole Nord"
+run/main_scene="uid://bdtuyjtwgysnk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Archi Pole Nord"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true

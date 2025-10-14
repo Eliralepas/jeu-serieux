@@ -1,0 +1,144 @@
+[gd_scene load_steps=33 format=4 uid="uid://bdtuyjtwgysnk"]
+
+[ext_resource type="Texture2D" uid="uid://0gjpbhn5luai" path="res://assets/sols/carrelageBD.png" id="2_8rie7"]
+[ext_resource type="Texture2D" uid="uid://byakgxa2steqp" path="res://assets/murs/murBleu1SDB.png" id="2_go34m"]
+[ext_resource type="Texture2D" uid="uid://y6hx4q7g2epa" path="res://assets/murs/murBleuSDB.png" id="2_ynsgs"]
+[ext_resource type="Texture2D" uid="uid://bffoh5a4bc4pw" path="res://assets/sols/carrelageBG.png" id="3_f1b3o"]
+[ext_resource type="Texture2D" uid="uid://cmftq044g46k6" path="res://assets/sols/carrelageHD.png" id="4_j15en"]
+[ext_resource type="Texture2D" uid="uid://bce4fytjbcjlu" path="res://assets/sols/carrelageHG.png" id="6_ymt48"]
+[ext_resource type="Texture2D" uid="uid://24rtjh7lheer" path="res://assets/meubles/lavabo256T/pixil-frame-0.png" id="7_qy43j"]
+[ext_resource type="Texture2D" uid="uid://16ejh1tga6mw" path="res://assets/meubles/lavabo256T/pixil-frame-1.png" id="8_ner68"]
+[ext_resource type="Texture2D" uid="uid://boqi8hd3gja58" path="res://assets/meubles/lavabo256T/pixil-frame-2.png" id="9_nf17j"]
+[ext_resource type="Texture2D" uid="uid://dyvswums4k0wc" path="res://assets/meubles/lavabo256T/pixil-frame-3.png" id="10_nwl1n"]
+[ext_resource type="Texture2D" uid="uid://ceh4410ix2gh7" path="res://assets/meubles/lavabo256T/pixil-frame-4.png" id="11_bpy67"]
+[ext_resource type="Texture2D" uid="uid://b03d1u56pfyni" path="res://assets/meubles/lavabo256T/pixil-frame-5.png" id="12_ryfdr"]
+[ext_resource type="Texture2D" uid="uid://dsitcwtk068on" path="res://assets/meubles/lavabo256T/pixil-frame-6.png" id="13_dgxnh"]
+[ext_resource type="Texture2D" uid="uid://bgrm775u3sh6s" path="res://assets/meubles/lavabo256T/pixil-frame-7.png" id="14_84tca"]
+[ext_resource type="Texture2D" uid="uid://cx4bkvg5n7t4i" path="res://assets/meubles/lavabo256T/pixil-frame-8.png" id="15_arhq5"]
+[ext_resource type="Texture2D" uid="uid://cbkb1ihivugy8" path="res://assets/meubles/lavabo256T/pixil-frame-9.png" id="16_6b1xy"]
+[ext_resource type="Texture2D" uid="uid://ctxoossnx2n51" path="res://assets/meubles/lavabo256T/pixil-frame-10.png" id="17_j636i"]
+[ext_resource type="Texture2D" uid="uid://bfms3q5g1fq52" path="res://assets/meubles/lavabo256T/pixil-frame-11.png" id="18_x7r1v"]
+[ext_resource type="Texture2D" uid="uid://doweskq0c8mxb" path="res://assets/meubles/lavabo256T/pixil-frame-12.png" id="19_tsyn5"]
+[ext_resource type="Texture2D" uid="uid://4d4xy3vxce2v" path="res://assets/meubles/lavabo256T/pixil-frame-13.png" id="20_7plaj"]
+[ext_resource type="Texture2D" uid="uid://tw514pkhr0h" path="res://assets/meubles/lavabo256T/pixil-frame-14.png" id="21_f2vrl"]
+[ext_resource type="Script" uid="uid://bmfwsbun27iye" path="res://lavabo.gd" id="22_ner68"]
+
+[sub_resource type="GDScript" id="GDScript_nf17j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu6tm"]
+texture = ExtResource("2_go34m")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtx1"]
+texture = ExtResource("2_go34m")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84n6d"]
+texture = ExtResource("2_8rie7")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anu7o"]
+texture = ExtResource("3_f1b3o")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymtxv"]
+texture = ExtResource("4_j15en")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_go34m"]
+texture = ExtResource("2_ynsgs")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4wdp"]
+texture = ExtResource("6_ymt48")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_go34m"]
+tile_size = Vector2i(70, 70)
+sources/8 = SubResource("TileSetAtlasSource_go34m")
+sources/3 = SubResource("TileSetAtlasSource_gu6tm")
+sources/4 = SubResource("TileSetAtlasSource_njtx1")
+sources/5 = SubResource("TileSetAtlasSource_84n6d")
+sources/6 = SubResource("TileSetAtlasSource_anu7o")
+sources/7 = SubResource("TileSetAtlasSource_ymtxv")
+sources/9 = SubResource("TileSetAtlasSource_l4wdp")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rie7"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("7_qy43j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ner68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nf17j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nwl1n")
+}, {
+"duration": 0.2,
+"texture": ExtResource("11_bpy67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ryfdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dgxnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_84tca")
+}, {
+"duration": 5.0,
+"texture": ExtResource("15_arhq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6b1xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_j636i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_x7r1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tsyn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7plaj")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_f2vrl")
+}],
+"loop": true,
+"name": &"Lavabo",
+"speed": 7.0
+}]
+
+[node name="salleDeBain" type="Node2D"]
+script = SubResource("GDScript_nf17j")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD1//r/CAAAAAAAAAD1//v/CAAAAAAAAAD1//z/CAAAAAAAAAD2//r/CAAAAAAAAAD2//v/CAAAAAAAAAD2//z/CAAAAAAAAAD3//r/CAAAAAAAAAD3//v/CAAAAAAAAAD3//z/CAAAAAAAAAD4//r/CAAAAAAAAAD4//v/CAAAAAAAAAD4//z/CAAAAAAAAAD5//r/CAAAAAAAAAD5//v/CAAAAAAAAAD5//z/CAAAAAAAAAD6//r/CAAAAAAAAAD6//v/CAAAAAAAAAD6//z/CAAAAAAAAAD7//r/CAAAAAAAAAD7//v/CAAAAAAAAAD7//z/CAAAAAAAAAD8//r/CAAAAAAAAAD8//v/CAAAAAAAAAD8//z/CAAAAAAAAAD9//r/CAAAAAAAAAD9//v/CAAAAAAAAAD9//z/CAAAAAAAAAD+//r/CAAAAAAAAAD+//v/CAAAAAAAAAD+//z/CAAAAAAAAAD///r/CAAAAAAAAAD///v/CAAAAAAAAAD///z/CAAAAAAAAAAAAPr/CAAAAAAAAAAAAPv/CAAAAAAAAAAAAPz/CAAAAAAAAAABAPr/CAAAAAAAAAABAPv/CAAAAAAAAAABAPz/CAAAAAAAAAACAPr/CAAAAAAAAAACAPv/CAAAAAAAAAACAPz/CAAAAAAAAAADAPr/CAAAAAAAAAADAPv/CAAAAAAAAAADAPz/CAAAAAAAAAAEAPr/CAAAAAAAAAAEAPv/CAAAAAAAAAAEAPz/CAAAAAAAAAAFAPr/CAAAAAAAAAAFAPv/CAAAAAAAAAAFAPz/CAAAAAAAAAAGAPr/CAAAAAAAAAAGAPv/CAAAAAAAAAAGAPz/CAAAAAAAAAAHAPr/CAAAAAAAAAAHAPv/CAAAAAAAAAAHAPz/CAAAAAAAAAAIAPr/CAAAAAAAAAAIAPv/CAAAAAAAAAAIAPz/CAAAAAAAAAAJAPr/CAAAAAAAAAAJAPv/CAAAAAAAAAAJAPz/CAAAAAAAAAAKAPr/CAAAAAAAAAAKAPv/CAAAAAAAAAAKAPz/CAAAAAAAAAD1//3/AwAAAAAAAAD2//3/AwAAAAAAAAD3//3/AwAAAAAAAAD4//3/AwAAAAAAAAD5//3/AwAAAAAAAAD6//3/AwAAAAAAAAD7//3/AwAAAAAAAAD8//3/AwAAAAAAAAD9//3/AwAAAAAAAAD+//3/AwAAAAAAAAD///3/AwAAAAAAAAAAAP3/AwAAAAAAAAABAP3/AwAAAAAAAAACAP3/AwAAAAAAAAADAP3/AwAAAAAAAAAEAP3/AwAAAAAAAAAFAP3/AwAAAAAAAAAGAP3/AwAAAAAAAAAHAP3/AwAAAAAAAAAIAP3/AwAAAAAAAAAJAP3/AwAAAAAAAAAKAP3/AwAAAAAAAAD1//7/CQAAAAAAAAD1////BgAAAAAAAAD1/wAACQAAAAAAAAD1/wEABgAAAAAAAAD2//7/BwAAAAAAAAD2////BQAAAAAAAAD2/wAABwAAAAAAAAD2/wEABQAAAAAAAAD3//7/CQAAAAAAAAD3////BgAAAAAAAAD3/wAACQAAAAAAAAD3/wEABgAAAAAAAAD4//7/BwAAAAAAAAD4////BQAAAAAAAAD4/wAABwAAAAAAAAD4/wEABQAAAAAAAAD5////BgAAAAAAAAD5/wAACQAAAAAAAAD5/wEABgAAAAAAAAD6//7/BwAAAAAAAAD6////BQAAAAAAAAD6/wAABwAAAAAAAAD6/wEABQAAAAAAAAD7//7/CQAAAAAAAAD7////BgAAAAAAAAD7/wAACQAAAAAAAAD7/wEABgAAAAAAAAD8//7/BwAAAAAAAAD8////BQAAAAAAAAD8/wAABwAAAAAAAAD8/wEABQAAAAAAAAD9//7/CQAAAAAAAAD9////BgAAAAAAAAD9/wAACQAAAAAAAAD9/wEABgAAAAAAAAD+//7/BwAAAAAAAAD+////BQAAAAAAAAD+/wAABwAAAAAAAAD+/wEABQAAAAAAAAD///7/CQAAAAAAAAD/////BgAAAAAAAAD//wAACQAAAAAAAAD//wEABgAAAAAAAAAAAP7/BwAAAAAAAAAAAP//BQAAAAAAAAAAAAAABwAAAAAAAAAAAAEABQAAAAAAAAABAP7/CQAAAAAAAAABAP//BgAAAAAAAAABAAAACQAAAAAAAAABAAEABgAAAAAAAAACAP7/BwAAAAAAAAACAP//BQAAAAAAAAACAAAABwAAAAAAAAACAAEABQAAAAAAAAADAP7/CQAAAAAAAAADAP//BgAAAAAAAAADAAAACQAAAAAAAAADAAEABgAAAAAAAAAEAP7/BwAAAAAAAAAEAP//BQAAAAAAAAAEAAAABwAAAAAAAAAEAAEABQAAAAAAAAAFAP7/CQAAAAAAAAAFAP//BgAAAAAAAAAFAAAACQAAAAAAAAAFAAEABgAAAAAAAAAGAP7/BwAAAAAAAAAGAP//BQAAAAAAAAAGAAAABwAAAAAAAAAGAAEABQAAAAAAAAAHAP7/CQAAAAAAAAAHAP//BgAAAAAAAAAHAAAACQAAAAAAAAAHAAEABgAAAAAAAAAIAP7/BwAAAAAAAAAIAP//BQAAAAAAAAAIAAAABwAAAAAAAAAIAAEABQAAAAAAAAAJAP7/CQAAAAAAAAAJAP//BgAAAAAAAAAJAAAACQAAAAAAAAAJAAEABgAAAAAAAAAKAP7/BwAAAAAAAAAKAP//BQAAAAAAAAAKAAAABwAAAAAAAAAKAAEABQAAAAAAAAD1/wIACQAAAAAAAAD1/wMABgAAAAAAAAD1/wQACQAAAAAAAAD1/wUABgAAAAAAAAD2/wIABwAAAAAAAAD2/wMABQAAAAAAAAD2/wQABwAAAAAAAAD2/wUABQAAAAAAAAD3/wIACQAAAAAAAAD3/wMABgAAAAAAAAD3/wQACQAAAAAAAAD3/wUABgAAAAAAAAD4/wIABwAAAAAAAAD4/wMABQAAAAAAAAD4/wQABwAAAAAAAAD4/wUABQAAAAAAAAD5/wIACQAAAAAAAAD5/wMABgAAAAAAAAD5/wQACQAAAAAAAAD5/wUABgAAAAAAAAD6/wIABwAAAAAAAAD6/wMABQAAAAAAAAD6/wQABwAAAAAAAAD6/wUABQAAAAAAAAD7/wIACQAAAAAAAAD7/wMABgAAAAAAAAD7/wQACQAAAAAAAAD7/wUABgAAAAAAAAD8/wIABwAAAAAAAAD8/wMABQAAAAAAAAD8/wQABwAAAAAAAAD8/wUABQAAAAAAAAD9/wIACQAAAAAAAAD9/wMABgAAAAAAAAD9/wQACQAAAAAAAAD9/wUABgAAAAAAAAD+/wIABwAAAAAAAAD+/wMABQAAAAAAAAD+/wQABwAAAAAAAAD+/wUABQAAAAAAAAD//wIACQAAAAAAAAD//wMABgAAAAAAAAD//wQACQAAAAAAAAD//wUABgAAAAAAAAAAAAIABwAAAAAAAAAAAAMABQAAAAAAAAAAAAQABwAAAAAAAAAAAAUABQAAAAAAAAABAAIACQAAAAAAAAABAAMABgAAAAAAAAABAAQACQAAAAAAAAABAAUABgAAAAAAAAACAAIABwAAAAAAAAACAAMABQAAAAAAAAACAAQABwAAAAAAAAACAAUABQAAAAAAAAADAAIACQAAAAAAAAADAAMABgAAAAAAAAADAAQACQAAAAAAAAADAAUABgAAAAAAAAAEAAIABwAAAAAAAAAEAAMABQAAAAAAAAAEAAQABwAAAAAAAAAEAAUABQAAAAAAAAAFAAIACQAAAAAAAAAFAAMABgAAAAAAAAAFAAQACQAAAAAAAAAFAAUABgAAAAAAAAAGAAIABwAAAAAAAAAGAAMABQAAAAAAAAAGAAQABwAAAAAAAAAGAAUABQAAAAAAAAAHAAIACQAAAAAAAAAHAAMABgAAAAAAAAAHAAQACQAAAAAAAAAHAAUABgAAAAAAAAAIAAIABwAAAAAAAAAIAAMABQAAAAAAAAAIAAQABwAAAAAAAAAIAAUABQAAAAAAAAAJAAIACQAAAAAAAAAJAAMABgAAAAAAAAAJAAQACQAAAAAAAAAJAAUABgAAAAAAAAAKAAIABwAAAAAAAAAKAAMABQAAAAAAAAAKAAQABwAAAAAAAAAKAAUABQAAAAAAAAD5//7/CQAAAAAAAAA=")
+tile_set = SubResource("TileSet_go34m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-32, -2)
+zoom = Vector2(0.78, 0.78)
+
+[node name="Lavabo" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+position = Vector2(571, -247)
+scale = Vector2(1.14941, 1.05469)
+sprite_frames = SubResource("SpriteFrames_8rie7")
+animation = &"Lavabo"
+frame_progress = 0.0992688
+script = ExtResource("22_ner68")
