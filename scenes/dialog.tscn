@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuqm7xvr5mmlo"]
 
 [ext_resource type="Texture2D" uid="uid://c1fmuap1wuamc" path="res://assets/perso/z_idle.png" id="1_7voku"]
-[ext_resource type="Texture2D" uid="uid://bk3dhbog3k5pw" path="res://assets/autres/dialog.png" id="2_36pgd"]
+[ext_resource type="Texture2D" uid="uid://u3jdcbnwgusm" path="res://assets/autres/pixilart-drawing(16).png" id="2_36pgd"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -25,7 +25,7 @@ offset_top = 4.428028
 offset_right = 41.283844
 offset_bottom = 50.42803
 scale = Vector2(0.9365772, 0.6825763)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "a"
 
 [node name="dialog_animation" type="AnimationPlayer" parent="."]
