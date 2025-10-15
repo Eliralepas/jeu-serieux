@@ -1,6 +1,7 @@
-# Archi Pole Nord
+# Archi Pole Nord ![Statut](https://img.shields.io/badge/Statut-En%20cours-yellow)
+
 Pour notre projet T3 (2e année de BUT Informatique), nous avons développé un **jeu sérieux** intitulé **Archi North Pole**. <br>
-Un **jeu sérieux en 2D** où le joueur incarne un architecte chargé de rénover la station polaire Concordia. Il doit concevoir des espaces adaptés à un **environnement extrême, confiné et multinational** (français et italien). <br> <br>
+Un **jeu sérieux en 2D** où le joueur incarne un architecte chargé de rénover la **station polaire Concordia**. Il doit concevoir des espaces adaptés à un **environnement extrême, confiné et multinational** (français et italien). <br> <br>
 
 <p align="center"> <img src="archipolenord.png"  alt="Aperçu du jeu Archi Pole Nord"/> </p>
 
