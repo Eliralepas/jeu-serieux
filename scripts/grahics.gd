@@ -10,12 +10,13 @@ extends Node2D
 	"CheckPlante1": $Plantes/Plant,
 	"CheckPlante2": $Plantes/Plante,
 	"CheckLampes": $Stuff/Lampe,
-	"CheckEchelle": $Stuff/Echelle
+	"CheckEchelle": $Stuff/Echelle,
+	"CheckCadres":$Stuff/Cadres
 }
 
 func _ready():
 	for button_name in objects.keys():
-		var button_path = "Menu/%s" % button_name  # crée le chemin en texte
+		var button_path = "Menu/Checks/%s" % button_name  # crée le chemin en texte
 		if has_node(button_path):  # vérifie que le bouton existe
 			var button = get_node(button_path)
 			button.connect("toggled", Callable(self, "_on_any_check_toggled").bind(button_name))
