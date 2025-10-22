@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://23fqc44j5snm"]
+
+[ext_resource type="Script" uid="uid://dgohoeil1hgrl" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://djk64hkvrxjr3" path="res://assets/interactions/decorer_background.png" id="1_yqeox"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_vjb58")
+
+[node name="DecorerBackground" type="Sprite2D" parent="."]
+position = Vector2(104, 222)
+texture = ExtResource("1_yqeox")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 199.0
+offset_bottom = 3.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
