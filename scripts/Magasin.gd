@@ -14,11 +14,12 @@ var dialogues = [
 	"Accélère, j'ai d'autres clients !" # dernière phrase normale
 ]
 
+		#objets du magasin
 var objets = [
-	"objet", "objet", "o", "o", "o","objet", "objet", "o", "o", "o","objet", "objet", "o", "o", "o","objet", "objet", "o", "o", "o"]
+	"armoire", "cadres", "coffre", "commode", "grand_tapis", "lampe", "plant", "plante", "pouf"]
 
 
-var index = 0 #pour avoir le nb de clicks
+var index = 0 #pour avoir le nb de clicks sur le dialogue
 
 func _ready(): #quand la scene demarre
 	label.text = dialogues[index] #on met dans le label la phrase a l'indice 0
@@ -26,20 +27,38 @@ func _ready(): #quand la scene demarre
 	# on "connecte" le signal input_event du Area2D à la fonction _on_area_input_event()
 	#   ça veut dire : "quand quelqu’un clique dans la zone (CollisionShape2D), donc fait un event
 	#      appelle automatiquement la fonction _on_area_input_event()"
-
+	
+			#LE MAGASIN SE REMPLI
 	for obj in objets:
-		var ctrl = Control.new()
-		var sprite = Sprite2D.new()
-		# On peut charger une texture depuis un fichier
-		sprite.texture = load("res://images/cadreObjets.png")
-		sprite.scale = Vector2(3, 3)  # double la taille
+		var grille= GridContainer.new()
+		grille.columns=1
 
-		# Optionnel : définir la taille ou l'échelle
 		
-		# Ajouter le sprite comme enfant de l'HBoxContainer
-		ctrl.add_child(sprite)
-		h_flow_container.add_child(ctrl)
+		# Use TextureRect instead of Sprite2D
+		var texture_rect = TextureRect.new()
+		var overlay = TextureRect.new()
+
+		#texture_rect.texture = load("res://images/objets/" + obj + ".png")		
+		texture_rect.texture = load("res://images/cadreObjets.png")		
 		
+		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		texture_rect.custom_minimum_size = Vector2(96, 96) # adjust size if needed
+		grille.add_child(texture_rect)
+		
+
+		# Crée la checkbox
+		var check = CheckBox.new()
+		check.text = "Choisir"
+		grille.add_child(check)
+
+		# Enfin, ajoute dans le HFlowContainer
+		h_flow_container.add_theme_constant_override("h_separation", 5)
+		h_flow_container.add_theme_constant_override("v_separation", 5)
+
+		
+
+		h_flow_container.add_child(grille)
+
 		print("itération")
 
 
