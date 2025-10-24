@@ -2,3 +2,5 @@ res://scenes/Magazin.tscn
 res://scenes/grahics.tscn
 res://scenes/game.tscn
 res://scenes/Magasin.tscn
+res://scripts/grahics.gd
+res://scripts/Magasin.gd

@@ -25,3 +25,7 @@ func _on_any_check_toggled(toggled_on: bool, button_name: String) -> void:
 	var target = objects.get(button_name)
 	if target:
 		target.visible = toggled_on
+
+
+func _on_button_magasin_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Magasin.tscn")

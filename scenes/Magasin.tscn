@@ -54,3 +54,5 @@ theme_override_colors/font_focus_color = Color(1, 0.380392, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.866667, 0.0705882, 0.686275, 1)
 text = "Acheter"
 icon = ExtResource("3_ohnjy")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_acheter_pressed"]

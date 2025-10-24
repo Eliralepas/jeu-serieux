@@ -442,3 +442,14 @@ theme_override_font_sizes/font_size = 20
 theme_override_icons/icon = ExtResource("17_4jixw")
 text = "Valider les modifications"
 icon = ExtResource("18_cov5p")
+
+[node name="ButtonMagasin" type="Button" parent="Menu"]
+offset_left = 142.0
+offset_top = 696.0
+offset_right = 396.0
+offset_bottom = 739.0
+theme_override_colors/font_color = Color(0.437799, 0.616361, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Magasin"
+
+[connection signal="pressed" from="Menu/ButtonMagasin" to="." method="_on_button_magasin_pressed"]
