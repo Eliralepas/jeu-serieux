@@ -1,27 +1,29 @@
 [gd_scene load_steps=11 format=3 uid="uid://bjqgfx63o5avc"]
 
-[ext_resource type="Texture2D" uid="uid://dgt3gx3c5ynfs" path="res://assets/perso/sr5z4e0e042b0eaws3.png" id="1_8mo0j"]
+[ext_resource type="Texture2D" uid="uid://dgt3gx3c5ynfs" path="res://assets/perso/perso1_idle.png" id="1_8mo0j"]
+[ext_resource type="Texture2D" uid="uid://dltgrmq0g2idq" path="res://assets/perso/sc-fou-2-pixilart.png" id="2_6qkav"]
 [ext_resource type="Texture2D" uid="uid://5vn868coy2kq" path="res://assets/bulle/bulle.png" id="2_36lil"]
 [ext_resource type="Script" uid="uid://dop8cp0vml2jh" path="res://scripts/perso.gd" id="2_n8c8k"]
-[ext_resource type="Texture2D" uid="uid://jwh1b25a5utd" path="res://assets/perso/sc-fou-pixilart(1).png" id="4_6qkav"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36lil"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_8mo0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6qkav")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 0.7
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8c8k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qkav"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85450"]
-texture = ExtResource("4_6qkav")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmft8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e84ud"]
 
@@ -30,6 +32,7 @@ texture = ExtResource("4_6qkav")
 [node name="Perso" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_36lil")
 animation = &"idle"
+frame_progress = 0.50029737
 script = ExtResource("2_n8c8k")
 
 [node name="Bulle" type="Sprite2D" parent="."]
@@ -63,9 +66,10 @@ offset_left = -119.0
 offset_top = -238.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_n8c8k")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6qkav")
-theme_override_styles/hover = SubResource("StyleBoxTexture_85450")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qmft8")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_e84ud")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_85450")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfjhnviukat1e"
-path="res://.godot/imported/sc-fou-pixilart.png-ad283ec5507d994603aeb407eaf66119.ctex"
+uid="uid://dgt3gx3c5ynfs"
+path="res://.godot/imported/perso1_idle.png-cc05d30df9e81ffde4ef8437c0719099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/perso/sc-fou-pixilart.png"
-dest_files=["res://.godot/imported/sc-fou-pixilart.png-ad283ec5507d994603aeb407eaf66119.ctex"]
+source_file="res://assets/perso/perso1_idle.png"
+dest_files=["res://.godot/imported/perso1_idle.png-cc05d30df9e81ffde4ef8437c0719099.ctex"]
 
 [params]
 

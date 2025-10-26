@@ -14,6 +14,11 @@ func _ready() -> void:
 		var check := CheckBox.new()
 		check.text = button_name
 		check.add_theme_color_override('font_color', Color.BLACK)
+		check.add_theme_color_override('font_hover_color', Color.BLACK)
+		check.add_theme_color_override('font_pressed_color', Color.BLACK)
+		check.add_theme_color_override('font_focus_color', Color.BLACK)
+		check.add_theme_color_override('font_disabled_color', Color.BLACK)
+		check.add_theme_color_override('font_hover_pressed_color', Color.BLACK)
 		check.button_pressed = target_node.visible
 		
 		v_box_container.add_child(check)
