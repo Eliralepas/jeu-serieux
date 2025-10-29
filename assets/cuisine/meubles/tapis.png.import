@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crwx2rfbncbjd"
-path="res://.godot/imported/evier.png-fe35b6bf9d04723fe1a7e51dc325c315.ctex"
+uid="uid://d0o8oavu5y5wg"
+path="res://.godot/imported/tapis.png-d93b76925a46defda5379e80085f5000.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/evier.png"
-dest_files=["res://.godot/imported/evier.png-fe35b6bf9d04723fe1a7e51dc325c315.ctex"]
+source_file="res://assets/cuisine/meubles/tapis.png"
+dest_files=["res://.godot/imported/tapis.png-d93b76925a46defda5379e80085f5000.ctex"]
 
 [params]
 

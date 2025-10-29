@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dgt3gx3c5ynfs" path="res://assets/perso/perso1_idle.png" id="1_8mo0j"]
 [ext_resource type="Texture2D" uid="uid://dltgrmq0g2idq" path="res://assets/perso/sc-fou-2-pixilart.png" id="2_6qkav"]
 [ext_resource type="Texture2D" uid="uid://5vn868coy2kq" path="res://assets/bulle/bulle.png" id="2_36lil"]
-[ext_resource type="Script" uid="uid://dop8cp0vml2jh" path="res://scripts/perso.gd" id="2_n8c8k"]
+[ext_resource type="Script" uid="uid://dop8cp0vml2jh" path="res://scripts/cuisine/perso.gd" id="2_n8c8k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36lil"]
 animations = [{

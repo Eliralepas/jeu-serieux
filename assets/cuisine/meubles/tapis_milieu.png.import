@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceccowdhjpi3j"
-path="res://.godot/imported/plante.png-d0b910c8831794c383ef9d2318cdaf65.ctex"
+uid="uid://s3qmqw6hm5co"
+path="res://.godot/imported/tapis_milieu.png-cebf5894ed6fb2078eb545d51a81af22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/plante.png"
-dest_files=["res://.godot/imported/plante.png-d0b910c8831794c383ef9d2318cdaf65.ctex"]
+source_file="res://assets/cuisine/meubles/tapis_milieu.png"
+dest_files=["res://.godot/imported/tapis_milieu.png-cebf5894ed6fb2078eb545d51a81af22.ctex"]
 
 [params]
 

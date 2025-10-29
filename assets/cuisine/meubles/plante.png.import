@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnmtsgomnikfi"
-path="res://.godot/imported/frigo.png-8efb9ee4d82f9b13457ea10dadc05144.ctex"
+uid="uid://ceccowdhjpi3j"
+path="res://.godot/imported/plante.png-11af5565f79c1e83bb27f9a35a9393a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/frigo.png"
-dest_files=["res://.godot/imported/frigo.png-8efb9ee4d82f9b13457ea10dadc05144.ctex"]
+source_file="res://assets/cuisine/meubles/plante.png"
+dest_files=["res://.godot/imported/plante.png-11af5565f79c1e83bb27f9a35a9393a8.ctex"]
 
 [params]
 

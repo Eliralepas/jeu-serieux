@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0o8oavu5y5wg"
-path="res://.godot/imported/tapis.png-94348a72eaf66aee1e736f8a221aec37.ctex"
+uid="uid://dnmtsgomnikfi"
+path="res://.godot/imported/frigo.png-1932f70f117641933bc108e568cea1da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/tapis.png"
-dest_files=["res://.godot/imported/tapis.png-94348a72eaf66aee1e736f8a221aec37.ctex"]
+source_file="res://assets/cuisine/meubles/frigo.png"
+dest_files=["res://.godot/imported/frigo.png-1932f70f117641933bc108e568cea1da.ctex"]
 
 [params]
 

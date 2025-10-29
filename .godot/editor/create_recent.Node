@@ -1,11 +1,11 @@
+AnimatedSprite2D
 Button
+Node2D
+Node
 CollisionShape2D
 Area2D
 TextureRect
 Sprite2D
-Node2D
-Node
-AnimatedSprite2D
 CheckBox
 VBoxContainer
 FlowContainer
