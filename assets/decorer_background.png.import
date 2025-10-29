@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s3qmqw6hm5co"
-path="res://.godot/imported/tapis_milieu.png-407513e15143e982df5f99fcc61bd856.ctex"
+uid="uid://cw5ao4r2gss8q"
+path="res://.godot/imported/decorer_background.png-b1c5819683c2466518dc245dcefe6e90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/tapis_milieu.png"
-dest_files=["res://.godot/imported/tapis_milieu.png-407513e15143e982df5f99fcc61bd856.ctex"]
+source_file="res://assets/decorer_background.png"
+dest_files=["res://.godot/imported/decorer_background.png-b1c5819683c2466518dc245dcefe6e90.ctex"]
 
 [params]
 

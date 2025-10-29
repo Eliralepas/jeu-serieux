@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s3qmqw6hm5co"
-path="res://.godot/imported/tapis_milieu.png-407513e15143e982df5f99fcc61bd856.ctex"
+uid="uid://dltgrmq0g2idq"
+path="res://.godot/imported/sc-fou-2-pixilart.png-305d5e3738d0b71de8dd955b3f3f0f02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/tapis_milieu.png"
-dest_files=["res://.godot/imported/tapis_milieu.png-407513e15143e982df5f99fcc61bd856.ctex"]
+source_file="res://assets/perso/sc-fou-2-pixilart.png"
+dest_files=["res://.godot/imported/sc-fou-2-pixilart.png-305d5e3738d0b71de8dd955b3f3f0f02.ctex"]
 
 [params]
 
