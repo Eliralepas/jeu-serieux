@@ -10,11 +10,13 @@ config_version=5
 
 [application]
 
+
 config/name="Archi Pole Nord"
 run/main_scene="res://scenes/piece_princiaple.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
 config/icon="res://icon.svg"
 
-[dotnet]
+[rendering]
 
-project/assembly_name="Archi Pole Nord"
+textures/canvas_textures/default_texture_filter=0
