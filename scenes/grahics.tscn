@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=31 format=4 uid="uid://tkfdjvhjr1ak"]
+=======
+[gd_scene load_steps=29 format=4 uid="uid://tkfdjvhjr1ak"]
+>>>>>>> c9c2677aa0e7828b017df6a5cfec6a1dee92216f
 
 [ext_resource type="Texture2D" uid="uid://bew1gjq3gw3by" path="res://images/objets/petit_tapis.png" id="1_q8fnq"]
 [ext_resource type="Script" uid="uid://cnm5p7imtopu7" path="res://scripts/grahics.gd" id="1_xkn22"]
@@ -25,8 +29,11 @@
 [ext_resource type="Texture2D" uid="uid://m4it33exsaip" path="res://images/persos/pnj.png" id="19_8u11d"]
 [ext_resource type="PackedScene" uid="uid://ch4cj4idb4k6u" path="res://scenes/rideaux.tscn" id="20_u3qfv"]
 [ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="22_kg6df"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://x51pblfjtps6" path="res://musique/snow-day-2-292775.mp3" id="26_qrgxg"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="27_h626l"]
+=======
+>>>>>>> c9c2677aa0e7828b017df6a5cfec6a1dee92216f
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iiou1"]
 texture = ExtResource("3_u3qfv")
@@ -444,6 +451,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_icons/icon = ExtResource("17_4jixw")
 text = "Valider les modifications"
 icon = ExtResource("18_cov5p")
+<<<<<<< HEAD
 
 [node name="ButtonMagasin" type="Button" parent="Menu"]
 offset_left = 142.0
@@ -465,3 +473,5 @@ stream = ExtResource("27_h626l")
 volume_db = 16.714
 
 [connection signal="pressed" from="Menu/ButtonMagasin" to="." method="_on_button_magasin_pressed"]
+=======
+>>>>>>> c9c2677aa0e7828b017df6a5cfec6a1dee92216f
