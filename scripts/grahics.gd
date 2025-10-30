@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var porte:= $song/clickButton
 # On crée un dictionnaire reliant le nom du bouton au node correspondant
 @onready var objects := {
 	"CheckPouf": $Stuff/Pouf,
@@ -28,4 +29,6 @@ func _on_any_check_toggled(toggled_on: bool, button_name: String) -> void:
 
 
 func _on_button_magasin_pressed() -> void:
+	porte.play()
+	await get_tree().create_timer(1.20).timeout
 	get_tree().change_scene_to_file("res://scenes/Magasin.tscn")

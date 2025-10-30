@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://tkfdjvhjr1ak"]
+[gd_scene load_steps=31 format=4 uid="uid://tkfdjvhjr1ak"]
 
 [ext_resource type="Texture2D" uid="uid://bew1gjq3gw3by" path="res://images/objets/petit_tapis.png" id="1_q8fnq"]
 [ext_resource type="Script" uid="uid://cnm5p7imtopu7" path="res://scripts/grahics.gd" id="1_xkn22"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://m4it33exsaip" path="res://images/persos/pnj.png" id="19_8u11d"]
 [ext_resource type="PackedScene" uid="uid://ch4cj4idb4k6u" path="res://scenes/rideaux.tscn" id="20_u3qfv"]
 [ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="22_kg6df"]
+[ext_resource type="AudioStream" uid="uid://x51pblfjtps6" path="res://musique/snow-day-2-292775.mp3" id="26_qrgxg"]
+[ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="27_h626l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iiou1"]
 texture = ExtResource("3_u3qfv")
@@ -451,5 +453,15 @@ offset_bottom = 739.0
 theme_override_colors/font_color = Color(0.437799, 0.616361, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Magasin"
+
+[node name="song" type="Node" parent="."]
+
+[node name="fond" type="AudioStreamPlayer2D" parent="song"]
+stream = ExtResource("26_qrgxg")
+autoplay = true
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="song"]
+stream = ExtResource("27_h626l")
+volume_db = 16.714
 
 [connection signal="pressed" from="Menu/ButtonMagasin" to="." method="_on_button_magasin_pressed"]

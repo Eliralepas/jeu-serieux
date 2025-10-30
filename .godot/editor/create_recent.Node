@@ -1,7 +1,10 @@
+CheckBox
+AudioStreamPlayer2D
+Node2D
+Node
 Button
 ScrollContainer
 Panel
-CheckBox
 Sprite2D
 PanelContainer
 HFlowContainer
@@ -9,6 +12,3 @@ Control
 TextureRect
 HBoxContainer
 CollisionShape2D
-Area2D
-Label
-Camera2D
