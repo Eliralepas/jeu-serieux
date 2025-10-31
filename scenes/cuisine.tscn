@@ -195,6 +195,6 @@ zoom = Vector2(0.78, 0.78)
 position = Vector2(569, -0.99999976)
 
 [node name="AnimatedSprite2D" parent="." node_paths=PackedStringArray("ListeObjets") instance=ExtResource("15_o5gwf")]
-position = Vector2(87, -13)
+position = Vector2(114, 116)
 autoplay = "idle"
 ListeObjets = NodePath("../Base/ListeObjet")

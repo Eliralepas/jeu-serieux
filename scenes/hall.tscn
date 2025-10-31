@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bufnswpw7si0k"]
+[gd_scene load_steps=44 format=4 uid="uid://bufnswpw7si0k"]
 
 [ext_resource type="Texture2D" uid="uid://byyhqj5wg0v32" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart(1).png" id="1_avp52"]
 [ext_resource type="Script" uid="uid://dfyg5xs56tvaf" path="res://scripts/hall/choix_salle.gd" id="1_p2qom"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b527rikoxwpl" path="res://assets/autres/salle_de_bain.png" id="12_66g17"]
 [ext_resource type="Texture2D" uid="uid://dvlfwlr8jvyvr" path="res://assets/autres/cuisine.png" id="13_rfgeu"]
 [ext_resource type="Texture2D" uid="uid://bpirad5mu7r4b" path="res://assets/autres/salon.png" id="14_7j1nj"]
+[ext_resource type="PackedScene" uid="uid://dk70484371esh" path="res://scenes/dialog.tscn" id="17_v3g6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k255s"]
 texture = ExtResource("1_avp52")
@@ -234,3 +235,11 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_x3hjs")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_enphg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vtwol")
 icon = ExtResource("14_7j1nj")
+
+[node name="Control" parent="." instance=ExtResource("17_v3g6v")]
+visible = false
+offset_left = -763.0
+offset_top = 78.0
+offset_right = -763.0
+offset_bottom = 78.0
+scale = Vector2(1.211982, 1.2388878)
