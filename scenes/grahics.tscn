@@ -406,7 +406,7 @@ theme_override_font_sizes/font_size = 40
 button_pressed = true
 text = "Echelle"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button_magasin" type="Button" parent="."]
 top_level = true
 offset_left = 882.0
 offset_top = 435.0
@@ -421,6 +421,21 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0, 0.772549, 1)
 theme_override_font_sizes/font_size = 30
 text = "Magasin"
 
+[node name="Button_piece_principale" type="Button" parent="."]
+top_level = true
+offset_left = 703.0
+offset_top = 433.0
+offset_right = 832.0
+offset_bottom = 496.0
+theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.953949, 0.648103, 0.788939, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.968627, 1)
+theme_override_colors/font_color = Color(2.26215e-06, 0.571486, 0.485333, 1)
+theme_override_colors/font_focus_color = Color(4.81307e-07, 0.314511, 0.224235, 1)
+theme_override_colors/font_pressed_color = Color(0.0622559, 0.444343, 0.455192, 1)
+theme_override_font_sizes/font_size = 30
+text = "valider"
+
 [node name="songs" type="Node" parent="."]
 
 [node name="bacjground" type="AudioStreamPlayer2D" parent="songs"]
@@ -432,4 +447,5 @@ autoplay = true
 stream = ExtResource("27_tc5pd")
 volume_db = 18.572
 
-[connection signal="pressed" from="Button" to="." method="_on_button_magasin_pressed"]
+[connection signal="pressed" from="Button_magasin" to="." method="_on_button_magasin_pressed"]
+[connection signal="pressed" from="Button_piece_principale" to="." method="_on_button_piece_principale_pressed"]

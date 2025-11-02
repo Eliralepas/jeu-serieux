@@ -1,5 +1,9 @@
-res://scenes/Magasin.tscn
-res://scripts/Magasin.gd
 res://scenes/grahics.tscn
 res://scenes/game.tscn
+res://scenes/Magasin.tscn
+res://scenes/character_Z.tscn
+res://scenes/dialog.tscn
+res://scenes/menu.tscn
+res://scenes/piece_princiaple.tscn
+res://scenes/piece_princiaple.gd
 res://scripts/grahics.gd

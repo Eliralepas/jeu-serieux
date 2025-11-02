@@ -34,3 +34,7 @@ func _on_button_magasin_pressed() -> void:
 	porte.play()
 	await get_tree().create_timer(1.20).timeout
 	get_tree().change_scene_to_file("res://scenes/Magasin.tscn")
+
+
+func _on_button_piece_principale_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/piece_princiaple.tscn")

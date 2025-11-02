@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=4 uid="uid://bufnswpw7si0k"]
+[gd_scene load_steps=28 format=4 uid="uid://bufnswpw7si0k"]
 
 [ext_resource type="Texture2D" uid="uid://byyhqj5wg0v32" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart(1).png" id="1_7aop7"]
 [ext_resource type="Texture2D" uid="uid://bpirad5mu7r4b" path="res://assets/autres/salon.png" id="1_bssau"]
+[ext_resource type="Script" uid="uid://ktkrmp80umvx" path="res://scenes/piece_princiaple.gd" id="1_c3xlm"]
 [ext_resource type="Texture2D" uid="uid://dbt3ybh1n4pbt" path="res://assets/autres/dortoir.png" id="2_3w17b"]
 [ext_resource type="Texture2D" uid="uid://dcnc8afoepltd" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart.png" id="2_iu4vp"]
 [ext_resource type="Texture2D" uid="uid://dvlfwlr8jvyvr" path="res://assets/autres/cuisine.png" id="3_3w17b"]
@@ -16,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cvgjt62768mco" path="res://scenes/character_Z.tscn" id="14_aimw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsm5w"]
-size = Vector2(428.00003, 374.75)
+size = Vector2(428, 374.75)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k255s"]
 texture = ExtResource("1_7aop7")
@@ -130,6 +131,7 @@ sources/1 = SubResource("TileSetAtlasSource_6s2l4")
 sources/2 = SubResource("TileSetAtlasSource_187d5")
 
 [node name="PiecePrinciaple" type="Node2D"]
+script = ExtResource("1_c3xlm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-35, -4)
@@ -139,56 +141,56 @@ zoom = Vector2(0.78, 0.78)
 
 [node name="Sprite2D" type="Sprite2D" parent="Salon"]
 position = Vector2(485, 224)
-scale = Vector2(0.41715232, 0.3661122)
+scale = Vector2(0.417152, 0.366112)
 texture = ExtResource("1_bssau")
 
 [node name="Area2D" type="Area2D" parent="Salon/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Salon/Sprite2D/Area2D"]
-position = Vector2(-7.1915283, 11.94989)
-scale = Vector2(2.3972056, 2.731403)
+position = Vector2(-7.19153, 11.9499)
+scale = Vector2(2.39721, 2.7314)
 shape = SubResource("RectangleShape2D_vsm5w")
 
 [node name="Dortoir" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Dortoir"]
-position = Vector2(-550.99994, -227.99998)
-scale = Vector2(0.419797, 0.36779052)
+position = Vector2(-551, -228)
+scale = Vector2(0.419797, 0.367791)
 texture = ExtResource("2_3w17b")
 
 [node name="Area2D" type="Area2D" parent="Dortoir/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dortoir/Sprite2D/Area2D"]
-position = Vector2(-0.00036621094, 2.7189941)
-scale = Vector2(2.3821037, 2.718939)
+position = Vector2(-0.000366211, 2.71899)
+scale = Vector2(2.3821, 2.71894)
 shape = SubResource("RectangleShape2D_vsm5w")
 
 [node name="Cuisine" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-552, 224.99998)
-scale = Vector2(0.94046146, 0.83733755)
+position = Vector2(-552, 225)
+scale = Vector2(0.940461, 0.837338)
 texture = ExtResource("3_3w17b")
 
 [node name="Area2D" type="Area2D" parent="Cuisine/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cuisine/Sprite2D/Area2D"]
-position = Vector2(-1.0633545, 2.3885498)
-scale = Vector2(1.0633078, 1.1942614)
+position = Vector2(-1.06335, 2.38855)
+scale = Vector2(1.06331, 1.19426)
 shape = SubResource("RectangleShape2D_vsm5w")
 
 [node name="SalleDeBain" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SalleDeBain"]
 position = Vector2(483, -228)
-scale = Vector2(0.42094687, 0.370919)
+scale = Vector2(0.420947, 0.370919)
 texture = ExtResource("3_aimw2")
 
 [node name="Area2D" type="Area2D" parent="SalleDeBain/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SalleDeBain/Sprite2D/Area2D"]
-position = Vector2(4.751343, -2.696045)
-scale = Vector2(2.3755963, 2.6960065)
+position = Vector2(4.75134, -2.69604)
+scale = Vector2(2.3756, 2.69601)
 shape = SubResource("RectangleShape2D_vsm5w")
 
 [node name="Sol" type="TileMapLayer" parent="."]
@@ -200,3 +202,5 @@ tile_map_data = PackedByteArray("AAD9//r/AAAAAAAAAAD9//v/AAAAAAEAAAD9//z/AAAAAAI
 tile_set = SubResource("TileSet_q1r7w")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("14_aimw2")]
+
+[connection signal="input_event" from="Dortoir/Sprite2D/Area2D" to="." method="click_area_dortoir"]
