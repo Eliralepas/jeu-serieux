@@ -38,16 +38,16 @@ func _ready(): #quand la scene demarre
 		grille.columns=1
 
 		
-		# Use TextureRect instead of Sprite2D
 		var texture_rect = TextureRect.new()
 		var overlay = TextureRect.new()
 
-		#texture_rect.texture = load("res://images/objets/" + obj + ".png")		
-		texture_rect.texture = load("res://images/cadreObjets.png")		
+		texture_rect.texture = load("res://images/cadreObjets.png")		#cadres
+		overlay.texture = load("res://images/objets/" + obj + ".png")	#icon des objets
 		
 		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texture_rect.custom_minimum_size = Vector2(96, 96) 
 		grille.add_child(texture_rect)
+		grille.add_child(overlay)
 		
 
 		# Creer la checkbox
@@ -122,9 +122,15 @@ func _on_area_input_event(viewport, event, shape_idx):
 			label.text = dialogues[index]
 
 ######################################################################
+#RESIZE DES OBJET DANS LES CADRES
+func resize() ->void: 
+	pass;
+
+######################################################################
+
 
 	#LORSQUE LE BOUTON ACHETER EST CLICK
 func _on_button_acheter_pressed() -> void:
 	caisse.play()
 	await get_tree().create_timer(1.10).timeout
-	get_tree().change_scene_to_file("res://scenes/grahics.tscn")
+	get_tree().change_scene_to_file("res://scenes/dortoir.tscn")
