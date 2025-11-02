@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://1slb4ng5gwih"]
+[gd_scene load_steps=8 format=3 uid="uid://1slb4ng5gwih"]
 
 [ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/Magasin.gd" id="1_nbura"]
 [ext_resource type="Texture2D" uid="uid://xkrh7s3rpwkb" path="res://magazin.png" id="2_5vtcu"]
 [ext_resource type="Texture2D" uid="uid://bes78ig7y1pxo" path="res://images/objets/plant.png" id="3_ohnjy"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_ohnjy"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_b7ckq"]
+[ext_resource type="AudioStream" uid="uid://bo83jkc060r3y" path="res://musique/acheter.mp3" id="6_b7ckq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2h71"]
 size = Vector2(646, 108)
@@ -42,10 +43,6 @@ offset_bottom = 448.0
 theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 100
 
-[node name="checkTest" type="CheckBox" parent="HFlowContainer"]
-layout_mode = 2
-text = "hello"
-
 [node name="Button" type="Button" parent="."]
 offset_left = 789.0
 offset_top = 466.0
@@ -73,5 +70,7 @@ stream = ExtResource("5_b7ckq")
 volume_db = -12.072
 autoplay = true
 
-[connection signal="pressed" from="HFlowContainer/checkTest" to="." method="test"]
+[node name="purchase" type="AudioStreamPlayer2D" parent="Songs"]
+stream = ExtResource("6_b7ckq")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_acheter_pressed"]

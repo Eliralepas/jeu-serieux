@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=31 format=4 uid="uid://tkfdjvhjr1ak"]
-=======
-[gd_scene load_steps=29 format=4 uid="uid://tkfdjvhjr1ak"]
->>>>>>> c9c2677aa0e7828b017df6a5cfec6a1dee92216f
 
 [ext_resource type="Texture2D" uid="uid://bew1gjq3gw3by" path="res://images/objets/petit_tapis.png" id="1_q8fnq"]
 [ext_resource type="Script" uid="uid://cnm5p7imtopu7" path="res://scripts/grahics.gd" id="1_xkn22"]
@@ -29,11 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://m4it33exsaip" path="res://images/persos/pnj.png" id="19_8u11d"]
 [ext_resource type="PackedScene" uid="uid://ch4cj4idb4k6u" path="res://scenes/rideaux.tscn" id="20_u3qfv"]
 [ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="22_kg6df"]
-<<<<<<< HEAD
-[ext_resource type="AudioStream" uid="uid://x51pblfjtps6" path="res://musique/snow-day-2-292775.mp3" id="26_qrgxg"]
-[ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="27_h626l"]
-=======
->>>>>>> c9c2677aa0e7828b017df6a5cfec6a1dee92216f
+[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="26_h626l"]
+[ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="27_tc5pd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iiou1"]
 texture = ExtResource("3_u3qfv")
@@ -210,59 +203,12 @@ texture = ExtResource("19_8u11d")
 top_level = true
 position = Vector2(635, -274)
 
-[node name="Checks" type="Node" parent="Menu"]
-
-[node name="CheckCadres" type="CheckButton" parent="Menu/Checks"]
-z_index = 3
-offset_left = 662.0
-offset_top = 56.0
-offset_right = 887.0
-offset_bottom = 119.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-button_pressed = true
-text = "Cadres"
-
-[node name="CheckLampes" type="CheckButton" parent="Menu/Checks"]
-offset_left = 658.0
-offset_top = 11.0
-offset_right = 862.0
-offset_bottom = 74.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-button_pressed = true
-text = "Lampe"
-
-[node name="CheckEchelle" type="CheckButton" parent="Menu/Checks"]
+[node name="CheckCoffre" type="CheckButton" parent="Menu"]
 z_index = 2
-offset_left = 869.0
-offset_top = 4.0
-offset_right = 1053.0
-offset_bottom = 67.0
+offset_left = 30.0
+offset_top = 411.0
+offset_right = 197.0
+offset_bottom = 474.0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -278,13 +224,125 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 button_pressed = true
-text = "Echelle"
+text = "Coffre"
 
-[node name="CheckPlante2" type="CheckButton" parent="Menu/Checks"]
-offset_left = 659.0
-offset_top = -29.0
-offset_right = 863.0
-offset_bottom = 34.0
+[node name="CheckTapis" type="CheckButton" parent="Menu"]
+z_index = 2
+offset_left = 30.0
+offset_top = 361.0
+offset_right = 179.0
+offset_bottom = 424.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+button_pressed = true
+text = "Tapis"
+
+[node name="CheckTabouret" type="CheckButton" parent="Menu"]
+z_index = 3
+offset_left = 22.0
+offset_top = 213.0
+offset_right = 247.0
+offset_bottom = 276.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+button_pressed = true
+text = "Tabouret"
+
+[node name="CheckPouf" type="CheckButton" parent="Menu"]
+offset_left = 24.0
+offset_top = 106.0
+offset_right = 161.0
+offset_bottom = 169.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+button_pressed = true
+text = "Pouf"
+
+[node name="CheckArmoire" type="CheckButton" parent="Menu"]
+offset_left = 25.0
+offset_top = 159.0
+offset_right = 231.0
+offset_bottom = 222.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+button_pressed = true
+text = "Armoire"
+
+[node name="CheckPlante1" type="CheckButton" parent="Menu"]
+offset_left = 21.0
+offset_top = 262.0
+offset_right = 225.0
+offset_bottom = 325.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+button_pressed = true
+text = "Plante 1"
+
+[node name="CheckPlante2" type="CheckButton" parent="Menu"]
+offset_left = 24.0
+offset_top = 311.0
+offset_right = 228.0
+offset_bottom = 374.0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -303,11 +361,11 @@ button_pressed = true
 text = "Plante 2
 "
 
-[node name="CheckPlante1" type="CheckButton" parent="Menu/Checks"]
-offset_left = 663.0
-offset_top = -78.0
-offset_right = 867.0
-offset_bottom = -15.0
+[node name="CheckLampes" type="CheckButton" parent="Menu"]
+offset_left = 27.0
+offset_top = 471.0
+offset_right = 231.0
+offset_bottom = 534.0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -323,81 +381,14 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 button_pressed = true
-text = "Plante 1"
+text = "Lampe"
 
-[node name="CheckArmoire" type="CheckButton" parent="Menu/Checks"]
-offset_left = 832.0
-offset_top = -173.0
-offset_right = 1038.0
-offset_bottom = -110.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-button_pressed = true
-text = "Armoire"
-
-[node name="CheckPouf" type="CheckButton" parent="Menu/Checks"]
-offset_left = 659.0
-offset_top = -168.0
-offset_right = 796.0
-offset_bottom = -105.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-button_pressed = true
-text = "Pouf"
-
-[node name="CheckTabouret" type="CheckButton" parent="Menu/Checks"]
-z_index = 3
-offset_left = 664.0
-offset_top = -123.0
-offset_right = 889.0
-offset_bottom = -60.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-button_pressed = true
-text = "Tabouret"
-
-[node name="CheckTapis" type="CheckButton" parent="Menu/Checks"]
+[node name="CheckEchelle" type="CheckButton" parent="Menu"]
 z_index = 2
-offset_left = 872.0
-offset_top = -81.0
-offset_right = 1021.0
-offset_bottom = -18.0
+offset_left = 25.0
+offset_top = 521.0
+offset_right = 209.0
+offset_bottom = 584.0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -413,65 +404,32 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 button_pressed = true
-text = "Tapis"
+text = "Echelle"
 
-[node name="CheckCoffre" type="CheckButton" parent="Menu/Checks"]
-z_index = 2
-offset_left = 874.0
-offset_top = -35.0
-offset_right = 1041.0
-offset_bottom = 28.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-button_pressed = true
-text = "Coffre"
-
-[node name="Button" type="Button" parent="Menu"]
-offset_left = 141.0
-offset_top = 749.0
-offset_right = 399.0
-offset_bottom = 785.0
-theme_override_colors/font_disabled_color = Color(0.907161, 0.480784, 0.59204, 1)
-theme_override_colors/font_hover_color = Color(0.42519, 0.13881, 0.270108, 1)
-theme_override_colors/font_outline_color = Color(4.81307e-07, 0, 0.724554, 1)
-theme_override_colors/font_color = Color(0.823952, 0.463096, 0.74291, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_icons/icon = ExtResource("17_4jixw")
-text = "Valider les modifications"
-icon = ExtResource("18_cov5p")
-<<<<<<< HEAD
-
-[node name="ButtonMagasin" type="Button" parent="Menu"]
-offset_left = 142.0
-offset_top = 696.0
-offset_right = 396.0
-offset_bottom = 739.0
-theme_override_colors/font_color = Color(0.437799, 0.616361, 1, 1)
+[node name="Button" type="Button" parent="."]
+top_level = true
+offset_left = 882.0
+offset_top = 435.0
+offset_right = 1011.0
+offset_bottom = 498.0
+theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.953949, 0.648103, 0.788939, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.968627, 1)
+theme_override_colors/font_color = Color(0.862745, 0, 0.564706, 1)
+theme_override_colors/font_focus_color = Color(0.480725, 2.76752e-06, 0.306748, 1)
+theme_override_colors/font_pressed_color = Color(0.572549, 0, 0.772549, 1)
 theme_override_font_sizes/font_size = 30
 text = "Magasin"
 
-[node name="song" type="Node" parent="."]
+[node name="songs" type="Node" parent="."]
 
-[node name="fond" type="AudioStreamPlayer2D" parent="song"]
-stream = ExtResource("26_qrgxg")
+[node name="bacjground" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("26_h626l")
+volume_db = -0.928
 autoplay = true
 
-[node name="clickButton" type="AudioStreamPlayer2D" parent="song"]
-stream = ExtResource("27_h626l")
-volume_db = 16.714
+[node name="porte" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("27_tc5pd")
+volume_db = 18.572
 
-[connection signal="pressed" from="Menu/ButtonMagasin" to="." method="_on_button_magasin_pressed"]
-=======
->>>>>>> c9c2677aa0e7828b017df6a5cfec6a1dee92216f
+[connection signal="pressed" from="Button" to="." method="_on_button_magasin_pressed"]

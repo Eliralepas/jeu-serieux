@@ -1,8 +1,8 @@
-CheckBox
 AudioStreamPlayer2D
-Node2D
 Node
 Button
+CheckBox
+Node2D
 ScrollContainer
 Panel
 Sprite2D

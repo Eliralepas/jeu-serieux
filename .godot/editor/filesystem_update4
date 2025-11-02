@@ -1,3 +1,5 @@
+res://scenes/Magasin.tscn
+res://scripts/Magasin.gd
 res://scenes/grahics.tscn
 res://scenes/game.tscn
-res://scenes/Magasin.tscn
+res://scripts/grahics.gd

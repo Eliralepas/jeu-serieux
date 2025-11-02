@@ -4,6 +4,7 @@ extends Node2D
 @onready var area = $Area2D
 @onready var h_flow_container: HFlowContainer = $HFlowContainer
 
+@onready var caisse:= $Songs/purchase
 
 
 
@@ -20,6 +21,8 @@ var objets = [
 
 
 var index = 0 #pour avoir le nb de clicks sur le dialogue
+
+#####################################################################################
 
 func _ready(): #quand la scene demarre
 	label.text = dialogues[index] #on met dans le label la phrase a l'indice 0
@@ -51,7 +54,9 @@ func _ready(): #quand la scene demarre
 		var check = CheckBox.new()
 		check.name="CHECK"+obj
 		check.text = obj
-		check.connect("toggled", Callable(self, "_check_a_checkbox"))
+		#on connecte chaque checkbox a la fct _check_a_checkbox lorsque elle est "toggled" (cochee)
+		check.connect("toggled", Callable(self, "_check_a_checkbox").bind(check))
+
 
 		grille.add_child(check)
 
@@ -64,11 +69,27 @@ func _ready(): #quand la scene demarre
 
 		h_flow_container.add_child(grille)
 
-		print("itération")
+
+###########################################################################
 
 
+	#LA FCT QUI GERE LE MAX: 2 CHECKBOX CHOISIES		
+func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void:
+	var checked_count = 0 #compteur de nb de checkbox deja cliquee
+	
+	for obj in objets: #parcours de la liste d'objets
+		var gr = h_flow_container.get_node("GRILLE" + obj) #on recup la grille (image+checkbox)
+		var check = gr.get_node("CHECK" + obj) #dans chaque grille on recup juste la checkbox
+		if check.button_pressed: #si la checkbox est click on incremente checked_count
+			checked_count += 1
+	
+	if checked_count > 2 and button_pressed: #si au final il y'a 
+		toggled_checkbox.button_pressed = false
 
 
+#############################################################################
+
+			#EVOLUTION DES DIALOGUES
 func _on_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed: #si l'evenemt est un clique
 		index += 1 #l'indice augmente de 1
@@ -100,37 +121,10 @@ func _on_area_input_event(viewport, event, shape_idx):
 		else:
 			label.text = dialogues[index]
 
+######################################################################
 
+	#LORSQUE LE BOUTON ACHETER EST CLICK
 func _on_button_acheter_pressed() -> void:
+	caisse.play()
+	await get_tree().create_timer(1.10).timeout
 	get_tree().change_scene_to_file("res://scenes/grahics.tscn")
-	
-func _check_a_checkbox() ->void: 
-	var i = 0; #compte le nb de checkbox check
-	
-	#on verifie toutes les checkbox
-	for obj in objets:
-		var grille_name="GRILLE"+obj #chaque checkbox est dans une grille
-		var check_name = "CHECK"+obj #le nom de chaque checkbox
-		# récupère le noeud checkbox
-		var gr = h_flow_container.get_node(grille_name) #on recul l'elem grille du hflowcontainer
-		var checkbox = gr.get_node(check_name)#on recupere la checkbox de cette grille
-		if checkbox.is_pressed(): #si la checkbox est On
-			i+=1; #on incremente
-	#apres avoir tout verifier	
-	if i>= 2 : #si y'a deja deux check de cocher
-		var checkbox = get_tree().get_last_event().target  # récupère la checkbox qui a declancher le signal
-		checkbox.pressed = false  # decoche sa case
-		
-
-
-func _on_Checkbox_toggled(button_pressed: bool):
-	
-	var i = 0
-	for obj in objets:
-		var gr = h_flow_container.get_node("GRILLE" + obj)
-		var check = gr.get_node("CHECK" + obj)
-		if check.is_pressed():
-			i += 1
-	
-	if i >= 2 and button_pressed:
-		$HFlowContainer/checkTest.pressed = false # décoche la case qui vient d’être cochée
