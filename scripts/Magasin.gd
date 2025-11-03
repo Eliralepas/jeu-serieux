@@ -155,5 +155,15 @@ func _on_button_acheter_pressed() -> void:
 	backgroundMagasin.stop()
 	people.stop()
 	mainbackground.play()
+	
+	get_parent().clear_check_boxes()
+	get_parent().add_check_box()
+	get_parent().connect_the_check_box()
 
 	
+func decoche_tout() -> void:
+	for obj in objets: #parcours de la liste d'objets
+		var gr = h_flow_container.get_node("GRILLE" + obj) #on recup la grille (image+checkbox)
+		var check = gr.get_node("CHECK" + obj) #dans chaque grille on recup juste la checkbox
+		if check.button_pressed: #si la checkbox est click on incremente checked_count
+			check.button_pressed=false
