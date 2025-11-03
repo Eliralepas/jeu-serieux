@@ -2,6 +2,8 @@ extends "res://scripts/piece_abstraite.gd"
 
 @onready var store:= $Store
 
+
+
 @onready var porte:= $songs/porte
 # On crée un dictionnaire reliant le nom du bouton au node correspondant
 #on met tous les objets possibles, meme si on les a pas encore achete
@@ -22,10 +24,7 @@ extends "res://scripts/piece_abstraite.gd"
 var stock = {}
 
 func _ready():
-	print("///////////////////////////////////////////////////////////")
 
-	ajoute_objet("Test", 20, stock)
-	ajoute_objet("testttt", 2, stock)
 
 	
 	for button_name in objects.keys():
@@ -46,6 +45,13 @@ func _on_button_magasin_pressed() -> void:
 	porte.play()
 	await get_tree().create_timer(1.20).timeout
 	#get_tree().change_scene_to_file("res://scenes/Magasin.tscn")
+	$songs/magasinBackground.play()
+	$songs/talkingPeople.play()
+	$songs/mainBackground.stop()
+
+	
+	
+
 	store.stock = stock
 	store.visible=true;
 	

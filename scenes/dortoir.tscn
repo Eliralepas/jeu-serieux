@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://tkfdjvhjr1ak"]
+[gd_scene load_steps=34 format=4 uid="uid://tkfdjvhjr1ak"]
 
 [ext_resource type="Script" uid="uid://cnm5p7imtopu7" path="res://scripts/grahics.gd" id="1_ymbn0"]
 [ext_resource type="Texture2D" uid="uid://becjw0gsaaolm" path="res://images/SOL/milieu.png" id="2_i14qx"]
@@ -28,6 +28,8 @@
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="26_mtqpy"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="27_3k3hv"]
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="28_i14qx"]
+[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="28_kw1nf"]
+[ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="29_xklu0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iiou1"]
 texture = ExtResource("2_i14qx")
@@ -447,7 +449,7 @@ text = "STOOOOOOCK"
 
 [node name="songs" type="Node" parent="."]
 
-[node name="bacjground" type="AudioStreamPlayer2D" parent="songs"]
+[node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
 stream = ExtResource("26_mtqpy")
 volume_db = -0.928
 autoplay = true
@@ -455,6 +457,14 @@ autoplay = true
 [node name="porte" type="AudioStreamPlayer2D" parent="songs"]
 stream = ExtResource("27_3k3hv")
 volume_db = 18.572
+
+[node name="magasinBackground" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("28_kw1nf")
+volume_db = -7.429
+
+[node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("29_xklu0")
+volume_db = -12.072
 
 [node name="Store" parent="." instance=ExtResource("28_i14qx")]
 visible = false

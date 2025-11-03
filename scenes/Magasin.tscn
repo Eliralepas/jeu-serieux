@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://1slb4ng5gwih"]
+[gd_scene load_steps=5 format=3 uid="uid://1slb4ng5gwih"]
 
 [ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/Magasin.gd" id="1_nbura"]
 [ext_resource type="Texture2D" uid="uid://xkrh7s3rpwkb" path="res://magazin.png" id="2_5vtcu"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_ohnjy"]
-[ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_b7ckq"]
 [ext_resource type="AudioStream" uid="uid://bo83jkc060r3y" path="res://musique/acheter.mp3" id="6_b7ckq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2h71"]
@@ -56,16 +54,6 @@ theme_override_font_sizes/font_size = 40
 text = "Acheter"
 
 [node name="Songs" type="Node2D" parent="."]
-
-[node name="backgroundMusique" type="AudioStreamPlayer2D" parent="Songs"]
-stream = ExtResource("4_ohnjy")
-volume_db = -7.429
-autoplay = true
-
-[node name="talkingPeople" type="AudioStreamPlayer2D" parent="Songs"]
-stream = ExtResource("5_b7ckq")
-volume_db = -12.072
-autoplay = true
 
 [node name="purchase" type="AudioStreamPlayer2D" parent="Songs"]
 stream = ExtResource("6_b7ckq")

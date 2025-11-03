@@ -8,6 +8,7 @@ extends "res://scripts/grahics.gd"
 
 
 
+
 			#les differentes phrases
 var dialogues = [
 	"Qu'est-ce que tu veux ?",
@@ -147,7 +148,12 @@ func _on_button_acheter_pressed() -> void:
 	await get_tree().create_timer(1.10).timeout
 	#get_tree().change_scene_to_file("res://scenes/dortoir.tscn")
 	self.visible=false
-	#var dortoir_scene = preload("res://scenes/dortoir.tscn").instantiate()
-	#dortoir_scene.stock = self.stock  # ← passe le stock actuel
-	#get_tree().root.add_child(dortoir_scene)
-	#get_tree().current_scene.queue_free()
+	var backgroundMagasin = get_parent().get_node("songs/magasinBackground")
+	var people = get_parent().get_node("songs/talkingPeople")
+	var mainbackground = get_parent().get_node("songs/mainBackground")
+	
+	backgroundMagasin.stop()
+	people.stop()
+	mainbackground.play()
+
+	
