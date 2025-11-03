@@ -44,7 +44,7 @@ func _ready(): #quand la scene demarre
 		var overlay = TextureRect.new()
 
 		texture_rect.texture = load("res://images/cadreObjets.png")		#cadres
-		overlay.texture = load("res://images/objets/" + obj + ".png")	#icon des objets
+		#overlay.texture = load("res://images/objets/" + obj + ".png")	#icon des objets
 		
 		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texture_rect.custom_minimum_size = Vector2(96, 96) 
@@ -137,6 +137,7 @@ func _on_button_acheter_pressed() -> void:
 	for obj in objets: #parcours de la liste d'objets
 		var gr = h_flow_container.get_node("GRILLE" + obj) #on recup la grille (image+checkbox)
 		var check = gr.get_node("CHECK" + obj) #dans chaque grille on recup juste la checkbox
+		
 		#PARTIE A remettre pour gestion du stock:
 		#if check.button_pressed: #si la checkbox est click on incremente checked_count
 			#ajoute_objet(obj, 3, stock);	
@@ -148,7 +149,5 @@ func _on_button_acheter_pressed() -> void:
 	await get_tree().create_timer(1.10).timeout
 	#get_tree().change_scene_to_file("res://scenes/dortoir.tscn")
 	self.visible=false
-	#var dortoir_scene = preload("res://scenes/dortoir.tscn").instantiate()
-	#dortoir_scene.stock = self.stock  # ← passe le stock actuel
-	#get_tree().root.add_child(dortoir_scene)
-	#get_tree().current_scene.queue_free()
+	 #Ici on ne quitte jamais vraiment le magasin, on le met juste en invisible
+	#comme ca le stock ne se reinitialise jamais.
