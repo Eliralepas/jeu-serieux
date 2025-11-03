@@ -1,4 +1,5 @@
-extends "res://scripts/grahics.gd"
+#extends "res://scripts/grahics.gd"
+extends Node2D
 
 @onready var label = $Label
 @onready var area = $Area2D
@@ -25,7 +26,7 @@ var index = 0 #pour avoir le nb de clicks sur le dialogue
 #####################################################################################
 
 func _ready(): #quand la scene demarre
-	print("///////////////////////////////////////////////////////////")
+	self.visible=true
 	label.text = dialogues[index] #on met dans le label la phrase a l'indice 0
 	area.input_event.connect(_on_area_input_event)
 	# on "connecte" le signal input_event du Area2D à la fonction _on_area_input_event()
@@ -136,9 +137,9 @@ func _on_button_acheter_pressed() -> void:
 	for obj in objets: #parcours de la liste d'objets
 		var gr = h_flow_container.get_node("GRILLE" + obj) #on recup la grille (image+checkbox)
 		var check = gr.get_node("CHECK" + obj) #dans chaque grille on recup juste la checkbox
-		if check.button_pressed: #si la checkbox est click on incremente checked_count
-			#Ajout des objets achetes au stock de la piece
-			ajoute_objet(obj, 3, stock);	
+		#PARTIE A remettre pour gestion du stock:
+		#if check.button_pressed: #si la checkbox est click on incremente checked_count
+			#ajoute_objet(obj, 3, stock);	
 	
 	
 	

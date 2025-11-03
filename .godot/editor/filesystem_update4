@@ -1,5 +1,2 @@
-res://scenes/dortoir.tscn
-res://scripts/grahics.gd
-res://scripts/Magasin.gd
 res://scenes/Magasin.tscn
-res://scenes/game.tscn
+res://scripts/Magasin.gd

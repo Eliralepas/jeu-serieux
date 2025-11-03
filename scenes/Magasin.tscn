@@ -70,4 +70,8 @@ autoplay = true
 [node name="purchase" type="AudioStreamPlayer2D" parent="Songs"]
 stream = ExtResource("6_b7ckq")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(631, 333)
+zoom = Vector2(0.799, 0.77)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_acheter_pressed"]
