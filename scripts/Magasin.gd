@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scripts/grahics.gd"
 
 @onready var label = $Label
 @onready var area = $Area2D
@@ -25,6 +25,7 @@ var index = 0 #pour avoir le nb de clicks sur le dialogue
 #####################################################################################
 
 func _ready(): #quand la scene demarre
+	print("///////////////////////////////////////////////////////////")
 	label.text = dialogues[index] #on met dans le label la phrase a l'indice 0
 	area.input_event.connect(_on_area_input_event)
 	# on "connecte" le signal input_event du Area2D à la fonction _on_area_input_event()
@@ -47,7 +48,7 @@ func _ready(): #quand la scene demarre
 		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texture_rect.custom_minimum_size = Vector2(96, 96) 
 		grille.add_child(texture_rect)
-		grille.add_child(overlay)
+		#grille.add_child(overlay)
 		
 
 		# Creer la checkbox
@@ -131,6 +132,22 @@ func resize() ->void:
 
 	#LORSQUE LE BOUTON ACHETER EST CLICK
 func _on_button_acheter_pressed() -> void:
+	#Recup des objets coches
+	for obj in objets: #parcours de la liste d'objets
+		var gr = h_flow_container.get_node("GRILLE" + obj) #on recup la grille (image+checkbox)
+		var check = gr.get_node("CHECK" + obj) #dans chaque grille on recup juste la checkbox
+		if check.button_pressed: #si la checkbox est click on incremente checked_count
+			#Ajout des objets achetes au stock de la piece
+			ajoute_objet(obj, 3, stock);	
+	
+	
+	
+	#retour vers la piece
 	caisse.play()
 	await get_tree().create_timer(1.10).timeout
-	get_tree().change_scene_to_file("res://scenes/dortoir.tscn")
+	#get_tree().change_scene_to_file("res://scenes/dortoir.tscn")
+	self.visible=false
+	#var dortoir_scene = preload("res://scenes/dortoir.tscn").instantiate()
+	#dortoir_scene.stock = self.stock  # ← passe le stock actuel
+	#get_tree().root.add_child(dortoir_scene)
+	#get_tree().current_scene.queue_free()

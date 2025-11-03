@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://tkfdjvhjr1ak"]
+[gd_scene load_steps=32 format=4 uid="uid://tkfdjvhjr1ak"]
 
 [ext_resource type="Script" uid="uid://cnm5p7imtopu7" path="res://scripts/grahics.gd" id="1_ymbn0"]
 [ext_resource type="Texture2D" uid="uid://becjw0gsaaolm" path="res://images/SOL/milieu.png" id="2_i14qx"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="25_1gu84"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="26_mtqpy"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="27_3k3hv"]
+[ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="28_i14qx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iiou1"]
 texture = ExtResource("2_i14qx")
@@ -436,6 +437,14 @@ theme_override_colors/font_pressed_color = Color(0.0622559, 0.444343, 0.455192, 
 theme_override_font_sizes/font_size = 30
 text = "valider"
 
+[node name="Visualise_stock" type="Button" parent="."]
+z_index = 1
+offset_left = 794.0
+offset_top = 352.0
+offset_right = 916.0
+offset_bottom = 383.0
+text = "STOOOOOOCK"
+
 [node name="songs" type="Node" parent="."]
 
 [node name="bacjground" type="AudioStreamPlayer2D" parent="songs"]
@@ -447,5 +456,11 @@ autoplay = true
 stream = ExtResource("27_3k3hv")
 volume_db = 18.572
 
+[node name="Store" parent="." instance=ExtResource("28_i14qx")]
+visible = false
+z_index = 10
+position = Vector2(-333, -186)
+
 [connection signal="pressed" from="Button_magasin" to="." method="_on_button_magasin_pressed"]
 [connection signal="pressed" from="Button_piece_principale" to="." method="_on_button_piece_principale_pressed"]
+[connection signal="pressed" from="Visualise_stock" to="." method="_on_visualise_stock_pressed"]
