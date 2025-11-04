@@ -1,5 +1,6 @@
-GridContainer
 Node
+MenuButton
+GridContainer
 Button
 AudioStreamPlayer2D
 CheckBox
@@ -11,5 +12,3 @@ PanelContainer
 HFlowContainer
 Control
 TextureRect
-HBoxContainer
-CollisionShape2D

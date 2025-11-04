@@ -29,6 +29,8 @@ func _ready():
 	add_check_box()
 	connect_the_check_box()
 	
+	$MenuMurColor.get_popup().connect("id_pressed", Callable(self, "_on_mur_color_selected"))
+	
 	
 func add_check_box()->void:
 	for item in stock.keys():
@@ -39,10 +41,11 @@ func add_check_box()->void:
 		check.add_theme_color_override("font_color", Color(0.0, 0.0, 0.5))           # Normal
 		check.add_theme_color_override("font_color_pressed", Color(0.0, 0.0, 0.5))   # When pressed
 		check.add_theme_color_override("font_color_hover", Color(0.0, 0.0, 0.5))     # When hovered
-		check.add_theme_color_override("font_color_focus", Color(0.0, 0.0, 0.5))     # When focused
+		check.add_theme_color_override("font_color_focus", Color(0.0, 0.0, 0.5))
 		##############
 		check.add_theme_font_size_override("font_size", 30)
 		
+		#lorsqu'on fini d'acheter le boutons deja coche le restera 
 		var target = objects.get(check.name)
 		if target and target.visible:
 			check.button_pressed = true
@@ -92,3 +95,34 @@ func _on_button_piece_principale_pressed() -> void:
 func _on_visualise_stock_pressed() -> void:
 	prints("///////////////")
 	lire_stock(stock)
+
+
+func _on_menu_mur_color_pressed() -> void:
+	var menuMur = $MenuMurColor
+	menuMur.get_popup().clear() #afin de ne pas repeter les item a chaque clique
+	menuMur.get_popup().add_item("bleu",0)
+	menuMur.get_popup().add_item("rouge",1)
+	menuMur.get_popup().add_item("vert",2)
+	
+func _on_mur_color_selected(id: int) -> void:
+	couleur_mur(id)
+
+	
+func couleur_mur(num : int) -> void: 
+	var bleu=$Mur_Couleurs/Mur_Bleu
+	var rouge=$Mur_Couleurs/Mur_Rouge
+	var vert=$Mur_Couleurs/Mur_Vert
+
+	match num:
+		0:
+			bleu.visible=true
+			rouge.visible=false
+			vert.visible=false
+		1 :
+			bleu.visible=false
+			rouge.visible=true
+			vert.visible=false
+		2:
+			bleu.visible=false
+			rouge.visible=false
+			vert.visible=true

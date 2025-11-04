@@ -32,8 +32,13 @@ func _ready(): #quand la scene demarre
 	# on "connecte" le signal input_event du Area2D à la fonction _on_area_input_event()
 	#   ça veut dire : "quand quelqu’un clique dans la zone (CollisionShape2D), donc fait un event
 	#      appelle automatiquement la fonction _on_area_input_event()"
-	
-			#LE MAGASIN SE REMPLI
+	remplir_magasin()
+			
+
+
+###########################################################################
+func remplir_magasin() -> void:
+	#LE MAGASIN SE REMPLI
 	for obj in objets:
 		var grille= GridContainer.new()
 		grille.name="GRILLE"+obj
@@ -72,7 +77,7 @@ func _ready(): #quand la scene demarre
 		h_flow_container.add_child(grille)
 
 
-###########################################################################
+
 
 
 	#LA FCT QUI GERE LE MAX: 2 CHECKBOX CHOISIES		
@@ -141,9 +146,7 @@ func _on_button_acheter_pressed() -> void:
 			#Ajout des objets achetes au stock de la piece
 			ajoute_objet(obj, 3, stock);	
 	
-	
-	
-	#retour vers la piece
+		#retour vers la piece
 	caisse.play()
 	await get_tree().create_timer(1.10).timeout
 	#get_tree().change_scene_to_file("res://scenes/dortoir.tscn")
@@ -156,11 +159,14 @@ func _on_button_acheter_pressed() -> void:
 	people.stop()
 	mainbackground.play()
 	
-	get_parent().clear_check_boxes()
-	get_parent().add_check_box()
-	get_parent().connect_the_check_box()
+	get_parent().clear_check_boxes() #evite d'avoir 2fois le meme btn
+	get_parent().add_check_box() #ajoute les btn du stock
+	get_parent().connect_the_check_box() #donne a chaque btn le bon event
 
-	
+
+
+
+	#utilise pour que lorsq'on revient dans le magasin les checkbox d'avant ne seront plus cochees
 func decoche_tout() -> void:
 	for obj in objets: #parcours de la liste d'objets
 		var gr = h_flow_container.get_node("GRILLE" + obj) #on recup la grille (image+checkbox)

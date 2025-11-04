@@ -5,8 +5,8 @@
 
 [node name="Node2D" instance=ExtResource("1_uwrxv")]
 
+[node name="Menu" parent="." index="4"]
+position = Vector2(640, -225)
+
 [node name="CharacterBody2D" parent="." index="6" instance=ExtResource("2_yqjtg")]
 position = Vector2(196, 325)
-
-[node name="Menu" parent="." index="9"]
-position = Vector2(640, -225)
