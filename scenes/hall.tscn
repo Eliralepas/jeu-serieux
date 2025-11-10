@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=4 uid="uid://bufnswpw7si0k"]
+[gd_scene load_steps=45 format=4 uid="uid://bufnswpw7si0k"]
 
 [ext_resource type="Texture2D" uid="uid://byyhqj5wg0v32" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart(1).png" id="1_avp52"]
 [ext_resource type="Script" uid="uid://dfyg5xs56tvaf" path="res://scripts/hall/choix_salle.gd" id="1_p2qom"]
+[ext_resource type="Script" uid="uid://yi07w7s28uxv" path="res://scripts/hall/hall.gd" id="1_wyflw"]
 [ext_resource type="Texture2D" uid="uid://dcnc8afoepltd" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart.png" id="2_p2qom"]
 [ext_resource type="Texture2D" uid="uid://cb3jebrkdsnrm" path="res://assets/sol/parquet-beige-gauche-pixilart(1).png" id="3_27y0h"]
 [ext_resource type="Texture2D" uid="uid://d2imuyjjbetm4" path="res://assets/sol/parquet-beige-pixilart(2).png" id="4_v3g6v"]
@@ -160,6 +161,7 @@ sources/2 = SubResource("TileSetAtlasSource_187d5")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abe3o"]
 
 [node name="PiecePrinciaple" type="Node2D"]
+script = ExtResource("1_wyflw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-35, -4)
