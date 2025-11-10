@@ -1,3 +1,4 @@
+	#A remplacer par sa propre scene!!!!
 extends "res://scripts/grahics.gd"
 
 @onready var parle = $Dialogue
