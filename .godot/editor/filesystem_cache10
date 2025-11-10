@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1762816548
-icon.svg::CompressedTexture2D/CompressedTexture2D::7527404050429718979::1762816524::1762816524::1::::<><><>0<>0<>13f10e4cd88cf5f6aea5763f5ed68a5d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://::1762817711
+icon.svg::CompressedTexture2D/CompressedTexture2D::7527404050429718979::1762817668::1762817669::1::::<><><>0<>0<>13f10e4cd88cf5f6aea5763f5ed68a5d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 magazin.png::CompressedTexture2D/CompressedTexture2D::1636033580498915765::1762816524::1762816524::1::::<><><>0<>0<>f84c60126b797e305145a0d44c6f72dc<>res://.godot/imported/magazin.png-b007f6fea984e341659f11c5c1702ed1.ctex::
 ::res://assets/::1762816524
 ::res://assets/autres/::1762816524
@@ -23,7 +23,7 @@ parquet-beige-gauche-pixilart(1).png::CompressedTexture2D/CompressedTexture2D::4
 parquet-beige-pixilart(2).png::CompressedTexture2D/CompressedTexture2D::9071641446004029201::1762816524::1762816524::1::::<><><>0<>0<>3ff9e1e5c4e74bc1c2bb0d4d0f805337<>res://.godot/imported/parquet-beige-pixilart(2).png-ee1743ab97e3f9292fdd274cf3959a98.ctex::
 parquet-beige-pixilart.png::CompressedTexture2D/CompressedTexture2D::2352999425170950021::1762816524::1762816524::1::::<><><>0<>0<>e5b53b08355910612958e215172b5092<>res://.godot/imported/parquet-beige-pixilart.png-96818bd1d7b863698ed37f722b29f180.ctex::
 pixilart-drawing(3).png::CompressedTexture2D/CompressedTexture2D::2287322273421564362::1762816524::1762816524::1::::<><><>0<>0<>376b84517560f09db2b236ce3cc140e0<>res://.godot/imported/pixilart-drawing(3).png-f375bf9d651a57c5bfe1fad6c139e9fa.ctex::
-::res://images/::1762816524
+::res://images/::1762817668
 cadreObjets.png::CompressedTexture2D/CompressedTexture2D::6563339249052949331::1762816524::1762816524::1::::<><><>0<>0<>94a6d0285139bc0c28d1253c8d77e28c<>res://.godot/imported/cadreObjets.png-628c584966d436aa0d104827be114fac.ctex::
 ::res://images/objets/::1762816524
 armoire.png::CompressedTexture2D/CompressedTexture2D::8647390238878443389::1762816524::1762816524::1::::<><><>0<>0<>d3a0977dd287c305349a235f2cfc647f<>res://.godot/imported/armoire.png-3e8777a2b18d3c533693d071a8fdde5b.ctex::
@@ -51,7 +51,7 @@ background.mp3::AudioStreamMP3/AudioStreamMP3::7750305007807778858::1762816524::
 door_opening.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::7289121611453262738::1762816524::1762816524::1::::<><><>0<>0<>e867c0594feb2452a4e3e9bb1bbf0c47<>res://.godot/imported/door_opening.ogg-dd4aa7218d2b25cd416603875203a0f1.oggvorbisstr::
 magasin_background.mp3::AudioStreamMP3/AudioStreamMP3::661054562303023424::1762816524::1762816524::1::::<><><>0<>0<>30b7b71f6702737a8e5477887bc024cf<>res://.godot/imported/magasin_background.mp3-6df33fe34e999fa5c988666634af8390.mp3str::
 people_talking.mp3::AudioStreamMP3/AudioStreamMP3::1899629130390679653::1762816524::1762816524::1::::<><><>0<>0<>49eabb51315e7dfd604fa1e9d8ba6c03<>res://.godot/imported/people_talking.mp3-f688f113757ec56a31fa90ac060b5d9d.mp3str::
-::res://scenes/::1762816524
-Magasin.tscn::PackedScene::1862739950448829695::1762816524::0::1::::<><><>0<>0<><>::uid://dami3u2og2fjb::::res://scripts/Magasin.gd<>uid://xkrh7s3rpwkb::::res://magazin.png<>uid://johqbx3tpyhk::::res://musique/magasin_background.mp3<>uid://2cgu5caxdtib::::res://musique/people_talking.mp3<>uid://bo83jkc060r3y::::res://musique/acheter.mp3
-::res://scripts/::1762816524
-Magasin.gd::GDScript::7184571415121392639::1762816524::0::1::::<>Node2D<><>0<>0<><>::
+::res://scenes/::1762817668
+Magasin.tscn::PackedScene::1862739950448829695::1762817668::0::1::::<><><>0<>0<><>::uid://dami3u2og2fjb::::res://scripts/Magasin.gd<>uid://xkrh7s3rpwkb::::res://magazin.png<>uid://johqbx3tpyhk::::res://musique/magasin_background.mp3<>uid://2cgu5caxdtib::::res://musique/people_talking.mp3<>uid://bo83jkc060r3y::::res://musique/acheter.mp3
+::res://scripts/::1762817668
+Magasin.gd::GDScript::7184571415121392639::1762817325::0::1::::<><><>0<>0<><>::
