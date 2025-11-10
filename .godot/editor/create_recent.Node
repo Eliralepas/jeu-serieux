@@ -1,7 +1,9 @@
+Camera2D
+Button
+VBoxContainer
 Node
 MenuButton
 GridContainer
-Button
 AudioStreamPlayer2D
 CheckBox
 Node2D
@@ -11,4 +13,3 @@ Sprite2D
 PanelContainer
 HFlowContainer
 Control
-TextureRect
