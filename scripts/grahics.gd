@@ -2,7 +2,7 @@ extends "res://scripts/piece_abstraite.gd"
 
 @onready var store:= $Store
 
-
+var budget = 500 #A changer, sera en fct du json
 
 @onready var porte:= $songs/porte
 # On crée un dictionnaire reliant le nom du bouton au node correspondant
@@ -22,18 +22,27 @@ extends "res://scripts/piece_abstraite.gd"
 }
 
 
-var stock = {}
+var stock = []
 
 func _ready():
 	clear_check_boxes()
 	add_check_box()
 	connect_the_check_box()
 	
+	$Menu/Panel/Label.text = str(budget) #cast int en str
+
+	
+
+	
+	
+	$Menu/Panel.connect("magasin_pressed", Callable(self, "_on_magasin_pressed"))
+	$Menu/Panel.connect("finaliser_pressed", Callable(self, "_on_finaliser_pressed"))
+	
 	$MenuMurColor.get_popup().connect("id_pressed", Callable(self, "_on_mur_color_selected"))
 	
 	
 func add_check_box()->void:
-	for item in stock.keys():
+	for item in stock:
 		var check = CheckButton.new()
 		check.name="Check"+item
 		check.text=item
@@ -65,38 +74,41 @@ func connect_the_check_box()->void:
 	
 
 func _on_any_check_toggled(toggled_on: bool, button_name: String) -> void:
-	var target = objects.get(button_name)
+	var target = objects.get(button_name) #recup objet emeteur du signal
 	if target:
-		target.visible = toggled_on
+		target.visible = toggled_on #on met la visibilite selon comment est l'etant du btn clicke
 
 
-func _on_button_magasin_pressed() -> void:
-	porte.play()
-	await get_tree().create_timer(1.20).timeout
-	#get_tree().change_scene_to_file("res://scenes/Magasin.tscn")
-	$songs/magasinBackground.play()
+func _on_magasin_pressed() -> void: #lors du clique sur le btn magasin
+	porte.play() #bruitage
+	await get_tree().create_timer(1.20).timeout #petit time de pause
+		#gestions des sons
+	$songs/magasinBackground.play() 
 	$songs/talkingPeople.play()
 	$songs/mainBackground.stop()
 	
-	store.decoche_tout()
+	store.decoche_tout() #on decoche toutes les cases du magasin
 	
 
-	store.stock = stock
-	store.visible=true;
+	store.stock = stock #on synchronise le stock du magasin avec celui de la piece
+	store.visible=true; #on met le magasin en mode visible
 	
 
 
-func _on_button_piece_principale_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/piece_princiaple.tscn")
+func _on_finaliser_pressed() -> void:
+	#on genereras un json
+	get_tree().change_scene_to_file("res://scenes/piece_princiaple.tscn") #retour a la piece principale
 
 
 
 
+	#fonction pure test , A SUPRIMER UNE FOIS QUE LE MAGASIN MARCHE POUR TOUS
 func _on_visualise_stock_pressed() -> void:
 	prints("///////////////")
 	lire_stock(stock)
 
 
+	#modification de la couleur des mur
 func _on_menu_mur_color_pressed() -> void:
 	var menuMur = $MenuMurColor
 	menuMur.get_popup().clear() #afin de ne pas repeter les item a chaque clique
@@ -105,7 +117,7 @@ func _on_menu_mur_color_pressed() -> void:
 	menuMur.get_popup().add_item("vert",2)
 	
 func _on_mur_color_selected(id: int) -> void:
-	couleur_mur(id)
+	couleur_mur(id) 
 
 	
 func couleur_mur(num : int) -> void: 

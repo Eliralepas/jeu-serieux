@@ -10,12 +10,19 @@ extends Node
 func _ready() -> void:
 	pass;
 
-func ajoute_objet(objet: String, duree: int, stock: Dictionary) -> void:
-	stock[objet]=duree;
+func ajoute_objet(objet: Array, stock: Array) -> bool:
+	for item in stock: 
+		if item==objet[0]:
+			return false
+			
+	stock.append(objet[0]);
+	return true
+			
+
 	
-func supprime_objet(objet: String, stock: Dictionary) -> void:
+func supprime_objet(objet: String, stock: Array) -> void:
 	stock.erase(objet);
 
-func lire_stock(stock: Dictionary) ->void:
-	for key in stock.keys():
-		print("l'objet : %s a une durée de vie: %d" % [key, stock[key]])
+func lire_stock(stock: Array) ->void:
+	for key in stock:
+		print("objet : %s %", stock)

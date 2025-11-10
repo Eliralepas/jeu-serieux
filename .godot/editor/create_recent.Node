@@ -1,3 +1,4 @@
+Label
 Camera2D
 Button
 VBoxContainer
@@ -12,4 +13,3 @@ Panel
 Sprite2D
 PanelContainer
 HFlowContainer
-Control

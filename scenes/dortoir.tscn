@@ -1164,43 +1164,13 @@ texture = ExtResource("24_erfmb")
 top_level = true
 position = Vector2(635, -274)
 
-[node name="Button_magasin" type="Button" parent="Menu"]
-top_level = true
-offset_left = 882.0
-offset_top = 435.0
-offset_right = 1011.0
-offset_bottom = 498.0
-theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.953949, 0.648103, 0.788939, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0.968627, 1)
-theme_override_colors/font_color = Color(0.862745, 0, 0.564706, 1)
-theme_override_colors/font_focus_color = Color(0.480725, 2.76752e-06, 0.306748, 1)
-theme_override_colors/font_pressed_color = Color(0.572549, 0, 0.772549, 1)
-theme_override_font_sizes/font_size = 30
-text = "Magasin"
-
 [node name="Visualise_stock" type="Button" parent="Menu"]
 z_index = 1
-offset_left = 35.0
-offset_top = 639.0
-offset_right = 157.0
-offset_bottom = 670.0
-text = "STOOOOOOCK"
-
-[node name="Button_piece_principale" type="Button" parent="Menu"]
-top_level = true
-offset_left = 703.0
-offset_top = 433.0
-offset_right = 832.0
-offset_bottom = 496.0
-theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.953949, 0.648103, 0.788939, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0.968627, 1)
-theme_override_colors/font_color = Color(2.26215e-06, 0.571486, 0.485333, 1)
-theme_override_colors/font_focus_color = Color(4.81307e-07, 0.314511, 0.224235, 1)
-theme_override_colors/font_pressed_color = Color(0.0622559, 0.444343, 0.455192, 1)
-theme_override_font_sizes/font_size = 30
-text = "valider"
+offset_left = 279.0
+offset_top = 581.0
+offset_right = 401.0
+offset_bottom = 612.0
+text = "STOCK"
 
 [node name="GrilleCheckBox" type="GridContainer" parent="Menu"]
 offset_left = 46.0
@@ -1210,23 +1180,13 @@ offset_bottom = 175.0
 
 [node name="MenuMurColor" type="MenuButton" parent="."]
 z_index = 3
-offset_left = -416.0
-offset_top = -279.0
-offset_right = -180.0
-offset_bottom = -229.0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+offset_left = 661.0
+offset_top = 290.0
+offset_right = 897.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.854902, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.772549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.82689, 0.302474, 0.382563, 1)
 theme_override_font_sizes/font_size = 30
 text = "Couleur du mur"
 
@@ -1254,7 +1214,5 @@ visible = false
 z_index = 10
 position = Vector2(-333, -186)
 
-[connection signal="pressed" from="Menu/Button_magasin" to="." method="_on_button_magasin_pressed"]
 [connection signal="pressed" from="Menu/Visualise_stock" to="." method="_on_visualise_stock_pressed"]
-[connection signal="pressed" from="Menu/Button_piece_principale" to="." method="_on_button_piece_principale_pressed"]
 [connection signal="pressed" from="MenuMurColor" to="." method="_on_menu_mur_color_pressed"]
