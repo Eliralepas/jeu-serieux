@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh5t5lvohhjyd"
-valid=false
+uid="uid://cwbe4ursc5vhr"
+path="res://.godot/imported/archipolenord.png-d52cad711ad8eafcc6e12aee6a33929d.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://archipolenord.png"
+dest_files=["res://.godot/imported/archipolenord.png-d52cad711ad8eafcc6e12aee6a33929d.ctex"]
 
 [params]
 

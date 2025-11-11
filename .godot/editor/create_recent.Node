@@ -1,3 +1,7 @@
+TextureRect
+VBoxContainer
+Button
+Panel
 TileMapLayer
 Node
 Node2D

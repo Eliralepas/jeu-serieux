@@ -1,1 +1,2 @@
-res://scenes/piece_principale.tscn
+res://scenes/menuPrincipale.tscn
+res://scripts/menu_principale.gd
