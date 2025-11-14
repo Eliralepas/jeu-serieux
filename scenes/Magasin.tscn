@@ -40,10 +40,26 @@ offset_bottom = 504.0
 theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 100
 
-[node name="Button" type="Button" parent="."]
+[node name="Btn_Sortir" type="Button" parent="."]
+offset_left = 1261.0
+offset_top = 700.0
+offset_right = 1386.0
+offset_bottom = 750.0
+rotation = -1.57079
+theme_override_colors/font_disabled_color = Color(0.620315, 0, 0.1044, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.796078, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.796078, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.588235, 0, 0, 1)
+theme_override_colors/font_color = Color(0.891291, 2.71939e-06, 5.77569e-07, 1)
+theme_override_colors/font_focus_color = Color(1, 0.0941176, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.0705882, 0.686275, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sortir"
+
+[node name="Btn_Acheter" type="Button" parent="."]
 offset_left = 1109.0
 offset_top = 577.0
-offset_right = 1305.0
+offset_right = 1249.0
 offset_bottom = 700.0
 theme_override_colors/font_disabled_color = Color(0.588696, 9.14484e-07, 0.356623, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.796222, 2.79158e-06, 0.490036, 1)
@@ -52,7 +68,7 @@ theme_override_colors/font_outline_color = Color(0.588235, 0, 0.356863, 1)
 theme_override_colors/font_color = Color(1, 0.461594, 0.712422, 1)
 theme_override_colors/font_focus_color = Color(1, 0.380392, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.866667, 0.0705882, 0.686275, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 text = "Acheter"
 
 [node name="Songs" type="Node2D" parent="."]
@@ -74,4 +90,5 @@ stream = ExtResource("6_b7ckq")
 position = Vector2(631, 333)
 zoom = Vector2(0.799, 0.77)
 
-[connection signal="pressed" from="Button" to="." method="_on_button_acheter_pressed"]
+[connection signal="pressed" from="Btn_Sortir" to="." method="_on_btn_sortir_pressed"]
+[connection signal="pressed" from="Btn_Acheter" to="." method="_on_button_acheter_pressed"]

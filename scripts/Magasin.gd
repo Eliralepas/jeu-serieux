@@ -1,6 +1,7 @@
 	#A remplacer par sa propre scene!!!!
 extends "res://scripts/grahics.gd"
 
+
 @onready var parle = $Dialogue
 @onready var area = $Area2D
 @onready var h_flow_container: HFlowContainer = $HFlowContainer
@@ -82,6 +83,7 @@ func remplir_magasin() -> void:
 		var prix = Label.new()
 		prix.name = "Label%d" % obj[1]
 		prix.text = "%d €" % obj[1]
+		prix.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		grille.add_child(prix)
 		
 		
@@ -177,17 +179,7 @@ func _on_button_acheter_pressed() -> void:
 		caisse.play()
 		await get_tree().create_timer(1.10).timeout
 
-		self.visible=false
-		var backgroundMagasin = get_parent().get_node("songs/magasinBackground")
-		var people = get_parent().get_node("songs/talkingPeople")
-		var mainbackground = get_parent().get_node("songs/mainBackground")
-		var argent= get_parent().get_node("Menu/Panel/Label")
-		
-		backgroundMagasin.stop()
-		people.stop()
-		mainbackground.play()
-		
-		argent.text = "Budget : %d " % budget
+		magasin_non_visible()
 
 		get_parent().clear_check_boxes() #evite d'avoir 2fois le meme btn
 		get_parent().add_check_box() #ajoute les btn du stock
@@ -208,3 +200,21 @@ func decoche_tout() -> void:
 		var check = gr.get_node("CHECK" + obj[0]) #dans chaque grille on recup juste la checkbox
 		if check.button_pressed: #si la checkbox est click on incremente checked_count
 			check.button_pressed=false
+
+
+func _on_btn_sortir_pressed() -> void:
+	decoche_tout()
+	magasin_non_visible()
+	
+func magasin_non_visible() ->void:	
+	self.visible=false
+	var backgroundMagasin = get_parent().get_node("songs/magasinBackground")
+	var people = get_parent().get_node("songs/talkingPeople")
+	var mainbackground = get_parent().get_node("songs/mainBackground")
+	var argent= get_parent().get_node("Menu/Panel/Label")
+	
+	backgroundMagasin.stop()
+	people.stop()
+	mainbackground.play()
+	
+	argent.text = "Budget : %d " % budget

@@ -1,5 +1,5 @@
-Camera2D
 Button
+Camera2D
 AudioStreamPlayer2D
 Node
 CheckBox
@@ -12,4 +12,3 @@ HFlowContainer
 Control
 TextureRect
 HBoxContainer
-CollisionShape2D
