@@ -115,3 +115,8 @@ text = "QUITTER
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.78, 0.78)
+
+[connection signal="pressed" from="Sprite2D/VBoxContainer/ButtonJouer" to="." method="_on_button_jouer_pressed"]
+[connection signal="pressed" from="Sprite2D/VBoxContainer/ButtonReprendre" to="." method="_on_button_reprendre_pressed"]
+[connection signal="pressed" from="Sprite2D/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="Sprite2D/VBoxContainer/ButtonQuitter" to="." method="_on_button_quitter_pressed"]
