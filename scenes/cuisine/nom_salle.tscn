@@ -1,0 +1,145 @@
+[gd_scene load_steps=16 format=3 uid="uid://dfdgwbokbcejl"]
+
+[ext_resource type="Script" uid="uid://mfp38phdd4ss" path="res://scripts/cuisine/cuisine.gd" id="1_p0r2g"]
+[ext_resource type="Texture2D" uid="uid://dnmtsgomnikfi" path="res://assets/cuisine/meubles/frigo.png" id="2_yv26h"]
+[ext_resource type="Texture2D" uid="uid://crwx2rfbncbjd" path="res://assets/cuisine/meubles/evier.png" id="3_x41tg"]
+[ext_resource type="Texture2D" uid="uid://bj70p11p36htw" path="res://assets/cuisine/meubles/pixilart-drawing(24).png" id="4_2smbg"]
+[ext_resource type="Texture2D" uid="uid://d0o8oavu5y5wg" path="res://assets/cuisine/meubles/tapis.png" id="5_1hj7f"]
+[ext_resource type="Texture2D" uid="uid://s3qmqw6hm5co" path="res://assets/cuisine/meubles/tapis_milieu.png" id="6_u6hw3"]
+[ext_resource type="Script" uid="uid://cfaogxrgmt0xb" path="res://scripts/cuisine/liste_objet.gd" id="7_fjy42"]
+[ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/cuisine/perso_1.tscn" id="8_qfri4"]
+
+[sub_resource type="TileSet" id="TileSet_cvsyn"]
+tile_size = Vector2i(70, 70)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1s6a5"]
+texture = ExtResource("2_yv26h")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrkyq"]
+texture = ExtResource("3_x41tg")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1h5h3"]
+texture = ExtResource("4_2smbg")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5tld"]
+texture = ExtResource("5_1hj7f")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_804jn"]
+texture = ExtResource("6_u6hw3")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mrkyq"]
+tile_size = Vector2i(70, 70)
+sources/1 = SubResource("TileSetAtlasSource_1s6a5")
+sources/2 = SubResource("TileSetAtlasSource_mrkyq")
+sources/3 = SubResource("TileSetAtlasSource_1h5h3")
+sources/4 = SubResource("TileSetAtlasSource_r5tld")
+sources/5 = SubResource("TileSetAtlasSource_804jn")
+
+[node name="Cuisuine" type="Node2D"]
+script = ExtResource("1_p0r2g")
+
+[node name="Base" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_cvsyn")
+
+[node name="ObjetBase" type="TileMapLayer" parent="Base"]
+tile_set = SubResource("TileSet_mrkyq")
+
+[node name="ListeObjet" type="Node2D" parent="Base"]
+script = ExtResource("7_fjy42")
+
+[node name="Radiateur" type="Sprite2D" parent="Base/ListeObjet"]
+position = Vector2(-137, 166)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(37, 0)
+zoom = Vector2(0.78, 0.78)
+
+[node name="AnimatedSprite2D" parent="." node_paths=PackedStringArray("ListeObjets") instance=ExtResource("8_qfri4")]
+position = Vector2(114, 116)
+autoplay = "idle"
+ListeObjets = NodePath("../Base/ListeObjet")
