@@ -76,12 +76,10 @@ text = "Acheter"
 [node name="backgroundMusique" type="AudioStreamPlayer2D" parent="Songs"]
 stream = ExtResource("4_ohnjy")
 volume_db = -7.429
-autoplay = true
 
 [node name="talkingPeople" type="AudioStreamPlayer2D" parent="Songs"]
 stream = ExtResource("5_b7ckq")
 volume_db = -12.072
-autoplay = true
 
 [node name="purchase" type="AudioStreamPlayer2D" parent="Songs"]
 stream = ExtResource("6_b7ckq")

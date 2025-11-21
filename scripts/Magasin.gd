@@ -1,6 +1,5 @@
 	#A remplacer par sa propre scene!!!!
-extends "res://scripts/grahics.gd"
-
+extends Dortoir
 
 @onready var parle = $Dialogue
 @onready var area = $Area2D
@@ -19,12 +18,12 @@ var dialogues = [
 
 		#objets du magasin
 		#tab de listes["nom", prix]
+		#! chaque piece a des objetx differents
 var objets = [
 	["armoire", 200],
 	["cadres", 50], 
 	["coffre", 100],
 	["commode", 100], 
-	["grand_tapis", 70], 
 	["lampe", 65],
 	["plant", 100], 
 	["plante", 100], 
@@ -46,8 +45,10 @@ func _ready(): #quand la scene demarre
 	#      appelle automatiquement la fonction _on_area_input_event()"
 	remplir_magasin()
 			
-
-
+###########################################################################
+func ajouter_obj_au_magasin(nom: String, prix: int) -> void: #si on voudra ajouter un item au magasin apres 
+	var element = [nom, prix]								# pas necessairement utile mais elle existe 
+	objets.append(element)
 ###########################################################################
 func remplir_magasin() -> void:
 	#LE MAGASIN SE REMPLI
