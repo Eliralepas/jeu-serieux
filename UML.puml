@@ -1,0 +1,79 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+    abstract class BaseSalle extends checkBTN {
+        -Menu: Node<<scene>>
+        -Magasin: node<<scene>>
+        -Objets: Dictionary<String, Sprite2D>
+        -Budget: Integer
+        -Stock: String[]
+
+        +setUp()
+        +setChemin(cheminMenu:String, cheminMagasin: String)
+        +defaultStock(stk: String[])
+        +ajoutObjets(obj: Dictionary<String,Sprite2D>)
+    }
+
+    class Dortoir extends BaseSalle{
+    }
+    class Cuisine extends BaseSalle{
+    }
+
+    class Salon extends BaseSalle{
+    }
+
+    class SalleDeBain extends BaseSalle{
+    }
+
+    class checkBTN extends Stock {
+        +add_check_button(stock:String[], objects:Dictionary<String,Sprite2D>)
+        +clear_check_boxes()
+        +connect_the_check_boxs(objects:Dictionary<String,Sprite2D>)
+        +_on_any_check_toggled(objects:Dictionary<String,Sprite2D>, toggled_on: Boolean, button_name: String)
+    }
+
+    class Stock {
+        +ajoute_objet(item: String, stock: String[]): Boolean
+        +supprime_objet(item: String, stock: String[])
+    }
+
+
+class Magasin {
+    -Salle: BaseSalle
+    -Dialogue: Node<<Label>>
+    -Zonetexte: Node<<Arear2D>>
+    -ConteneursObjets: Node<<HFlowContainer>>
+    -SonCaisse: Node<<AudioSteamPlayer>>
+    -DialoguesListe: String[]
+    -Objets: Array<Array<String, int>>
+    -indiceDialogue: Integer
+    -nb_objets_achetés: Integer
+
+    +_ready()
+    +ajouter_obj_au_magasin(nom: String, prix: int)
+    +remplir_magasin()
+    +_check_a_checkbox(button_pressed: Boolean, toggled_checkbox: CheckBox)
+    +_on_area_input_event(viewport, event, shape_idx):
+    +_on_button_acheter_pressed()
+    +decoche_tout()
+    +_on_btn_sortir_pressed()
+    +magasin_non_visible()
+}
+
+
+class MenuSalle{
+    -SonPorte: Node<<AudioSteamPlayer>>
+
+    +_on_magasin_pressed(store: Node<<scene>>)
+    +_on_finaliser_pressed()
+    +_on_menu_mur_color_pressed()
+    +_on_mur_color_selected(id: Integer)
+    +_couleur_mur(num: Integer)
+}
+
+
+BaseSalle "1"*--"1" MenuSalle : possede un
+BaseSalle "1" *-- "1" Magasin : possede
+
+
+@enduml
