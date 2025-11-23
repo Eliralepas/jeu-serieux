@@ -6,12 +6,12 @@ class_name Stock
 #ajout d'objet dans le stock (une fois acheter du magasin)
 
 #ici on a utiliser une array car un objet est defini par un nom et un prix
-func ajoute_objet(objet: Array, stock: Array) -> bool:
+func ajoute_objet(objet: String, stock: Array) -> bool:
 	for item in stock: 
-		if item==objet[0]: #si l'objet existe deja dans le stock
+		if item==objet: #si l'objet existe deja dans le stock
 			return false
 			
-	stock.append(objet[0]); #sinon on l'ajoute dans le stock
+	stock.append(objet); #sinon on l'ajoute dans le stock
 	return true
 			
 

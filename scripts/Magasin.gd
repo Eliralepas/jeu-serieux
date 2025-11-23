@@ -1,5 +1,5 @@
 	#A remplacer par sa propre scene!!!!
-extends Dortoir
+extends BasePiece
 
 @onready var parle = $Dialogue
 @onready var area = $Area2D
@@ -117,7 +117,7 @@ func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void
 #############################################################################
 
 			#EVOLUTION DES DIALOGUES
-func _on_area_input_event(viewport, event, shape_idx):
+func _on_area_input_event(viewport, event, shape_idx)->void:
 	if event is InputEventMouseButton and event.pressed: #si l'evenemt est un clique
 		index += 1 #l'indice augmente de 1
 

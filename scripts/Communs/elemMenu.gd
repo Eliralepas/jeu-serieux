@@ -1,15 +1,19 @@
 extends Node
 
 @onready var porte:= $songs/porte
+@onready var magasinBackground:= $songs/magasinBackground
+@onready var talkingPeople:= $songs/talkingPeople
+@onready var mainBackground:= $songs/mainBackground
 
-	#quand le btn "magasin" est click
+
+	#quand le btn "magasin" est clickBaseSalle
 func _on_magasin_pressed(store: Node) -> void: #lors du clique sur le btn magasin
 	porte.play() #bruitage
 	await get_tree().create_timer(1.20).timeout #petit time de pause
 		#gestions des sons
-	$songs/magasinBackground.play() 
-	$songs/talkingPeople.play()
-	$songs/mainBackground.stop()
+	magasinBackground.play() 
+	talkingPeople.play()
+	mainBackground.stop()
 	
 	store.decoche_tout() #on decoche toutes les cases du magasin
 	store.visible=true; #on met le magasin en mode visible

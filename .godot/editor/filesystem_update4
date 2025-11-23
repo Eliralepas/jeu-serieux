@@ -1,7 +1,2 @@
 res://scenes/Magasin.tscn
-res://scripts/Communs/piece.gd
-res://scripts/Communs/checkButtons.gd
-res://scripts/graphic.gd
 res://scripts/Communs/elemMenu.gd
-res://scripts/Magasin.gd
-res://scripts/cuisine/cuisine.gd

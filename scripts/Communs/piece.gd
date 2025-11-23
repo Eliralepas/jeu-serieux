@@ -36,7 +36,7 @@ func setup() -> void:
 	$MenuMurColor.get_popup().connect("id_pressed", Callable(self, "_on_mur_color_selected"))
 
 	#cette fonction permet d'adapter les chemins vers chaque elem selon la salle
-func chemins(menu:String, magasin:String)->void:
+func setChemins(menu:String, magasin:String)->void:
 	chemin_menu= get_node(menu)
 	chemin_magasin= get_node(magasin)
 
@@ -45,6 +45,6 @@ func chemins(menu:String, magasin:String)->void:
 func default_stock(stk: Array)->void:
 	stock=stk
 
-func tous_les_obj(obj: Dictionary) -> void:
+func ajout_obj(obj: Dictionary) -> void:
 	for key in obj.keys():
 		objects[key] = obj[key]  # ajoute ou remplace la cle dans le dictionnaire
