@@ -2,6 +2,9 @@ extends Node2D
 
 const FILE_PATH := "user://save_game.json"
 
+@onready var cuisine: Control = $Salles/cuisine
+
+
 func _ready() -> void:
 	var file = FileAccess.open(FILE_PATH, FileAccess.READ)
 	
@@ -50,3 +53,7 @@ func _ready() -> void:
 		file.store_string(json_string)
 		file.close()
 		print("Fichier créé avec contenu par défaut :", default_data)
+
+
+func _on_dialog_box_on_dialog_end() -> void:
+	cuisine.unlock()

@@ -1,5 +1,7 @@
 extends Control
 
+signal on_dialog_end
+
 var dialog = [
 	"Hello there",
 	"OOO MY GODDDDD",
@@ -14,7 +16,7 @@ var finished = false
 func _ready() -> void:
 	load_dialog()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
 	
@@ -27,4 +29,5 @@ func load_dialog():
 		
 	else :
 		queue_free()
+		on_dialog_end.emit()
 	dialog_index+=1

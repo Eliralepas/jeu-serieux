@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk3dhbog3k5pw"
-path="res://.godot/imported/dialog.png-811b272fa8b9d8a72579ed64187931a4.ctex"
+uid="uid://bbqfa6tw56q71"
+path="res://.godot/imported/cadenas_ferme.png-a02c6ee06daa2420454ab591c2cf9368.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/autres/dialog.png"
-dest_files=["res://.godot/imported/dialog.png-811b272fa8b9d8a72579ed64187931a4.ctex"]
+source_file="res://assets/autres/cadenas_ferme.png"
+dest_files=["res://.godot/imported/cadenas_ferme.png-a02c6ee06daa2420454ab591c2cf9368.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bufnswpw7si0k"]
+[gd_scene load_steps=30 format=4 uid="uid://bufnswpw7si0k"]
 
 [ext_resource type="Texture2D" uid="uid://byyhqj5wg0v32" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart(1).png" id="1_avp52"]
 [ext_resource type="Script" uid="uid://dfyg5xs56tvaf" path="res://scripts/hall/choix_salle.gd" id="1_p2qom"]
@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://ceccowdhjpi3j" path="res://assets/cuisine/meubles/plante.png" id="9_smtjo"]
 [ext_resource type="PackedScene" uid="uid://cvgjt62768mco" path="res://scenes/hall/character_Z.tscn" id="10_du0u5"]
 [ext_resource type="Script" uid="uid://cs538u2iyc67d" path="res://scripts/hall/character_z.gd" id="11_27y0h"]
-[ext_resource type="Texture2D" uid="uid://dbt3ybh1n4pbt" path="res://assets/autres/dortoir.png" id="11_fgyqt"]
 [ext_resource type="Texture2D" uid="uid://b527rikoxwpl" path="res://assets/autres/salle_de_bain.png" id="12_66g17"]
 [ext_resource type="Texture2D" uid="uid://dvlfwlr8jvyvr" path="res://assets/autres/cuisine.png" id="13_rfgeu"]
 [ext_resource type="Texture2D" uid="uid://bpirad5mu7r4b" path="res://assets/autres/salon.png" id="14_7j1nj"]
+[ext_resource type="PackedScene" uid="uid://cp0558s7bpusi" path="res://scenes/hall/room_button.tscn" id="14_j2h53"]
 [ext_resource type="PackedScene" uid="uid://dk70484371esh" path="res://scenes/dialog.tscn" id="17_v3g6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k255s"]
@@ -130,37 +130,7 @@ sources/0 = SubResource("TileSetAtlasSource_vh7y1")
 sources/1 = SubResource("TileSetAtlasSource_6s2l4")
 sources/2 = SubResource("TileSetAtlasSource_187d5")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhwml"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mvx3h"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3hjs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_enphg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtwol"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70d2d"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ft4ie"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6qyf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8tjj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnspa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsebi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8h3l"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_serlv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njivs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abe3o"]
-
-[node name="PiecePrinciaple" type="Node2D"]
+[node name="hall" type="Node2D"]
 script = ExtResource("1_wyflw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -182,66 +152,57 @@ script = ExtResource("11_27y0h")
 [node name="Salles" type="Node2D" parent="."]
 script = ExtResource("1_p2qom")
 
-[node name="Dortoir" type="Button" parent="Salles"]
-offset_left = -769.0
-offset_top = -418.00003
-offset_right = 263.0
-offset_bottom = 614.0
-scale = Vector2(0.4192954, 0.36593154)
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhwml")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mvx3h")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_x3hjs")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_enphg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vtwol")
-icon = ExtResource("11_fgyqt")
+[node name="salon" parent="Salles" instance=ExtResource("14_j2h53")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = 320.0
+offset_top = 35.0
+offset_right = 700.0
+offset_bottom = 415.0
 
-[node name="SalleDeBain" type="Button" parent="Salles"]
-offset_left = 266.00003
-offset_top = -418.0
-offset_right = 1298.0
-offset_bottom = 614.0
-scale = Vector2(0.4192954, 0.36593154)
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_70d2d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ft4ie")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_f6qyf")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_m8tjj")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dnspa")
-icon = ExtResource("12_66g17")
+[node name="TextureRect" parent="Salles/salon/Room" index="0"]
+texture = ExtResource("14_7j1nj")
 
-[node name="Cuisine" type="Button" parent="Salles"]
-offset_left = -774.00006
-offset_top = 39.000004
-offset_right = -316.00006
-offset_bottom = 497.0
-scale = Vector2(0.9608748, 0.8261432)
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tsebi")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_g8h3l")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_serlv")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_njivs")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_abe3o")
-icon = ExtResource("13_rfgeu")
+[node name="cuisine" parent="Salles" instance=ExtResource("14_j2h53")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = -773.0
+offset_top = 32.0
+offset_right = -393.0
+offset_bottom = 412.0
 
-[node name="Salon" type="Button" parent="Salles"]
-offset_left = 264.99988
-offset_top = 40.0
-offset_right = 1296.9999
-offset_bottom = 1072.0
-scale = Vector2(0.4192954, 0.36593154)
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhwml")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mvx3h")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_x3hjs")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_enphg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vtwol")
-icon = ExtResource("14_7j1nj")
+[node name="TextureRect" parent="Salles/cuisine/Room" index="0"]
+texture = ExtResource("13_rfgeu")
 
-[node name="Control" parent="." instance=ExtResource("17_v3g6v")]
+[node name="salle_de_bain" parent="Salles" instance=ExtResource("14_j2h53")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = 320.0
+offset_top = -415.0
+offset_right = 700.0
+offset_bottom = -35.0
+
+[node name="TextureRect" parent="Salles/salle_de_bain/Room" index="0"]
+texture = ExtResource("12_66g17")
+
+[node name="dortoir" parent="Salles" instance=ExtResource("14_j2h53")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = -771.0
+offset_top = -415.0
+offset_right = -391.0
+offset_bottom = -35.0
+
+[node name="TextureRect" parent="Salles/dortoir/Room" index="0"]
+texture = ExtResource("14_7j1nj")
+
+[node name="DialogBox" parent="." instance=ExtResource("17_v3g6v")]
 visible = false
 offset_left = -763.0
 offset_top = 78.0
-offset_right = -763.0
-offset_bottom = 78.0
-scale = Vector2(1.211982, 1.2388878)
+offset_right = -723.0
+offset_bottom = 118.0
+scale = Vector2(1.2, 1.2)
+
+[connection signal="on_dialog_end" from="DialogBox" to="." method="_on_dialog_box_on_dialog_end"]
+
+[editable path="Salles/salon"]
+[editable path="Salles/cuisine"]
+[editable path="Salles/salle_de_bain"]
+[editable path="Salles/dortoir"]

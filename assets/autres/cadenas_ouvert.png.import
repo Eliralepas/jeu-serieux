@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u3jdcbnwgusm"
-path="res://.godot/imported/pixilart-drawing(16).png-35898150bdeec383f43e44e510daf6f1.ctex"
+uid="uid://bmepbreco1w7s"
+path="res://.godot/imported/cadenas_ouvert.png-6c07c9e4b053358909843db383005e5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/autres/pixilart-drawing(16).png"
-dest_files=["res://.godot/imported/pixilart-drawing(16).png-35898150bdeec383f43e44e510daf6f1.ctex"]
+source_file="res://assets/autres/cadenas_ouvert.png"
+dest_files=["res://.godot/imported/cadenas_ouvert.png-6c07c9e4b053358909843db383005e5e.ctex"]
 
 [params]
 

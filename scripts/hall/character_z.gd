@@ -1,9 +1,10 @@
 extends Node2D
 
-@onready var firt_time : bool = true
+@onready var first_time : bool = true
 
 func _ready() -> void:
-	if firt_time:
-		$"../Control".visible = true
+	if first_time:
+		
+		$"../DialogBox".visible = true
 		#dialog
 	pass
