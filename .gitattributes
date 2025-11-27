@@ -1,2 +1,9 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+
+*.gd linguist-language=Godot
+*.tscn linguist-language=Godot
+*.tres linguist-language=Godot
+
+*.png linguist-detectable=false
+*.import linguist-detectable=false
