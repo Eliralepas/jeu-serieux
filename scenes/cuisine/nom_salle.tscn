@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfdgwbokbcejl"]
+[gd_scene load_steps=17 format=3 uid="uid://dfdgwbokbcejl"]
 
 [ext_resource type="Script" uid="uid://mfp38phdd4ss" path="res://scripts/cuisine/cuisine.gd" id="1_p0r2g"]
 [ext_resource type="Texture2D" uid="uid://dnmtsgomnikfi" path="res://assets/cuisine/meubles/frigo.png" id="2_yv26h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d0o8oavu5y5wg" path="res://assets/cuisine/meubles/tapis.png" id="5_1hj7f"]
 [ext_resource type="Texture2D" uid="uid://s3qmqw6hm5co" path="res://assets/cuisine/meubles/tapis_milieu.png" id="6_u6hw3"]
 [ext_resource type="Script" uid="uid://cfaogxrgmt0xb" path="res://scripts/cuisine/liste_objet.gd" id="7_fjy42"]
+[ext_resource type="Texture2D" uid="uid://cp4m36x7nt4fc" path="res://assets/radiateur.png" id="8_akme4"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/cuisine/perso_1.tscn" id="8_qfri4"]
 
 [sub_resource type="TileSet" id="TileSet_cvsyn"]
@@ -133,7 +134,8 @@ tile_set = SubResource("TileSet_mrkyq")
 script = ExtResource("7_fjy42")
 
 [node name="Radiateur" type="Sprite2D" parent="Base/ListeObjet"]
-position = Vector2(-137, 166)
+position = Vector2(-104, 108)
+texture = ExtResource("8_akme4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, 0)
