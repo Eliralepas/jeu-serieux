@@ -1,5 +1,5 @@
 	#A remplacer par sa propre scene!!!!
-extends BasePiece
+extends "res://scripts/Communs/piece.gd"
 
 @onready var parle = $Dialogue
 @onready var area = $Area2D
@@ -61,8 +61,8 @@ func remplir_magasin() -> void:
 		var texture_rect = TextureRect.new()
 		var overlay = TextureRect.new()
 
-		texture_rect.texture = load("res://images/cadreObjets.png")		#cadres
-		overlay.texture = load("res://images/objets/" + obj[0] + ".png")	#icon des objets
+		texture_rect.texture = load("res://assets/Magasin/cadreObjets.png")		#cadres
+		#overlay.texture = load("res://images/objets/" + obj[0] + ".png")	#icon des objets
 		
 		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texture_rect.custom_minimum_size = Vector2(96, 96) 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://1slb4ng5gwih"]
 
 [ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/Magasin.gd" id="1_nbura"]
-[ext_resource type="Texture2D" uid="uid://xkrh7s3rpwkb" path="res://magazin.png" id="2_5vtcu"]
+[ext_resource type="Texture2D" uid="uid://xkrh7s3rpwkb" path="res://assets/Magasin/magazin.png" id="2_5vtcu"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_ohnjy"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_b7ckq"]
 [ext_resource type="AudioStream" uid="uid://bo83jkc060r3y" path="res://musique/acheter.mp3" id="6_b7ckq"]
@@ -83,10 +83,6 @@ volume_db = -12.072
 
 [node name="purchase" type="AudioStreamPlayer2D" parent="Songs"]
 stream = ExtResource("6_b7ckq")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(631, 333)
-zoom = Vector2(0.799, 0.77)
 
 [connection signal="pressed" from="Btn_Sortir" to="." method="_on_btn_sortir_pressed"]
 [connection signal="pressed" from="Btn_Acheter" to="." method="_on_button_acheter_pressed"]

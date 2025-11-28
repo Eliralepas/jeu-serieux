@@ -26,7 +26,7 @@ func add_check_button(stock:Array, objects:Dictionary)->void:
 		if target and target.visible: #si ce node existe et qu'il est visible
 			check.button_pressed = true
 
-		$Menu/GrilleCheckBox.add_child(check)
+		$Menu/VboxContainer.add_child(check)
 		
 		
 		
@@ -34,7 +34,7 @@ func add_check_button(stock:Array, objects:Dictionary)->void:
 		# ! NE VIDE PAS LE STOCK!!!!! ((il faudrait appeler la fct dans baseStock)
 		#A appeler avant le add_check_button pour ne pas avoir le meme btn 2 fois
 func clear_check_boxes() -> void:
-	for child in $Menu/GrilleCheckBox.get_children():
+	for child in $Menu.get_children():
 		child.queue_free()
 		
 		
