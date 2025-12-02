@@ -1,14 +1,18 @@
 	#A remplacer par sa propre scene!!!!
-extends "res://scripts/Communs/piece.gd"
+extends checkBTN
 
 @onready var parle = $Dialogue
 @onready var area = $Area2D
 @onready var h_flow_container: HFlowContainer = $HFlowContainer
 
-@onready var caisse:= $Songs/purchase
+@onready var caisse:= $Songs/purchase 
 
+@onready var budget =500
+@onready var objects = get_parent().get_objects()
 
+@onready var test=get_parent().get_node("Menu/Control/Panel/VBoxContainer")
 
+@onready var stock = get_parent().get_stock()
 			#les differentes phrases
 var dialogues = [
 	"Qu'est-ce que tu veux ?",
@@ -27,7 +31,8 @@ var objets = [
 	["lampe", 65],
 	["plant", 100], 
 	["plante", 100], 
-	["pouf", 130]
+	["pouf", 130],
+	["radiateur",1]
 	]
 
 
@@ -36,15 +41,18 @@ var nb_objet=0 #pour compter les objets deja achetes
 
 #####################################################################################
 
-func _ready(): #quand la scene demarre
+
+
+func _ready():
 	print("///////////////////////////////////////////////////////////")
-	parle.text = dialogues[index] #on met dans le label la phrase a l'indice 0
+	parle.text = dialogues[index]
 	area.input_event.connect(_on_area_input_event)
-	# on "connecte" le signal input_event du Area2D à la fonction _on_area_input_event()
-	#   ça veut dire : "quand quelqu’un clique dans la zone (CollisionShape2D), donc fait un event
-	#      appelle automatiquement la fonction _on_area_input_event()"
 	remplir_magasin()
-			
+
+	# connecte les boutons du store
+	#$Btn_Acheter.connect("pressed", Callable(self, "_on_button_acheter_pressed"))
+	#$Btn_Sortir.connect("pressed", Callable(self, "_on_btn_sortir_pressed"))
+
 ###########################################################################
 func ajouter_obj_au_magasin(nom: String, prix: int) -> void: #si on voudra ajouter un item au magasin apres 
 	var element = [nom, prix]								# pas necessairement utile mais elle existe 
@@ -156,42 +164,49 @@ func resize() ->void:
 ######################################################################
 
 
+func _on_btn_sortir_pressed() -> void:
+	decoche_tout()
+	magasin_non_visible()
+
 	#LORSQUE LE BOUTON ACHETER EST CLICK
-func _on_button_acheter_pressed() -> void:
-	var total=0;
-	var possible=false
-	#Recup des objets coches
-	for obj in objets: #parcours de la liste d'objets
-		var gr = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
-		var check = gr.get_node("CHECK" + obj[0]) #dans chaque grille on recup juste la checkbox
-		if check.button_pressed: #si la checkbox est click on incremente checked_count
-			#Ajout des objets achetes au stock de la piece
-			total += obj[1]
-			if total < budget:
-				var ajoutee = ajoute_objet(obj, stock);	
-				if ajoutee : #si objet pas deja dans le stock
-					budget -= obj[1]
-					possible=true
-				else:
-					parle.text="Tu ne sais meme pas que tu l'as deja?"
 	
-		#retour vers la piece
-	if possible:
-		caisse.play()
-		await get_tree().create_timer(1.10).timeout
+func _on_button_acheter_pressed() -> void:
+	var total = 0
+	var checked_objects = []
 
-		magasin_non_visible()
+	# Récupère tous les objets cochés
+	for obj in objets:
+		var gr = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
+		var check = gr.get_node("CHECK" + obj[0]) #recup checkbox
+		if check.button_pressed: #si obj choisi
+			total += obj[1]#ajout du prix au total
+			checked_objects.append(obj)#ajout de l'objet a la liste d'objets
 
-		get_parent().clear_check_boxes() #evite d'avoir 2fois le meme btn
-		get_parent().add_check_box() #ajoute les btn du stock
-		get_parent().connect_the_check_box() #donne a chaque btn le bon event
-		
+	# Vérifie si le budget suffit
+	if total <= budget: #si on a la thune pour tout
+		var any_added = false
+		for obj in checked_objects: #pour chaque obj choisi
+			var ajoutee = get_parent().ajoute_objet(obj[0],stock) #on ajoute l;objet au stock
+			if ajoutee: # si objet pas déjà dans le stock 
+				budget -= obj[1]
+				any_added = true
+			else:
+				parle.text = "Tu ne sais même pas que tu l'as déjà ?"
 
-		
-	else :
-		parle.text = "Haha dans tes reves, t'as pas l'argent"
+		if any_added:
+			caisse.play()
+			await get_tree().create_timer(1.1).timeout
 
-
+			magasin_non_visible()
+			get_parent().clear_check_boxes()
+			get_parent().add_check_button(stock, objects, test)
+			get_parent().reconnect_menu_buttons()
+			get_parent().connect_the_check_boxs(objects)
+			
+			budget=budget-total
+			print(budget)
+	else:
+		parle.text = "Haha dans tes rêves, t'as pas l'argent"
 
 
 	#utilise pour que lorsq'on revient dans le magasin les checkbox d'avant ne seront plus cochees
@@ -203,19 +218,25 @@ func decoche_tout() -> void:
 			check.button_pressed=false
 
 
-func _on_btn_sortir_pressed() -> void:
-	decoche_tout()
-	magasin_non_visible()
 	
-func magasin_non_visible() ->void:	
-	self.visible=false
-	var backgroundMagasin = get_parent().get_node("songs/magasinBackground")
-	var people = get_parent().get_node("songs/talkingPeople")
-	var mainbackground = get_parent().get_node("songs/mainBackground")
-	var argent= get_parent().get_node("Menu/Panel/Label")
-	
+func magasin_non_visible() -> void:
+	print(budget)
+
+	# récupère le node du magasin explicitement
+	var magasin_node = get_parent().get_node("Store")  
+	magasin_node.visible = false
+
+	var parent = get_parent()
+	var backgroundMagasin = parent.get_node("songs/magasinBackground")
+	var people = parent.get_node("songs/talkingPeople")
+	var mainbackground = parent.get_node("songs/mainBackground")
+	var argent = parent.get_node_or_null("Menu/Panel/Label")
+
 	backgroundMagasin.stop()
 	people.stop()
 	mainbackground.play()
-	
-	argent.text = "Budget : %d " % budget
+
+	if argent:
+		argent.text = "Budget : %d" % budget
+	else:
+		push_error("Le Label 'Menu/Panel/Label' est introuvable. Vérifie le nom ou la hiérarchie.")

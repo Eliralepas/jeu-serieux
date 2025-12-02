@@ -5,7 +5,8 @@ class_name checkBTN
 
 	#fonction a appeler apres l'achat dans le magasin
 	#ou au commencement du jeu pour mettre les objets par defauts
-func add_check_button(stock:Array, objects:Dictionary)->void:
+func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
+	print("Node reçu:", node)
 	for item in stock: 
 		var check = CheckButton.new()
 		check.name="Check"+item
@@ -26,7 +27,7 @@ func add_check_button(stock:Array, objects:Dictionary)->void:
 		if target and target.visible: #si ce node existe et qu'il est visible
 			check.button_pressed = true
 
-		$Menu/VboxContainer.add_child(check)
+		node.add_child(check)
 		
 		
 		
@@ -34,8 +35,11 @@ func add_check_button(stock:Array, objects:Dictionary)->void:
 		# ! NE VIDE PAS LE STOCK!!!!! ((il faudrait appeler la fct dans baseStock)
 		#A appeler avant le add_check_button pour ne pas avoir le meme btn 2 fois
 func clear_check_boxes() -> void:
-	for child in $Menu.get_children():
-		child.queue_free()
+	var grille = $Menu.get_node("GrilleCheckBox")  # conteneur qui contient les checkbuttons
+	if grille:
+		for child in grille.get_children():
+			child.queue_free()
+
 		
 		
 		

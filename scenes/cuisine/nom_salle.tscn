@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfdgwbokbcejl"]
+[gd_scene load_steps=11 format=3 uid="uid://dfdgwbokbcejl"]
 
+[ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="3_fqsnu"]
 [ext_resource type="Texture2D" uid="uid://cp4m36x7nt4fc" path="res://assets/radiateur.png" id="8_akme4"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/cuisine/perso_1.tscn" id="8_qfri4"]
 
@@ -131,3 +132,5 @@ zoom = Vector2(0.78, 0.78)
 position = Vector2(114, 116)
 autoplay = "idle"
 script = null
+
+[node name="Control" parent="." instance=ExtResource("3_fqsnu")]

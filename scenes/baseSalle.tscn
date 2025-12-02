@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=26 format=4 uid="uid://okeh157g3swl"]
 
-[ext_resource type="Script" path="res://scenes/salleSpecifique.gd" id="1_db5u3"]
+[ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/Mur/Mur_Bleu.png" id="2_68ymg"]
 [ext_resource type="Texture2D" uid="uid://do5mew8c5n6q" path="res://assets/Mur/Mur_Rouge.png" id="3_2u0g6"]
 [ext_resource type="Texture2D" uid="uid://cvgp3svwl2wo0" path="res://assets/Mur/Mur_Vert.png" id="4_eoixc"]
@@ -10,13 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://trxci3tyhtj6" path="res://assets/sol/parquet-brun-clair-pixilart(2).png" id="7_ijx10"]
 [ext_resource type="Texture2D" uid="uid://bdkow7n0au8bv" path="res://assets/sol/parquet-brun-clair-pixilart.png" id="8_wdoph"]
 [ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="9_fc6x3"]
-[ext_resource type="PackedScene" path="res://scenes/menu.tscn" id="10_svf3d"]
-[ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="11_5lwxx"]
+[ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="10_svf3d"]
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="12_irfwe"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="14_6517k"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="15_ijx10"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="16_wdoph"]
+[ext_resource type="Texture2D" uid="uid://cp4m36x7nt4fc" path="res://assets/radiateur.png" id="17_6517k"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="17_fc6x3"]
+[ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("5_lguqs")
@@ -58,7 +59,7 @@ sources/1 = SubResource("TileSetAtlasSource_avpxn")
 sources/0 = SubResource("TileSetAtlasSource_ip76g")
 
 [node name="baseSalle" type="Node2D"]
-script = ExtResource("1_db5u3")
+script = ExtResource("1_6517k")
 
 [node name="Murs" type="Node" parent="."]
 
@@ -90,21 +91,6 @@ tile_set = SubResource("TileSet_duoh5")
 position = Vector2(34, 0)
 zoom = Vector2(0.78, 0.78)
 
-[node name="Menu" parent="." instance=ExtResource("10_svf3d")]
-position = Vector2(596, 7)
-script = ExtResource("11_5lwxx")
-
-[node name="Panel" parent="Menu" index="0"]
-offset_left = -235.0
-offset_top = -417.0
-offset_right = 169.0
-offset_bottom = 397.0
-script = null
-
-[node name="Store" parent="." instance=ExtResource("12_irfwe")]
-visible = false
-position = Vector2(-590, -341)
-
 [node name="songs" type="Node" parent="."]
 
 [node name="porte" type="AudioStreamPlayer2D" parent="songs"]
@@ -122,6 +108,19 @@ autoplay = true
 
 [node name="ListeObjets" type="Node" parent="."]
 
-[node name="Exemple" type="Sprite2D" parent="ListeObjets"]
+[node name="radiateur" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-410, -181)
+texture = ExtResource("17_6517k")
+
+[node name="Menu" parent="." instance=ExtResource("10_svf3d")]
+z_index = 1
+position = Vector2(362, -416)
+script = ExtResource("18_ijx10")
+
+[node name="Store" parent="." instance=ExtResource("12_irfwe")]
+visible = false
+z_index = 2
+position = Vector2(-590, -341)
 
 [editable path="Menu"]
+[editable path="Store"]
