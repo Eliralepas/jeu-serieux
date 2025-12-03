@@ -6,10 +6,9 @@ class_name checkBTN
 	#fonction a appeler apres l'achat dans le magasin
 	#ou au commencement du jeu pour mettre les objets par defauts
 func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
-	print("Node reçu:", node)
 	for item in stock: 
 		var check = CheckButton.new()
-		check.name="Check"+item
+		check.name=item
 		check.text=item
 		############## les couleurs ############
 		check.add_theme_color_override("font_color", Color(0.0, 0.0, 0.5))           # Normal
@@ -24,6 +23,8 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		
 		#lorsqu'on fini d'acheter le boutons deja coche le restera 
 		var target = objects.get(check.name) #on recup l'objet dont la cle est le nom de la checkbox
+		print ("26 checkbtn")
+		print (target)
 		if target and target.visible: #si ce node existe et qu'il est visible
 			check.button_pressed = true
 
@@ -41,21 +42,20 @@ func clear_check_boxes() -> void:
 			child.queue_free()
 
 		
-		
-		
 		#Ajoute aux checkbutton du menu un event "_on_any_check_toggled" au moment du click
 		#a appeler dans le ready ou apres avoir acheter un objet 
 func connect_the_check_boxs(objects:Dictionary)->void:
 	for button_name in objects.keys():
-		var button_path = "Menu/GrilleCheckBox/%s" % button_name  # crée le chemin en texte
-		if has_node(button_path):  # vérifie que le bouton existe
+		var button_path = "Menu/Control/Panel/VBoxContainer/%s" % button_name
+		if has_node(button_path):
 			var button = get_node(button_path)
-			button.connect("toggled", Callable(self, "_on_any_check_toggled").bind(button_name))
-			
-			
-	#le event a connecter au check_buttons
-	#a chaque changement d'etat du buton on met la visibilite de l'objet que ce checkbutton doit gerer dans le meme etat
-func _on_any_check_toggled(objects:Dictionary, toggled_on: bool, button_name: String) -> void:
-	var target = objects.get(button_name) #recup objet emeteur du signal
+			button.connect("toggled", Callable(self, "_on_any_check_toggled").bind(objects, button_name))
+		else:
+			print("Bouton introuvable:", button_path)
+
+
+func _on_any_check_toggled(toggled_on: bool, objects: Dictionary, button_name: String) -> void:
+	print("Signal reçu:", button_name, toggled_on)
+	var target = objects.get(button_name)
 	if target:
-		target.visible = toggled_on #on met la visibilite selon comment est l'etant du btn clicke
+		target.visible = toggled_on

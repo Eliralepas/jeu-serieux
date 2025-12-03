@@ -8,11 +8,11 @@ extends checkBTN
 @onready var caisse:= $Songs/purchase 
 
 @onready var budget =500
-@onready var objects = get_parent().get_objects()
 
 @onready var test=get_parent().get_node("Menu/Control/Panel/VBoxContainer")
 
 @onready var stock = get_parent().get_stock()
+@onready var stuff
 			#les differentes phrases
 var dialogues = [
 	"Qu'est-ce que tu veux ?",
@@ -24,15 +24,7 @@ var dialogues = [
 		#tab de listes["nom", prix]
 		#! chaque piece a des objetx differents
 var objets = [
-	["armoire", 200],
-	["cadres", 50], 
-	["coffre", 100],
-	["commode", 100], 
-	["lampe", 65],
-	["plant", 100], 
-	["plante", 100], 
-	["pouf", 130],
-	["radiateur",1]
+	["radiateur",20]
 	]
 
 
@@ -45,10 +37,12 @@ var nb_objet=0 #pour compter les objets deja achetes
 
 func _ready():
 	print("///////////////////////////////////////////////////////////")
+	await get_tree().process_frame #temps pour que le parent fasse son ready
+	stuff = get_parent().get_objects()  # récupère ici
 	parle.text = dialogues[index]
 	area.input_event.connect(_on_area_input_event)
 	remplir_magasin()
-
+	
 	# connecte les boutons du store
 	#$Btn_Acheter.connect("pressed", Callable(self, "_on_button_acheter_pressed"))
 	#$Btn_Sortir.connect("pressed", Callable(self, "_on_btn_sortir_pressed"))
@@ -175,7 +169,7 @@ func _on_button_acheter_pressed() -> void:
 	var checked_objects = []
 
 	# Récupère tous les objets cochés
-	for obj in objets:
+	for obj in objets: #recupere le prix final
 		var gr = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
 		var check = gr.get_node("CHECK" + obj[0]) #recup checkbox
 		if check.button_pressed: #si obj choisi
@@ -183,28 +177,28 @@ func _on_button_acheter_pressed() -> void:
 			checked_objects.append(obj)#ajout de l'objet a la liste d'objets
 
 	# Vérifie si le budget suffit
-	if total <= budget: #si on a la thune pour tout
+	if total <= budget: 
 		var any_added = false
-		for obj in checked_objects: #pour chaque obj choisi
-			var ajoutee = get_parent().ajoute_objet(obj[0],stock) #on ajoute l;objet au stock
-			if ajoutee: # si objet pas déjà dans le stock 
-				budget -= obj[1]
+		for obj in checked_objects:
+			var ajoutee = get_parent().ajoute_objet(obj[0], stock)
+			if ajoutee:
 				any_added = true
 			else:
-				parle.text = "Tu ne sais même pas que tu l'as déjà ?"
+				parle.text = "Tu l'as deja, je ne vend pas en double."
 
 		if any_added:
+			budget -= total  # soustraction globale ici
 			caisse.play()
 			await get_tree().create_timer(1.1).timeout
 
 			magasin_non_visible()
 			get_parent().clear_check_boxes()
-			get_parent().add_check_button(stock, objects, test)
+			get_parent().add_check_button(stock, stuff, test)
 			get_parent().reconnect_menu_buttons()
-			get_parent().connect_the_check_boxs(objects)
-			
-			budget=budget-total
-			print(budget)
+			get_parent().connect_the_check_boxs(stuff)
+
+		print("Budget ligne 200:", budget)
+
 	else:
 		parle.text = "Haha dans tes rêves, t'as pas l'argent"
 
@@ -220,9 +214,7 @@ func decoche_tout() -> void:
 
 	
 func magasin_non_visible() -> void:
-	print(budget)
-
-	# récupère le node du magasin explicitement
+# récupère le node du magasin explicitement
 	var magasin_node = get_parent().get_node("Store")  
 	magasin_node.visible = false
 
@@ -235,8 +227,5 @@ func magasin_non_visible() -> void:
 	backgroundMagasin.stop()
 	people.stop()
 	mainbackground.play()
-
-	if argent:
-		argent.text = "Budget : %d" % budget
-	else:
-		push_error("Le Label 'Menu/Panel/Label' est introuvable. Vérifie le nom ou la hiérarchie.")
+	
+	get_parent().get_node("Menu").change_budget(budget);

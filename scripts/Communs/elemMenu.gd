@@ -4,7 +4,7 @@ class_name Menu
 
 	#quand le btn "magasin" est clickBaseSalle
 func _on_magasin_pressed(store: Node, porte: Node, magasinBackground: Node, talkingPeople: Node, mainBackground: Node) -> void: #lors du clique sur le btn magasin
-	print("youhouuuuu")
+	print("7 elem menu")
 	porte.play() #bruitage
 	await get_tree().create_timer(1.20).timeout #petit time de pause
 		#gestions des sons
@@ -16,7 +16,8 @@ func _on_magasin_pressed(store: Node, porte: Node, magasinBackground: Node, talk
 	store.visible=true; #on met le magasin en mode visible
 	store.set_process_input(true)
 
-
+func change_budget(budget):
+	$Control/Panel/Label.text = "Le budget est de: " + str(budget)
 
 	#quand le btn "finaliser" est click
 func _on_finaliser_pressed() -> void:

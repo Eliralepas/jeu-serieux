@@ -12,4 +12,3 @@ RichTextLabel
 TextureRect
 Control
 VBoxContainer
-HBoxContainer

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=27 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/Mur/Mur_Bleu.png" id="2_68ymg"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="12_irfwe"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="14_6517k"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="15_ijx10"]
+[ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/liste_objets.gd" id="15_wdoph"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="16_wdoph"]
 [ext_resource type="Texture2D" uid="uid://cp4m36x7nt4fc" path="res://assets/radiateur.png" id="17_6517k"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="17_fc6x3"]
@@ -106,7 +107,8 @@ stream = ExtResource("16_wdoph")
 stream = ExtResource("17_fc6x3")
 autoplay = true
 
-[node name="ListeObjets" type="Node" parent="."]
+[node name="ListeObjets" type="Node2D" parent="."]
+script = ExtResource("15_wdoph")
 
 [node name="radiateur" type="Sprite2D" parent="ListeObjets"]
 position = Vector2(-410, -181)
