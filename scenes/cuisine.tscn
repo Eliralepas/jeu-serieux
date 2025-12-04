@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dfdgwbokbcejl"]
+[gd_scene load_steps=30 format=4 uid="uid://dfdgwbokbcejl"]
 
 [ext_resource type="Script" uid="uid://mfp38phdd4ss" path="res://scripts/cuisine/cuisine.gd" id="1_ueun0"]
 [ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="2_w0eim"]
@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bj70p11p36htw" path="res://assets/cuisine/meubles/pixilart-drawing(24).png" id="11_bn1cl"]
 [ext_resource type="Texture2D" uid="uid://d0o8oavu5y5wg" path="res://assets/cuisine/meubles/tapis.png" id="12_vqt38"]
 [ext_resource type="Script" uid="uid://cfaogxrgmt0xb" path="res://scripts/cuisine/liste_objet.gd" id="13_4l56l"]
-[ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/cuisine/menu.tscn" id="14_8kfwu"]
-[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scenes/object.gd" id="14_w0eim"]
+[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/object.gd" id="14_w0eim"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/cuisine/perso_1.tscn" id="15_o5gwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
@@ -192,9 +191,6 @@ script = ExtResource("14_w0eim")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, 0)
 zoom = Vector2(0.78, 0.78)
-
-[node name="Menu" parent="." instance=ExtResource("14_8kfwu")]
-position = Vector2(569, -0.99999976)
 
 [node name="AnimatedSprite2D" parent="." node_paths=PackedStringArray("ListeObjets") instance=ExtResource("15_o5gwf")]
 position = Vector2(114, 116)
