@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjqgfx63o5avc"]
+[gd_scene load_steps=13 format=3 uid="uid://bjqgfx63o5avc"]
 
 [ext_resource type="Texture2D" uid="uid://dgt3gx3c5ynfs" path="res://assets/perso/perso1_idle.png" id="1_8mo0j"]
 [ext_resource type="Texture2D" uid="uid://dltgrmq0g2idq" path="res://assets/perso/sc-fou-2-pixilart.png" id="2_6qkav"]
 [ext_resource type="Texture2D" uid="uid://5vn868coy2kq" path="res://assets/bulle/bulle.png" id="2_36lil"]
 [ext_resource type="Script" uid="uid://dop8cp0vml2jh" path="res://scripts/cuisine/perso.gd" id="2_n8c8k"]
+[ext_resource type="Texture2D" uid="uid://csxsi53gvq802" path="res://assets/bulle/pas_content.png" id="5_cspy0"]
+[ext_resource type="Texture2D" uid="uid://d4j44sfg4ughj" path="res://assets/bulle/content.png" id="6_v4it8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36lil"]
 animations = [{
@@ -72,5 +74,28 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_6qkav")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_qmft8")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_e84ud")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_85450")
+
+[node name="Emotion" type="Node2D" parent="."]
+
+[node name="PasContent" type="TextureRect" parent="Emotion"]
+texture_filter = 3
+offset_left = -20.0
+offset_top = -165.0
+offset_right = 10.0
+offset_bottom = -135.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("5_cspy0")
+
+[node name="Content" type="TextureRect" parent="Emotion"]
+visible = false
+texture_filter = 3
+offset_left = -20.0
+offset_top = -165.0
+offset_right = 10.0
+offset_bottom = -135.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("6_v4it8")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

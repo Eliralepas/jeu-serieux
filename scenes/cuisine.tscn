@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dfdgwbokbcejl"]
+[gd_scene load_steps=31 format=4 uid="uid://dfdgwbokbcejl"]
 
 [ext_resource type="Script" uid="uid://mfp38phdd4ss" path="res://scripts/cuisine/cuisine.gd" id="1_ueun0"]
 [ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="2_w0eim"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d0o8oavu5y5wg" path="res://assets/cuisine/meubles/tapis.png" id="12_vqt38"]
 [ext_resource type="Script" uid="uid://cfaogxrgmt0xb" path="res://scripts/cuisine/liste_objet.gd" id="13_4l56l"]
 [ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/cuisine/menu.tscn" id="14_8kfwu"]
+[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scenes/object.gd" id="14_w0eim"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/cuisine/perso_1.tscn" id="15_o5gwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
@@ -186,6 +187,7 @@ script = ExtResource("13_4l56l")
 [node name="Table" type="Sprite2D" parent="Base/ListeObjet"]
 position = Vector2(-137, 166)
 texture = ExtResource("11_bn1cl")
+script = ExtResource("14_w0eim")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, 0)
