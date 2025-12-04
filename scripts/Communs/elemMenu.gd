@@ -64,7 +64,7 @@ func _on_mur_color_selected(id: int) -> void:
 			vert.visible=true
 
 
-	
+
 func couleur_mur(num : int) -> void: 
 	var bleu=$Murs/MurBleu
 	var rouge=$Murs/MurRouge

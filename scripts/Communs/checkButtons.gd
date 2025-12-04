@@ -11,9 +11,9 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		check.name=item
 		check.text=item
 		############## les couleurs ############
-		check.add_theme_color_override("font_color", Color(0.0, 0.0, 0.5))           # Normal
-		check.add_theme_color_override("font_color_pressed", Color(0.0, 0.0, 0.5))   # When pressed
-		check.add_theme_color_override("font_color_hover", Color(0.0, 0.0, 0.5))     # When hovered
+		check.add_theme_color_override("font_color", Color(0.0, 0.0, 0.5))          
+		check.add_theme_color_override("font_color_pressed", Color(0.0, 0.0, 0.5))  
+		check.add_theme_color_override("font_color_hover", Color(0.0, 0.0, 0.5))    
 		check.add_theme_color_override("font_color_focus", Color(0.0, 0.0, 0.5))
 		########################################
 		
@@ -23,8 +23,7 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		
 		#lorsqu'on fini d'acheter le boutons deja coche le restera 
 		var target = objects.get(check.name) #on recup l'objet dont la cle est le nom de la checkbox
-		print ("26 checkbtn")
-		print (target)
+		print (target) #pour débug
 		if target and target.visible: #si ce node existe et qu'il est visible
 			check.button_pressed = true
 

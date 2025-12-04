@@ -15,11 +15,11 @@ func ajoute_objet(objet: String, stock: Array) -> bool:
 	return true
 			
 
-#suppression d'un objet du stock (un peu inutil vu que nous n'avons plus de duree de vie)
+#suppression d'un objet du stock (pour une fonctionnalité qu'on a pas pu mettre en place)
 func supprime_objet(objet: String, stock: Array) -> void:
 	stock.erase(objet);
 
-#print tous les objets dans la sortie standar (utile pour les tests)
+#afficher tous les objets dans la sortie standar (utile pour les tests)
 func lire_stock(stock: Array) ->void:
 	for key in stock:
 		print("objet : %s %", stock)

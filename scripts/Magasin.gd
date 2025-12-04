@@ -61,7 +61,7 @@ func remplir_magasin() -> void:
 
 		
 		var texture_rect = TextureRect.new()
-		var overlay = TextureRect.new()
+		#var overlay = TextureRect.new()
 
 		texture_rect.texture = load("res://assets/Magasin/cadreObjets.png")		#cadres
 		#overlay.texture = load("res://images/objets/" + obj[0] + ".png")	#icon des objets
