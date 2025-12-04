@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/radiateur.png.import
 uid="uid://bb3iprkd4ystj"
 path="res://.godot/imported/radiateur.png-042b2f2d1de9f3c12a4ce6070d7e8396.ctex"
+========
+uid="uid://d4j44sfg4ughj"
+path="res://.godot/imported/content.png-e1949542ca9c71a1325ccde1a6b00788.ctex"
+>>>>>>>> feature-piecePrincipale:assets/bulle/content.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/radiateur.png.import
 source_file="res://assets/radiateur.png"
 dest_files=["res://.godot/imported/radiateur.png-042b2f2d1de9f3c12a4ce6070d7e8396.ctex"]
+========
+source_file="res://assets/bulle/content.png"
+dest_files=["res://.godot/imported/content.png-e1949542ca9c71a1325ccde1a6b00788.ctex"]
+>>>>>>>> feature-piecePrincipale:assets/bulle/content.png.import
 
 [params]
 
