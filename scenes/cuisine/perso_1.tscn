@@ -79,10 +79,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_85450")
 
 [node name="PasContent" type="TextureRect" parent="Emotion"]
 texture_filter = 3
-offset_left = -20.0
-offset_top = -165.0
-offset_right = 10.0
-offset_bottom = -135.0
+offset_left = -29.0
+offset_top = -184.0
+offset_right = 15.0
+offset_bottom = -141.33333
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 texture = ExtResource("5_cspy0")
@@ -90,10 +90,10 @@ texture = ExtResource("5_cspy0")
 [node name="Content" type="TextureRect" parent="Emotion"]
 visible = false
 texture_filter = 3
-offset_left = -20.0
-offset_top = -165.0
-offset_right = 10.0
-offset_bottom = -135.0
+offset_left = -29.0
+offset_top = -184.0
+offset_right = 15.0
+offset_bottom = -141.33333
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 texture = ExtResource("6_v4it8")
