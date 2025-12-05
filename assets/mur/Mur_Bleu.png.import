@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bppd31wut5xla"
-path="res://.godot/imported/Mur_Bleu.png-7266f64a4b56c211dc240d3d06c2edc5.ctex"
+path="res://.godot/imported/Mur_Bleu.png-f9053cd7469907f25d2b2797c7266b6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Mur/Mur_Bleu.png"
-dest_files=["res://.godot/imported/Mur_Bleu.png-7266f64a4b56c211dc240d3d06c2edc5.ctex"]
+source_file="res://assets/mur/Mur_Bleu.png"
+dest_files=["res://.godot/imported/Mur_Bleu.png-f9053cd7469907f25d2b2797c7266b6f.ctex"]
 
 [params]
 

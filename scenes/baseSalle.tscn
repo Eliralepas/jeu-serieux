@@ -1,23 +1,27 @@
-[gd_scene load_steps=28 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=31 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
-[ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/Mur/Mur_Bleu.png" id="2_68ymg"]
-[ext_resource type="Texture2D" uid="uid://do5mew8c5n6q" path="res://assets/Mur/Mur_Rouge.png" id="3_2u0g6"]
-[ext_resource type="Texture2D" uid="uid://cvgp3svwl2wo0" path="res://assets/Mur/Mur_Vert.png" id="4_eoixc"]
+[ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/Mur_Bleu.png" id="2_68ymg"]
+[ext_resource type="Texture2D" uid="uid://do5mew8c5n6q" path="res://assets/mur/Mur_Rouge.png" id="3_2u0g6"]
+[ext_resource type="Texture2D" uid="uid://cvgp3svwl2wo0" path="res://assets/mur/Mur_Vert.png" id="4_eoixc"]
 [ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="5_lguqs"]
 [ext_resource type="Texture2D" uid="uid://biihxfugstveu" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart.png" id="6_68ymg"]
 [ext_resource type="Texture2D" uid="uid://fm5bui5nacmc" path="res://assets/sol/parquet-brun-clair-pixilart(1).png" id="6_6517k"]
 [ext_resource type="Texture2D" uid="uid://trxci3tyhtj6" path="res://assets/sol/parquet-brun-clair-pixilart(2).png" id="7_ijx10"]
 [ext_resource type="Texture2D" uid="uid://bdkow7n0au8bv" path="res://assets/sol/parquet-brun-clair-pixilart.png" id="8_wdoph"]
 [ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="9_fc6x3"]
-[ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://scenes/menu.tscn" id="10_svf3d"]
+[ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/menu.tscn" id="10_svf3d"]
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="12_irfwe"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="14_6517k"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="15_ijx10"]
 [ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/liste_objets.gd" id="15_wdoph"]
+[ext_resource type="Texture2D" uid="uid://bb3iprkd4ystj" path="res://assets/meubles/radiateur.png" id="16_fc6x3"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="16_wdoph"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="17_fc6x3"]
+[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/Communs/object.gd" id="17_svf3d"]
+[ext_resource type="Texture2D" uid="uid://dq6doymg436fx" path="res://assets/meubles/cd.png" id="18_5lwxx"]
 [ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
+[ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="21_svf3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("5_lguqs")
@@ -60,9 +64,6 @@ sources/0 = SubResource("TileSetAtlasSource_ip76g")
 
 [sub_resource type="TileSet" id="TileSet_ijx10"]
 tile_size = Vector2i(70, 70)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wdoph"]
-load_path = "res://.godot/imported/radiateur.png-042b2f2d1de9f3c12a4ce6070d7e8396.ctex"
 
 [node name="baseSalle" type="Node2D"]
 script = ExtResource("1_6517k")
@@ -119,19 +120,33 @@ autoplay = true
 script = ExtResource("15_wdoph")
 
 [node name="radiateur" type="Sprite2D" parent="ListeObjets"]
-visible = false
-position = Vector2(-410, -181)
-texture = SubResource("CompressedTexture2D_wdoph")
+position = Vector2(-537, -172)
+texture = ExtResource("16_fc6x3")
+script = ExtResource("17_svf3d")
+
+[node name="cd" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-485, 164)
+scale = Vector2(0.64710796, 0.49729183)
+texture = ExtResource("18_5lwxx")
+script = ExtResource("17_svf3d")
 
 [node name="Menu" parent="." instance=ExtResource("10_svf3d")]
 z_index = 1
-position = Vector2(362, -416)
+offset_left = 362.0
+offset_top = -416.0
+offset_right = 362.0
+offset_bottom = -416.0
 script = ExtResource("18_ijx10")
 
 [node name="Store" parent="." instance=ExtResource("12_irfwe")]
 visible = false
 z_index = 2
 position = Vector2(-590, -341)
+
+[node name="Perso" type="Node2D" parent="."]
+
+[node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+ListeObjets = NodePath("../../ListeObjets")
 
 [editable path="Menu"]
 [editable path="Store"]

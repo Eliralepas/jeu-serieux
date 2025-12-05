@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0rlidyvtjf2r"
-path="res://.godot/imported/cadreObjets.png-dfeac02932fc56ed14bc1feac5be7be7.ctex"
+uid="uid://cqyvqbhfxbimm"
+path="res://.godot/imported/croix.png-171105caac4628012cf147ffc858b0b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Magasin/cadreObjets.png"
-dest_files=["res://.godot/imported/cadreObjets.png-dfeac02932fc56ed14bc1feac5be7be7.ctex"]
+source_file="res://assets/bulle/croix.png"
+dest_files=["res://.godot/imported/croix.png-171105caac4628012cf147ffc858b0b6.ctex"]
 
 [params]
 

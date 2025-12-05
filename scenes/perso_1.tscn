@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bjqgfx63o5avc"]
 
-[ext_resource type="Texture2D" uid="uid://dgt3gx3c5ynfs" path="res://assets/perso/perso1_idle.png" id="1_8mo0j"]
+[ext_resource type="Texture2D" uid="uid://dpbyhlffuqqsu" path="res://assets/perso/perso1_idle.png" id="1_8mo0j"]
 [ext_resource type="Texture2D" uid="uid://dltgrmq0g2idq" path="res://assets/perso/sc-fou-2-pixilart.png" id="2_6qkav"]
-[ext_resource type="Texture2D" uid="uid://5vn868coy2kq" path="res://assets/bulle/bulle.png" id="2_36lil"]
-[ext_resource type="Script" uid="uid://dop8cp0vml2jh" path="res://scripts/cuisine/perso.gd" id="2_n8c8k"]
+[ext_resource type="Texture2D" uid="uid://ct27v3r8dcadf" path="res://assets/bulle/bulle.png" id="2_36lil"]
+[ext_resource type="Script" uid="uid://caovvds3o7wjd" path="res://scripts/perso.gd" id="3_cspy0"]
 [ext_resource type="Texture2D" uid="uid://csxsi53gvq802" path="res://assets/bulle/pas_content.png" id="5_cspy0"]
-[ext_resource type="Texture2D" uid="uid://d4j44sfg4ughj" path="res://assets/bulle/content.png" id="6_v4it8"]
+[ext_resource type="Texture2D" uid="uid://cqihnnuc8c3ne" path="res://assets/bulle/content.png" id="6_v4it8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36lil"]
 animations = [{
@@ -34,8 +34,8 @@ animations = [{
 [node name="Perso" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_36lil")
 animation = &"idle"
-frame_progress = 0.50029737
-script = ExtResource("2_n8c8k")
+autoplay = "idle"
+script = ExtResource("3_cspy0")
 
 [node name="Bulle" type="Sprite2D" parent="."]
 position = Vector2(100, -121)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xkrh7s3rpwkb"
-path="res://.godot/imported/magazin.png-af734bb4c1f50603041b8e6f215f4b83.ctex"
+uid="uid://d3gag7pw526h7"
+path="res://.godot/imported/coeur.png-1f9219c6a26a956659f4f10fdc55deac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Magasin/magazin.png"
-dest_files=["res://.godot/imported/magazin.png-af734bb4c1f50603041b8e6f215f4b83.ctex"]
+source_file="res://assets/bulle/coeur.png"
+dest_files=["res://.godot/imported/coeur.png-1f9219c6a26a956659f4f10fdc55deac.ctex"]
 
 [params]
 

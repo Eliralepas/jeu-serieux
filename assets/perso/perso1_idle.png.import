@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmepbreco1w7s"
-path="res://.godot/imported/cadenas_ouvert.png-2973e850d0bdf8c05baa7ab39aa08f4f.ctex"
+uid="uid://dpbyhlffuqqsu"
+path="res://.godot/imported/perso1_idle.png-cc05d30df9e81ffde4ef8437c0719099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Mur/cadenas_ouvert.png"
-dest_files=["res://.godot/imported/cadenas_ouvert.png-2973e850d0bdf8c05baa7ab39aa08f4f.ctex"]
+source_file="res://assets/perso/perso1_idle.png"
+dest_files=["res://.godot/imported/perso1_idle.png-cc05d30df9e81ffde4ef8437c0719099.ctex"]
 
 [params]
 

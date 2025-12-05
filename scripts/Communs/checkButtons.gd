@@ -1,5 +1,4 @@
 extends Stock
-
 class_name checkBTN
 
 
@@ -11,10 +10,12 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		check.name=item
 		check.text=item
 		############## les couleurs ############
-		check.add_theme_color_override("font_color", Color(0.0, 0.0, 0.5))          
-		check.add_theme_color_override("font_color_pressed", Color(0.0, 0.0, 0.5))  
-		check.add_theme_color_override("font_color_hover", Color(0.0, 0.0, 0.5))    
-		check.add_theme_color_override("font_color_focus", Color(0.0, 0.0, 0.5))
+		check.add_theme_color_override('font_color', Color.BLACK)
+		check.add_theme_color_override('font_hover_color', Color.BLACK)
+		check.add_theme_color_override('font_pressed_color', Color.BLACK)
+		check.add_theme_color_override('font_focus_color', Color.BLACK)
+		check.add_theme_color_override('font_disabled_color', Color.BLACK)
+		check.add_theme_color_override('font_hover_pressed_color', Color.BLACK)
 		########################################
 		
 		################### la taille #################
@@ -22,11 +23,12 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		##############################################
 		
 		#lorsqu'on fini d'acheter le boutons deja coche le restera 
-		var target = objects.get(check.name) #on recup l'objet dont la cle est le nom de la checkbox
-		print (target) #pour débug
-		if target and target.visible: #si ce node existe et qu'il est visible
-			check.button_pressed = true
-
+		var target : Object_piece = objects.get(check.name) #on recup l'objet dont la cle est le nom de la checkbox
+		target.set_visibility(target.visible)
+		
+		check.toggled.connect(func(pressed: bool): 
+			target.set_visibility(pressed)
+		)
 		node.add_child(check)
 		
 		
@@ -35,7 +37,7 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		# ! NE VIDE PAS LE STOCK!!!!! ((il faudrait appeler la fct dans baseStock)
 		#A appeler avant le add_check_button pour ne pas avoir le meme btn 2 fois
 func clear_check_boxes() -> void:
-	var grille = $Menu.get_node("GrilleCheckBox")  # conteneur qui contient les checkbuttons
+	var grille : VBoxContainer = $Menu/Panel/VBoxContainer  # conteneur qui contient les checkbuttons
 	if grille:
 		for child in grille.get_children():
 			child.queue_free()
@@ -45,7 +47,7 @@ func clear_check_boxes() -> void:
 		#a appeler dans le ready ou apres avoir acheter un objet 
 func connect_the_check_boxs(objects:Dictionary)->void:
 	for button_name in objects.keys():
-		var button_path = "Menu/Control/Panel/VBoxContainer/%s" % button_name
+		var button_path = "Menu/Panel/VBoxContainer/%s" % button_name
 		if has_node(button_path):
 			var button = get_node(button_path)
 			button.connect("toggled", Callable(self, "_on_any_check_toggled").bind(objects, button_name))

@@ -8,10 +8,11 @@ class_name Personnage
 @onready var content: TextureRect = $Emotion/Content
 @onready var pas_content: TextureRect = $Emotion/PasContent
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !ListeObjets:
 		push_error("%s : @export var ListeObjet est null" % name)
+	
+	#On récupère un objet random de la liste d'objet
 	var object : Object_piece = ListeObjets.objectRandom()
 	var object_bulle : Sprite2D = Sprite2D.new()
 	object_bulle.texture = object.texture
@@ -19,10 +20,6 @@ func _ready() -> void:
 	resize(object_bulle, texture_object)
 	
 	var image_path: String
-	
-	
-	
-	
 	
 	if randi_range(0,1):
 		image_path = "res://assets/bulle/coeur.png"

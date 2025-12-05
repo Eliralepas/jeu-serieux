@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 class_name Menu
 
@@ -17,20 +17,17 @@ func _on_magasin_pressed(store: Node, porte: Node, magasinBackground: Node, talk
 	store.set_process_input(true)
 
 func change_budget(budget):
-	$Control/Panel/Label.text = "Le budget est de: " + str(budget)
+	$Panel/Label.text = "Le budget est de: " + str(budget)
 
 	#quand le btn "finaliser" est click
 func _on_finaliser_pressed() -> void:
 	#on genereras un json
 	get_tree().change_scene_to_file("res://scenes/menu.tscn") #retour a la piece principale
 
-
-
-
 #########LES FCT DU CHANGEMENT DE COULEUR DU MUR###################
 	#modification de la couleur des mur
 func _on_menu_mur_color_pressed() -> void:
-	var menuMur: MenuButton = $Control/Panel/MenuMurColor
+	var menuMur: MenuButton = $Panel/MenuMurColor
 	var popup = menuMur.get_popup()
 
 	popup.clear()

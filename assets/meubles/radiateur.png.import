@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvgp3svwl2wo0"
-path="res://.godot/imported/Mur_Vert.png-e6218c5a36c82edb2f2cf93c8bdd39fb.ctex"
+uid="uid://bb3iprkd4ystj"
+path="res://.godot/imported/radiateur.png-398a402a2b9614cee59e7e3efa8a90bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Mur/Mur_Vert.png"
-dest_files=["res://.godot/imported/Mur_Vert.png-e6218c5a36c82edb2f2cf93c8bdd39fb.ctex"]
+source_file="res://assets/meubles/radiateur.png"
+dest_files=["res://.godot/imported/radiateur.png-398a402a2b9614cee59e7e3efa8a90bc.ctex"]
 
 [params]
 

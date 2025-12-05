@@ -1,6 +1,8 @@
 	#A remplacer par sa propre scene!!!!
 extends checkBTN
 
+@onready var scene_cadre: PackedScene = preload("res://scenes/cadre.tscn")
+
 @onready var parle = $Dialogue
 @onready var area = $Area2D
 @onready var h_flow_container: HFlowContainer = $HFlowContainer
@@ -9,22 +11,23 @@ extends checkBTN
 
 @onready var budget =500
 
-@onready var test=get_parent().get_node("Menu/Control/Panel/VBoxContainer")
+@onready var test=get_parent().get_node("Menu/Panel/VBoxContainer")
 
 @onready var stock = get_parent().get_stock()
 @onready var stuff
 			#les differentes phrases
 var dialogues = [
+	"Me dévalise pas ! Pas plus de quatres articles.\nOn est au Pole Nord ici !",
 	"Qu'est-ce que tu veux ?",
-	"Me dévalise pas ! Pas plus de quatres articles.",
 	"Accélère, j'ai d'autres clients !" # dernière phrase normale
 ]
 
 		#objets du magasin
 		#tab de listes["nom", prix]
-		#! chaque piece a des objetx differents
+		#! chaque piece a des objets differents
 var objets = [
-	["radiateur",20]
+	["radiateur",20],
+	["cd",120]
 	]
 
 
@@ -32,7 +35,6 @@ var index = 0 #pour avoir le nb de clicks sur le dialogue
 var nb_objet=0 #pour compter les objets deja achetes
 
 #####################################################################################
-
 
 
 func _ready():
@@ -49,66 +51,62 @@ func _ready():
 
 ###########################################################################
 func ajouter_obj_au_magasin(nom: String, prix: int) -> void: #si on voudra ajouter un item au magasin apres 
-	var element = [nom, prix]								# pas necessairement utile mais elle existe 
+	var element = [nom, prix] # pas necessairement utile mais elle existe 
 	objets.append(element)
 ###########################################################################
 func remplir_magasin() -> void:
-	#LE MAGASIN SE REMPLI
+	#remplir le magasin avec les différents objets (prix, button, image, nom)
 	for obj in objets:
-		var grille= GridContainer.new()
-		grille.name="GRILLE"+obj[0]
-		grille.columns=1
-
+		var cadre : Cadre_objet = scene_cadre.instantiate()
+		cadre.name = "GRILLE" + obj[0]
 		
-		var texture_rect = TextureRect.new()
-		#var overlay = TextureRect.new()
-
-		texture_rect.texture = load("res://assets/Magasin/cadreObjets.png")		#cadres
-		#overlay.texture = load("res://images/objets/" + obj[0] + ".png")	#icon des objets
+		#Ajout de l'image (le chemin a changé si besoin)
+		var texture_objet = cadre.getObjet()
+		var image_path : String = "res://assets/meubles/"+obj[0]+".png"
+		var image: Image = Image.new()
+		var error = image.load(image_path)
+		if error != OK:
+			push_error("Erreur")
+			return
+		var texture = ImageTexture.create_from_image(image)
+		texture_objet.texture = texture
 		
-		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		texture_rect.custom_minimum_size = Vector2(96, 96) 
-		grille.add_child(texture_rect)
-		#grille.add_child(overlay)
+		var sprite = cadre.getCadre()
 		
-
-		# Creer la checkbox
-		var check = CheckBox.new()
-		check.name="CHECK"+obj[0]
-		check.text = obj[0]
+		# changer la taille de l'image de l'objet
+		var size : Vector2 = sprite.texture.get_size()
+		var x: float = size.x - 6
+		var y: float = size.y - 6
+		var image_size : Vector2 = texture.get_size()
+		
+		# Calcul du facteur d'échelle
+		var scale_factor: float = min(x / image_size.x, y / image_size.y)
+		texture_objet.scale = Vector2.ONE * scale_factor
+		
+		#Ajout le nom de l'objet
+		var objet_check = cadre.getCheckButton()
+		objet_check.text = obj[0]
+		
+		#Ajout du label prix
+		var objet_prix = cadre.getLabel()
+		objet_prix.text = str(obj[1]) + " €"
+		
 		#on connecte chaque checkbox a la fct _check_a_checkbox lorsque elle est "toggled" (cochee)
-		check.connect("toggled", Callable(self, "_check_a_checkbox").bind(check))
-
-
-		grille.add_child(check)
-
-		#Creer les label de prix
-		var prix = Label.new()
-		prix.name = "Label%d" % obj[1]
-		prix.text = "%d €" % obj[1]
-		prix.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		grille.add_child(prix)
-		
+		objet_check.connect("toggled", Callable(self, "_check_a_checkbox").bind(objet_check))
 		
 		# Enfin, ajoute dans le HFlowContainer
-		h_flow_container.add_theme_constant_override("h_separation", 5)
-		h_flow_container.add_theme_constant_override("v_separation", 5)
-
+		h_flow_container.add_theme_constant_override("h_separation", 10)
+		h_flow_container.add_theme_constant_override("v_separation", 10)
 		
-
-		h_flow_container.add_child(grille)
-
-
-
-
+		h_flow_container.add_child(cadre)
 
 	#LA FCT QUI GERE LE MAX: 4 CHECKBOX CHOISIES		
 func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void:
 	var checked_count = 0 #compteur de nb de checkbox deja cliquee
 	
 	for obj in objets: #parcours de la liste d'objets
-		var gr = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
-		var check = gr.get_node("CHECK" + obj[0]) #dans chaque grille on recup juste la checkbox
+		var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
+		var check = gr.getCheckButton() #dans chaque grille on recup juste la checkbox
 		if check.button_pressed: #si la checkbox est click on incremente checked_count
 			checked_count += 1
 	
@@ -118,7 +116,7 @@ func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void
 
 #############################################################################
 
-			#EVOLUTION DES DIALOGUES
+#EVOLUTION DES DIALOGUES
 func _on_area_input_event(viewport, event, shape_idx)->void:
 	if event is InputEventMouseButton and event.pressed: #si l'evenemt est un clique
 		index += 1 #l'indice augmente de 1
@@ -127,26 +125,20 @@ func _on_area_input_event(viewport, event, shape_idx)->void:
 		if index == 10:
 			parle.text = "T'as fini ?!"
 			return
-			
+		
 		if index == 20:
 			parle.text = "Juste vas t'en..."
 			return
-
+		
 		if index == 30:
 			parle.text = "DEGAGEEEEEE !"
 			parle.add_theme_font_size_override("font_size", 60)
 			return
-
-
-
-
 		# Plus de 3 clics → reste sur la dernière phrase
 		if index > 2:
 			parle.text = dialogues[2]
 			parle.add_theme_font_size_override("font_size", 30)
-
-			
-			#comportement normal
+		#comportement normal
 		else:
 			parle.text = dialogues[index]
 
@@ -170,8 +162,8 @@ func _on_button_acheter_pressed() -> void:
 
 	# Récupère tous les objets cochés
 	for obj in objets: #recupere le prix final
-		var gr = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
-		var check = gr.get_node("CHECK" + obj[0]) #recup checkbox
+		var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
+		var check = gr.getCheckButton() #recup checkbox
 		if check.button_pressed: #si obj choisi
 			total += obj[1]#ajout du prix au total
 			checked_objects.append(obj)#ajout de l'objet a la liste d'objets
@@ -184,7 +176,7 @@ func _on_button_acheter_pressed() -> void:
 			if ajoutee:
 				any_added = true
 			else:
-				parle.text = "Tu l'as deja, je ne vend pas en double."
+				parle.text = "Tu l'as déjà, je ne vends pas en double."
 
 		if any_added:
 			budget -= total  # soustraction globale ici
@@ -206,13 +198,12 @@ func _on_button_acheter_pressed() -> void:
 	#utilise pour que lorsq'on revient dans le magasin les checkbox d'avant ne seront plus cochees
 func decoche_tout() -> void:
 	for obj in objets: #parcours de la liste d'objets
-		var gr = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
-		var check = gr.get_node("CHECK" + obj[0]) #dans chaque grille on recup juste la checkbox
+		var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
+		var check = gr.getCheckButton() #dans chaque grille on recup juste la checkbox
 		if check.button_pressed: #si la checkbox est click on incremente checked_count
 			check.button_pressed=false
 
 
-	
 func magasin_non_visible() -> void:
 # récupère le node du magasin explicitement
 	var magasin_node = get_parent().get_node("Store")  
@@ -222,7 +213,7 @@ func magasin_non_visible() -> void:
 	var backgroundMagasin = parent.get_node("songs/magasinBackground")
 	var people = parent.get_node("songs/talkingPeople")
 	var mainbackground = parent.get_node("songs/mainBackground")
-	var argent = parent.get_node_or_null("Menu/Panel/Label")
+	#var argent = parent.get_node_or_null("Menu/Panel/Label")
 
 	backgroundMagasin.stop()
 	people.stop()
