@@ -1,7 +1,7 @@
 # Archi Pole Nord ![Statut](https://img.shields.io/badge/Statut-En%20cours-yellow)
 
-Pour notre projet T3 (2e année de BUT Informatique), nous avons développé un **jeu sérieux** intitulé **Archi North Pole**.  
-Un **jeu sérieux en 2D** où le joueur incarne un architecte chargé de rénover la **station polaire Concordia**. Il doit concevoir des espaces adaptés à un **environnement extrême, confiné et multinational** (français et italien).
+Pour notre projet T3 (2e année de BUT Informatique), nous avons développé un **jeu sérieux** intitulé **ArchiPoleNord**.  
+Un jeu sérieux en **2D** où le joueur incarne un architecte chargé de rénover la **station polaire Concordia**. Il doit concevoir des espaces adaptés à un **environnement extrême, confiné et multinational** (français, italien etc.).
 
 <p align="center"> 
   <img src="archipolenord.png" alt="Aperçu du jeu Archi Pole Nord"/> 
@@ -18,17 +18,11 @@ Un **jeu sérieux en 2D** où le joueur incarne un architecte chargé de rénove
 ---
 
 ## Installation et exécution
-1. **Cloner le dépôt**
-   ```bash
-   git clone https://github.com/mon-utilisateur/polar-station.git
-   cd polar-station
-   
-2. **Installer Godot**  
-   Téléchargez la version stable de **Godot 4.3 ou supérieure** depuis le site officiel : [Godot Engine](https://godotengine.org)
+1. **Téléchargement**  
+    Télécharger le fichier .exe qui se trouve dans la section release
 
-3. **Lancer le projet**  
-   - Ouvrez le dossier `archi-pole-nord/` dans Godot  
-   - Cliquez sur **Play Scene** (ou appuyez sur **F5**) pour exécuter le jeu
+2. **Lancement le projet**  
+    Lancez l'éxécutable `ArchiPoleNord.exe`
 
 ---
 
@@ -40,12 +34,12 @@ Un **jeu sérieux en 2D** où le joueur incarne un architecte chargé de rénove
 
 ---
 ## Le jeu
-Voici les elements qu'on retrouve dans le gameplay:
+Voici les elements qu'on retrouve dans le gameplay :
 
 ### Différentes salles
 - **Cuisine** : salle de repas  
 - **Dortoir** : salle de repos  
-- **Salle de détente**  
+- **Salon** : salle de détente  
 - **Salle de bain** : salle d’hygiène  
 - **Hall** : permet l’accès à toutes les salles  
 
@@ -108,9 +102,9 @@ Bientot disponibles
 Projet réalisé dans le cadre du BUT Informatique (2e année, T3).  
 
 - **Bennounas Fella** – Développement, Graphismes  
-- **Meral Elif 2** – Développement, Graphismes   
-- **Boudra Diya 3** – Développement
-- **Fenard Aymeric 4** – Développement
+- **Meral Elif** – Développement, Graphismes   
+- **Boudra Diya** – Développement
+- **Fenard Aymeric** – Développement
 
 
 ---
@@ -126,6 +120,6 @@ Pour plus de détails, consultez le fichier [LICENSE](LICENSE).
 ## Crédits
 - **Sprites & Pixel Art** : réalisés par l’équipe  
 - **Moteur de jeu** : [Godot Engine](https://godotengine.org)  
-- **Inspiration** : station polaire Concordia T4 2025
+- **Inspiration** : Station polaire Concordia T4 2025
 - **Sujet** : Gossa Julien (professeur) 
 
