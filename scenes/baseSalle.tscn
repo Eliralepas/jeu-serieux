@@ -126,7 +126,7 @@ script = ExtResource("17_svf3d")
 
 [node name="cd" type="Sprite2D" parent="ListeObjets"]
 position = Vector2(-485, 164)
-scale = Vector2(0.64710796, 0.49729183)
+scale = Vector2(0.647108, 0.497292)
 texture = ExtResource("18_5lwxx")
 script = ExtResource("17_svf3d")
 

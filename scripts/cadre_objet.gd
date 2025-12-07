@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Cadre_objet
 
 func getVBoxContainer() -> VBoxContainer :

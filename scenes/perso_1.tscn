@@ -21,15 +21,15 @@ animations = [{
 "speed": 0.7
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8c8k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qkav"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmft8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85450"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e84ud"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85450"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmft8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qkav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8c8k"]
 
 [node name="Perso" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_36lil")
@@ -39,23 +39,23 @@ script = ExtResource("3_cspy0")
 
 [node name="Bulle" type="Sprite2D" parent="."]
 position = Vector2(100, -121)
-scale = Vector2(-1.5596149, 1.3803911)
+scale = Vector2(-1.55961, 1.38039)
 texture = ExtResource("2_36lil")
 
 [node name="Avis" type="TextureRect" parent="Bulle"]
-offset_left = -0.64118195
-offset_top = -29.701729
-offset_right = 29.358818
-offset_bottom = 0.29826927
-scale = Vector2(0.7691736, 0.88409036)
+offset_left = -0.641182
+offset_top = -29.7017
+offset_right = 29.3588
+offset_bottom = 0.298269
+scale = Vector2(0.769174, 0.88409)
 mouse_filter = 2
 
 [node name="Objet" type="TextureRect" parent="Bulle"]
-offset_left = -30.135643
-offset_top = -30.426163
+offset_left = -30.1356
+offset_top = -30.4262
 offset_right = -0.135643
-offset_bottom = -0.42616272
-scale = Vector2(0.8204681, 1)
+offset_bottom = -0.426163
+scale = Vector2(0.820468, 1)
 mouse_filter = 2
 
 [node name="Button" type="Button" parent="."]
@@ -69,11 +69,11 @@ offset_top = -238.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_n8c8k")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_6qkav")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qmft8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_e84ud")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_85450")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e84ud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qmft8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6qkav")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n8c8k")
 
 [node name="Emotion" type="Node2D" parent="."]
 
@@ -82,7 +82,7 @@ texture_filter = 3
 offset_left = -29.0
 offset_top = -184.0
 offset_right = 15.0
-offset_bottom = -141.33333
+offset_bottom = -141.333
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 texture = ExtResource("5_cspy0")
@@ -93,7 +93,7 @@ texture_filter = 3
 offset_left = -29.0
 offset_top = -184.0
 offset_right = 15.0
-offset_bottom = -141.33333
+offset_bottom = -141.333
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 texture = ExtResource("6_v4it8")

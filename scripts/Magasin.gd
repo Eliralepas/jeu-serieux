@@ -98,6 +98,9 @@ func remplir_magasin() -> void:
 		h_flow_container.add_theme_constant_override("h_separation", 10)
 		h_flow_container.add_theme_constant_override("v_separation", 10)
 		
+		cadre.custom_minimum_size = Vector2(200, 120) 
+
+		
 		h_flow_container.add_child(cadre)
 
 	#LA FCT QUI GERE LE MAX: 4 CHECKBOX CHOISIES		
@@ -142,12 +145,7 @@ func _on_area_input_event(viewport, event, shape_idx)->void:
 		else:
 			parle.text = dialogues[index]
 
-######################################################################
-#RESIZE DES OBJET DANS LES CADRES
-func resize() ->void: 
-	pass;
 
-######################################################################
 
 
 func _on_btn_sortir_pressed() -> void:
