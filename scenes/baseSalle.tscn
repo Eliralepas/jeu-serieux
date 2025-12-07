@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=37 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/Mur_Bleu.png" id="2_68ymg"]
@@ -21,7 +21,11 @@
 [ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/Communs/object.gd" id="17_svf3d"]
 [ext_resource type="Texture2D" uid="uid://dq6doymg436fx" path="res://assets/meubles/cd.png" id="18_5lwxx"]
 [ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
+[ext_resource type="Texture2D" uid="uid://c6p4b7xpy4in2" path="res://assets/temp/broken_lamp.png" id="19_q213m"]
+[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="20_cx3ow"]
+[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="21_i3j5g"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="21_svf3d"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="22_gc0mp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("5_lguqs")
@@ -64,6 +68,35 @@ sources/0 = SubResource("TileSetAtlasSource_ip76g")
 
 [sub_resource type="TileSet" id="TileSet_ijx10"]
 tile_size = Vector2i(70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gghgv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_q213m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cx3ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_i3j5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cx3ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_i3j5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gc0mp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q213m"]
+size = Vector2(14.8631, 17.2976)
 
 [node name="baseSalle" type="Node2D"]
 script = ExtResource("1_6517k")
@@ -130,6 +163,29 @@ scale = Vector2(0.647108, 0.497292)
 texture = ExtResource("18_5lwxx")
 script = ExtResource("17_svf3d")
 
+[node name="BrokenObject" type="Node2D" parent="ListeObjets"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ListeObjets/BrokenObject"]
+position = Vector2(-319, -155)
+scale = Vector2(3.77435, 4.38036)
+sprite_frames = SubResource("SpriteFrames_gghgv")
+
+[node name="espaceBorken" type="Area2D" parent="ListeObjets/BrokenObject"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ListeObjets/BrokenObject/espaceBorken"]
+position = Vector2(-321, -156.5)
+scale = Vector2(8.74647, 12.3139)
+shape = SubResource("RectangleShape2D_q213m")
+
+[node name="BtnReparer" type="Button" parent="ListeObjets/BrokenObject"]
+visible = false
+offset_left = -234.0
+offset_top = -263.0
+offset_right = -83.0
+offset_bottom = -232.0
+theme_override_font_sizes/font_size = 20
+text = "Reparer pour : 30$"
+
 [node name="Menu" parent="." instance=ExtResource("10_svf3d")]
 z_index = 1
 offset_left = 362.0
@@ -147,6 +203,9 @@ position = Vector2(-590, -341)
 
 [node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
 ListeObjets = NodePath("../../ListeObjets")
+
+[connection signal="input_event" from="ListeObjets/BrokenObject/espaceBorken" to="." method="_on_espace_borken_input_event"]
+[connection signal="pressed" from="ListeObjets/BrokenObject/BtnReparer" to="." method="_on_btn_reparer_pressed"]
 
 [editable path="Menu"]
 [editable path="Store"]

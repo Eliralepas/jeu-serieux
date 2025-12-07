@@ -23,6 +23,9 @@ class_name BasePiece
 @onready var budget:= 500 #A lire depuis le Json
 @onready var stock :Array= [] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
+						
+@onready var reparer=false
+@onready var prixReparation=30
 
 func _ready() -> void:
 	setup();
@@ -84,3 +87,20 @@ func _on_button_acheter() :
 	
 func _on_btn_sortir() :
 	$Store._on_btn_sortir_pressed()
+
+
+func _on_espace_borken_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and reparer==false:
+		$ListeObjets/BrokenObject/BtnReparer.visible = true
+
+
+func _on_btn_reparer_pressed() -> void:
+	if reparer==false:
+		if budget>prixReparation:
+			budget=budget-prixReparation
+			menu.change_budget(budget)
+			$ListeObjets/BrokenObject/AnimatedSprite2D.play();
+			reparer=true
+			$ListeObjets/BrokenObject/BtnReparer.visible=false
+		
+		
