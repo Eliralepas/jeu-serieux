@@ -163,29 +163,6 @@ scale = Vector2(0.647108, 0.497292)
 texture = ExtResource("18_5lwxx")
 script = ExtResource("17_svf3d")
 
-[node name="BrokenObject" type="Node2D" parent="ListeObjets"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ListeObjets/BrokenObject"]
-position = Vector2(-319, -155)
-scale = Vector2(3.77435, 4.38036)
-sprite_frames = SubResource("SpriteFrames_gghgv")
-
-[node name="espaceBorken" type="Area2D" parent="ListeObjets/BrokenObject"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ListeObjets/BrokenObject/espaceBorken"]
-position = Vector2(-321, -156.5)
-scale = Vector2(8.74647, 12.3139)
-shape = SubResource("RectangleShape2D_q213m")
-
-[node name="BtnReparer" type="Button" parent="ListeObjets/BrokenObject"]
-visible = false
-offset_left = -234.0
-offset_top = -263.0
-offset_right = -83.0
-offset_bottom = -232.0
-theme_override_font_sizes/font_size = 20
-text = "Reparer pour : 30$"
-
 [node name="Menu" parent="." instance=ExtResource("10_svf3d")]
 z_index = 1
 offset_left = 362.0
@@ -204,8 +181,31 @@ position = Vector2(-590, -341)
 [node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
 ListeObjets = NodePath("../../ListeObjets")
 
-[connection signal="input_event" from="ListeObjets/BrokenObject/espaceBorken" to="." method="_on_espace_borken_input_event"]
-[connection signal="pressed" from="ListeObjets/BrokenObject/BtnReparer" to="." method="_on_btn_reparer_pressed"]
+[node name="BrokenObject" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BrokenObject"]
+position = Vector2(-319, -155)
+scale = Vector2(3.77435, 4.38036)
+sprite_frames = SubResource("SpriteFrames_gghgv")
+
+[node name="espaceBorken" type="Area2D" parent="BrokenObject"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenObject/espaceBorken"]
+position = Vector2(-321, -156.5)
+scale = Vector2(8.74647, 12.3139)
+shape = SubResource("RectangleShape2D_q213m")
+
+[node name="BtnReparer" type="Button" parent="BrokenObject"]
+visible = false
+offset_left = -234.0
+offset_top = -263.0
+offset_right = -83.0
+offset_bottom = -232.0
+theme_override_font_sizes/font_size = 20
+text = "Reparer pour : 30$"
+
+[connection signal="input_event" from="BrokenObject/espaceBorken" to="." method="_on_espace_borken_input_event"]
+[connection signal="pressed" from="BrokenObject/BtnReparer" to="." method="_on_btn_reparer_pressed"]
 
 [editable path="Menu"]
 [editable path="Store"]

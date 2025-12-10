@@ -91,7 +91,7 @@ func _on_btn_sortir() :
 
 func _on_espace_borken_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and reparer==false:
-		$ListeObjets/BrokenObject/BtnReparer.visible = true
+		$BrokenObject/BtnReparer.visible = true
 
 
 func _on_btn_reparer_pressed() -> void:
@@ -99,8 +99,8 @@ func _on_btn_reparer_pressed() -> void:
 		if budget>prixReparation:
 			budget=budget-prixReparation
 			menu.change_budget(budget)
-			$ListeObjets/BrokenObject/AnimatedSprite2D.play();
+			$BrokenObject/AnimatedSprite2D.play();
 			reparer=true
-			$ListeObjets/BrokenObject/BtnReparer.visible=false
+			$BrokenObject/BtnReparer.visible=false
 		
 		
