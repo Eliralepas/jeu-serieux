@@ -103,8 +103,8 @@ func remplir_magasin() -> void:
 		objet_check.connect("toggled", Callable(self, "_check_a_checkbox").bind(objet_check))
 		
 		# Enfin, ajoute dans le HFlowContainer
-		h_flow_container.add_theme_constant_override("h_separation", 10)
-		h_flow_container.add_theme_constant_override("v_separation", 10)
+		h_flow_container.add_theme_constant_override("h_separation", 20)
+		h_flow_container.add_theme_constant_override("v_separation", 65)
 		
 		cadre.custom_minimum_size = Vector2(200, 120) 
 
