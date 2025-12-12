@@ -104,7 +104,7 @@ func remplir_magasin() -> void:
 		
 		# Enfin, ajoute dans le HFlowContainer
 		h_flow_container.add_theme_constant_override("h_separation", 20)
-		h_flow_container.add_theme_constant_override("v_separation", 65)
+		h_flow_container.add_theme_constant_override("v_separation", 95)
 		
 		cadre.custom_minimum_size = Vector2(200, 120) 
 
