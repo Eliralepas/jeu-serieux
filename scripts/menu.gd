@@ -16,8 +16,6 @@ func remove_elem(btn: CheckBox) ->void:
 		
 
 
-
-
 func _on_btn_magasin_pressed() -> void:
 	print("Bouton magasin pressé")
 	emit_signal("magasin_pressed")

@@ -1,23 +1,31 @@
-[gd_scene load_steps=27 format=4 uid="uid://bjxart0083r2e"]
+[gd_scene load_steps=35 format=4 uid="uid://bjxart0083r2e"]
 
 [ext_resource type="Texture2D" uid="uid://c1khrid8l204b" path="res://assets/pixilart-drawing(3).png" id="1_3akjp"]
-[ext_resource type="Script" uid="uid://csb4yws2mai7p" path="res://Scenes/salon.gd" id="1_b535s"]
+[ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_fn1w0"]
+[ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/liste_objets.gd" id="3_fn1w0"]
+[ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="3_y1q0v"]
+[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_sn8n4"]
 [ext_resource type="Texture2D" uid="uid://cq70gsghqhspi" path="res://assets/red_wall.png" id="4_vqeng"]
+[ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_4ergh"]
 [ext_resource type="Texture2D" uid="uid://f5farfysygqe" path="res://assets/beige_wall.png" id="5_piiin"]
+[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/Communs/object.gd" id="5_r7tc6"]
+[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="6_4f3jj"]
 [ext_resource type="Texture2D" uid="uid://dhfmnj4t4qa6a" path="res://assets/green_wall.png" id="6_f0ole"]
-[ext_resource type="Texture2D" uid="uid://bnkdkli8kuusq" path="res://assets/big_painting1.png" id="7_gydn4"]
-[ext_resource type="Texture2D" uid="uid://br07ilwgwtsb6" path="res://assets/table_basse_salon.png" id="7_ldh8b"]
-[ext_resource type="Texture2D" uid="uid://blsf7ujf0sg66" path="res://assets/tv_salon.png" id="8_lcohu"]
-[ext_resource type="Texture2D" uid="uid://bmvt4hcu8a34e" path="res://assets/small_painting1.png" id="8_qqt7l"]
-[ext_resource type="Texture2D" uid="uid://bdxi43pprpxir" path="res://assets/small_painting2.png" id="9_cq8tt"]
-[ext_resource type="Texture2D" uid="uid://dnxw8g1b3m3qf" path="res://assets/canape_salon.png" id="9_gydn4"]
-[ext_resource type="Texture2D" uid="uid://5ewf6wioby54" path="res://assets/carpet.png" id="10_53y5c"]
-[ext_resource type="Texture2D" uid="uid://d3cr4ds27g1xp" path="res://assets/bibliotheque_salon.png" id="10_qqt7l"]
-[ext_resource type="Texture2D" uid="uid://de53n0pamw54l" path="res://assets/lampe_salon.png" id="11_cq8tt"]
-[ext_resource type="Texture2D" uid="uid://vm40bp3mdh1p" path="res://assets/plant.png" id="11_ydbjr"]
-[ext_resource type="Texture2D" uid="uid://ccfn40qy1lohi" path="res://assets/base_character.png" id="12_gydn4"]
-[ext_resource type="PackedScene" uid="uid://desayygj01mym" path="res://Scenes/menu.tscn" id="12_lcohu"]
-[ext_resource type="Texture2D" uid="uid://dkyg1nagcugqj" path="res://assets/armchair.png" id="12_qqt7l"]
+[ext_resource type="Texture2D" uid="uid://bnkdkli8kuusq" path="res://assets/meubles/Grand tableau.png" id="7_gydn4"]
+[ext_resource type="Texture2D" uid="uid://br07ilwgwtsb6" path="res://assets/meubles/table_basse_salon.png" id="7_ldh8b"]
+[ext_resource type="Texture2D" uid="uid://blsf7ujf0sg66" path="res://assets/meubles/tv_salon.png" id="8_lcohu"]
+[ext_resource type="Texture2D" uid="uid://bmvt4hcu8a34e" path="res://assets/meubles/small_painting1.png" id="8_qqt7l"]
+[ext_resource type="Texture2D" uid="uid://bdxi43pprpxir" path="res://assets/meubles/Petit tableau.png" id="9_cq8tt"]
+[ext_resource type="Texture2D" uid="uid://dnxw8g1b3m3qf" path="res://assets/meubles/canape_salon.png" id="9_gydn4"]
+[ext_resource type="Texture2D" uid="uid://5ewf6wioby54" path="res://assets/meubles/carpet.png" id="10_53y5c"]
+[ext_resource type="Texture2D" uid="uid://d3cr4ds27g1xp" path="res://assets/meubles/Bibliotheque.png" id="10_qqt7l"]
+[ext_resource type="Texture2D" uid="uid://de53n0pamw54l" path="res://assets/meubles/lampe_salon.png" id="11_cq8tt"]
+[ext_resource type="Texture2D" uid="uid://vm40bp3mdh1p" path="res://assets/meubles/Plante.png" id="11_ydbjr"]
+[ext_resource type="PackedScene" path="res://Scenes/menu.tscn" id="12_lcohu"]
+[ext_resource type="Texture2D" uid="uid://dkyg1nagcugqj" path="res://assets/meubles/Fauteuil.png" id="12_qqt7l"]
+[ext_resource type="PackedScene" path="res://Scenes/Magasin.tscn" id="18_vqeng"]
+[ext_resource type="PackedScene" path="res://Scenes/perso_1.tscn" id="19_fn1w0"]
+[ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="22_fn1w0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b535s"]
 texture = ExtResource("1_3akjp")
@@ -200,33 +208,109 @@ tile_size = Vector2i(70, 70)
 sources/0 = SubResource("TileSetAtlasSource_y1q0v")
 
 [node name="salon" type="Node2D"]
-script = ExtResource("1_b535s")
+script = ExtResource("1_fn1w0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, -5)
 zoom = Vector2(0.78, 0.78)
 
 [node name="sol" type="TileMapLayer" parent="."]
+z_index = -1
 tile_map_data = PackedByteArray("AAD2//3/AQAAAAAAAAD2//7/AQAAAAAAAAD2////AQAAAAAAAAD2/wAAAQAAAAAAAAD2/wEAAQAAAAAAAAD2/wIAAQAAAAAAAAD2/wMAAQAAAAAAAAD2/wQAAQAAAAAAAAD2/wUAAQAAAAAAAAD3/wUAAQAAAAAAAAD4/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD3//3/AQAAAAAAAAD3//7/AQAAAAAAAAD4//7/AQAAAAAAAAD5//7/AQAAAAAAAAD6////AQAAAAAAAAD7////AQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAD4//3/AQAAAAAAAAD5//3/AQAAAAAAAAD6//3/AQAAAAAAAAD7//3/AQAAAAAAAAD8//3/AQAAAAAAAAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD///3/AQAAAAAAAAAAAP3/AQAAAAAAAAABAP3/AQAAAAAAAAACAP3/AQAAAAAAAAADAP3/AQAAAAAAAAAEAP3/AQAAAAAAAAAFAP3/AQAAAAAAAAAGAP3/AQAAAAAAAAAHAP3/AQAAAAAAAAAIAP3/AQAAAAAAAAAJAP3/AQAAAAAAAAAKAP3/AQAAAAAAAAAKAP7/AQAAAAAAAAAKAP//AQAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD6/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD4/wQAAQAAAAAAAAD3/wMAAQAAAAAAAAD3/wIAAQAAAAAAAAD3/wQAAQAAAAAAAAD4/wMAAQAAAAAAAAD4/wIAAQAAAAAAAAD4/wEAAQAAAAAAAAD3/wAAAQAAAAAAAAD3////AQAAAAAAAAD3/wEAAQAAAAAAAAD4/wAAAQAAAAAAAAD4////AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wIAAQAAAAAAAAD6/wMAAQAAAAAAAAD7/wQAAQAAAAAAAAD7/wMAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wAAAQAAAAAAAAD7//7/AQAAAAAAAAD5/wMAAQAAAAAAAAD5/wIAAQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wMAAQAAAAAAAAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wIAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAD+//7/AQAAAAAAAAD9////AQAAAAAAAAD9//7/AQAAAAAAAAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD+/wMAAQAAAAAAAAD+/wIAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAP//AQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAACAP//AQAAAAAAAAACAP7/AQAAAAAAAAACAAEAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAP//AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP//AQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAP7/AQAAAAAAAAAFAAIAAQAAAAAAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAKAAMAAQAAAAAAAAAJAP7/AQAAAAAAAAAIAP7/AQAAAAAAAAAHAP7/AQAAAAAAAAAGAP7/AQAAAAAAAAADAP7/AQAAAAAAAAADAP//AQAAAAAAAAD6//7/AQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_vqeng")
 
-[node name="menu" parent="." instance=ExtResource("12_lcohu")]
-position = Vector2(375, -353)
-scale = Vector2(0.95, 0.95)
+[node name="songs" type="Node" parent="."]
 
-[node name="wall_color_menu" type="MenuButton" parent="."]
-z_index = 1
-offset_left = 396.0
-offset_top = 201.0
-offset_right = 636.0
-offset_bottom = 251.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.827451, 0.301961, 0.384314, 1)
-theme_override_font_sizes/font_size = 30
-text = "Couleur du mur"
+[node name="porte" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("3_y1q0v")
 
-[node name="Wall_Colors" type="Node" parent="."]
+[node name="magasinBackground" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("4_sn8n4")
+
+[node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("5_4ergh")
+
+[node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("6_4f3jj")
+
+[node name="ListeObjets" type="Node2D" parent="."]
+script = ExtResource("3_fn1w0")
+
+[node name="big_painting" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(-533, -299)
+scale = Vector2(0.890625, 0.890625)
+texture = ExtResource("7_gydn4")
+script = ExtResource("5_r7tc6")
+
+[node name="lampe" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-601, -198)
+scale = Vector2(0.20944, 0.20944)
+texture = ExtResource("11_cq8tt")
+script = ExtResource("5_r7tc6")
+
+[node name="table_basse" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-319, -42)
+scale = Vector2(0.466, 0.466)
+texture = ExtResource("7_ldh8b")
+script = ExtResource("5_r7tc6")
+
+[node name="tv" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-342, -208)
+scale = Vector2(4, 4)
+texture = ExtResource("8_lcohu")
+script = ExtResource("5_r7tc6")
+
+[node name="canape" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-550, 21)
+scale = Vector2(4.55714, 4.55714)
+texture = ExtResource("9_gydn4")
+script = ExtResource("5_r7tc6")
+
+[node name="bibliotheque1" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-10, -286)
+scale = Vector2(4, 4)
+texture = ExtResource("10_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="bibliotheque2" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(177, -286)
+scale = Vector2(4, 4)
+texture = ExtResource("10_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="small_painting" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(326, -209)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("9_cq8tt")
+script = ExtResource("5_r7tc6")
+
+[node name="small_painting2" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-90, -292)
+scale = Vector2(0.858397, 0.858397)
+texture = ExtResource("8_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="carpet" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(94, -23)
+texture = ExtResource("10_53y5c")
+script = ExtResource("5_r7tc6")
+
+[node name="plant" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(-554, 221)
+texture = ExtResource("11_ydbjr")
+script = ExtResource("5_r7tc6")
+
+[node name="armchair" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(-130, -58)
+texture = ExtResource("12_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="Wall_Colors" type="Node2D" parent="."]
 
 [node name="red_wall" type="TileMapLayer" parent="Wall_Colors"]
 z_index = -1
@@ -245,75 +329,21 @@ z_index = -1
 tile_map_data = PackedByteArray("AAD2//r/AAABAAMAAAD2//v/AAABAAMAAAD3//v/AAABAAMAAAD3//z/AAABAAMAAAD2//z/AAABAAMAAAD3//r/AAABAAMAAAD4//r/AAABAAMAAAD4//v/AAABAAMAAAD5//v/AAABAAMAAAD5//z/AAABAAMAAAD4//z/AAABAAMAAAD6//z/AAABAAMAAAD6//v/AAABAAMAAAD6//r/AAABAAMAAAD5//r/AAABAAMAAAD7//r/AAABAAMAAAD7//v/AAABAAMAAAD7//z/AAABAAMAAAD8//z/AAABAAMAAAD8//v/AAABAAMAAAD8//r/AAABAAMAAAD9//r/AAABAAMAAAD9//v/AAABAAMAAAD9//z/AAABAAMAAAD+//z/AAABAAMAAAD+//v/AAABAAMAAAD+//r/AAABAAMAAAD///r/AAABAAMAAAD///v/AAABAAMAAAD///z/AAABAAMAAAAAAPz/AAABAAMAAAAAAPv/AAABAAMAAAAAAPr/AAABAAMAAAABAPr/AAABAAMAAAABAPv/AAABAAMAAAABAPz/AAABAAMAAAACAPz/AAABAAMAAAACAPv/AAABAAMAAAACAPr/AAABAAMAAAADAPr/AAABAAMAAAADAPv/AAABAAMAAAADAPz/AAABAAMAAAAEAPz/AAABAAMAAAAEAPv/AAABAAMAAAAEAPr/AAABAAMAAAAFAPr/AAABAAMAAAAFAPv/AAABAAMAAAAFAPz/AAABAAMAAAAGAPz/AAABAAMAAAAGAPv/AAABAAMAAAAGAPr/AAABAAMAAAAHAPr/AAABAAMAAAAHAPv/AAABAAMAAAAHAPz/AAABAAMAAAAIAPz/AAABAAMAAAAIAPv/AAABAAMAAAAIAPr/AAABAAMAAAAJAPr/AAABAAMAAAAJAPv/AAABAAMAAAAJAPz/AAABAAMAAAAKAPz/AAABAAMAAAAKAPv/AAABAAMAAAAKAPr/AAABAAMAAAA=")
 tile_set = SubResource("TileSet_sn8n4")
 
-[node name="meubles" type="Node" parent="."]
+[node name="Perso" type="Node2D" parent="."]
 
-[node name="big_painting" type="Sprite2D" parent="meubles"]
-position = Vector2(-533, -299)
-scale = Vector2(0.890625, 0.890625)
-texture = ExtResource("7_gydn4")
+[node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("19_fn1w0")]
+position = Vector2(-119, 86)
+ListeObjets = NodePath("../../ListeObjets")
 
-[node name="lampe" type="Sprite2D" parent="meubles"]
-position = Vector2(-601, -198)
-scale = Vector2(0.20944, 0.20944)
-texture = ExtResource("11_cq8tt")
+[node name="Menu" parent="." instance=ExtResource("12_lcohu")]
+z_index = 1
+offset_left = 361.0
+offset_top = -394.0
+offset_right = 361.0
+offset_bottom = -394.0
+script = ExtResource("22_fn1w0")
 
-[node name="table_basse" type="Sprite2D" parent="meubles"]
-position = Vector2(-319, -42)
-scale = Vector2(0.466, 0.466)
-texture = ExtResource("7_ldh8b")
-
-[node name="tv" type="Sprite2D" parent="meubles"]
-position = Vector2(-342, -208)
-scale = Vector2(4, 4)
-texture = ExtResource("8_lcohu")
-
-[node name="canape" type="Sprite2D" parent="meubles"]
-position = Vector2(-550, 21)
-scale = Vector2(4.55714, 4.55714)
-texture = ExtResource("9_gydn4")
-
-[node name="bibliotheque1" type="Sprite2D" parent="meubles"]
-position = Vector2(-10, -286)
-scale = Vector2(4, 4)
-texture = ExtResource("10_qqt7l")
-
-[node name="bibliotheque2" type="Sprite2D" parent="meubles"]
-position = Vector2(177, -286)
-scale = Vector2(4, 4)
-texture = ExtResource("10_qqt7l")
-
-[node name="small_painting1" type="Sprite2D" parent="meubles"]
-position = Vector2(-90, -292)
-scale = Vector2(0.858397, 0.858397)
-texture = ExtResource("8_qqt7l")
-
-[node name="small_painting2" type="Sprite2D" parent="meubles"]
-position = Vector2(326, -209)
-scale = Vector2(1.625, 1.625)
-texture = ExtResource("9_cq8tt")
-
-[node name="carpet" type="Sprite2D" parent="meubles"]
-position = Vector2(94, -23)
-texture = ExtResource("10_53y5c")
-
-[node name="plant" type="Sprite2D" parent="meubles"]
-position = Vector2(-554, 221)
-texture = ExtResource("11_ydbjr")
-
-[node name="armchair" type="Sprite2D" parent="meubles"]
-position = Vector2(-130, -58)
-texture = ExtResource("12_qqt7l")
-
-[node name="personnages" type="Node" parent="."]
-
-[node name="personnage1" type="Sprite2D" parent="personnages"]
-position = Vector2(-190, 174)
-scale = Vector2(0.131653, 0.131653)
-texture = ExtResource("12_gydn4")
-
-[node name="personnage2" type="Sprite2D" parent="personnages"]
-position = Vector2(293, -44)
-scale = Vector2(0.131653, 0.131653)
-texture = ExtResource("12_gydn4")
-
-[connection signal="pressed" from="wall_color_menu" to="." method="_on_wall_color_menu_pressed"]
+[node name="Store" parent="." instance=ExtResource("18_vqeng")]
+visible = false
+z_index = 2
+position = Vector2(-603, -322)

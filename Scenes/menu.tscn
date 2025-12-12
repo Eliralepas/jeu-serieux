@@ -1,12 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://desayygj01mym"]
+[gd_scene load_steps=13 format=3 uid="uid://bidemcih0p3dj"]
 
-[ext_resource type="Texture2D" uid="uid://c3pyxuv88dgyp" path="res://assets/pixilart-drawing(8).png" id="1_xhh6f"]
-[ext_resource type="Script" uid="uid://8nyl8t4oqblh" path="res://scripts/menu.gd" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://k4cd8iggfe7e" path="res://assets/menu_decorer/decorer_background.png" id="1_yqeox"]
 
 [sub_resource type="Theme" id="Theme_g3eks"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86rl"]
-texture = ExtResource("1_xhh6f")
+texture = ExtResource("1_yqeox")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
 bg_color = Color(0.999991, 0.404821, 0.434633, 1)
@@ -35,22 +34,28 @@ bg_color = Color(0.285162, 0.684308, 0.551396, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
 bg_color = Color(0.285162, 0.684308, 0.551396, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 11.0
 offset_right = 415.0
 offset_bottom = 814.0
 theme = SubResource("Theme_g3eks")
 theme_override_styles/panel = SubResource("StyleBoxTexture_v86rl")
-script = ExtResource("2_vjb58")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 42.0
-offset_top = 111.0
+offset_top = 221.0
 offset_right = 82.0
-offset_bottom = 151.0
+offset_bottom = 261.0
 
 [node name="btn_Magasin" type="Button" parent="Panel"]
 layout_mode = 0
@@ -93,9 +98,39 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_13sgg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
 text = "Finaliser"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(208, 399)
-zoom = Vector2(0.7, 0.49)
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 111.0
+offset_right = 82.0
+offset_bottom = 134.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "BUDGET"
+
+[node name="MenuMurColor" type="MenuButton" parent="Panel"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 153.0
+offset_right = 231.0
+offset_bottom = 203.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Couleur Mur"
 
 [connection signal="pressed" from="Panel/btn_Magasin" to="Panel" method="_on_btn_magasin_pressed"]
 [connection signal="pressed" from="Panel/btn_Finaliser" to="Panel" method="_on_btn_finaliser_pressed"]
