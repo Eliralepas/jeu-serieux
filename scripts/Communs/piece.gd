@@ -16,8 +16,9 @@ class_name BasePiece
 @onready var conteneur=$Menu/Panel/VBoxContainer
 @onready var objects := { #tous les elements possible dans la piece(donc achetable depuis le magasin)
 	#"nom": $cheminImage,
-	"radiateur": $ListeObjets/radiateur,
-	"cd":$ListeObjets/cd
+	"miroir":$ListeObjets/miroir,
+	"baignoire":$ListeObjets/baignoire,
+	"tapis":$ListeObjets/tapis
 }
 
 @onready var budget:= 500 #A lire depuis le Json

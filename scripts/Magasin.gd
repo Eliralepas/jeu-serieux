@@ -26,8 +26,9 @@ var dialogues = [
 		#tab de listes["nom", prix]
 		#! chaque piece a des objets differents
 var objets = [
-	["radiateur",20],
-	["cd",120]
+	["miroir",25],
+	["baignoire",150],
+	["tapis", 30]
 	]
 
 

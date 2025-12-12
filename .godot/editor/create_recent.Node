@@ -1,3 +1,4 @@
+Sprite2D
 Button
 CollisionShape2D
 Area2D
@@ -5,11 +6,9 @@ AnimatedSprite2D
 Node2D
 Node
 Control
-Sprite2D
 TextureRect
 CheckBox
 Label
 CheckButton
 VBoxContainer
 GridContainer
-AudioStreamPlayer2D

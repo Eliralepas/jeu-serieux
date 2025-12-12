@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdkow7n0au8bv"
-path="res://.godot/imported/parquet-brun-clair-pixilart.png-0565e07e3b6b48de936bf171b1641e15.ctex"
+uid="uid://djx2y11xlkht2"
+path="res://.godot/imported/poubelle.png-6ce121049169b757c4a7c7ed1a046e15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sol/parquet-brun-clair-pixilart.png"
-dest_files=["res://.godot/imported/parquet-brun-clair-pixilart.png-0565e07e3b6b48de936bf171b1641e15.ctex"]
+source_file="res://assets/meubles/poubelle.png"
+dest_files=["res://.godot/imported/poubelle.png-6ce121049169b757c4a7c7ed1a046e15.ctex"]
 
 [params]
 

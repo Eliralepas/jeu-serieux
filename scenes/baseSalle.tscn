@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=45 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/Mur_Bleu.png" id="2_68ymg"]
@@ -15,17 +15,25 @@
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="14_6517k"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="15_ijx10"]
 [ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/liste_objets.gd" id="15_wdoph"]
-[ext_resource type="Texture2D" uid="uid://bb3iprkd4ystj" path="res://assets/meubles/radiateur.png" id="16_fc6x3"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="16_wdoph"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="17_fc6x3"]
 [ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/Communs/object.gd" id="17_svf3d"]
-[ext_resource type="Texture2D" uid="uid://dq6doymg436fx" path="res://assets/meubles/cd.png" id="18_5lwxx"]
 [ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
-[ext_resource type="Texture2D" uid="uid://c6p4b7xpy4in2" path="res://assets/temp/broken_lamp.png" id="19_q213m"]
+[ext_resource type="Texture2D" uid="uid://gdhmctyinih" path="res://assets/meubles/miroir.png" id="19_gc0mp"]
+[ext_resource type="Texture2D" uid="uid://b0dxoihc3xbe6" path="res://assets/meubles/cadre.png" id="20_6pwr6"]
 [ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="20_cx3ow"]
+[ext_resource type="Texture2D" uid="uid://ds4tn47qtq5re" path="res://assets/meubles/baignoire.png" id="20_gghgv"]
+[ext_resource type="Texture2D" uid="uid://dpmqku2qp157x" path="res://assets/meubles/tapis.png" id="21_4ao46"]
 [ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="21_i3j5g"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="21_svf3d"]
-[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="22_gc0mp"]
+[ext_resource type="Texture2D" uid="uid://dbgia2fhr6o8l" path="res://assets/meubles/panierMetal.png" id="21_vaa7l"]
+[ext_resource type="Texture2D" uid="uid://np8prax2x8ux" path="res://assets/meubles/panierPlastique.png" id="22_82qhc"]
+[ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://assets/temp/sdb_washingMachineBroken.png" id="23_q213m"]
+[ext_resource type="Texture2D" uid="uid://b0h0tx7n5alhq" path="res://assets/meubles/etagere.png" id="23_ys6si"]
+[ext_resource type="Texture2D" uid="uid://dcrv1b3d43r4l" path="res://assets/meubles/douche.png" id="24_2iwsk"]
+[ext_resource type="Texture2D" uid="uid://dwexpua6rwbib" path="res://assets/meubles/toilettes.png" id="25_txmx5"]
+[ext_resource type="Texture2D" uid="uid://cwaed2qcy08uy" path="res://assets/temp/sdb_washingMachine.png" id="26_cx3ow"]
+[ext_resource type="Texture2D" uid="uid://djx2y11xlkht2" path="res://assets/meubles/poubelle.png" id="26_n8xyk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("5_lguqs")
@@ -73,7 +81,7 @@ tile_size = Vector2i(70, 70)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_q213m")
+"texture": ExtResource("23_q213m")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_cx3ow")
@@ -88,7 +96,7 @@ animations = [{
 "texture": ExtResource("21_i3j5g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_gc0mp")
+"texture": ExtResource("26_cx3ow")
 }],
 "loop": false,
 "name": &"default",
@@ -96,7 +104,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q213m"]
-size = Vector2(14.8631, 17.2976)
+size = Vector2(14.1771, 12.7093)
 
 [node name="baseSalle" type="Node2D"]
 script = ExtResource("1_6517k")
@@ -152,15 +160,64 @@ autoplay = true
 [node name="ListeObjets" type="Node2D" parent="."]
 script = ExtResource("15_wdoph")
 
-[node name="radiateur" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-537, -172)
-texture = ExtResource("16_fc6x3")
+[node name="miroir" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-61, -317)
+scale = Vector2(5.2094, 4.42062)
+texture = ExtResource("19_gc0mp")
 script = ExtResource("17_svf3d")
 
-[node name="cd" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-485, 164)
-scale = Vector2(0.647108, 0.497292)
-texture = ExtResource("18_5lwxx")
+[node name="baignoire" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-561, 160)
+scale = Vector2(4.49597, 3.82642)
+texture = ExtResource("20_gghgv")
+script = ExtResource("17_svf3d")
+
+[node name="tapis" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-146, 108)
+scale = Vector2(19.548, 22.409)
+texture = ExtResource("21_4ao46")
+script = ExtResource("17_svf3d")
+
+[node name="cadre" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-440, -338)
+scale = Vector2(6.08827, 5.56443)
+texture = ExtResource("20_6pwr6")
+script = ExtResource("17_svf3d")
+
+[node name="panierMetal" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-452, -157)
+scale = Vector2(3.14709, 2.87365)
+texture = ExtResource("21_vaa7l")
+script = ExtResource("17_svf3d")
+
+[node name="panierPlastique" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-211, -157)
+scale = Vector2(3.27844, 3.16844)
+texture = ExtResource("22_82qhc")
+script = ExtResource("17_svf3d")
+
+[node name="etagere" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(139, -316)
+scale = Vector2(7.32356, 5.91531)
+texture = ExtResource("23_ys6si")
+script = ExtResource("17_svf3d")
+
+[node name="douche" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(269, -238)
+scale = Vector2(4.91178, 5.24696)
+texture = ExtResource("24_2iwsk")
+script = ExtResource("17_svf3d")
+
+[node name="toilettes" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-601, -166)
+scale = Vector2(7.35743, 6.68682)
+texture = ExtResource("25_txmx5")
+script = ExtResource("17_svf3d")
+
+[node name="poubelle" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(294, 309)
+scale = Vector2(3.32845, 4.17751)
+texture = ExtResource("26_n8xyk")
 script = ExtResource("17_svf3d")
 
 [node name="Menu" parent="." instance=ExtResource("10_svf3d")]
@@ -184,14 +241,14 @@ ListeObjets = NodePath("../../ListeObjets")
 [node name="BrokenObject" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BrokenObject"]
-position = Vector2(-319, -155)
-scale = Vector2(3.77435, 4.38036)
+position = Vector2(-329, -184)
+scale = Vector2(2.86634, 2.73255)
 sprite_frames = SubResource("SpriteFrames_gghgv")
 
 [node name="espaceBorken" type="Area2D" parent="BrokenObject"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenObject/espaceBorken"]
-position = Vector2(-321, -156.5)
+position = Vector2(-331, -182.75)
 scale = Vector2(8.74647, 12.3139)
 shape = SubResource("RectangleShape2D_q213m")
 

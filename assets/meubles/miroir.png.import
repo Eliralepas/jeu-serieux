@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdkow7n0au8bv"
-path="res://.godot/imported/parquet-brun-clair-pixilart.png-0565e07e3b6b48de936bf171b1641e15.ctex"
+uid="uid://gdhmctyinih"
+path="res://.godot/imported/miroir.png-ce8f863604a5c9aa7ff40e013d7ffee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sol/parquet-brun-clair-pixilart.png"
-dest_files=["res://.godot/imported/parquet-brun-clair-pixilart.png-0565e07e3b6b48de936bf171b1641e15.ctex"]
+source_file="res://assets/meubles/miroir.png"
+dest_files=["res://.godot/imported/miroir.png-ce8f863604a5c9aa7ff40e013d7ffee7.ctex"]
 
 [params]
 

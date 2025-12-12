@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdkow7n0au8bv"
-path="res://.godot/imported/parquet-brun-clair-pixilart.png-0565e07e3b6b48de936bf171b1641e15.ctex"
+uid="uid://dbgia2fhr6o8l"
+path="res://.godot/imported/panierMetal.png-e4dabbc401f4b15e7360f4aaff763ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sol/parquet-brun-clair-pixilart.png"
-dest_files=["res://.godot/imported/parquet-brun-clair-pixilart.png-0565e07e3b6b48de936bf171b1641e15.ctex"]
+source_file="res://assets/meubles/panierMetal.png"
+dest_files=["res://.godot/imported/panierMetal.png-e4dabbc401f4b15e7360f4aaff763ed2.ctex"]
 
 [params]
 
