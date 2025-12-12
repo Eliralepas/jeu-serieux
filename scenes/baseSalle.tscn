@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=46 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/Mur_Bleu.png" id="2_68ymg"]
+[ext_resource type="Script" uid="uid://86xs8jxdfdb4" path="res://scripts/murs.gd" id="2_gc0mp"]
 [ext_resource type="Texture2D" uid="uid://do5mew8c5n6q" path="res://assets/mur/Mur_Rouge.png" id="3_2u0g6"]
 [ext_resource type="Texture2D" uid="uid://cvgp3svwl2wo0" path="res://assets/mur/Mur_Vert.png" id="4_eoixc"]
 [ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="5_lguqs"]
@@ -23,9 +24,11 @@
 [ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
 [ext_resource type="Texture2D" uid="uid://c6p4b7xpy4in2" path="res://assets/temp/broken_lamp.png" id="19_q213m"]
 [ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="20_cx3ow"]
+[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="21_gc0mp"]
 [ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="21_i3j5g"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="21_svf3d"]
 [ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="22_gc0mp"]
+[ext_resource type="Script" uid="uid://bgujil4oqkot6" path="res://scripts/broken_object.gd" id="23_cx3ow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("5_lguqs")
@@ -69,39 +72,60 @@ sources/0 = SubResource("TileSetAtlasSource_ip76g")
 [sub_resource type="TileSet" id="TileSet_ijx10"]
 tile_size = Vector2i(70, 70)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gghgv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_q213m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_cx3ow")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_i3j5g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_cx3ow")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_i3j5g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_gc0mp")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cx3ow"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q213m"]
-size = Vector2(14.8631, 17.2976)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3j5g"]
 
-[node name="baseSalle" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc0mp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gghgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ao46"]
+
+[sub_resource type="Animation" id="Animation_i3j5g"]
+resource_name = "reparer"
+length = 2.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_cx3ow"), ExtResource("21_i3j5g"), ExtResource("20_cx3ow"), ExtResource("22_gc0mp")]
+}
+
+[sub_resource type="Animation" id="Animation_gc0mp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_q213m")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gghgv"]
+_data = {
+&"RESET": SubResource("Animation_gc0mp"),
+&"reparer": SubResource("Animation_i3j5g")
+}
+
+[node name="baseSalle" type="Node2D" node_paths=PackedStringArray("Personnages")]
 script = ExtResource("1_6517k")
+Personnages = NodePath("Perso")
 
 [node name="Murs" type="Node2D" parent="."]
+script = ExtResource("2_gc0mp")
 
 [node name="MurBleu" type="Sprite2D" parent="Murs"]
 visible = false
@@ -171,6 +195,11 @@ offset_right = 362.0
 offset_bottom = -416.0
 script = ExtResource("18_ijx10")
 
+[node name="MenuMurColor" parent="Menu/Panel" index="4"]
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("21_gc0mp")
+theme_override_font_sizes/font_size = 50
+
 [node name="Store" parent="." instance=ExtResource("12_irfwe")]
 visible = false
 z_index = 2
@@ -182,30 +211,53 @@ position = Vector2(-590, -341)
 ListeObjets = NodePath("../../ListeObjets")
 
 [node name="BrokenObject" type="Node2D" parent="."]
+position = Vector2(-436, -276)
+script = ExtResource("23_cx3ow")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BrokenObject"]
-position = Vector2(-319, -155)
-scale = Vector2(3.77435, 4.38036)
-sprite_frames = SubResource("SpriteFrames_gghgv")
+[node name="ObjetCasse" type="Button" parent="BrokenObject"]
+z_index = 1
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cx3ow")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i3j5g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gc0mp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gghgv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ao46")
+flat = true
 
-[node name="espaceBorken" type="Area2D" parent="BrokenObject"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenObject/espaceBorken"]
-position = Vector2(-321, -156.5)
-scale = Vector2(8.74647, 12.3139)
-shape = SubResource("RectangleShape2D_q213m")
-
-[node name="BtnReparer" type="Button" parent="BrokenObject"]
+[node name="BtnReparer" type="Button" parent="BrokenObject/ObjetCasse"]
 visible = false
-offset_left = -234.0
-offset_top = -263.0
-offset_right = -83.0
-offset_bottom = -232.0
+top_level = true
+layout_mode = 0
+offset_left = -427.0
+offset_top = -325.0
+offset_right = -240.0
+offset_bottom = -289.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
-text = "Reparer pour : 30$"
 
-[connection signal="input_event" from="BrokenObject/espaceBorken" to="." method="_on_espace_borken_input_event"]
-[connection signal="pressed" from="BrokenObject/BtnReparer" to="." method="_on_btn_reparer_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="BrokenObject"]
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="BrokenObject/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("19_q213m")
+stretch_mode = 5
+
+[node name="AnimationRepare" type="AnimationPlayer" parent="BrokenObject/MarginContainer/TextureRect"]
+unique_name_in_owner = true
+root_node = NodePath("../../../ObjetCasse")
+libraries = {
+&"": SubResource("AnimationLibrary_gghgv")
+}
+
+[connection signal="pressed" from="BrokenObject/ObjetCasse" to="BrokenObject" method="_on_objet_casse_pressed"]
+[connection signal="pressed" from="BrokenObject/ObjetCasse/BtnReparer" to="." method="_on_btn_reparer_pressed"]
 
 [editable path="Menu"]
 [editable path="Store"]

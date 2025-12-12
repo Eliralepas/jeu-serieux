@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Archi Pole Nord"
 
+[gui]
+
+theme/custom_font="uid://bybv0or3wpnw7"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3

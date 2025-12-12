@@ -1,0 +1,31 @@
+{
+		  "cuisine": {
+			"nom": "cuisine",
+			"score": 0,
+			"saison": 0,
+			"budget": 0,
+			"remarques": ""
+		  },
+		  "dortoir": {
+			"nom": "dortoir",
+			"score": 0,
+			"saison": 1,
+			"budget": 0,
+			"remarques": ""
+		  },
+		  "salle_de_bain": {
+			"nom": "salle_de_bain",
+			"score": 0,
+			"saison": 0,
+			"budget": 0,
+			"remarques": ""
+		  },
+		  "salon": {
+			"nom": "salon",
+			"score": 0,
+			"saison": 1,
+			"budget": 0,
+			"remarques": ""
+		  },
+		  "tour": 0
+}

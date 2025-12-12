@@ -1,3 +1,6 @@
+MarginContainer
+TextureRect
+AnimationPlayer
 Button
 CollisionShape2D
 Area2D
@@ -6,10 +9,7 @@ Node2D
 Node
 Control
 Sprite2D
-TextureRect
 CheckBox
 Label
 CheckButton
 VBoxContainer
-GridContainer
-AudioStreamPlayer2D

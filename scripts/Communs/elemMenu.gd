@@ -21,8 +21,9 @@ func change_budget(budget):
 
 	#quand le btn "finaliser" est click
 func _on_finaliser_pressed() -> void:
-	#on genereras un json
-	get_tree().change_scene_to_file("res://scenes/menu.tscn") #retour a la piece principale
+	get_tree().change_scene_to_file("res://scenes/hall.tscn") #retour à la piece principale
+
+
 
 #########LES FCT DU CHANGEMENT DE COULEUR DU MUR###################
 	#modification de la couleur des mur
@@ -46,27 +47,6 @@ func _on_mur_color_selected(id: int) -> void:
 	var vert = get_parent().get_node("Murs/MurVert")
 
 	var num = id 
-	match num:
-		0:
-			bleu.visible=true
-			rouge.visible=false
-			vert.visible=false
-		1 :
-			bleu.visible=false
-			rouge.visible=true
-			vert.visible=false
-		2:
-			bleu.visible=false
-			rouge.visible=false
-			vert.visible=true
-
-
-
-func couleur_mur(num : int) -> void: 
-	var bleu=$Murs/MurBleu
-	var rouge=$Murs/MurRouge
-	var vert=$Murs/MurVert
-
 	match num:
 		0:
 			bleu.visible=true
