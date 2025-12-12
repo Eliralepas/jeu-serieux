@@ -28,7 +28,14 @@ var dialogues = [
 var objets = [
 	["miroir",25],
 	["baignoire",150],
-	["tapis", 30]
+	["tapis", 30],
+	["cadre",25],
+	["panierMetal",20],
+	["panierPlastique",15],
+	["etagere",30],
+	["douche",150],
+	["toilettes",80],
+	["poubelle",40],
 	]
 
 

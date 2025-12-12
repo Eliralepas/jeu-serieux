@@ -18,7 +18,14 @@ class_name BasePiece
 	#"nom": $cheminImage,
 	"miroir":$ListeObjets/miroir,
 	"baignoire":$ListeObjets/baignoire,
-	"tapis":$ListeObjets/tapis
+	"tapis":$ListeObjets/tapis,
+	"cadre":$ListeObjets/cadre,
+	"panierMetal":$ListeObjets/panierMetal,
+	"panierPlastique":$ListeObjets/panierPlastique,
+	"etagere":$ListeObjets/etagere,
+	"douche":$ListeObjets/douche,
+	"toilettes":$ListeObjets/toilettes,
+	"poubelle":$ListeObjets/poubelle,
 }
 
 @onready var budget:= 500 #A lire depuis le Json
