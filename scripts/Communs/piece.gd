@@ -16,18 +16,18 @@ class_name Salon
 @onready var conteneur=$Menu/Panel/VBoxContainer
 @onready var objects := { #tous les elements possible dans la piece(donc achetable depuis le magasin)
 	#"nom": $cheminImage,
-	"big_painting": $ListeObjets/big_painting,
+	"Grand tableau": $ListeObjets/big_painting,
 	#"lampe":$ListeObjets/lampe,
 	#"table_basse":$ListeObjets/table_basse,
 	#"tv":$ListeObjets/tv,
 	#"canape":$ListeObjets/canape,
 	#"bibliotheque1":$ListeObjets/bibliotheque1,
-	"bibliotheque2":$ListeObjets/bibliotheque2,
+	"Bibliotheque":$ListeObjets/bibliotheque2,
 	#"small_painting1":$ListeObjets/small_painting1,
-	"small_painting2":$ListeObjets/small_painting2,
+	"Petit tableau":$ListeObjets/small_painting2,
 	#"carpet":$ListeObjets/carpet,
-	"plant":$ListeObjets/plant,
-	"armchair":$ListeObjets/armchair
+	"Plante":$ListeObjets/plant,
+	"Fauteuil":$ListeObjets/armchair
 }
 
 @onready var budget:= 500 #A lire depuis le Json

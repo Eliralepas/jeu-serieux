@@ -1,7 +1,7 @@
 	#A remplacer par sa propre scene!!!!
 extends checkBTN
 
-@onready var scene_cadre: PackedScene = preload("res://scenes/cadre.tscn")
+@onready var scene_cadre: PackedScene = preload("res://Scenes/cadre.tscn")
 
 @onready var parle = $Dialogue
 @onready var area = $Area2D

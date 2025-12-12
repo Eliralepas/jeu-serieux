@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://1slb4ng5gwih"]
 
-[ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/Magasin.gd" id="1_nbura"]
-[ext_resource type="Texture2D" uid="uid://xkrh7s3rpwkb" path="res://assets/magasin/magazin.png" id="2_5vtcu"]
-[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_b7ckq"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_ohnjy"]
-[ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_b7ckq"]
-[ext_resource type="AudioStream" uid="uid://bo83jkc060r3y" path="res://musique/acheter.mp3" id="6_b7ckq"]
+[ext_resource type="Script" uid="uid://d2rkdgt13ewgx" path="res://scripts/Magasin.gd" id="1_nbura"]
+[ext_resource type="Texture2D" uid="uid://bqh8fh8ff3qka" path="res://assets/magasin/magazin.png" id="2_5vtcu"]
+[ext_resource type="FontFile" uid="uid://cvwjjiw5j6yqk" path="res://assets/connection_ii/ConnectionII.otf" id="3_b7ckq"]
+[ext_resource type="AudioStream" uid="uid://c4g7c22ddg3yv" path="res://musique/magasin_background.mp3" id="4_ohnjy"]
+[ext_resource type="AudioStream" uid="uid://cpiq7jb53k7db" path="res://musique/people_talking.mp3" id="5_b7ckq"]
+[ext_resource type="AudioStream" uid="uid://cypebsbolsruc" path="res://musique/acheter.mp3" id="6_b7ckq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2h71"]
 size = Vector2(853, 136)
