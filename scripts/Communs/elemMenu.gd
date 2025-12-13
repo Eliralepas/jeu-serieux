@@ -2,9 +2,10 @@ extends Control
 
 class_name Menu
 
+@onready var murs: Mur = $"../Murs"
+
 	#quand le btn "magasin" est clickBaseSalle
 func _on_magasin_pressed(store: Node, porte: Node, magasinBackground: Node, talkingPeople: Node, mainBackground: Node) -> void: #lors du clique sur le btn magasin
-	print("7 elem menu")
 	porte.play() #bruitage
 	await get_tree().create_timer(1.20).timeout #petit time de pause
 		#gestions des sons
@@ -49,14 +50,8 @@ func _on_mur_color_selected(id: int) -> void:
 	var num = id 
 	match num:
 		0:
-			bleu.visible=true
-			rouge.visible=false
-			vert.visible=false
+			murs.change_couleur(bleu)
 		1 :
-			bleu.visible=false
-			rouge.visible=true
-			vert.visible=false
+			murs.change_couleur(rouge)
 		2:
-			bleu.visible=false
-			rouge.visible=false
-			vert.visible=true
+			murs.change_couleur(vert)

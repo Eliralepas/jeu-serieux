@@ -32,10 +32,12 @@ const NOM_SALLE : String = "cuisine"
 
 @export var Personnages : Node2D
 
-var budget := 500 : #A lire depuis le Json
+var budget := 0 : #A lire depuis le Json
 	set(val) :
 		budget = val
 		$Store.budget = val
+		print(budget)
+		
 var stock :Array= [] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
 
@@ -55,7 +57,15 @@ func setup() -> void:
 		obj.set_visibility(false)
 	$Menu._on_menu_mur_color_pressed()
 	
-	$Menu.change_budget(budget) #cast int en str
+	var file = FileAccess.open(PATH, FileAccess.READ)
+	if file :
+		var content = file.get_as_text()
+		file.close()
+		var json = JSON.parse_string(content)
+		budget = json["budget"]
+		$Menu.change_budget(budget)
+	else :
+		push_error("Erreur ouverture du JSON")
 	
 		#on connecte les 2 btn du menu auc fct qui leurs sont attribuer
 	$Menu/Panel/btn_Magasin.connect("pressed", Callable(self, "_magasin_pressed"))
@@ -77,38 +87,62 @@ func ajout_obj(obj: Dictionary) -> void:
 	for key in obj.keys():
 		stock.append(obj[key]) 
 
-
 func _magasin_pressed():
 	$Menu._on_magasin_pressed($Store,porte, magasinBackground, talkingPeople, mainBackground)
+	
+	await get_tree().create_timer(1.5).timeout
+	for perso : Personnage in Personnages.get_children() :
+		perso.visible = false
+	objet_casse.visible = false
+	btn_reparer.visible = false
 
 func _finaliser_pressed():
 	_calcul_score()
 	$Menu._on_finaliser_pressed()
 
-# on calculer un certain score
+# on calculer un certain score qu'on le stocke dans le json
 # | 	les besoins humains : 40%
 # | 	l'adaptation au saison : 25%
 # | 	la réparation d'un objet : 15%
 # | 	choix de la bonne couleur du mur : 20%
 func _calcul_score() ->void :
-	#on rempli le json qui a été crée dans la source du code
 	#on vérifie si tout d'abord nous avons écouter l'avis des résidents (40%)
 	#pour chaque résident satisfait on donne +1
+	var remarques : String = ""
 	var nbContent : int = 0
 	for perso : Personnage in Personnages.get_children() :
 		if perso.is_content() :
 			nbContent = nbContent + 1
-			
+	
+	if nbContent == 3 : 
+		remarques += "Et bien, tout les résidents ont été satisfait !\n"
+	elif nbContent == 2:
+		remarques += "On ne peut pas satisfaire tout le monde.\n"
+	elif nbContent == 1 : 
+		remarques += "Tu aurais pu faire mieux, j'ai eu deux plaintes.\n"
+	else : 
+		remarques += "Bon là... Tu fais aucun effort, tout le monde est de mauvaise humeur.\n"
+	
 	#Avec 3 résidents = 3 points max, on normalise
-	var scoreTotal : float = nbContent/3 * 4
+	var scoreTotal : float = 0
+	scoreTotal += nbContent/3.0 * 4.0
 	
 	#si l'objet a été réparé (15%)
 	var repare : bool = broken_object.est_repare()
 	if repare :
 		scoreTotal += 1.5
+		remarques += "C'est bien que tu aies pu réparer l'objet cassé, merci.\n"
+	else : 
+		remarques += "Ça aurait été bien de pouvoir réparer cet objet.\n"
 	
 	#vérifier si la bonne couleur de mur a été choisie (20%)
-	
+	var murs : Mur = menu.murs
+	if murs.bonne_couleur_choisie() :
+		scoreTotal += 2
+		remarques += "D'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\n"
+	else :
+		remarques += "Bon, au niveau de la couleur du mur tu aurais pu faire plus d'effort.\n"
+	print(murs.bonne_couleur_choisie())
 	
 	#pour le calcul de l'adaptation au saison (on récupère la saison du json)
 	var file = FileAccess.open(PATH, FileAccess.READ_WRITE)
@@ -121,16 +155,41 @@ func _calcul_score() ->void :
 			var saison : int = json[NOM_SALLE]["saison"]
 			if saison == 0 : #si été
 				#vérifier si le rideau est visible
-				var rideau = objects["rideaux"]
+				var rideau = objects["radiateur"]
 				if rideau.visible : 
 					scoreTotal += 2.5
+					remarques += "C'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\n"
+				else : 
+					remarques += "Durant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n"
 			elif saison == 1 : 
 				#vérifier si la lampe/lumière est visible
-				var lampe = objects["lampe"]
+				var lampe = objects["cd"]
 				if lampe.visible : 
 					scoreTotal += 2.5
+					remarques += "C'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n"
+				else : 
+					remarques += "Durant cette saison, il fait tout le temps nuit...On aurait aimé voir plus de lumière.\n"
+				
+			json["budget"] = budget
+			json[NOM_SALLE]["remarques"] = remarques
 			json[NOM_SALLE]["score"] = scoreTotal
-	pass
+			json["tour"] += 1
+		_change_json(json)
+		file.close()
+	else : 
+		print("Erreur sur la lecture du fichier json.")
+		push_error("JSON")
+
+func _change_json(json) :
+	var file_write := FileAccess.open(PATH, FileAccess.WRITE)
+	if file_write:
+		file_write.store_string(JSON.stringify(json, "\t", true))
+		file_write.close()
+	else:
+		push_error("Impossible d'écrire le fichier JSON.")
+
+func set_budget(_budget) :
+	budget = _budget
 
 func reconnect_menu_buttons():
 	var btnMag = $Menu/Panel/btn_Magasin
@@ -143,9 +202,15 @@ func reconnect_menu_buttons():
 		btnFin.connect("pressed", Callable(self, "_finaliser_pressed"))
 		
 func _on_button_acheter() :
+	for perso : Personnage in Personnages.get_children() :
+		perso.visible = true
+	objet_casse.visible = true
 	$Store._on_button_acheter_pressed()
 	
 func _on_btn_sortir() :
+	for perso : Personnage in Personnages.get_children() :
+		perso.visible = true
+	objet_casse.visible = true
 	$Store._on_btn_sortir_pressed()
 
 func _on_btn_reparer_pressed() -> void:
@@ -157,6 +222,7 @@ func _on_btn_reparer_pressed() -> void:
 	%AnimationRepare.play("reparer")
 	btn_reparer.visible = false
 	objet_casse.disabled = true
+	broken_object.set_repare()
 	objet_casse.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	budget-=cout
 	$Menu.change_budget(budget)

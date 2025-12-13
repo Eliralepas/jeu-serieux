@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=45 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/Mur_Bleu.png" id="2_68ymg"]
@@ -24,7 +24,6 @@
 [ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
 [ext_resource type="Texture2D" uid="uid://c6p4b7xpy4in2" path="res://assets/temp/broken_lamp.png" id="19_q213m"]
 [ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="20_cx3ow"]
-[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="21_gc0mp"]
 [ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="21_i3j5g"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="21_svf3d"]
 [ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="22_gc0mp"]
@@ -82,6 +81,21 @@ tile_size = Vector2i(70, 70)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ao46"]
 
+[sub_resource type="Animation" id="Animation_gc0mp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_q213m")]
+}
+
 [sub_resource type="Animation" id="Animation_i3j5g"]
 resource_name = "reparer"
 length = 2.0
@@ -97,21 +111,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("20_cx3ow"), ExtResource("21_i3j5g"), ExtResource("20_cx3ow"), ExtResource("22_gc0mp")]
-}
-
-[sub_resource type="Animation" id="Animation_gc0mp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../MarginContainer/TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("19_q213m")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gghgv"]
@@ -158,6 +157,13 @@ tile_set = SubResource("TileSet_ijx10")
 position = Vector2(34, 0)
 zoom = Vector2(0.78, 0.78)
 
+[node name="Menu" parent="." instance=ExtResource("10_svf3d")]
+offset_left = 361.0
+offset_top = -402.0
+offset_right = 361.0
+offset_bottom = -402.0
+script = ExtResource("18_ijx10")
+
 [node name="songs" type="Node" parent="."]
 
 [node name="porte" type="AudioStreamPlayer2D" parent="songs"]
@@ -177,7 +183,7 @@ autoplay = true
 script = ExtResource("15_wdoph")
 
 [node name="radiateur" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-537, -172)
+position = Vector2(-569, -172)
 texture = ExtResource("16_fc6x3")
 script = ExtResource("17_svf3d")
 
@@ -187,31 +193,27 @@ scale = Vector2(0.647108, 0.497292)
 texture = ExtResource("18_5lwxx")
 script = ExtResource("17_svf3d")
 
-[node name="Menu" parent="." instance=ExtResource("10_svf3d")]
-z_index = 1
-offset_left = 362.0
-offset_top = -416.0
-offset_right = 362.0
-offset_bottom = -416.0
-script = ExtResource("18_ijx10")
-
-[node name="MenuMurColor" parent="Menu/Panel" index="4"]
-mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("21_gc0mp")
-theme_override_font_sizes/font_size = 50
-
 [node name="Store" parent="." instance=ExtResource("12_irfwe")]
 visible = false
 z_index = 2
-position = Vector2(-590, -341)
+position = Vector2(-691, -415)
 
 [node name="Perso" type="Node2D" parent="."]
 
 [node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+position = Vector2(-220, 123)
+ListeObjets = NodePath("../../ListeObjets")
+
+[node name="Perso2" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+position = Vector2(128, -16)
+ListeObjets = NodePath("../../ListeObjets")
+
+[node name="Perso3" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+position = Vector2(-515, -197)
 ListeObjets = NodePath("../../ListeObjets")
 
 [node name="BrokenObject" type="Node2D" parent="."]
-position = Vector2(-436, -276)
+position = Vector2(-166, -261)
 script = ExtResource("23_cx3ow")
 
 [node name="ObjetCasse" type="Button" parent="BrokenObject"]
@@ -231,10 +233,10 @@ flat = true
 visible = false
 top_level = true
 layout_mode = 0
-offset_left = -427.0
-offset_top = -325.0
-offset_right = -240.0
-offset_bottom = -289.0
+offset_left = -154.0
+offset_top = -305.0
+offset_right = 33.0
+offset_bottom = -269.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 
@@ -259,5 +261,4 @@ libraries = {
 [connection signal="pressed" from="BrokenObject/ObjetCasse" to="BrokenObject" method="_on_objet_casse_pressed"]
 [connection signal="pressed" from="BrokenObject/ObjetCasse/BtnReparer" to="." method="_on_btn_reparer_pressed"]
 
-[editable path="Menu"]
 [editable path="Store"]
