@@ -2,9 +2,10 @@ extends Control
 
 class_name Menu
 
+@onready var murs: Mur = $"../Murs"
+
 	#quand le btn "magasin" est clickBaseSalle
 func _on_magasin_pressed(store: Node, porte: Node, magasinBackground: Node, talkingPeople: Node, mainBackground: Node) -> void: #lors du clique sur le btn magasin
-	print("7 elem menu")
 	porte.play() #bruitage
 	await get_tree().create_timer(1.20).timeout #petit time de pause
 		#gestions des sons
@@ -21,8 +22,9 @@ func change_budget(budget):
 
 	#quand le btn "finaliser" est click
 func _on_finaliser_pressed() -> void:
-	#on genereras un json
-	get_tree().change_scene_to_file("res://scenes/menu.tscn") #retour a la piece principale
+	get_tree().change_scene_to_file("res://scenes/hall.tscn") #retour à la piece principale
+
+
 
 #########LES FCT DU CHANGEMENT DE COULEUR DU MUR###################
 	#modification de la couleur des mur
@@ -48,35 +50,8 @@ func _on_mur_color_selected(id: int) -> void:
 	var num = id 
 	match num:
 		0:
-			bleu.visible=true
-			rouge.visible=false
-			vert.visible=false
+			murs.change_couleur(bleu)
 		1 :
-			bleu.visible=false
-			rouge.visible=true
-			vert.visible=false
+			murs.change_couleur(rouge)
 		2:
-			bleu.visible=false
-			rouge.visible=false
-			vert.visible=true
-
-
-
-func couleur_mur(num : int) -> void: 
-	var bleu=$Murs/MurBleu
-	var rouge=$Murs/MurRouge
-	var vert=$Murs/MurVert
-
-	match num:
-		0:
-			bleu.visible=true
-			rouge.visible=false
-			vert.visible=false
-		1 :
-			bleu.visible=false
-			rouge.visible=true
-			vert.visible=false
-		2:
-			bleu.visible=false
-			rouge.visible=false
-			vert.visible=true
+			murs.change_couleur(vert)

@@ -60,3 +60,12 @@ func visible_emotion(estcontent : bool) -> void:
 	else :
 		content.visible = false
 		pas_content.visible = true
+
+#retroune si le personnage est content ou non
+func is_content() -> bool : 
+	if content.visible && !pas_content.visible : 
+		return true
+		
+	if pas_content.visible && !content.visible: 
+		return false
+	return false

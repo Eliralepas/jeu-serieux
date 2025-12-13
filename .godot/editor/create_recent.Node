@@ -1,10 +1,20 @@
+<<<<<<< HEAD
 Sprite2D
+=======
+ItemList
+ColorPickerButton
+Control
+MarginContainer
+TextureRect
+AnimationPlayer
+>>>>>>> 74c8aa7a8ed35b8be885384dfe00b0c2ea19ec31
 Button
 CollisionShape2D
 Area2D
 AnimatedSprite2D
 Node2D
 Node
+<<<<<<< HEAD
 Control
 TextureRect
 CheckBox
@@ -12,3 +22,8 @@ Label
 CheckButton
 VBoxContainer
 GridContainer
+=======
+Sprite2D
+CheckBox
+Label
+>>>>>>> 74c8aa7a8ed35b8be885384dfe00b0c2ea19ec31

@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=55 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/Mur_Bleu.png" id="2_68ymg"]
+[ext_resource type="Script" uid="uid://86xs8jxdfdb4" path="res://scripts/murs.gd" id="2_gc0mp"]
 [ext_resource type="Texture2D" uid="uid://do5mew8c5n6q" path="res://assets/mur/Mur_Rouge.png" id="3_2u0g6"]
 [ext_resource type="Texture2D" uid="uid://cvgp3svwl2wo0" path="res://assets/mur/Mur_Vert.png" id="4_eoixc"]
 [ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="5_lguqs"]
@@ -15,25 +16,28 @@
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="14_6517k"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="15_ijx10"]
 [ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/liste_objets.gd" id="15_wdoph"]
+[ext_resource type="Texture2D" uid="uid://bb3iprkd4ystj" path="res://assets/meubles/radiateur.png" id="16_fc6x3"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="16_wdoph"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="17_fc6x3"]
 [ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/Communs/object.gd" id="17_svf3d"]
+[ext_resource type="Texture2D" uid="uid://dq6doymg436fx" path="res://assets/meubles/cd.png" id="18_5lwxx"]
 [ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/Communs/elemMenu.gd" id="18_ijx10"]
-[ext_resource type="Texture2D" uid="uid://gdhmctyinih" path="res://assets/meubles/miroir.png" id="19_gc0mp"]
-[ext_resource type="Texture2D" uid="uid://b0dxoihc3xbe6" path="res://assets/meubles/cadre.png" id="20_6pwr6"]
+[ext_resource type="Texture2D" uid="uid://dpmqku2qp157x" path="res://assets/meubles/tapis.png" id="19_2iwsk"]
+[ext_resource type="Texture2D" uid="uid://c6p4b7xpy4in2" path="res://assets/temp/broken_lamp.png" id="19_q213m"]
 [ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="20_cx3ow"]
-[ext_resource type="Texture2D" uid="uid://ds4tn47qtq5re" path="res://assets/meubles/baignoire.png" id="20_gghgv"]
-[ext_resource type="Texture2D" uid="uid://dpmqku2qp157x" path="res://assets/meubles/tapis.png" id="21_4ao46"]
 [ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="21_i3j5g"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="21_svf3d"]
-[ext_resource type="Texture2D" uid="uid://dbgia2fhr6o8l" path="res://assets/meubles/panierMetal.png" id="21_vaa7l"]
-[ext_resource type="Texture2D" uid="uid://np8prax2x8ux" path="res://assets/meubles/panierPlastique.png" id="22_82qhc"]
-[ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://assets/temp/sdb_washingMachineBroken.png" id="23_q213m"]
-[ext_resource type="Texture2D" uid="uid://b0h0tx7n5alhq" path="res://assets/meubles/etagere.png" id="23_ys6si"]
-[ext_resource type="Texture2D" uid="uid://dcrv1b3d43r4l" path="res://assets/meubles/douche.png" id="24_2iwsk"]
-[ext_resource type="Texture2D" uid="uid://dwexpua6rwbib" path="res://assets/meubles/toilettes.png" id="25_txmx5"]
-[ext_resource type="Texture2D" uid="uid://cwaed2qcy08uy" path="res://assets/temp/sdb_washingMachine.png" id="26_cx3ow"]
-[ext_resource type="Texture2D" uid="uid://djx2y11xlkht2" path="res://assets/meubles/poubelle.png" id="26_n8xyk"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="22_gc0mp"]
+[ext_resource type="Script" uid="uid://bgujil4oqkot6" path="res://scripts/broken_object.gd" id="23_cx3ow"]
+[ext_resource type="Texture2D" uid="uid://ds4tn47qtq5re" path="res://assets/meubles/baignoire.png" id="23_txmx5"]
+[ext_resource type="Texture2D" uid="uid://b0dxoihc3xbe6" path="res://assets/meubles/cadre.png" id="24_n8xyk"]
+[ext_resource type="Texture2D" uid="uid://dcrv1b3d43r4l" path="res://assets/meubles/douche.png" id="25_i5j5n"]
+[ext_resource type="Texture2D" uid="uid://b0h0tx7n5alhq" path="res://assets/meubles/etagere.png" id="26_s4r7p"]
+[ext_resource type="Texture2D" uid="uid://gdhmctyinih" path="res://assets/meubles/miroir.png" id="27_8h763"]
+[ext_resource type="Texture2D" uid="uid://dbgia2fhr6o8l" path="res://assets/meubles/panierMetal.png" id="28_bjw8p"]
+[ext_resource type="Texture2D" uid="uid://np8prax2x8ux" path="res://assets/meubles/panierPlastique.png" id="29_7203c"]
+[ext_resource type="Texture2D" uid="uid://djx2y11xlkht2" path="res://assets/meubles/poubelle.png" id="30_w2gwh"]
+[ext_resource type="Texture2D" uid="uid://dwexpua6rwbib" path="res://assets/meubles/toilettes.png" id="31_bi8xp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("5_lguqs")
@@ -77,39 +81,60 @@ sources/0 = SubResource("TileSetAtlasSource_ip76g")
 [sub_resource type="TileSet" id="TileSet_ijx10"]
 tile_size = Vector2i(70, 70)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gghgv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_q213m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_cx3ow")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_i3j5g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_cx3ow")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_i3j5g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_cx3ow")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ao46"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q213m"]
-size = Vector2(14.1771, 12.7093)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gghgv"]
 
-[node name="baseSalle" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc0mp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3j5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cx3ow"]
+
+[sub_resource type="Animation" id="Animation_gc0mp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_q213m")]
+}
+
+[sub_resource type="Animation" id="Animation_i3j5g"]
+resource_name = "reparer"
+length = 2.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_cx3ow"), ExtResource("21_i3j5g"), ExtResource("20_cx3ow"), ExtResource("22_gc0mp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gghgv"]
+_data = {
+&"RESET": SubResource("Animation_gc0mp"),
+&"reparer": SubResource("Animation_i3j5g")
+}
+
+[node name="baseSalle" type="Node2D" node_paths=PackedStringArray("Personnages")]
 script = ExtResource("1_6517k")
+Personnages = NodePath("Perso")
 
 [node name="Murs" type="Node2D" parent="."]
+script = ExtResource("2_gc0mp")
 
 [node name="MurBleu" type="Sprite2D" parent="Murs"]
 visible = false
@@ -142,6 +167,13 @@ tile_set = SubResource("TileSet_ijx10")
 position = Vector2(34, 0)
 zoom = Vector2(0.78, 0.78)
 
+[node name="Menu" parent="." instance=ExtResource("10_svf3d")]
+offset_left = 361.0
+offset_top = -402.0
+offset_right = 361.0
+offset_bottom = -402.0
+script = ExtResource("18_ijx10")
+
 [node name="songs" type="Node" parent="."]
 
 [node name="porte" type="AudioStreamPlayer2D" parent="songs"]
@@ -160,109 +192,143 @@ autoplay = true
 [node name="ListeObjets" type="Node2D" parent="."]
 script = ExtResource("15_wdoph")
 
-[node name="miroir" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-61, -317)
-scale = Vector2(5.2094, 4.42062)
-texture = ExtResource("19_gc0mp")
+[node name="tapis" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-155, 124)
+scale = Vector2(34.1267, 27.8308)
+texture = ExtResource("19_2iwsk")
+script = ExtResource("17_svf3d")
+
+[node name="radiateur" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-569, -172)
+texture = ExtResource("16_fc6x3")
+script = ExtResource("17_svf3d")
+
+[node name="cd" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-549, 181)
+scale = Vector2(0.647108, 0.497292)
+texture = ExtResource("18_5lwxx")
 script = ExtResource("17_svf3d")
 
 [node name="baignoire" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-561, 160)
-scale = Vector2(4.49597, 3.82642)
-texture = ExtResource("20_gghgv")
-script = ExtResource("17_svf3d")
-
-[node name="tapis" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-146, 108)
-scale = Vector2(19.548, 22.409)
-texture = ExtResource("21_4ao46")
+position = Vector2(260, -30)
+scale = Vector2(3.1339, 3.02642)
+texture = ExtResource("23_txmx5")
 script = ExtResource("17_svf3d")
 
 [node name="cadre" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-440, -338)
-scale = Vector2(6.08827, 5.56443)
-texture = ExtResource("20_6pwr6")
-script = ExtResource("17_svf3d")
-
-[node name="panierMetal" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-452, -157)
-scale = Vector2(3.14709, 2.87365)
-texture = ExtResource("21_vaa7l")
-script = ExtResource("17_svf3d")
-
-[node name="panierPlastique" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-211, -157)
-scale = Vector2(3.27844, 3.16844)
-texture = ExtResource("22_82qhc")
-script = ExtResource("17_svf3d")
-
-[node name="etagere" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(139, -316)
-scale = Vector2(7.32356, 5.91531)
-texture = ExtResource("23_ys6si")
+position = Vector2(-562, -303)
+scale = Vector2(7.36611, 7.24864)
+texture = ExtResource("24_n8xyk")
 script = ExtResource("17_svf3d")
 
 [node name="douche" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(269, -238)
-scale = Vector2(4.91178, 5.24696)
-texture = ExtResource("24_2iwsk")
+position = Vector2(-100, 211)
+scale = Vector2(6.06268, 5.73921)
+texture = ExtResource("25_i5j5n")
 script = ExtResource("17_svf3d")
 
-[node name="toilettes" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-601, -166)
-scale = Vector2(7.35743, 6.68682)
-texture = ExtResource("25_txmx5")
+[node name="etagere" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(-46.0001, -304)
+scale = Vector2(7.08281, 6.38501)
+texture = ExtResource("26_s4r7p")
+script = ExtResource("17_svf3d")
+
+[node name="miroir" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(116, -306)
+scale = Vector2(6.14708, 5.26788)
+texture = ExtResource("27_8h763")
+script = ExtResource("17_svf3d")
+
+[node name="panierMetal" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(178, 294)
+scale = Vector2(4.13711, 3.37908)
+texture = ExtResource("28_bjw8p")
+script = ExtResource("17_svf3d")
+
+[node name="panierPlastique" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(70, 224)
+scale = Vector2(3.7807, 3.59647)
+texture = ExtResource("29_7203c")
 script = ExtResource("17_svf3d")
 
 [node name="poubelle" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(294, 309)
-scale = Vector2(3.32845, 4.17751)
-texture = ExtResource("26_n8xyk")
+position = Vector2(-245, -132)
+scale = Vector2(3.00793, 3.85289)
+texture = ExtResource("30_w2gwh")
 script = ExtResource("17_svf3d")
 
-[node name="Menu" parent="." instance=ExtResource("10_svf3d")]
-z_index = 1
-offset_left = 362.0
-offset_top = -416.0
-offset_right = 362.0
-offset_bottom = -416.0
-script = ExtResource("18_ijx10")
+[node name="toilettes" type="Sprite2D" parent="ListeObjets"]
+position = Vector2(285, 254)
+scale = Vector2(5.10133, 4.54865)
+texture = ExtResource("31_bi8xp")
+script = ExtResource("17_svf3d")
 
 [node name="Store" parent="." instance=ExtResource("12_irfwe")]
 visible = false
 z_index = 2
-position = Vector2(-590, -341)
+position = Vector2(-691, -415)
 
 [node name="Perso" type="Node2D" parent="."]
 
 [node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+position = Vector2(-220, 123)
+ListeObjets = NodePath("../../ListeObjets")
+
+[node name="Perso2" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+position = Vector2(128, -16)
+ListeObjets = NodePath("../../ListeObjets")
+
+[node name="Perso3" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("21_svf3d")]
+position = Vector2(-426, -149)
 ListeObjets = NodePath("../../ListeObjets")
 
 [node name="BrokenObject" type="Node2D" parent="."]
+position = Vector2(-166, -261)
+script = ExtResource("23_cx3ow")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BrokenObject"]
-position = Vector2(-329, -184)
-scale = Vector2(2.86634, 2.73255)
-sprite_frames = SubResource("SpriteFrames_gghgv")
+[node name="ObjetCasse" type="Button" parent="BrokenObject"]
+z_index = 1
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ao46")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gghgv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gc0mp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i3j5g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cx3ow")
+flat = true
 
-[node name="espaceBorken" type="Area2D" parent="BrokenObject"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenObject/espaceBorken"]
-position = Vector2(-331, -182.75)
-scale = Vector2(8.74647, 12.3139)
-shape = SubResource("RectangleShape2D_q213m")
-
-[node name="BtnReparer" type="Button" parent="BrokenObject"]
+[node name="BtnReparer" type="Button" parent="BrokenObject/ObjetCasse"]
 visible = false
-offset_left = -234.0
-offset_top = -263.0
-offset_right = -83.0
-offset_bottom = -232.0
+top_level = true
+layout_mode = 0
+offset_left = -154.0
+offset_top = -305.0
+offset_right = 33.0
+offset_bottom = -269.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
-text = "Reparer pour : 30$"
 
-[connection signal="input_event" from="BrokenObject/espaceBorken" to="." method="_on_espace_borken_input_event"]
-[connection signal="pressed" from="BrokenObject/BtnReparer" to="." method="_on_btn_reparer_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="BrokenObject"]
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
 
-[editable path="Menu"]
+[node name="TextureRect" type="TextureRect" parent="BrokenObject/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("19_q213m")
+stretch_mode = 5
+
+[node name="AnimationRepare" type="AnimationPlayer" parent="BrokenObject/MarginContainer/TextureRect"]
+unique_name_in_owner = true
+root_node = NodePath("../../../ObjetCasse")
+libraries = {
+&"": SubResource("AnimationLibrary_gghgv")
+}
+
+[connection signal="pressed" from="BrokenObject/ObjetCasse" to="BrokenObject" method="_on_objet_casse_pressed"]
+[connection signal="pressed" from="BrokenObject/ObjetCasse/BtnReparer" to="." method="_on_btn_reparer_pressed"]
+
 [editable path="Store"]

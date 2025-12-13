@@ -9,7 +9,7 @@ extends checkBTN
 
 @onready var caisse:= $Songs/purchase 
 
-@onready var budget =500
+@onready var budget
 
 @onready var test=get_parent().get_node("Menu/Panel/VBoxContainer")
 
@@ -31,11 +31,11 @@ var objets = [
 	["tapis", 30],
 	["cadre",25],
 	["panierMetal",20],
-	["panierPlastique",15],
 	["etagere",30],
 	["douche",150],
 	["toilettes",80],
 	["poubelle",40],
+	["panierPlastique",15],
 	]
 
 
@@ -50,7 +50,7 @@ func _ready():
 	await get_tree().process_frame #temps pour que le parent fasse son ready
 	stuff = get_parent().get_objects()  # récupère ici
 	parle.text = dialogues[index]
-	area.input_event.connect(_on_area_input_event)
+	#area.input_event.connect(_on_area_input_event)
 	remplir_magasin()
 	
 	# connecte les boutons du store
@@ -94,21 +94,16 @@ func remplir_magasin() -> void:
 		#Ajout le nom de l'objet
 		var objet_check = cadre.getCheckButton()
 		objet_check.text = obj[0]
+		objet_check.disabled = false
 		
 		#Ajout du label prix
 		var objet_prix = cadre.getLabel()
-		objet_prix.text = str(obj[1]) + " €"
+		objet_prix.text = str(obj[1]) + " $"
 		
 		#on connecte chaque checkbox a la fct _check_a_checkbox lorsque elle est "toggled" (cochee)
 		objet_check.connect("toggled", Callable(self, "_check_a_checkbox").bind(objet_check))
 		
-		# Enfin, ajoute dans le HFlowContainer
-		h_flow_container.add_theme_constant_override("h_separation", 20)
-		h_flow_container.add_theme_constant_override("v_separation", 95)
-		
-		cadre.custom_minimum_size = Vector2(200, 120) 
 
-		
 		h_flow_container.add_child(cadre)
 
 	#LA FCT QUI GERE LE MAX: 4 CHECKBOX CHOISIES		
@@ -126,35 +121,6 @@ func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void
 
 
 #############################################################################
-
-#EVOLUTION DES DIALOGUES
-func _on_area_input_event(viewport, event, shape_idx)->void:
-	if event is InputEventMouseButton and event.pressed: #si l'evenemt est un clique
-		index += 1 #l'indice augmente de 1
-
-		#phrase secrete
-		if index == 10:
-			parle.text = "T'as fini ?!"
-			return
-		
-		if index == 20:
-			parle.text = "Juste vas t'en..."
-			return
-		
-		if index == 30:
-			parle.text = "DEGAGEEEEEE !"
-			parle.add_theme_font_size_override("font_size", 60)
-			return
-		# Plus de 3 clics → reste sur la dernière phrase
-		if index > 2:
-			parle.text = dialogues[2]
-			parle.add_theme_font_size_override("font_size", 30)
-		#comportement normal
-		else:
-			parle.text = dialogues[index]
-
-
-
 
 func _on_btn_sortir_pressed() -> void:
 	decoche_tout()
@@ -194,6 +160,7 @@ func _on_button_acheter_pressed() -> void:
 			get_parent().add_check_button(stock, stuff, test)
 			get_parent().reconnect_menu_buttons()
 			get_parent().connect_the_check_boxs(stuff)
+			get_parent().set_budget(budget)
 
 		print("Budget ligne 200:", budget)
 
@@ -206,6 +173,7 @@ func decoche_tout() -> void:
 	for obj in objets: #parcours de la liste d'objets
 		var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
 		var check = gr.getCheckButton() #dans chaque grille on recup juste la checkbox
+		check.disabled = false 
 		if check.button_pressed: #si la checkbox est click on incremente checked_count
 			check.button_pressed=false
 
@@ -226,3 +194,31 @@ func magasin_non_visible() -> void:
 	mainbackground.play()
 	
 	get_parent().get_node("Menu").change_budget(budget);
+
+
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed: #si l'evenemt est un clique
+		index += 1 #l'indice augmente de 1
+
+		#phrase secrete
+		if index == 10:
+			parle.text = "T'as fini ?!"
+			return
+		
+		if index == 20:
+			parle.text = "Juste vas t'en..."
+			return
+		
+		if index == 30:
+			parle.text = "DEGAGEEEEEE !"
+			parle.add_theme_font_size_override("font_size", 60)
+			return
+		
+		# Plus de 3 clics → reste sur la dernière phrase
+		if index > 2:
+			parle.text = dialogues[2]
+			parle.add_theme_font_size_override("font_size", 30)
+		#comportement normal
+		else:
+			parle.text = dialogues[index]
+	pass # Replace with function body.
