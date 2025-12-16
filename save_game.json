@@ -1,10 +1,10 @@
 {
-	"budget": 110,
+	"budget": 500000,
 	"cuisine": {
 		"nom": "cuisine",
-		"remarques": "Tu aurais pu faire mieux, j'ai eu deux plaintes.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nDurant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n",
+		"remarques": "Et bien, tout les résidents ont été satisfait !\nÇa aurait été bien de pouvoir réparer cet objet.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nDurant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n",
 		"saison": 0.0,
-		"score": 4.83333333333333
+		"score": 6.0
 	},
 	"dortoir": {
 		"nom": "dortoir",
@@ -14,9 +14,9 @@
 	},
 	"salle_de_bain": {
 		"nom": "salle_de_bain",
-		"remarques": "",
-		"saison": 0.0,
-		"score": 0.0
+		"remarques": "On ne peut pas satisfaire tout le monde.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nDurant cette saison, il fait tout le temps nuit...On aurait aimé voir plus de lumière.\n",
+		"saison": 1.0,
+		"score": 6.16666666666667
 	},
 	"salon": {
 		"nom": "salon",
@@ -24,5 +24,5 @@
 		"saison": 1.0,
 		"score": 0.0
 	},
-	"tour": 25.0
+	"tour": 28.0
 }

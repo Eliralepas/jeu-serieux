@@ -35,6 +35,7 @@ var objets = [
 	["douche",150],
 	["toilettes",80],
 	["poubelle",40],
+	["lavabo", 70],
 	["panierPlastique",15],
 	]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwaed2qcy08uy"
-path="res://.godot/imported/sdb_washingMachine.png-15af271eb3fa438407427d941c98f6af.ctex"
+uid="uid://byfq5joavh7oe"
+path="res://.godot/imported/lavabo.png-7d70b9e63ffb303191802d899849be19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/sdb_washingMachine.png"
-dest_files=["res://.godot/imported/sdb_washingMachine.png-15af271eb3fa438407427d941c98f6af.ctex"]
+source_file="res://assets/meubles/lavabo.png"
+dest_files=["res://.godot/imported/lavabo.png-7d70b9e63ffb303191802d899849be19.ctex"]
 
 [params]
 
