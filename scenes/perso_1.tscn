@@ -21,15 +21,15 @@ animations = [{
 "speed": 0.7
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8c8k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qkav"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmft8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85450"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e84ud"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85450"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmft8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qkav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8c8k"]
 
 [node name="Perso" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_36lil")
@@ -69,11 +69,11 @@ offset_top = -238.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_n8c8k")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_6qkav")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qmft8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_e84ud")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_85450")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e84ud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qmft8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6qkav")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n8c8k")
 
 [node name="Emotion" type="Node2D" parent="."]
 

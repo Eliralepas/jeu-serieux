@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ivajs6wnqluj"
-path="res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"
+uid="uid://boxohe6g2bv3l"
+path="res://.godot/imported/Pouf.png-5e841c0cc31e6f80cab3a64031504729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/cd.png"
-dest_files=["res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"]
+source_file="res://assets/meubles/Pouf.png"
+dest_files=["res://.godot/imported/Pouf.png-5e841c0cc31e6f80cab3a64031504729.ctex"]
 
 [params]
 

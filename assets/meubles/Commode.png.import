@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ivajs6wnqluj"
-path="res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"
+uid="uid://cnumepxp7jbm4"
+path="res://.godot/imported/Commode.png-902793af87dfa1fbc2f85ecbb4218a0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/cd.png"
-dest_files=["res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"]
+source_file="res://assets/meubles/Commode.png"
+dest_files=["res://.godot/imported/Commode.png-902793af87dfa1fbc2f85ecbb4218a0c.ctex"]
 
 [params]
 

@@ -1,3 +1,4 @@
+Node2D
 ItemList
 ColorPickerButton
 Control
@@ -8,8 +9,6 @@ Button
 CollisionShape2D
 Area2D
 AnimatedSprite2D
-Node2D
 Node
 Sprite2D
 CheckBox
-Label

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ivajs6wnqluj"
-path="res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"
+uid="uid://bs02k808qhxb7"
+path="res://.godot/imported/Armoire.png-8fbf34ea498dd77bdbf34263f18d2d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/cd.png"
-dest_files=["res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"]
+source_file="res://assets/meubles/Armoire.png"
+dest_files=["res://.godot/imported/Armoire.png-8fbf34ea498dd77bdbf34263f18d2d16.ctex"]
 
 [params]
 

@@ -24,10 +24,14 @@ const NOM_SALLE : String = "cuisine"
 @onready var conteneur=$Menu/Panel/VBoxContainer
 @onready var objects := { #tous les elements possible dans la piece(donc achetable depuis le magasin)
 	#"nom": $cheminImage,
-	"radiateur": $ListeObjets/radiateur,
-	"cd":$ListeObjets/cd
-	#"rideaux": $ListeObjets/rideaux
-	#"lampe": $ListeObjets/lampe
+	"Cadres": $ListeObjets/Cadres,
+	"Armoire":$ListeObjets/Armoire,
+	"Lampe":$ListeObjets/Lampe,
+	"Plante1":$ListeObjets/Plante1,
+	"Plante2":$ListeObjets/Plante2,
+	"Pouf":$ListeObjets/Pouf,
+	"Commode":$ListeObjets/Commode,
+
 }
 
 @export var Personnages : Node2D
@@ -55,6 +59,9 @@ func setup() -> void:
 	connect_the_check_boxs(objects) #on lui donne tous les objets possible, elle gere pour trier
 	for obj : Object_piece in objects.values():
 		obj.set_visibility(false)
+		
+
+		
 	$Menu._on_menu_mur_color_pressed()
 	
 	var file = FileAccess.open(PATH, FileAccess.READ)

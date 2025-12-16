@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ivajs6wnqluj"
-path="res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"
+uid="uid://c86clplre5jv6"
+path="res://.godot/imported/petit_tapis.png-71adb14f4c8466bff53e7ed6235034e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/cd.png"
-dest_files=["res://.godot/imported/cd.png-c4c3c7f3e651f32ce5198ecc241a2d21.ctex"]
+source_file="res://assets/meubles/petit_tapis.png"
+dest_files=["res://.godot/imported/petit_tapis.png-71adb14f4c8466bff53e7ed6235034e5.ctex"]
 
 [params]
 

@@ -26,10 +26,14 @@ var dialogues = [
 		#tab de listes["nom", prix]
 		#! chaque piece a des objets differents
 var objets = [
-	["radiateur",20],
-	["cd",120]
+	["Cadres",20],
+	["Armoire",120],
+	["Lampe",32],
+	["Plante1",14],
+	["Plante2",17],
+	["Pouf",55],
+	["Commode",67]
 	]
-
 
 var index = 0 #pour avoir le nb de clicks sur le dialogue
 var nb_objet=0 #pour compter les objets deja achetes
