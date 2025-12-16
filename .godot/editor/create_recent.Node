@@ -1,0 +1,15 @@
+Node2D
+Sprite2D
+AudioStreamPlayer2D
+Control
+TextureRect
+TextureButton
+AnimationPlayer
+Button
+AnimatedSprite2D
+AnimationTree
+Timer
+RichTextLabel
+VBoxContainer
+HBoxContainer
+Panel
