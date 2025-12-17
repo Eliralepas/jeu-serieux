@@ -7,7 +7,7 @@ class_name BasePiece
 
 # pour la gestion du JSON (adaptez les chemins si besoin)
 const PATH : String = "res://save_game.json"
-const NOM_SALLE : String = "cuisine"
+const NOM_SALLE : String = "dortoir"
 
 @onready var porte= $songs/porte
 @onready var magasinBackground = $songs/magasinBackground
