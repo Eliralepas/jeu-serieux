@@ -1,15 +1,29 @@
-Node2D
+<<<<<<< HEAD
 Sprite2D
-AudioStreamPlayer2D
+=======
+ItemList
+ColorPickerButton
+Control
+MarginContainer
+TextureRect
+AnimationPlayer
+>>>>>>> 74c8aa7a8ed35b8be885384dfe00b0c2ea19ec31
+Button
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+Node2D
+Node
+<<<<<<< HEAD
 Control
 TextureRect
-TextureButton
-AnimationPlayer
-Button
-AnimatedSprite2D
-AnimationTree
-Timer
-RichTextLabel
+CheckBox
+Label
+CheckButton
 VBoxContainer
-HBoxContainer
-Panel
+GridContainer
+=======
+Sprite2D
+CheckBox
+Label
+>>>>>>> 74c8aa7a8ed35b8be885384dfe00b0c2ea19ec31

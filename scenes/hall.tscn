@@ -1,0 +1,208 @@
+[gd_scene load_steps=31 format=4 uid="uid://bufnswpw7si0k"]
+
+[ext_resource type="Script" uid="uid://yi07w7s28uxv" path="res://scripts/hall/hall.gd" id="1_j2h53"]
+[ext_resource type="Texture2D" uid="uid://byyhqj5wg0v32" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart(1).png" id="2_2x4b0"]
+[ext_resource type="Texture2D" uid="uid://dcnc8afoepltd" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart.png" id="3_jwltb"]
+[ext_resource type="Texture2D" uid="uid://cb3jebrkdsnrm" path="res://assets/sol/parquet-beige-gauche-pixilart(1).png" id="4_smtjo"]
+[ext_resource type="Texture2D" uid="uid://d2imuyjjbetm4" path="res://assets/sol/parquet-beige-pixilart(2).png" id="5_du0u5"]
+[ext_resource type="Texture2D" uid="uid://8r2s6ux2vqan" path="res://assets/sol/parquet-beige-pixilart.png" id="6_fgyqt"]
+[ext_resource type="Texture2D" uid="uid://7t84mnlw0wx3" path="res://assets/sol/pixilart-drawing(3).png" id="7_66g17"]
+[ext_resource type="Texture2D" uid="uid://chrxqiq0wlaij" path="res://assets/hall/tapis.png" id="8_rfgeu"]
+[ext_resource type="Texture2D" uid="uid://cbkl6i45oqjoy" path="res://assets/hall/plante.png" id="9_7j1nj"]
+[ext_resource type="Texture2D" uid="uid://6hxqv8r7x42k" path="res://assets/hall/tapis_milieu.png" id="10_f7yir"]
+[ext_resource type="PackedScene" uid="uid://cvgjt62768mco" path="res://scenes/hall/character_Z.tscn" id="11_fwq77"]
+[ext_resource type="Script" uid="uid://cs538u2iyc67d" path="res://scripts/hall/character_z.gd" id="12_6k7pj"]
+[ext_resource type="Script" uid="uid://dfyg5xs56tvaf" path="res://scripts/hall/choix_salle.gd" id="13_sho3r"]
+[ext_resource type="PackedScene" uid="uid://cp0558s7bpusi" path="res://scenes/hall/room_button.tscn" id="14_3g02j"]
+[ext_resource type="Texture2D" uid="uid://bpirad5mu7r4b" path="res://assets/autres/salon.png" id="15_avoui"]
+[ext_resource type="Texture2D" uid="uid://dvlfwlr8jvyvr" path="res://assets/autres/cuisine.png" id="16_o13hs"]
+[ext_resource type="Texture2D" uid="uid://b527rikoxwpl" path="res://assets/autres/salle_de_bain.png" id="17_xabks"]
+[ext_resource type="Texture2D" uid="uid://dbt3ybh1n4pbt" path="res://assets/autres/dortoir.png" id="18_pk1sp"]
+[ext_resource type="PackedScene" uid="uid://dk70484371esh" path="res://scenes/hall/dialog.tscn" id="19_s8cf7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k255s"]
+texture = ExtResource("2_2x4b0")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmtlf"]
+texture = ExtResource("3_jwltb")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bg1kf"]
+texture = ExtResource("4_smtjo")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qdmq"]
+texture = ExtResource("5_du0u5")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vahjv"]
+texture = ExtResource("6_fgyqt")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3ek7"]
+texture = ExtResource("7_66g17")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w5vlo"]
+tile_size = Vector2i(70, 70)
+sources/0 = SubResource("TileSetAtlasSource_k255s")
+sources/1 = SubResource("TileSetAtlasSource_vmtlf")
+sources/2 = SubResource("TileSetAtlasSource_bg1kf")
+sources/3 = SubResource("TileSetAtlasSource_0qdmq")
+sources/4 = SubResource("TileSetAtlasSource_vahjv")
+sources/5 = SubResource("TileSetAtlasSource_k3ek7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sioib"]
+texture = ExtResource("8_rfgeu")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mppjq"]
+texture = ExtResource("9_7j1nj")
+texture_region_size = Vector2i(100, 70)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygfmt"]
+texture = ExtResource("10_f7yir")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_q1r7w"]
+tile_size = Vector2i(70, 70)
+sources/3 = SubResource("TileSetAtlasSource_sioib")
+sources/4 = SubResource("TileSetAtlasSource_mppjq")
+sources/5 = SubResource("TileSetAtlasSource_ygfmt")
+
+[node name="hall" type="Node2D"]
+script = ExtResource("1_j2h53")
+
+[node name="camera2D" type="Camera2D" parent="."]
+position = Vector2(-35, -4)
+zoom = Vector2(0.78, 0.78)
+
+[node name="sol" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD1//r/AQAAAAAAAAD1//v/AgAAAAAAAAD1//z/AgAAAAAAAAD1//3/AgAAAAAAAAD1//7/AgAAAAAAAAD1////AgAAAAAAAAD1/wAAAgAAAAAAAAD1/wEAAgAAAAAAAAD1/wIAAgAAAAAAAAD1/wMAAgAAAAAAAAD1/wQAAgAAAAAAAAD1/wUAAgAAAAAAAAD2//r/BAAAAAAAAAD2//v/BQAAAAAAAAD2//z/BQAAAAAAAAD2//3/BQAAAAAAAAD2//7/BQAAAAAAAAD2////BQAAAAAAAAD2/wAABQAAAAAAAAD2/wEABQAAAAAAAAD2/wIABQAAAAAAAAD2/wMABQAAAAAAAAD2/wQABQAAAAAAAAD2/wUABQAAAAAAAAD3//r/BAAAAAAAAAD3//v/BQAAAAAAAAD3//z/BQAAAAAAAAD3//3/BQAAAAAAAAD3//7/BQAAAAAAAAD3////BQAAAAAAAAD3/wAABQAAAAAAAAD3/wEABQAAAAAAAAD3/wIABQAAAAAAAAD3/wMABQAAAAAAAAD3/wQABQAAAAAAAAD3/wUABQAAAAAAAAD4//r/BAAAAAAAAAD4//v/BQAAAAAAAAD4//z/BQAAAAAAAAD4//3/BQAAAAAAAAD4//7/BQAAAAAAAAD4////BQAAAAAAAAD4/wAABQAAAAAAAAD4/wEABQAAAAAAAAD4/wIABQAAAAAAAAD4/wMABQAAAAAAAAD4/wQABQAAAAAAAAD4/wUABQAAAAAAAAD5//r/BAAAAAAAAAD5//v/BQAAAAAAAAD5//z/BQAAAAAAAAD5//3/BQAAAAAAAAD5//7/BQAAAAAAAAD5////BQAAAAAAAAD5/wAABQAAAAAAAAD5/wEABQAAAAAAAAD5/wIABQAAAAAAAAD5/wMABQAAAAAAAAD5/wQABQAAAAAAAAD5/wUABQAAAAAAAAD6//r/BAAAAAAAAAD6//v/BQAAAAAAAAD6//z/BQAAAAAAAAD6//3/BQAAAAAAAAD6//7/BQAAAAAAAAD6////BQAAAAAAAAD6/wAABQAAAAAAAAD6/wEABQAAAAAAAAD6/wIABQAAAAAAAAD6/wMABQAAAAAAAAD6/wQABQAAAAAAAAD6/wUABQAAAAAAAAD7//r/BAAAAAAAAAD7//v/BQAAAAAAAAD7//z/BQAAAAAAAAD7//3/BQAAAAAAAAD7//7/BQAAAAAAAAD7////BQAAAAAAAAD7/wAABQAAAAAAAAD7/wEABQAAAAAAAAD7/wIABQAAAAAAAAD7/wMABQAAAAAAAAD7/wQABQAAAAAAAAD7/wUABQAAAAAAAAD8//r/BAAAAAAAAAD8//v/BQAAAAAAAAD8//z/BQAAAAAAAAD8//3/BQAAAAAAAAD8//7/BQAAAAAAAAD8////BQAAAAAAAAD8/wAABQAAAAAAAAD8/wEABQAAAAAAAAD8/wIABQAAAAAAAAD8/wMABQAAAAAAAAD8/wQABQAAAAAAAAD8/wUABQAAAAAAAAD9//r/BAAAAAAAAAD9//v/BQAAAAAAAAD9//z/BQAAAAAAAAD9//3/BQAAAAAAAAD9//7/BQAAAAAAAAD9////BQAAAAAAAAD9/wAABQAAAAAAAAD9/wEABQAAAAAAAAD9/wIABQAAAAAAAAD9/wMABQAAAAAAAAD9/wQABQAAAAAAAAD9/wUABQAAAAAAAAD+//r/BAAAAAAAAAD+//v/BQAAAAAAAAD+//z/BQAAAAAAAAD+//3/BQAAAAAAAAD+//7/BQAAAAAAAAD+////BQAAAAAAAAD+/wAABQAAAAAAAAD+/wEABQAAAAAAAAD+/wIABQAAAAAAAAD+/wMABQAAAAAAAAD+/wQABQAAAAAAAAD+/wUABQAAAAAAAAD///r/BAAAAAAAAAD///v/BQAAAAAAAAD///z/BQAAAAAAAAD///3/BQAAAAAAAAD///7/BQAAAAAAAAD//wEABQAAAAAAAAD//wIABQAAAAAAAAD//wMABQAAAAAAAAD//wQABQAAAAAAAAD//wUABQAAAAAAAAAAAPr/BAAAAAAAAAAAAPv/BQAAAAAAAAAAAPz/BQAAAAAAAAAAAP3/BQAAAAAAAAAAAP7/BQAAAAAAAAAAAAEABQAAAAAAAAAAAAIABQAAAAAAAAAAAAMABQAAAAAAAAAAAAQABQAAAAAAAAAAAAUABQAAAAAAAAABAPr/BAAAAAAAAAABAPv/BQAAAAAAAAABAPz/BQAAAAAAAAABAP3/BQAAAAAAAAABAP7/BQAAAAAAAAABAP//BQAAAAAAAAABAAAABQAAAAAAAAABAAEABQAAAAAAAAABAAIABQAAAAAAAAABAAMABQAAAAAAAAABAAQABQAAAAAAAAABAAUABQAAAAAAAAACAPr/BAAAAAAAAAACAPv/BQAAAAAAAAACAPz/BQAAAAAAAAACAP3/BQAAAAAAAAACAP7/BQAAAAAAAAACAP//BQAAAAAAAAACAAAABQAAAAAAAAACAAEABQAAAAAAAAACAAIABQAAAAAAAAACAAMABQAAAAAAAAACAAQABQAAAAAAAAACAAUABQAAAAAAAAADAPr/BAAAAAAAAAADAPv/BQAAAAAAAAADAPz/BQAAAAAAAAADAP3/BQAAAAAAAAADAP7/BQAAAAAAAAADAP//BQAAAAAAAAADAAAABQAAAAAAAAADAAEABQAAAAAAAAADAAIABQAAAAAAAAADAAMABQAAAAAAAAADAAQABQAAAAAAAAADAAUABQAAAAAAAAAEAPr/BAAAAAAAAAAEAPv/BQAAAAAAAAAEAPz/BQAAAAAAAAAEAP3/BQAAAAAAAAAEAP7/BQAAAAAAAAAEAP//BQAAAAAAAAAEAAAABQAAAAAAAAAEAAEABQAAAAAAAAAEAAIABQAAAAAAAAAEAAMABQAAAAAAAAAEAAQABQAAAAAAAAAEAAUABQAAAAAAAAAFAPr/BAAAAAAAAAAFAPv/BQAAAAAAAAAFAPz/BQAAAAAAAAAFAP3/BQAAAAAAAAAFAP7/BQAAAAAAAAAFAP//BQAAAAAAAAAFAAAABQAAAAAAAAAFAAEABQAAAAAAAAAFAAIABQAAAAAAAAAFAAMABQAAAAAAAAAFAAQABQAAAAAAAAAFAAUABQAAAAAAAAAGAPr/BAAAAAAAAAAGAPv/BQAAAAAAAAAGAPz/BQAAAAAAAAAGAP3/BQAAAAAAAAAGAP7/BQAAAAAAAAAGAP//BQAAAAAAAAAGAAAABQAAAAAAAAAGAAEABQAAAAAAAAAGAAIABQAAAAAAAAAGAAMABQAAAAAAAAAGAAQABQAAAAAAAAAGAAUABQAAAAAAAAAHAPr/BAAAAAAAAAAHAPv/BQAAAAAAAAAHAPz/BQAAAAAAAAAHAP3/BQAAAAAAAAAHAP7/BQAAAAAAAAAHAP//BQAAAAAAAAAHAAAABQAAAAAAAAAHAAEABQAAAAAAAAAHAAIABQAAAAAAAAAHAAMABQAAAAAAAAAHAAQABQAAAAAAAAAHAAUABQAAAAAAAAAIAPr/BAAAAAAAAAAIAPv/BQAAAAAAAAAIAPz/BQAAAAAAAAAIAP3/BQAAAAAAAAAIAP7/BQAAAAAAAAAIAP//BQAAAAAAAAAIAAAABQAAAAAAAAAIAAEABQAAAAAAAAAIAAIABQAAAAAAAAAIAAMABQAAAAAAAAAIAAQABQAAAAAAAAAIAAUABQAAAAAAAAAJAPr/AAAAAAAAAAAJAPv/AwAAAAAAAAAJAPz/AwAAAAAAAAAJAP3/AwAAAAAAAAAJAP7/AwAAAAAAAAAJAP//AwAAAAAAAAAJAAAAAwAAAAAAAAAJAAEAAwAAAAAAAAAJAAIAAwAAAAAAAAAJAAMAAwAAAAAAAAAJAAQAAwAAAAAAAAAJAAUAAwAAAAAAAAD/////BQAAAAAAAAAAAP//BQAAAAAAAAAAAAAABQAAAAAAAAD//wAABQAAAAAAAAA=")
+tile_set = SubResource("TileSet_w5vlo")
+
+[node name="meubles" type="TileMapLayer" parent="sol"]
+tile_map_data = PackedByteArray("AAD9//r/AwAAAAAAAAD9//v/AwAAAAEAAAD9//z/AwAAAAIAAAD9//3/AwAAAAMAAAD9//7/AwAAAAQAAAD9////AwAAAAUAAAD9/wAAAwAAAAYAAAD9/wEAAwAAAAcAAAD9/wIAAwAAAAYAAAD9/wMAAwAAAAcAAAD+//r/AwABAAAAAAD+//v/AwABAAEAAAD+//z/AwABAAIAAAD+//3/AwABAAMAAAD+//7/AwABAAMAAAD+////AwABAAQAAAD+/wAAAwABAAUAAAD+/wEAAwABAAcAAAD+/wIAAwABAAYAAAD+/wMAAwABAAcAAAD///r/AwACAAAAAAD///v/AwACAAEAAAD///z/BQAAAAAAAAD///3/AwACAAIAAAD///7/AwACAAMAAAD/////AwACAAQAAAD//wAAAwACAAUAAAD//wEABQAAAAAAAAD//wIAAwACAAIAAAD//wMABQAAAAAAAAAAAPr/AwADAAAAAAAAAPv/AwADAAEAAAAAAPz/AwADAAIAAAAAAP3/AwADAAMAAAAAAP7/AwADAAMAAAAAAP//AwADAAQAAAAAAAAAAwADAAUAAAAAAAEAAwADAAcAAAAAAAIAAwADAAYAAAAAAAMAAwADAAcAAAABAPr/AwAEAAAAAAABAPv/AwAEAAEAAAABAPz/AwAEAAIAAAABAP3/AwAEAAMAAAABAP7/AwAEAAQAAAABAP//AwAEAAUAAAABAAAAAwAEAAYAAAABAAEAAwAEAAcAAAABAAIAAwAEAAYAAAABAAMAAwAEAAcAAAD9/wQAAwAAAAgAAAD9/wUAAwAAAAkAAAD+/wQAAwABAAgAAAD+/wUAAwABAAkAAAD//wQAAwACAAgAAAD//wUAAwACAAkAAAAAAAQAAwADAAgAAAAAAAUAAwADAAkAAAABAAQAAwAEAAgAAAABAAUAAwAEAAkAAAADAAMABAAAAAAAAAADAAQABAAAAAEAAAADAP3/BAAAAAAAAAADAP7/BAAAAAEAAAADAPr/BAAAAAAAAAADAPv/BAAAAAEAAAD7//r/BAAAAAAAAAD7//v/BAAAAAEAAAD7//3/BAAAAAAAAAD7//7/BAAAAAEAAAD7/wMABAAAAAAAAAD7/wQABAAAAAEAAAD7/wAABAAAAAAAAAD7/wEABAAAAAEAAAADAAAABAAAAAAAAAADAAEABAAAAAEAAAA=")
+tile_set = SubResource("TileSet_q1r7w")
+
+[node name="characterBody2D" parent="." instance=ExtResource("11_fwq77")]
+position = Vector2(-39, -94)
+script = ExtResource("12_6k7pj")
+
+[node name="salles" type="Node2D" parent="."]
+script = ExtResource("13_sho3r")
+
+[node name="salon" parent="salles" instance=ExtResource("14_3g02j")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = 320.0
+offset_top = 35.0
+offset_right = 700.0
+offset_bottom = 415.0
+
+[node name="textureRect" parent="salles/salon/room" index="0"]
+texture = ExtResource("15_avoui")
+
+[node name="cuisine" parent="salles" instance=ExtResource("14_3g02j")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = -773.0
+offset_top = 32.0
+offset_right = -393.0
+offset_bottom = 412.0
+
+[node name="textureRect" parent="salles/cuisine/room" index="0"]
+texture = ExtResource("16_o13hs")
+
+[node name="salle_de_bain" parent="salles" instance=ExtResource("14_3g02j")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = 320.0
+offset_top = -415.0
+offset_right = 700.0
+offset_bottom = -35.0
+
+[node name="textureRect" parent="salles/salle_de_bain/room" index="0"]
+texture = ExtResource("17_xabks")
+
+[node name="dortoir" parent="salles" instance=ExtResource("14_3g02j")]
+self_modulate = Color(1, 1, 1, 0.5882353)
+offset_left = -771.0
+offset_top = -415.0
+offset_right = -391.0
+offset_bottom = -35.0
+
+[node name="textureRect" parent="salles/dortoir/room" index="0"]
+texture = ExtResource("18_pk1sp")
+
+[node name="dialogBox" parent="." instance=ExtResource("19_s8cf7")]
+visible = false
+offset_left = -763.0
+offset_top = 78.0
+offset_right = -723.0
+offset_bottom = 118.0
+scale = Vector2(1.2, 1.2)
+
+[connection signal="on_dialog_end" from="dialogBox" to="." method="_on_dialog_box_on_dialog_end"]
+
+[editable path="salles/salon"]
+[editable path="salles/cuisine"]
+[editable path="salles/salle_de_bain"]
+[editable path="salles/dortoir"]

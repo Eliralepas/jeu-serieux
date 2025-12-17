@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvj257l2sl3p0"]
+
+[ext_resource type="Script" uid="uid://5ue44l4nxpxl" path="res://scripts/salle_de_bain/cadre_objet.gd" id="1_jglqo"]
+[ext_resource type="Texture2D" uid="uid://c0rlidyvtjf2r" path="res://assets/magasin/cadreObjets.png" id="1_mi0vr"]
+[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_48fo1"]
+
+[node name="Cadre" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jglqo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 153.0
+offset_right = 24.0
+offset_bottom = 206.0
+scale = Vector2(1.16, 1)
+size_flags_horizontal = 0
+theme_override_constants/separation = 5
+
+[node name="Cadre" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(73.276, -76)
+scale = Vector2(4.84917, 5.06181)
+texture = ExtResource("1_mi0vr")
+
+[node name="Objet" type="TextureRect" parent="VBoxContainer/Cadre"]
+offset_left = -12.4444
+offset_top = -10.6681
+offset_right = 27.5556
+offset_bottom = 29.3319
+scale = Vector2(0.620077, 0.573123)
+mouse_default_cursor_shape = 2
+
+[node name="CheckButton" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_48fo1")
+theme_override_font_sizes/font_size = 25
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_48fo1")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="VBoxContainer/Cadre/Objet" to="." method="_on_objet_gui_input"]

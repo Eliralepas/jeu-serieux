@@ -1,0 +1,4 @@
+res://scenes/hall/hall.tscn
+res://scripts/hall/hall.gd
+res://scenes/hall.tscn
+res://save_game.json
