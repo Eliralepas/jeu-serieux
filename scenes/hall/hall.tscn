@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://d2imuyjjbetm4" path="res://assets/sol/parquet-beige-pixilart(2).png" id="4_v3g6v"]
 [ext_resource type="Texture2D" uid="uid://8r2s6ux2vqan" path="res://assets/sol/parquet-beige-pixilart.png" id="5_wyflw"]
 [ext_resource type="Texture2D" uid="uid://7t84mnlw0wx3" path="res://assets/sol/pixilart-drawing(3).png" id="6_j2h53"]
-[ext_resource type="Texture2D" uid="uid://d0o8oavu5y5wg" path="res://assets/cuisine/meubles/tapis.png" id="7_2x4b0"]
-[ext_resource type="Texture2D" uid="uid://s3qmqw6hm5co" path="res://assets/cuisine/meubles/tapis_milieu.png" id="8_jwltb"]
-[ext_resource type="Texture2D" uid="uid://ceccowdhjpi3j" path="res://assets/cuisine/meubles/plante.png" id="9_smtjo"]
+[ext_resource type="Texture2D" uid="uid://dym4bejllk0x6" path="res://assets/hall/tapis.png" id="8_hd556"]
+[ext_resource type="Texture2D" uid="uid://d3514cg0g716r" path="res://assets/hall/plante.png" id="9_l20mb"]
 [ext_resource type="PackedScene" uid="uid://cvgjt62768mco" path="res://scenes/hall/character_Z.tscn" id="10_du0u5"]
+[ext_resource type="Texture2D" uid="uid://wgh3o18yhq6b" path="res://assets/hall/tapis_milieu.png" id="10_j86gq"]
 [ext_resource type="Script" uid="uid://cs538u2iyc67d" path="res://scripts/hall/character_z.gd" id="11_27y0h"]
 [ext_resource type="Texture2D" uid="uid://b527rikoxwpl" path="res://assets/autres/salle_de_bain.png" id="12_66g17"]
 [ext_resource type="Texture2D" uid="uid://dvlfwlr8jvyvr" path="res://assets/autres/cuisine.png" id="13_rfgeu"]
@@ -59,8 +59,8 @@ sources/3 = SubResource("TileSetAtlasSource_0qdmq")
 sources/4 = SubResource("TileSetAtlasSource_vahjv")
 sources/5 = SubResource("TileSetAtlasSource_k3ek7")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vh7y1"]
-texture = ExtResource("7_2x4b0")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sioib"]
+texture = ExtResource("8_hd556")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 1:0/0 = 0
@@ -113,23 +113,22 @@ texture_region_size = Vector2i(70, 70)
 3:9/0 = 0
 4:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s2l4"]
-texture = ExtResource("8_jwltb")
-texture_region_size = Vector2i(70, 70)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_187d5"]
-texture = ExtResource("9_smtjo")
-margins = Vector2i(17, 6)
-texture_region_size = Vector2i(70, 70)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mppjq"]
+texture = ExtResource("9_l20mb")
+texture_region_size = Vector2i(100, 70)
 0:0/0 = 0
 0:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygfmt"]
+texture = ExtResource("10_j86gq")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_q1r7w"]
 tile_size = Vector2i(70, 70)
-sources/0 = SubResource("TileSetAtlasSource_vh7y1")
-sources/1 = SubResource("TileSetAtlasSource_6s2l4")
-sources/2 = SubResource("TileSetAtlasSource_187d5")
+sources/3 = SubResource("TileSetAtlasSource_sioib")
+sources/4 = SubResource("TileSetAtlasSource_mppjq")
+sources/5 = SubResource("TileSetAtlasSource_ygfmt")
 
 [node name="hall" type="Node2D"]
 script = ExtResource("1_wyflw")
@@ -143,7 +142,7 @@ tile_map_data = PackedByteArray("AAD1//r/AQAAAAAAAAD1//v/AgAAAAAAAAD1//z/AgAAAAA
 tile_set = SubResource("TileSet_w5vlo")
 
 [node name="meubles" type="TileMapLayer" parent="sol"]
-tile_map_data = PackedByteArray("AAD9//r/AAAAAAAAAAD9//v/AAAAAAEAAAD9//z/AAAAAAIAAAD9//3/AAAAAAMAAAD9//7/AAAAAAQAAAD9////AAAAAAUAAAD9/wAAAAAAAAYAAAD9/wEAAAAAAAcAAAD9/wIAAAAAAAgAAAD9/wMAAAAAAAcAAAD+//r/AAABAAAAAAD+//v/AAABAAEAAAD+//z/AAABAAIAAAD+//3/AAABAAIAAAD+//7/AAABAAMAAAD+////AAABAAQAAAD+/wAAAAABAAUAAAD+/wEAAAABAAYAAAD+/wIAAAABAAcAAAD+/wMAAAABAAcAAAD///r/AAACAAAAAAD///v/AAACAAEAAAD///z/AQAAAAAAAAD///3/AAACAAIAAAD///7/AAACAAMAAAD/////AAACAAQAAAD//wAAAAACAAUAAAD//wEAAAACAAYAAAD//wIAAAACAAcAAAD//wMAAQAAAAAAAAAAAPr/AAADAAAAAAAAAPv/AAADAAEAAAAAAPz/AAADAAIAAAAAAP3/AAADAAIAAAAAAP7/AAADAAMAAAAAAP//AAADAAQAAAAAAAAAAAADAAUAAAAAAAEAAAADAAYAAAAAAAIAAAADAAcAAAAAAAMAAAADAAcAAAABAPr/AAAEAAAAAAABAPv/AAAEAAEAAAABAPz/AAAEAAIAAAABAP3/AAAEAAMAAAABAP7/AAAEAAQAAAABAP//AAAEAAUAAAABAAAAAAAEAAYAAAABAAEAAAAEAAcAAAABAAIAAAAEAAgAAAABAAMAAAAEAAcAAAD9/wQAAAAAAAgAAAD9/wUAAAAAAAkAAAD+/wQAAAABAAgAAAD+/wUAAAABAAkAAAD//wQAAAACAAgAAAD//wUAAAACAAkAAAAAAAQAAAADAAgAAAAAAAUAAAADAAkAAAABAAQAAAAEAAgAAAABAAUAAAAEAAkAAAACAPr/AgAAAAAAAAACAPv/AgAAAAEAAAACAAAAAgAAAAAAAAACAAEAAgAAAAEAAAACAAMAAgAAAAAAAAACAAQAAgAAAAEAAAD8/wAAAgAAAAAAAAD8/wEAAgAAAAEAAAD8/wMAAgAAAAAAAAD8/wQAAgAAAAEAAAD8//3/AgAAAAAAAAD8//7/AgAAAAEAAAD8//r/AgAAAAAAAAD8//v/AgAAAAEAAAACAP3/AgAAAAAAAAACAP7/AgAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD9//r/AwAAAAAAAAD9//v/AwAAAAEAAAD9//z/AwAAAAIAAAD9//3/AwAAAAMAAAD9//7/AwAAAAQAAAD9////AwAAAAUAAAD9/wAAAwAAAAYAAAD9/wEAAwAAAAcAAAD9/wIAAwAAAAYAAAD9/wMAAwAAAAcAAAD+//r/AwABAAAAAAD+//v/AwABAAEAAAD+//z/AwABAAIAAAD+//3/AwABAAMAAAD+//7/AwABAAMAAAD+////AwABAAQAAAD+/wAAAwABAAUAAAD+/wEAAwABAAcAAAD+/wIAAwABAAYAAAD+/wMAAwABAAcAAAD///r/AwACAAAAAAD///v/AwACAAEAAAD///z/BQAAAAAAAAD///3/AwACAAIAAAD///7/AwACAAMAAAD/////AwACAAQAAAD//wAAAwACAAUAAAD//wEABQAAAAAAAAD//wIAAwACAAIAAAD//wMABQAAAAAAAAAAAPr/AwADAAAAAAAAAPv/AwADAAEAAAAAAPz/AwADAAIAAAAAAP3/AwADAAMAAAAAAP7/AwADAAMAAAAAAP//AwADAAQAAAAAAAAAAwADAAUAAAAAAAEAAwADAAcAAAAAAAIAAwADAAYAAAAAAAMAAwADAAcAAAABAPr/AwAEAAAAAAABAPv/AwAEAAEAAAABAPz/AwAEAAIAAAABAP3/AwAEAAMAAAABAP7/AwAEAAQAAAABAP//AwAEAAUAAAABAAAAAwAEAAYAAAABAAEAAwAEAAcAAAABAAIAAwAEAAYAAAABAAMAAwAEAAcAAAD9/wQAAwAAAAgAAAD9/wUAAwAAAAkAAAD+/wQAAwABAAgAAAD+/wUAAwABAAkAAAD//wQAAwACAAgAAAD//wUAAwACAAkAAAAAAAQAAwADAAgAAAAAAAUAAwADAAkAAAABAAQAAwAEAAgAAAABAAUAAwAEAAkAAAADAAMABAAAAAAAAAADAAQABAAAAAEAAAADAP3/BAAAAAAAAAADAP7/BAAAAAEAAAADAPr/BAAAAAAAAAADAPv/BAAAAAEAAAD7//r/BAAAAAAAAAD7//v/BAAAAAEAAAD7//3/BAAAAAAAAAD7//7/BAAAAAEAAAD7/wMABAAAAAAAAAD7/wQABAAAAAEAAAD7/wAABAAAAAAAAAD7/wEABAAAAAEAAAADAAAABAAAAAAAAAADAAEABAAAAAEAAAA=")
 tile_set = SubResource("TileSet_q1r7w")
 
 [node name="characterBody2D" parent="." instance=ExtResource("10_du0u5")]
@@ -193,7 +192,7 @@ offset_bottom = -35.0
 [node name="textureRect" parent="salles/dortoir/room" index="0"]
 texture = ExtResource("18_hd556")
 
-[node name="DialogBox" parent="." instance=ExtResource("17_v3g6v")]
+[node name="dialogBox" parent="." instance=ExtResource("17_v3g6v")]
 visible = false
 offset_left = -763.0
 offset_top = 78.0
@@ -201,7 +200,7 @@ offset_right = -723.0
 offset_bottom = 118.0
 scale = Vector2(1.2, 1.2)
 
-[connection signal="on_dialog_end" from="DialogBox" to="." method="_on_dialog_box_on_dialog_end"]
+[connection signal="on_dialog_end" from="dialogBox" to="." method="_on_dialog_box_on_dialog_end"]
 
 [editable path="salles/salon"]
 [editable path="salles/cuisine"]

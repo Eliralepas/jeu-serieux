@@ -5,6 +5,6 @@ extends Node2D
 func _ready() -> void:
 	if first_time:
 		
-		$"../DialogBox".visible = true
+		$"../dialogBox".visible = true
 		#dialog
 	pass
