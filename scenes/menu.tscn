@@ -8,44 +8,44 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86rl"]
 texture = ExtResource("1_yqeox")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.999991, 0.404821, 0.434633, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
 bg_color = Color(0.999991, 0.404821, 0.434633, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
 bg_color = Color(0.931423, 0, 0.241374, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
 bg_color = Color(0.999991, 0.404821, 0.434633, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
-bg_color = Color(0.999991, 0.404821, 0.434633, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
-bg_color = Color(0.286275, 0.682353, 0.552941, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
-bg_color = Color(0.181653, 0.56725, 0.37553, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
 bg_color = Color(0.285162, 0.684308, 0.551396, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
 bg_color = Color(0.285162, 0.684308, 0.551396, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
 bg_color = Color(0.285162, 0.684308, 0.551396, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v86rl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.181653, 0.56725, 0.37553, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3eks"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ytvr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.286275, 0.682353, 0.552941, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_con2f"]
 
-[node name="Control" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ytvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3eks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v86rl"]
+
+[node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +55,7 @@ offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 11.0
 offset_right = 415.0
@@ -63,57 +63,57 @@ offset_bottom = 814.0
 theme = SubResource("Theme_g3eks")
 theme_override_styles/panel = SubResource("StyleBoxTexture_v86rl")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="vBoxContainer" type="VBoxContainer" parent="panel"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 221.0
 offset_right = 82.0
 offset_bottom = 261.0
 
-[node name="btn_Magasin" type="Button" parent="Panel"]
+[node name="btnMagasin" type="Button" parent="panel"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 707.0
 offset_right = 171.0
 offset_bottom = 757.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(0.513798, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.513798, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.513798, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.513798, 0, 0, 1)
 theme_override_colors/font_color = Color(0.513798, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.513798, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.423185, 3.73013e-07, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(0.513798, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.513798, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.513798, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.513798, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxFlat_yqeox")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vjb58")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yqeox")
 text = "Magasin"
 
-[node name="btn_Finaliser" type="Button" parent="Panel"]
+[node name="btnFinaliser" type="Button" parent="panel"]
 layout_mode = 0
 offset_left = 245.0
 offset_top = 707.0
 offset_right = 375.0
 offset_bottom = 757.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(0, 0.347168, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.34902, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0.34902, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0.34902, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0.34902, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.34902, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.34902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.34902, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0.347168, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxFlat_4ytvr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_13sgg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_13sgg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4ytvr")
 text = "Finaliser"
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="label" type="Label" parent="panel"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 111.0
@@ -125,30 +125,30 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "BUDGET"
 
-[node name="MenuMurColor" type="MenuButton" parent="Panel"]
+[node name="menuMurColor" type="MenuButton" parent="panel"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 148.0
 offset_right = 266.0
 offset_bottom = 186.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0.666667)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 0.666667)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.666667)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 0.666667)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0.666667)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.666667)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0.666667)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0.666667)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_v86rl")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3eks")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_4ytvr")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mhnvy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_con2f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mhnvy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4ytvr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3eks")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v86rl")
 text = "Couleur Mur "
 icon = ExtResource("2_vjb58")
 
-[connection signal="pressed" from="Panel/btn_Magasin" to="Panel" method="_on_btn_magasin_pressed"]
-[connection signal="pressed" from="Panel/btn_Finaliser" to="Panel" method="_on_btn_finaliser_pressed"]
+[connection signal="pressed" from="panel/btnMagasin" to="panel" method="_on_btn_magasin_pressed"]
+[connection signal="pressed" from="panel/btnFinaliser" to="panel" method="_on_btn_finaliser_pressed"]

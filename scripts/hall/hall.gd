@@ -2,7 +2,7 @@ extends Node2D
 
 const FILE_PATH := "user://save_game.json"
 
-@onready var cuisine: Control = $salles/salle_de_bain
+@onready var cuisine: Control = $salles/dortoir
 
 func _ready() -> void:
 	var file = FileAccess.open(FILE_PATH, FileAccess.READ)
