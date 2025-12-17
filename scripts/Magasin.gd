@@ -10,6 +10,7 @@ extends checkBTN
 @onready var caisse:= $Songs/purchase 
 
 @onready var budget
+@onready var objets_achetes=0;
 
 @onready var test=get_parent().get_node("Menu/Panel/VBoxContainer")
 
@@ -126,41 +127,45 @@ func _on_btn_sortir_pressed() -> void:
 func _on_button_acheter_pressed() -> void:
 	var total = 0
 	var checked_objects = []
+	
+	if objets_achetes + checked_objects.size() > 2:
+		parle.text = "On a dit uniquement   4 objets!"
 
-	# Récupère tous les objets cochés
-	for obj in objets: #recupere le prix final
-		var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
-		var check = gr.getCheckButton() #recup checkbox
-		if check.button_pressed: #si obj choisi
-			total += obj[1]#ajout du prix au total
-			checked_objects.append(obj)#ajout de l'objet a la liste d'objets
+	else :
+		# Récupère tous les objets cochés
+		for obj in objets: #recupere le prix final
+			var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
+			var check = gr.getCheckButton() #recup checkbox
+			if check.button_pressed: #si obj choisi
+				total += obj[1]#ajout du prix au total
+				checked_objects.append(obj)#ajout de l'objet a la liste d'objets
+				objets_achetes= objets_achetes+1;
 
-	# Vérifie si le budget suffit
-	if total <= budget: 
-		var any_added = false
-		for obj in checked_objects:
-			var ajoutee = get_parent().ajoute_objet(obj[0], stock)
-			if ajoutee:
-				any_added = true
-			else:
-				parle.text = "Tu l'as déjà, je ne vends pas en double."
+		# Vérifie si le budget suffit
+		if total <= budget: 
+			var any_added = false
+			for obj in checked_objects:
+				var ajoutee = get_parent().ajoute_objet(obj[0], stock)
+				if ajoutee:
+					any_added = true
+				else:
+					parle.text = "Tu l'as déjà, je ne vends pas en double."
 
-		if any_added:
-			budget -= total  # soustraction globale ici
-			caisse.play()
-			await get_tree().create_timer(1.1).timeout
+			if any_added:
+				budget -= total  # soustraction globale ici
+				caisse.play()
+				await get_tree().create_timer(1.1).timeout
 
-			magasin_non_visible()
-			get_parent().clear_check_boxes()
-			get_parent().add_check_button(stock, stuff, test)
-			get_parent().reconnect_menu_buttons()
-			get_parent().connect_the_check_boxs(stuff)
-			get_parent().set_budget(budget)
+				magasin_non_visible()
+				get_parent().clear_check_boxes()
+				get_parent().add_check_button(stock, stuff, test)
+				get_parent().reconnect_menu_buttons()
+				get_parent().connect_the_check_boxs(stuff)
+				get_parent().set_budget(budget)
 
-		print("Budget ligne 200:", budget)
 
-	else:
-		parle.text = "Haha dans tes rêves, t'as pas l'argent"
+		else:
+			parle.text = "Haha dans tes rêves, t'as pas l'argent"
 
 
 	#utilise pour que lorsq'on revient dans le magasin les checkbox d'avant ne seront plus cochees

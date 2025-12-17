@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=55 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/Communs/piece.gd" id="1_6517k"]
 [ext_resource type="Script" uid="uid://86xs8jxdfdb4" path="res://scripts/murs.gd" id="2_gc0mp"]
@@ -89,8 +89,6 @@ tile_size = Vector2i(70, 70)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc0mp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3j5g"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cx3ow"]
 
 [sub_resource type="Animation" id="Animation_gc0mp"]
 length = 0.001
@@ -237,41 +235,6 @@ scale = Vector2(5.92857, 6.77778)
 texture = ExtResource("26_7203c")
 script = ExtResource("17_svf3d")
 
-[node name="decors" type="Node2D" parent="ListeObjets"]
-
-[node name="Commode" type="Sprite2D" parent="ListeObjets/decors"]
-z_index = 2
-position = Vector2(-609, 100)
-scale = Vector2(9.20833, 9.75)
-texture = ExtResource("27_w2gwh")
-
-[node name="Lits" type="Sprite2D" parent="ListeObjets/decors"]
-z_index = 1
-position = Vector2(-544, -61)
-scale = Vector2(9.23387, 8.50806)
-texture = ExtResource("28_bi8xp")
-
-[node name="Lit" type="Sprite2D" parent="ListeObjets/decors"]
-z_index = 2
-position = Vector2(-544, 265)
-scale = Vector2(9.37903, 8.39516)
-texture = ExtResource("29_ks8ap")
-
-[node name="Fenetres" type="Sprite2D" parent="ListeObjets/decors"]
-position = Vector2(180, -300.125)
-scale = Vector2(7.61905, 7.31522)
-texture = ExtResource("30_ogc1f")
-
-[node name="GrandTapis" type="Sprite2D" parent="ListeObjets/decors"]
-z_index = -1
-position = Vector2(20, 77)
-scale = Vector2(9.65686, 10.3095)
-texture = ExtResource("31_yjd3d")
-
-[node name="radiateur" type="Sprite2D" parent="ListeObjets/decors"]
-position = Vector2(-569, -172)
-texture = ExtResource("16_fc6x3")
-
 [node name="Store" parent="." instance=ExtResource("12_irfwe")]
 visible = false
 z_index = 4
@@ -292,7 +255,7 @@ position = Vector2(-456, -181)
 ListeObjets = NodePath("../../ListeObjets")
 
 [node name="BrokenObject" type="Node2D" parent="."]
-z_index = 2
+z_index = 3
 position = Vector2(-654, -16)
 scale = Vector2(0.439275, 0.44)
 script = ExtResource("23_cx3ow")
@@ -307,7 +270,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_4ao46")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_gghgv")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gc0mp")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_i3j5g")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cx3ow")
 flat = true
 
 [node name="BtnReparer" type="Button" parent="BrokenObject/ObjetCasse"]
@@ -339,6 +301,41 @@ root_node = NodePath("../../../ObjetCasse")
 libraries = {
 &"": SubResource("AnimationLibrary_gghgv")
 }
+
+[node name="decors" type="Node2D" parent="."]
+
+[node name="Commode" type="Sprite2D" parent="decors"]
+z_index = 2
+position = Vector2(-609, 100)
+scale = Vector2(9.20833, 9.75)
+texture = ExtResource("27_w2gwh")
+
+[node name="Lits" type="Sprite2D" parent="decors"]
+z_index = 1
+position = Vector2(-544, -61)
+scale = Vector2(9.23387, 8.50806)
+texture = ExtResource("28_bi8xp")
+
+[node name="Lit" type="Sprite2D" parent="decors"]
+z_index = 2
+position = Vector2(-544, 265)
+scale = Vector2(9.37903, 8.39516)
+texture = ExtResource("29_ks8ap")
+
+[node name="Fenetres" type="Sprite2D" parent="decors"]
+position = Vector2(180, -300.125)
+scale = Vector2(7.61905, 7.31522)
+texture = ExtResource("30_ogc1f")
+
+[node name="GrandTapis" type="Sprite2D" parent="decors"]
+z_index = -1
+position = Vector2(20, 77)
+scale = Vector2(9.65686, 10.3095)
+texture = ExtResource("31_yjd3d")
+
+[node name="radiateur" type="Sprite2D" parent="decors"]
+position = Vector2(-569, -172)
+texture = ExtResource("16_fc6x3")
 
 [connection signal="pressed" from="BrokenObject/ObjetCasse" to="BrokenObject" method="_on_objet_casse_pressed"]
 [connection signal="pressed" from="BrokenObject/ObjetCasse/BtnReparer" to="." method="_on_btn_reparer_pressed"]
