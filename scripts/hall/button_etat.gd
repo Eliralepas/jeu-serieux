@@ -1,7 +1,7 @@
 extends Control
 
-@onready var animation_player: AnimationPlayer = $Room/AnimationPlayer
-@onready var room: TextureButton = $Room
+@onready var animation_player: AnimationPlayer = $room/animationLock
+@onready var room: TextureButton = $room
 
 func _ready() -> void:
 	animation_player.play("transparence")

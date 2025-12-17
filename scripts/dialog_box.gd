@@ -3,14 +3,14 @@ extends Control
 signal on_dialog_end
 
 var dialog = [
-	"Hello there",
-	"OOO MY GODDDDD",
-	"YAY, I am a patato and im gonna ezat you human"
+	"Bienvenue à Concordia !",
+	"Notre équipage n'attendait plus que toi.",
+	"Vite, familiarise toi avec les lieux et commence ton travail !"
 ]
 
 var dialog_index = 0
 var finished = false
-@onready var label : RichTextLabel = $RichTextLabel
+@onready var label : RichTextLabel = $richTextLabel
 
 
 func _ready() -> void:

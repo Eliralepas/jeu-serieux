@@ -2,8 +2,7 @@ extends Node2D
 
 const FILE_PATH := "user://save_game.json"
 
-@onready var cuisine: Control = $Salles/cuisine
-
+@onready var cuisine: Control = $salles/cuisine
 
 func _ready() -> void:
 	var file = FileAccess.open(FILE_PATH, FileAccess.READ)
@@ -21,31 +20,31 @@ func _ready() -> void:
 		file.close()
 	else: # Le fichier n'existe pas, on le crée
 		var default_data = {
+		"budget": 0,
 		  "cuisine": {
 			"nom": "cuisine",
-			"score": 0,
-			"budget": 0,
-			"remarques": ""
+			"remarques": "",
+			"saison": 0,
+			"score": 0
 		  },
 		  "dortoir": {
 			"nom": "dortoir",
-			"score": 0,
-			"budget": 0,
-			"remarques": ""
+			"remarques": "",
+			"saison": 1,
+			"score": 0
 		  },
 		  "salle_de_bain": {
 			"nom": "salle_de_bain",
-			"score": 0,
-			"budget": 0,
-			"remarques": ""
+			"remarques": "",
+			"saison": 0,
+			"score": 0
 		  },
 		  "salon": {
 			"nom": "salon",
-			"score": 0,
-			"budget": 0,
-			"remarques": ""
+			"remarques": "",
+			"saison": 1,
+			"score": 0
 		  },
-		  "score_total": 0,
 		  "tour": 0
 		}
 		var json_string = JSON.stringify(default_data)

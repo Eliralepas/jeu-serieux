@@ -10,7 +10,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Room:self_modulate")
+tracks/0/path = NodePath("room:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/path = NodePath("Room:disabled")
+tracks/1/path = NodePath("room:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -34,7 +34,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Room:mouse_default_cursor_shape")
+tracks/2/path = NodePath("room:mouse_default_cursor_shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -46,7 +46,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/path = NodePath("audioStreamPlayer2D:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -62,7 +62,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Room:self_modulate")
+tracks/0/path = NodePath("room:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,7 +74,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Room:disabled")
+tracks/1/path = NodePath("room:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -86,7 +86,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Room:mouse_default_cursor_shape")
+tracks/2/path = NodePath("room:mouse_default_cursor_shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -98,7 +98,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/path = NodePath("audioStreamPlayer2D:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -114,7 +114,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Room:self_modulate")
+tracks/0/path = NodePath("room:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -131,14 +131,14 @@ _data = {
 &"transparence": SubResource("Animation_7khcb")
 }
 
-[node name="RoomButton" type="Control"]
+[node name="roomButton" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_qpxvb")
 
-[node name="Room" type="TextureButton" parent="."]
+[node name="room" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 380.0
 offset_bottom = 380.0
@@ -149,7 +149,7 @@ texture_disabled = ExtResource("3_0csg6")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="Room"]
+[node name="textureRect" type="TextureRect" parent="room"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -160,13 +160,13 @@ grow_vertical = 2
 mouse_filter = 2
 expand_mode = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Room"]
+[node name="animationLock" type="AnimationPlayer" parent="room"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_0csg6")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="audioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_7khcb")
 
-[connection signal="pressed" from="Room" to="." method="_on_room_pressed"]
+[connection signal="pressed" from="room" to="." method="_on_room_pressed"]
