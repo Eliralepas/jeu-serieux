@@ -1,5 +1,5 @@
 extends Sprite2D
-class_name Object_piece
+class_name ObjectPiece
 
 # pour CHAQUE objet qu'on peut placer ou non
 # on a deux listes de personnages (aime et aime_pas)

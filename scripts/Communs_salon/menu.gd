@@ -7,12 +7,12 @@ signal finaliser_pressed
 
 func add_elem(btn: CheckButton) -> void:
 	if btn.get_type() == CheckButton:
-		$VBoxContainer.add_child(btn)
+		$vBoxContainer.add_child(btn)
 		
 		
 func remove_elem(btn: CheckBox) ->void:
 	if btn.get_type() == CheckButton:
-		$VBoxContainer.remove_child(btn);
+		$vBoxContainer.remove_child(btn);
 		
 
 

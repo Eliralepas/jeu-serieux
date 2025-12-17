@@ -1,5 +1,5 @@
 extends Stock
-class_name checkBTN
+class_name CheckBtn
 
 
 	#fonction a appeler apres l'achat dans le magasin
@@ -23,8 +23,7 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		##############################################
 		
 		#lorsqu'on fini d'acheter le boutons deja coche le restera 
-		var target : Object_piece = objects.get(check.name) #on recup l'objet dont la cle est le nom de la checkbox
-		print(check.name)
+		var target : ObjectPiece = objects.get(check.name) #on recup l'objet dont la cle est le nom de la checkbox
 		target.set_visibility(target.visible)
 		
 		check.toggled.connect(func(pressed: bool): 
@@ -38,7 +37,7 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		# ! NE VIDE PAS LE STOCK!!!!! ((il faudrait appeler la fct dans baseStock)
 		#A appeler avant le add_check_button pour ne pas avoir le meme btn 2 fois
 func clear_check_boxes() -> void:
-	var grille : VBoxContainer = $Menu/Panel/VBoxContainer  # conteneur qui contient les checkbuttons
+	var grille : VBoxContainer = $menu/panel/vBoxContainer  # conteneur qui contient les checkbuttons
 	if grille:
 		for child in grille.get_children():
 			child.queue_free()
@@ -48,8 +47,7 @@ func clear_check_boxes() -> void:
 		#a appeler dans le ready ou apres avoir acheter un objet 
 func connect_the_check_boxs(objects:Dictionary)->void:
 	for button_name in objects.keys():
-		var button_path = "Menu/Panel/VBoxContainer/%s" % button_name
-		print(button_path)
+		var button_path = "menu/panel/vBoxContainer/%s" % button_name
 		if has_node(button_path):
 			var button = get_node(button_path)
 			button.connect("toggled", Callable(self, "_on_any_check_toggled").bind(objects, button_name))

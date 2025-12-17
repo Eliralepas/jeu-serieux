@@ -3,20 +3,20 @@ extends AnimatedSprite2D
 class_name Personnage
 
 @export var ListeObjets : ListeObjet
-@onready var bulle : Sprite2D = get_node("Bulle")
+@onready var bulle : Sprite2D = get_node("bulle")
 
-@onready var content: TextureRect = $Emotion/Content
-@onready var pas_content: TextureRect = $Emotion/PasContent
+@onready var content: TextureRect = $emotion/content
+@onready var pas_content: TextureRect = $emotion/pasContent
 
 func _ready() -> void:
 	if !ListeObjets:
 		push_error("%s : @export var ListeObjet est null" % name)
 	
 	#On récupère un objet random de la liste d'objet
-	var object : Object_piece = ListeObjets.objectRandom()
+	var object : ObjectPiece = ListeObjets.objectRandom()
 	var object_bulle : Sprite2D = Sprite2D.new()
 	object_bulle.texture = object.texture
-	var texture_object: TextureRect = get_node("Bulle/Objet")
+	var texture_object: TextureRect = get_node("bulle/objet")
 	resize(object_bulle, texture_object)
 	
 	var image_path: String
@@ -35,7 +35,7 @@ func _ready() -> void:
 	var avis = ImageTexture.create_from_image(image)
 	var avis_sprite : Sprite2D = Sprite2D.new()
 	avis_sprite.texture = avis
-	var texture_avis: TextureRect = get_node("Bulle/Avis")
+	var texture_avis: TextureRect = get_node("bulle/avis")
 	resize(avis_sprite, texture_avis)
 	
 	bulle.visible = false
@@ -60,3 +60,12 @@ func visible_emotion(estcontent : bool) -> void:
 	else :
 		content.visible = false
 		pas_content.visible = true
+
+#retroune si le personnage est content ou non
+func is_content() -> bool : 
+	if content.visible && !pas_content.visible : 
+		return true
+		
+	if pas_content.visible && !content.visible: 
+		return false
+	return false
