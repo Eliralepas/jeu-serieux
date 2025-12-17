@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvpw6hut7wras"
-path="res://.godot/imported/tapis.png-94348a72eaf66aee1e736f8a221aec37.ctex"
+uid="uid://5vn868coy2kq"
+path="res://.godot/imported/bulle.png-220a372f096fd6f0c84f162fed2226e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meubles/tapis.png"
-dest_files=["res://.godot/imported/tapis.png-94348a72eaf66aee1e736f8a221aec37.ctex"]
+source_file="res://assets/bulle/bulle.png"
+dest_files=["res://.godot/imported/bulle.png-220a372f096fd6f0c84f162fed2226e2.ctex"]
 
 [params]
 

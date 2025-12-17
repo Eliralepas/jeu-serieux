@@ -4,4 +4,6 @@
 .*
 icon.svg*
 ./projet.godot
-
+*.import
+*.uid
+*.tmp

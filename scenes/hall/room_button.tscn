@@ -1,0 +1,172 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp0558s7bpusi"]
+
+[ext_resource type="Script" uid="uid://c1vpwy1wcfb4t" path="res://scripts/hall/button_etat.gd" id="1_qpxvb"]
+[ext_resource type="Texture2D" uid="uid://bmepbreco1w7s" path="res://assets/autres/cadenas_ouvert.png" id="2_al5dm"]
+[ext_resource type="Texture2D" uid="uid://bbqfa6tw56q71" path="res://assets/autres/cadenas_ferme.png" id="3_0csg6"]
+[ext_resource type="AudioStream" uid="uid://cg16r3iuj4cio" path="res://assets/sound_effect/metal-hit-sound-effect-241374.mp3" id="4_7khcb"]
+
+[sub_resource type="Animation" id="Animation_0csg6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("room:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("room:mouse_default_cursor_shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("audioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_al5dm"]
+resource_name = "deverouiller"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5882353), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("room:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("room:mouse_default_cursor_shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("audioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7khcb"]
+resource_name = "transparence"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5882353)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0csg6"]
+_data = {
+&"RESET": SubResource("Animation_0csg6"),
+&"deverouiller": SubResource("Animation_al5dm"),
+&"transparence": SubResource("Animation_7khcb")
+}
+
+[node name="roomButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qpxvb")
+
+[node name="room" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 380.0
+offset_bottom = 380.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource("2_al5dm")
+texture_disabled = ExtResource("3_0csg6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="textureRect" type="TextureRect" parent="room"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 3
+
+[node name="animationLock" type="AnimationPlayer" parent="room"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_0csg6")
+}
+
+[node name="audioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7khcb")
+
+[connection signal="pressed" from="room" to="." method="_on_room_pressed"]
