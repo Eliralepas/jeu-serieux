@@ -11,13 +11,8 @@ config_version=5
 [application]
 
 config/name="Archi Pole Nord"
-<<<<<<< HEAD
-run/main_scene="res://scenes/piece_princiaple.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
-=======
 run/main_scene="res://scenes/hall/hall.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
->>>>>>> 151c6e21a74e2622d70a6325a87ab8b4638281ec
 config/icon="res://icon.svg"
 
 [dotnet]
