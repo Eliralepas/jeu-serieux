@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://1slb4ng5gwih"]
 
-[ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/Magasin.gd" id="1_nbura"]
+[ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/salle_de_bain/magasin.gd" id="1_nbura"]
 [ext_resource type="Texture2D" uid="uid://xkrh7s3rpwkb" path="res://assets/magasin/magazin.png" id="2_5vtcu"]
 [ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_b7ckq"]
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_ohnjy"]

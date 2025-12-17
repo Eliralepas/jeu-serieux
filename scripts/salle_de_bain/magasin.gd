@@ -1,4 +1,5 @@
 	#A remplacer par sa propre scene!!!!
+class_name Magasin
 extends checkBTN
 
 @onready var scene_cadre: PackedScene = preload("res://scenes/cadre.tscn")
@@ -9,7 +10,8 @@ extends checkBTN
 
 @onready var caisse:= $Songs/purchase 
 
-@onready var budget
+@onready var budget = 0
+@onready var objets_achetes=0;
 
 @onready var test=get_parent().get_node("Menu/Panel/VBoxContainer")
 
@@ -33,9 +35,7 @@ var objets = [
 	["panierMetal",20],
 	["etagere",30],
 	["douche",150],
-	["toilettes",80],
 	["poubelle",40],
-	["lavabo", 70],
 	["panierPlastique",15],
 	]
 
@@ -132,7 +132,7 @@ func _on_btn_sortir_pressed() -> void:
 func _on_button_acheter_pressed() -> void:
 	var total = 0
 	var checked_objects = []
-
+	
 	# Récupère tous les objets cochés
 	for obj in objets: #recupere le prix final
 		var gr : Cadre_objet = h_flow_container.get_node("GRILLE" + obj[0]) #recup grille de chaque obj
@@ -140,9 +140,13 @@ func _on_button_acheter_pressed() -> void:
 		if check.button_pressed: #si obj choisi
 			total += obj[1]#ajout du prix au total
 			checked_objects.append(obj)#ajout de l'objet a la liste d'objets
+			
+			
+	if (objets_achetes + checked_objects.size()) > 4: #verifie qu'on ne veut pas plus de 4 objets
+		parle.text = "On a dit uniquement 4 objets!"
 
 	# Vérifie si le budget suffit
-	if total <= budget: 
+	elif total <= budget: 
 		var any_added = false
 		for obj in checked_objects:
 			var ajoutee = get_parent().ajoute_objet(obj[0], stock)
@@ -153,6 +157,9 @@ func _on_button_acheter_pressed() -> void:
 
 		if any_added:
 			budget -= total  # soustraction globale ici
+			objets_achetes += checked_objects.size()  # ← correction ici
+			print(objets_achetes)
+
 			caisse.play()
 			await get_tree().create_timer(1.1).timeout
 
@@ -162,11 +169,13 @@ func _on_button_acheter_pressed() -> void:
 			get_parent().reconnect_menu_buttons()
 			get_parent().connect_the_check_boxs(stuff)
 			get_parent().set_budget(budget)
+			
+			parle.text = "Hahaha j'aime quand tu depenses."
 
-		print("Budget ligne 200:", budget)
 
 	else:
 		parle.text = "Haha dans tes rêves, t'as pas l'argent"
+
 
 
 	#utilise pour que lorsq'on revient dans le magasin les checkbox d'avant ne seront plus cochees

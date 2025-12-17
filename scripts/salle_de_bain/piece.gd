@@ -1,6 +1,6 @@
 extends checkBTN
 
-class_name BasePiece
+class_name SalleDeBain
 
 #les attributs que chaque piece doit avoir: 
 #(adaptez les chemins si besoin)
@@ -19,7 +19,7 @@ const NOM_SALLE : String = "salle_de_bain"
 @onready var objet_casse: Button = $BrokenObject/ObjetCasse
 
 @onready var menu = $Menu #un menu pour poser/retirer des objets
-@onready var store= $Store #chaque piece a un magasin
+@onready var store = $Store #chaque piece a un magasin
 
 @onready var conteneur=$Menu/Panel/VBoxContainer
 @onready var objects := { #tous les elements possible dans la piece(donc achetable depuis le magasin)
@@ -32,9 +32,7 @@ const NOM_SALLE : String = "salle_de_bain"
 	"panierPlastique":$ListeObjets/panierPlastique,
 	"etagere":$ListeObjets/etagere,
 	"douche":$ListeObjets/douche,
-	"toilettes":$ListeObjets/toilettes,
 	"poubelle":$ListeObjets/poubelle,
-	"lavabo":$ListeObjets/lavabo,
 	#"radiateur": $ListeObjets/radiateur,
 	#"cd":$ListeObjets/cd
 	#"rideaux": $ListeObjets/rideaux
