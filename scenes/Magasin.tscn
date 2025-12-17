@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://1slb4ng5gwih"]
+
+[ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://scripts/salon/magasin.gd" id="1_nbura"]
+[ext_resource type="Texture2D" uid="uid://d3cfcvuedy2m3" path="res://assets/magasin/magazin.png" id="2_5vtcu"]
+[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_b7ckq"]
+[ext_resource type="AudioStream" uid="uid://c8yds8b1jt5kg" path="res://musique/magasin_background.mp3" id="4_ohnjy"]
+[ext_resource type="AudioStream" uid="uid://dsadbandu8fmm" path="res://musique/people_talking.mp3" id="5_b7ckq"]
+[ext_resource type="AudioStream" uid="uid://dlb1d5ipu84ow" path="res://musique/acheter.mp3" id="6_b7ckq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2h71"]
+size = Vector2(853, 136)
+
+[node name="store" type="Node2D"]
+position = Vector2(90, 93)
+script = ExtResource("1_nbura")
+
+[node name="magazin" type="Sprite2D" parent="."]
+position = Vector2(632, 325.75)
+scale = Vector2(1.41406, 1.22474)
+texture = ExtResource("2_5vtcu")
+
+[node name="dialogue" type="Label" parent="."]
+offset_left = 243.0
+offset_top = 577.0
+offset_right = 388.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("3_b7ckq")
+theme_override_font_sizes/font_size = 30
+text = "hellooooo"
+
+[node name="area2D" type="Area2D" parent="."]
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="area2D"]
+position = Vector2(656.5, 639)
+shape = SubResource("RectangleShape2D_w2h71")
+
+[node name="hFlowContainer" type="HFlowContainer" parent="."]
+offset_left = -24.0
+offset_top = -52.0
+offset_right = 1329.0
+offset_bottom = 504.0
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 230
+
+[node name="btnSortir" type="Button" parent="."]
+offset_left = 1261.0
+offset_top = 700.0
+offset_right = 1386.0
+offset_bottom = 750.0
+rotation = -1.57079
+theme_override_colors/font_color = Color(0.891291, 2.71939e-06, 5.77569e-07, 1)
+theme_override_colors/font_focus_color = Color(1, 0.0941176, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.0705882, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.796078, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.796078, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.620315, 0, 0.1044, 1)
+theme_override_colors/font_outline_color = Color(0.588235, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b7ckq")
+theme_override_font_sizes/font_size = 30
+text = "Sortir"
+
+[node name="btnAcheter" type="Button" parent="."]
+offset_left = 1109.0
+offset_top = 577.0
+offset_right = 1249.0
+offset_bottom = 700.0
+theme_override_colors/font_color = Color(1, 0.461594, 0.712422, 1)
+theme_override_colors/font_focus_color = Color(1, 0.380392, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.0705882, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.796078, 0, 0.490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.796222, 2.79158e-06, 0.490036, 1)
+theme_override_colors/font_disabled_color = Color(0.588696, 9.14484e-07, 0.356623, 1)
+theme_override_colors/font_outline_color = Color(0.588235, 0, 0.356863, 1)
+theme_override_fonts/font = ExtResource("3_b7ckq")
+theme_override_font_sizes/font_size = 35
+text = "Acheter"
+
+[node name="songs" type="Node2D" parent="."]
+
+[node name="backgroundMusique" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("4_ohnjy")
+volume_db = -7.429
+
+[node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("5_b7ckq")
+volume_db = -12.072
+
+[node name="purchase" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("6_b7ckq")
+
+[connection signal="input_event" from="area2D" to="." method="_on_area_2d_input_event"]

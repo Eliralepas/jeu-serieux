@@ -1,0 +1,318 @@
+[gd_scene load_steps=46 format=4 uid="uid://bjxart0083r2e"]
+
+[ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/salon/piece.gd" id="1_fn1w0"]
+[ext_resource type="Texture2D" uid="uid://chx1toqkrr1vp" path="res://assets/sol/pixilart-drawing(2).png" id="2_r2ubq"]
+[ext_resource type="Texture2D" uid="uid://0g2wg15ji4nm" path="res://assets/meubles/fenetre.png" id="3_0i7ja"]
+[ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/salon/liste_objets.gd" id="3_fn1w0"]
+[ext_resource type="AudioStream" uid="uid://b6wgisfrmrxw7" path="res://musique/door_opening.ogg" id="3_y1q0v"]
+[ext_resource type="AudioStream" uid="uid://c8yds8b1jt5kg" path="res://musique/magasin_background.mp3" id="4_sn8n4"]
+[ext_resource type="AudioStream" uid="uid://dsadbandu8fmm" path="res://musique/people_talking.mp3" id="5_4ergh"]
+[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/salon/object.gd" id="5_r7tc6"]
+[ext_resource type="AudioStream" uid="uid://bfsek6k1drq4p" path="res://musique/background.mp3" id="6_4f3jj"]
+[ext_resource type="Texture2D" uid="uid://bnkdkli8kuusq" path="res://assets/meubles/Grand tableau.png" id="7_gydn4"]
+[ext_resource type="Texture2D" uid="uid://br07ilwgwtsb6" path="res://assets/meubles/table_basse_salon.png" id="7_ldh8b"]
+[ext_resource type="Texture2D" uid="uid://blsf7ujf0sg66" path="res://assets/meubles/tv_salon.png" id="8_lcohu"]
+[ext_resource type="Texture2D" uid="uid://bmvt4hcu8a34e" path="res://assets/meubles/small_painting1.png" id="8_qqt7l"]
+[ext_resource type="Texture2D" uid="uid://bdxi43pprpxir" path="res://assets/meubles/Petit tableau.png" id="9_cq8tt"]
+[ext_resource type="Texture2D" uid="uid://dnxw8g1b3m3qf" path="res://assets/meubles/canape_salon.png" id="9_gydn4"]
+[ext_resource type="Texture2D" uid="uid://5ewf6wioby54" path="res://assets/meubles/Tapis.png" id="10_53y5c"]
+[ext_resource type="Texture2D" uid="uid://d3cr4ds27g1xp" path="res://assets/meubles/Bibliotheque.png" id="10_qqt7l"]
+[ext_resource type="Texture2D" uid="uid://de53n0pamw54l" path="res://assets/meubles/Grande Lampe.png" id="11_cq8tt"]
+[ext_resource type="Texture2D" uid="uid://vm40bp3mdh1p" path="res://assets/meubles/Plante.png" id="11_ydbjr"]
+[ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/menu.tscn" id="12_lcohu"]
+[ext_resource type="Texture2D" uid="uid://dkyg1nagcugqj" path="res://assets/meubles/Fauteuil.png" id="12_qqt7l"]
+[ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="18_vqeng"]
+[ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="19_fn1w0"]
+[ext_resource type="Script" uid="uid://86xs8jxdfdb4" path="res://scripts/salon/murs.gd" id="20_t4i3p"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="21_0i7ja"]
+[ext_resource type="Texture2D" uid="uid://i57dd7wwin1o" path="res://assets/meubles/rideaux.png" id="22_k61po"]
+[ext_resource type="Texture2D" uid="uid://bjridfoxhvpot" path="res://assets/mur/beige_wall.png" id="23_yaa1r"]
+[ext_resource type="Texture2D" uid="uid://6xx3qrl3bbv1" path="res://assets/mur/red_wall.png" id="24_yaa1r"]
+[ext_resource type="Texture2D" uid="uid://1grr65gp67fy" path="res://assets/mur/green_wall.png" id="25_grcyl"]
+[ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/salon/elem_menu.gd" id="26_yaa1r"]
+[ext_resource type="Script" uid="uid://bgujil4oqkot6" path="res://scripts/salon/broken_object.gd" id="27_sn8n4"]
+[ext_resource type="Texture2D" uid="uid://yoe5vg8ki7p3" path="res://assets/meubles/broken_clock.png" id="28_qmtj2"]
+[ext_resource type="Texture2D" uid="uid://bvx5r1dsogtrd" path="res://assets/meubles/clock.png" id="31_cofgp"]
+[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="32_j5h6y"]
+[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="33_0i7ja"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnvgm"]
+texture = ExtResource("2_r2ubq")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vqeng"]
+tile_size = Vector2i(70, 70)
+sources/0 = SubResource("TileSetAtlasSource_mnvgm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhhld"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mexdd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbtbg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gj30g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43rvo"]
+
+[sub_resource type="Animation" id="Animation_8l67y"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../marginContainer/textureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("28_qmtj2")]
+}
+
+[sub_resource type="Animation" id="Animation_e7jy0"]
+resource_name = "reparer"
+length = 2.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../marginContainer/textureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("32_j5h6y"), ExtResource("33_0i7ja"), ExtResource("32_j5h6y"), ExtResource("31_cofgp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmsjd"]
+_data = {
+&"RESET": SubResource("Animation_8l67y"),
+&"reparer": SubResource("Animation_e7jy0")
+}
+
+[node name="salon" type="Node2D" node_paths=PackedStringArray("Personnages")]
+script = ExtResource("1_fn1w0")
+Personnages = NodePath("perso")
+
+[node name="camera2D" type="Camera2D" parent="."]
+position = Vector2(37, -5)
+zoom = Vector2(0.78, 0.78)
+
+[node name="sol" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAD2//3/AAAAAAAAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAD2/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD4//7/AAAAAAAAAAD5//7/AAAAAAAAAAD6////AAAAAAAAAAD7////AAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAD4//3/AAAAAAAAAAD5//3/AAAAAAAAAAD6//3/AAAAAAAAAAD7//3/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP//AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD6/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wQAAAAAAAAAAAD4/wMAAAAAAAAAAAD4/wIAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wAAAAAAAAAAAAD3////AAAAAAAAAAD3/wEAAAAAAAAAAAD4/wAAAAAAAAAAAAD4////AAAAAAAAAAD5////AAAAAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD7//7/AAAAAAAAAAD5/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAAEAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAP7/AAAAAAAAAAAFAAIAAAAAAAAAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAKAAMAAAAAAAAAAAAJAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAD6//7/AAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAJAPz/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vqeng")
+
+[node name="songs" type="Node" parent="."]
+
+[node name="porte" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("3_y1q0v")
+
+[node name="magasinBackground" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("4_sn8n4")
+
+[node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("5_4ergh")
+
+[node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
+stream = ExtResource("6_4f3jj")
+
+[node name="meublesBase" type="Node" parent="."]
+
+[node name="tableBasse" type="Sprite2D" parent="meublesBase"]
+position = Vector2(-319, -42)
+scale = Vector2(0.466, 0.466)
+texture = ExtResource("7_ldh8b")
+
+[node name="tv" type="Sprite2D" parent="meublesBase"]
+z_index = 1
+position = Vector2(-325, -214)
+scale = Vector2(3.7285714, 3.7285714)
+texture = ExtResource("8_lcohu")
+
+[node name="canape" type="Sprite2D" parent="meublesBase"]
+z_index = -1
+position = Vector2(-550, 21)
+scale = Vector2(4.55714, 4.55714)
+texture = ExtResource("9_gydn4")
+
+[node name="fenetre" type="Sprite2D" parent="meublesBase"]
+position = Vector2(-312, -361)
+scale = Vector2(0.15462185, 0.15462185)
+texture = ExtResource("3_0i7ja")
+
+[node name="listeObjets" type="Node2D" parent="."]
+script = ExtResource("3_fn1w0")
+
+[node name="bigPainting" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(-533, -299)
+scale = Vector2(0.890625, 0.890625)
+texture = ExtResource("7_gydn4")
+script = ExtResource("5_r7tc6")
+
+[node name="grandeLampe" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(-601, -198)
+scale = Vector2(0.20944, 0.20944)
+texture = ExtResource("11_cq8tt")
+script = ExtResource("5_r7tc6")
+
+[node name="bibliotheque" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(-10, -286)
+scale = Vector2(4, 4)
+texture = ExtResource("10_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="smallPainting1" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(170, -209)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("9_cq8tt")
+script = ExtResource("5_r7tc6")
+
+[node name="smallPainting2" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(-90, -292)
+scale = Vector2(0.858397, 0.858397)
+texture = ExtResource("8_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="carpet" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(94, -23)
+texture = ExtResource("10_53y5c")
+script = ExtResource("5_r7tc6")
+
+[node name="plant" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(-554, 221)
+texture = ExtResource("11_ydbjr")
+script = ExtResource("5_r7tc6")
+
+[node name="armchair" type="Sprite2D" parent="listeObjets"]
+visible = false
+position = Vector2(-130, -58)
+texture = ExtResource("12_qqt7l")
+script = ExtResource("5_r7tc6")
+
+[node name="lampe" type="Sprite2D" parent="listeObjets"]
+visible = false
+z_index = 2
+position = Vector2(-301.00003, -104)
+scale = Vector2(1.6874998, 1.6874998)
+texture = ExtResource("21_0i7ja")
+script = ExtResource("5_r7tc6")
+
+[node name="rideaux" type="Sprite2D" parent="listeObjets"]
+visible = false
+z_index = 1
+position = Vector2(-311, -334.00003)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("22_k61po")
+script = ExtResource("5_r7tc6")
+
+[node name="murs" type="Node2D" parent="."]
+position = Vector2(0, -4)
+script = ExtResource("20_t4i3p")
+
+[node name="beigeWall" type="Sprite2D" parent="murs"]
+visible = false
+z_index = -1
+position = Vector2(36.999992, -315)
+scale = Vector2(2.8828125, 0.41015628)
+texture = ExtResource("23_yaa1r")
+
+[node name="redWall" type="Sprite2D" parent="murs"]
+visible = false
+z_index = -1
+position = Vector2(37.5, -315)
+scale = Vector2(2.8847656, 0.41015625)
+texture = ExtResource("24_yaa1r")
+
+[node name="greenWall" type="Sprite2D" parent="murs"]
+z_index = -2
+position = Vector2(37.000046, -315)
+scale = Vector2(2.8828125, 0.41015625)
+texture = ExtResource("25_grcyl")
+
+[node name="perso" type="Node2D" parent="."]
+
+[node name="perso1" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("19_fn1w0")]
+position = Vector2(-129, 42)
+ListeObjets = NodePath("../../listeObjets")
+
+[node name="perso2" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("19_fn1w0")]
+position = Vector2(-398, 222)
+ListeObjets = NodePath("../../listeObjets")
+
+[node name="perso3" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("19_fn1w0")]
+position = Vector2(76, 200)
+ListeObjets = NodePath("../../listeObjets")
+
+[node name="menu" parent="." instance=ExtResource("12_lcohu")]
+z_index = 3
+offset_left = 361.0
+offset_top = -394.0
+offset_right = 361.0
+offset_bottom = -394.0
+script = ExtResource("26_yaa1r")
+
+[node name="store" parent="." instance=ExtResource("18_vqeng")]
+visible = false
+z_index = 10
+position = Vector2(-607, -330.99997)
+scale = Vector2(1.05, 1.05)
+
+[node name="brokenObject" type="Node2D" parent="."]
+z_index = 3
+position = Vector2(166, -430)
+script = ExtResource("27_sn8n4")
+
+[node name="objetCasse" type="Button" parent="brokenObject"]
+z_index = 1
+offset_right = 256.0
+offset_bottom = 256.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bhhld")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mexdd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tbtbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gj30g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_43rvo")
+flat = true
+
+[node name="btnReparer" type="Button" parent="brokenObject/objetCasse"]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 143.0
+offset_top = -329.0
+offset_right = 157.0
+offset_bottom = -313.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="marginContainer" type="MarginContainer" parent="brokenObject"]
+offset_right = 256.0
+offset_bottom = 256.0
+mouse_filter = 2
+
+[node name="textureRect" type="TextureRect" parent="brokenObject/marginContainer"]
+z_index = -3
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("28_qmtj2")
+
+[node name="animationRepare" type="AnimationPlayer" parent="brokenObject/marginContainer/textureRect"]
+unique_name_in_owner = true
+root_node = NodePath("../../../objetCasse")
+libraries = {
+&"": SubResource("AnimationLibrary_rmsjd")
+}
+
+[connection signal="pressed" from="brokenObject/objetCasse" to="brokenObject" method="_on_objet_casse_pressed"]
+[connection signal="pressed" from="brokenObject/objetCasse/btnReparer" to="." method="_on_btn_reparer_pressed"]
