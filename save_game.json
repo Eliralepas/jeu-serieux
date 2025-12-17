@@ -14,9 +14,9 @@
 	},
 	"salle_de_bain": {
 		"nom": "salle_de_bain",
-		"remarques": "On ne peut pas satisfaire tout le monde.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nDurant cette saison, il fait tout le temps nuit...On aurait aimé voir plus de lumière.\n",
+		"remarques": "Tu aurais pu faire mieux, j'ai eu deux plaintes.\nÇa aurait été bien de pouvoir réparer cet objet.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nC'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n",
 		"saison": 1.0,
-		"score": 6.16666666666667
+		"score": 5.83333333333333
 	},
 	"salon": {
 		"nom": "salon",
@@ -24,5 +24,5 @@
 		"saison": 1.0,
 		"score": 0.0
 	},
-	"tour": 28.0
+	"tour": 30.0
 }

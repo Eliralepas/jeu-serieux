@@ -33,10 +33,11 @@ const NOM_SALLE : String = "salle_de_bain"
 	"etagere":$ListeObjets/etagere,
 	"douche":$ListeObjets/douche,
 	"poubelle":$ListeObjets/poubelle,
+	
 	#"radiateur": $ListeObjets/radiateur,
 	#"cd":$ListeObjets/cd
-	#"rideaux": $ListeObjets/rideaux
-	#"lampe": $ListeObjets/lampe
+	"rideaux": $ListeObjets/rideaux,
+	"lampe": $ListeObjets/lampe,
 }
 
 @export var Personnages : Node2D
@@ -47,7 +48,7 @@ var budget := 0 : #A lire depuis le Json
 		$Store.budget = val
 		print(budget)
 		
-var stock :Array= [] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
+var stock :Array= ["rideaux", "lampe"] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
 
 func _ready() -> void:
@@ -164,7 +165,7 @@ func _calcul_score() ->void :
 			var saison : int = json[NOM_SALLE]["saison"]
 			if saison == 0 : #si été
 				#vérifier si le rideau est visible
-				var rideau = objects["radiateur"]
+				var rideau = objects["rideaux"]
 				if rideau.visible : 
 					scoreTotal += 2.5
 					remarques += "C'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\n"
@@ -172,7 +173,7 @@ func _calcul_score() ->void :
 					remarques += "Durant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n"
 			elif saison == 1 : 
 				#vérifier si la lampe/lumière est visible
-				var lampe = objects["cd"]
+				var lampe = objects["lampe"]
 				if lampe.visible : 
 					scoreTotal += 2.5
 					remarques += "C'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n"

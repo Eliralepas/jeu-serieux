@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://okeh157g3swl"]
+[gd_scene load_steps=57 format=4 uid="uid://okeh157g3swl"]
 
 [ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/salle_de_bain/piece.gd" id="1_2813e"]
 [ext_resource type="Script" uid="uid://86xs8jxdfdb4" path="res://scripts/salle_de_bain/murs.gd" id="2_madcg"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="15_dl1tu"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="16_ys5ic"]
 [ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="17_fyvtg"]
+[ext_resource type="Texture2D" uid="uid://dce8rsvn1suq2" path="res://assets/meubles/fenetre.png" id="18_1q3q2"]
 [ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/salle_de_bain/liste_objets.gd" id="18_31ka2"]
 [ext_resource type="Texture2D" uid="uid://dpmqku2qp157x" path="res://assets/meubles/tapis.png" id="19_nop7e"]
 [ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/salle_de_bain/object.gd" id="20_376y5"]
@@ -29,7 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://np8prax2x8ux" path="res://assets/meubles/panierPlastique.png" id="27_jjl5w"]
 [ext_resource type="Texture2D" uid="uid://djx2y11xlkht2" path="res://assets/meubles/poubelle.png" id="28_jkjd7"]
 [ext_resource type="Texture2D" uid="uid://byfq5joavh7oe" path="res://assets/meubles/lavabo.png" id="29_hyscj"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="30_omtnp"]
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/Magasin.tscn" id="30_tmjlu"]
+[ext_resource type="Texture2D" uid="uid://b4v2aix6aotnm" path="res://assets/meubles/rideaux.png" id="31_3ss8u"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="31_uyhqi"]
 [ext_resource type="Script" uid="uid://bgujil4oqkot6" path="res://scripts/salle_de_bain/broken_object.gd" id="32_jgky0"]
 [ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://assets/temp/broken_washingMachine.png" id="33_ly0l8"]
@@ -188,6 +191,21 @@ stream = ExtResource("16_ys5ic")
 stream = ExtResource("17_fyvtg")
 autoplay = true
 
+[node name="Fenêtre" type="Sprite2D" parent="."]
+position = Vector2(238, -351)
+scale = Vector2(0.16861, 0.148087)
+texture = ExtResource("18_1q3q2")
+
+[node name="Toilettes" type="Sprite2D" parent="."]
+position = Vector2(-181, -166)
+scale = Vector2(5.10133, 4.54865)
+texture = ExtResource("37_5rqod")
+
+[node name="Lavabo" type="Sprite2D" parent="."]
+position = Vector2(47, -210)
+scale = Vector2(4.32057, 3.82786)
+texture = ExtResource("29_hyscj")
+
 [node name="ListeObjets" type="Node2D" parent="."]
 script = ExtResource("18_31ka2")
 
@@ -204,7 +222,7 @@ texture = ExtResource("21_8ypqi")
 script = ExtResource("20_376y5")
 
 [node name="cadre" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(237, -321)
+position = Vector2(-113, -326)
 scale = Vector2(7.36611, 7.24864)
 texture = ExtResource("22_usgjb")
 script = ExtResource("20_376y5")
@@ -216,7 +234,7 @@ texture = ExtResource("23_d0dd5")
 script = ExtResource("20_376y5")
 
 [node name="etagere" type="Sprite2D" parent="ListeObjets"]
-position = Vector2(-184, -311)
+position = Vector2(-277, -316)
 scale = Vector2(7.08281, 6.38501)
 texture = ExtResource("24_v0etd")
 script = ExtResource("20_376y5")
@@ -245,6 +263,20 @@ scale = Vector2(3.31352, 3.74894)
 texture = ExtResource("28_jkjd7")
 script = ExtResource("20_376y5")
 
+[node name="lampe" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(-129, 311)
+scale = Vector2(3.31352, 3.74894)
+texture = ExtResource("30_omtnp")
+script = ExtResource("20_376y5")
+
+[node name="rideaux" type="Sprite2D" parent="ListeObjets"]
+visible = false
+position = Vector2(240.946, -330)
+scale = Vector2(0.937075, 0.652211)
+texture = ExtResource("31_3ss8u")
+script = ExtResource("20_376y5")
+
 [node name="Store" parent="." instance=ExtResource("30_tmjlu")]
 visible = false
 z_index = 2
@@ -253,7 +285,7 @@ position = Vector2(-691, -415)
 [node name="Perso" type="Node2D" parent="."]
 
 [node name="Perso" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("31_uyhqi")]
-position = Vector2(-464, -80)
+position = Vector2(-366, -61)
 ListeObjets = NodePath("../../ListeObjets")
 
 [node name="Perso2" parent="Perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("31_uyhqi")]
@@ -309,16 +341,6 @@ root_node = NodePath("../../../ObjetCasse")
 libraries = {
 &"": SubResource("AnimationLibrary_gghgv")
 }
-
-[node name="Toilettes" type="Sprite2D" parent="."]
-position = Vector2(-181, -166)
-scale = Vector2(5.10133, 4.54865)
-texture = ExtResource("37_5rqod")
-
-[node name="Lavabo" type="Sprite2D" parent="."]
-position = Vector2(47, -210)
-scale = Vector2(4.32057, 3.82786)
-texture = ExtResource("29_hyscj")
 
 [connection signal="pressed" from="BrokenObject/ObjetCasse" to="BrokenObject" method="_on_objet_casse_pressed"]
 [connection signal="pressed" from="BrokenObject/ObjetCasse/BtnReparer" to="." method="_on_btn_reparer_pressed"]
