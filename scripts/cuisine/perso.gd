@@ -8,21 +8,18 @@ class_name Personnage
 @onready var content: TextureRect = $Emotion/Content
 @onready var pas_content: TextureRect = $Emotion/PasContent
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !ListeObjets:
 		push_error("%s : @export var ListeObjet est null" % name)
-	var object : Object_piece = ListeObjets.objectRandom()
+	
+	#On récupère un objet random de la liste d'objet
+	var object : ObjectPiece = ListeObjets.objectRandom()
 	var object_bulle : Sprite2D = Sprite2D.new()
 	object_bulle.texture = object.texture
 	var texture_object: TextureRect = get_node("Bulle/Objet")
 	resize(object_bulle, texture_object)
 	
 	var image_path: String
-	
-	
-	
-	
 	
 	if randi_range(0,1):
 		image_path = "res://assets/bulle/coeur.png"
@@ -63,3 +60,12 @@ func visible_emotion(estcontent : bool) -> void:
 	else :
 		content.visible = false
 		pas_content.visible = true
+
+#retroune si le personnage est content ou non
+func is_content() -> bool : 
+	if content.visible && !pas_content.visible : 
+		return true
+		
+	if pas_content.visible && !content.visible: 
+		return false
+	return false

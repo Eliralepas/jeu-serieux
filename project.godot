@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="Archi Pole Nord"
+run/main_scene="uid://1slb4ng5gwih"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Archi Pole Nord"
+
+[gui]
+
+theme/custom_font="uid://bybv0or3wpnw7"
 
 [rendering]
 
