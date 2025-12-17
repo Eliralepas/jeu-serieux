@@ -4,7 +4,7 @@ Pour notre projet T3 (2e année de BUT Informatique), nous avons développé un 
 Un jeu sérieux en **2D** où le joueur incarne un architecte chargé de rénover la **station polaire Concordia**. Il doit concevoir des espaces adaptés à un **environnement extrême, confiné et multinational** (français, italien etc.).
 
 <p align="center"> 
-  <img src="archipolenord.png" alt="Aperçu du jeu Archi Pole Nord"/> 
+  <img src="./readme/archipolenord.png" alt="Aperçu du jeu Archi Pole Nord"/> 
 </p>
 
 ---
