@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvj257l2sl3p0"]
 
-[ext_resource type="Script" uid="uid://5ue44l4nxpxl" path="res://scripts/Communs_salon/cadre_objet.gd" id="1_bn40w"]
+[ext_resource type="Script" uid="uid://5ue44l4nxpxl" path="res://scripts/salon/cadre_objet.gd" id="1_bn40w"]
 [ext_resource type="Texture2D" uid="uid://fhddn58fuaeq" path="res://assets/magasin/cadreObjets.png" id="1_mi0vr"]
 [ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_48fo1"]
 
