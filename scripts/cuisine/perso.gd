@@ -3,10 +3,10 @@ extends AnimatedSprite2D
 class_name Personnage
 
 @export var ListeObjets : ListeObjet
-@onready var bulle : Sprite2D = get_node("Bulle")
+@onready var bulle : Sprite2D = get_node("bulle")
 
-@onready var content: TextureRect = $Emotion/Content
-@onready var pas_content: TextureRect = $Emotion/PasContent
+@onready var content: TextureRect = $emotion/content
+@onready var pas_content: TextureRect = $emotion/pasContent
 
 func _ready() -> void:
 	if !ListeObjets:
@@ -16,7 +16,7 @@ func _ready() -> void:
 	var object : ObjectPiece = ListeObjets.objectRandom()
 	var object_bulle : Sprite2D = Sprite2D.new()
 	object_bulle.texture = object.texture
-	var texture_object: TextureRect = get_node("Bulle/Objet")
+	var texture_object: TextureRect = get_node("bulle/objet")
 	resize(object_bulle, texture_object)
 	
 	var image_path: String
@@ -35,7 +35,7 @@ func _ready() -> void:
 	var avis = ImageTexture.create_from_image(image)
 	var avis_sprite : Sprite2D = Sprite2D.new()
 	avis_sprite.texture = avis
-	var texture_avis: TextureRect = get_node("Bulle/Avis")
+	var texture_avis: TextureRect = get_node("bulle/avis")
 	resize(avis_sprite, texture_avis)
 	
 	bulle.visible = false
