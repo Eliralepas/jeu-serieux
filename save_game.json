@@ -1,5 +1,5 @@
 {
-	"budget": 10000,
+	"budget": 9285,
 	"cuisine": {
 		"nom": "cuisine",
 		"remarques": "On ne peut pas satisfaire tout le monde.\nÇa aurait été bien de pouvoir réparer cet objet.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nDurant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n",
@@ -20,9 +20,9 @@
 	},
 	"salon": {
 		"nom": "salon",
-		"remarques": "",
+		"remarques": "Et bien, tout les résidents ont été satisfait !\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nD'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\nC'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n",
 		"saison": 1.0,
-		"score": 0.0
+		"score": 10.0
 	},
-	"tour": 14.0
+	"tour": 34.0
 }

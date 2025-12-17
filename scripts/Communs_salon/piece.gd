@@ -26,15 +26,15 @@ const NOM_SALLE : String = "salon"
 	#"nom": $cheminImage,
 	"Grand tableau": $listeObjets/bigPainting,
 	"Grande Lampe":$listeObjets/grandeLampe,
-	#"table_basse":$listeObjets/table_basse,
-	#"tv":$listeObjets/tv,
-	#"canape":$listeObjets/canape,
 	"Bibliotheque":$listeObjets/bibliotheque,
 	"Petit tableau 1":$listeObjets/smallPainting1,
 	"Petit tableau 2":$listeObjets/smallPainting2,
 	"Tapis":$listeObjets/carpet,
 	"Plante":$listeObjets/plant,
-	"Fauteuil":$listeObjets/armchair
+	"Fauteuil":$listeObjets/armchair,
+	
+	"Rideaux": $listeObjets/rideaux,
+	"Lampe": $listeObjets/lampe
 }
 
 @export var Personnages : Node2D
@@ -45,7 +45,7 @@ var budget := 0 : #A lire depuis le Json
 		$store.budget = val
 		print(budget)
 		
-var stock :Array= [] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
+var stock :Array= ["Rideaux", "Lampe"] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
 
 func _ready() -> void:
@@ -162,7 +162,7 @@ func _calcul_score() ->void :
 			var saison : int = json[NOM_SALLE]["saison"]
 			if saison == 0 : #si été
 				#vérifier si le rideau est visible
-				var rideau = objects["radiateur"]
+				var rideau = objects["Rideaux"]
 				if rideau.visible : 
 					scoreTotal += 2.5
 					remarques += "C'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\n"
@@ -170,7 +170,7 @@ func _calcul_score() ->void :
 					remarques += "Durant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n"
 			elif saison == 1 : 
 				#vérifier si la lampe/lumière est visible
-				var lampe = objects["cd"]
+				var lampe = objects["Lampe"]
 				if lampe.visible : 
 					scoreTotal += 2.5
 					remarques += "C'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n"

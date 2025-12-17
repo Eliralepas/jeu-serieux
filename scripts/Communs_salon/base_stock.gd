@@ -1,5 +1,6 @@
 extends Node2D
 class_name Stock
+
 #CLASSE AVEC TOUTES LES FCT DE BASE DES STOCK
 
 #ajout d'objet dans le stock (une fois acheter du magasin)

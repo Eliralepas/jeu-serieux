@@ -140,7 +140,7 @@ func _on_button_acheter_pressed() -> void:
 			
 			
 	if (objets_achetes + checked_objects.size()) > 4: #verifie qu'on ne veut pas plus de 4 objets
-		parle.text = "On a dit uniquement  4 objets!"
+		parle.text = "On a dit uniquement 4 objets!"
 
 	# Vérifie si le budget suffit
 	elif total <= budget: 
@@ -150,8 +150,8 @@ func _on_button_acheter_pressed() -> void:
 			if ajoutee:
 				any_added = true
 			else:
-				objets_achetes -= 1 # On décrémente le nombre d'objet
-				total -= obj[1] # On retire le prix de l'objet déjà possédé au résultat
+				#objets_achetes -= 1 # On décrémente le nombre d'objet
+				#total -= obj[1] # On retire le prix de l'objet déjà possédé au résultat
 				parle.text = "Tu l'as déjà, je ne vends pas en double."
 
 		if any_added:

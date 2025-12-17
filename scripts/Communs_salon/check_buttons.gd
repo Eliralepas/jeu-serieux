@@ -1,7 +1,6 @@
 extends Stock
 class_name CheckBtn
 
-
 	#fonction a appeler apres l'achat dans le magasin
 	#ou au commencement du jeu pour mettre les objets par defauts
 func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
