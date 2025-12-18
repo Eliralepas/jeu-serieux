@@ -6,7 +6,7 @@ class_name SalleDeBain
 #(adaptez les chemins si besoin)
 
 # pour la gestion du JSON (adaptez les chemins si besoin)
-const PATH : String = "res://save_game.json"
+const PATH : String = "res://save/save_game.json"
 const NOM_SALLE : String = "salle_de_bain"
 
 @onready var porte= $songs/porte

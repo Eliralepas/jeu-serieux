@@ -6,7 +6,7 @@ class_name Dortoir
 #(adaptez les chemins si besoin)
 
 # pour la gestion du JSON (adaptez les chemins si besoin)
-const PATH : String = "res://save_game.json"
+const PATH : String = "res://save/save_game.json"
 const NOM_SALLE : String = "dortoir"
 
 @onready var porte= $songs/porte
@@ -25,14 +25,14 @@ const NOM_SALLE : String = "dortoir"
 @onready var conteneur=$menu/panel/vBoxContainer
 @onready var objects := { #tous les elements possible dans la piece(donc achetable depuis le magasin)
 	#"nom": $cheminImage,
-	"Cadres": $listeObjets/cadres,
-	"Armoire":$listeObjets/armoire,
-	"Lampe":$listeObjets/lampe,
-	"Plante1":$listeObjets/plante1,
-	"Plante2":$listeObjets/plante2,
-	"Pouf":$listeObjets/pouf,
-	"Commode":$listeObjets/commode,
-
+	"cadres": $listeObjets/cadres,
+	"armoire":$listeObjets/armoire,
+	"lampe":$listeObjets/lampe,
+	"plante1":$listeObjets/plante1,
+	"plante2":$listeObjets/plante2,
+	"pouf":$listeObjets/pouf,
+	"commode":$listeObjets/commode,
+	"rideaux":$listeObjets/rideaux
 }
 
 @export var Personnages : Node2D
@@ -43,7 +43,7 @@ var budget := 0 : #A lire depuis le Json
 		$store.budget = val
 		print(budget)
 		
-var stock :Array= [] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
+var stock :Array= ["lampe", "rideaux"] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
 
 func _ready() -> void:
@@ -84,13 +84,12 @@ func setup() -> void:
 	$store/btnSortir.connect("pressed", Callable(self, "_on_btn_sortir"))
 	
 	var objets = [
-	["Cadres",20],
-	["Armoire",120],
-	["Lampe",32],
-	["Plante1",14],
-	["Plante2",17],
-	["Pouf",55],
-	["Commode",67]
+	["cadres",20],
+	["armoire",120],
+	["plante1",14],
+	["plante2",17],
+	["pouf",55],
+	["commode",67]
 	]
 	
 	store.set_items(objets)
@@ -180,7 +179,7 @@ func _calcul_score() ->void :
 			var saison : int = json[NOM_SALLE]["saison"]
 			if saison == 0 : #si été
 				#vérifier si le rideau est visible
-				var rideau = objects["Plante1"]
+				var rideau = objects["rideaux"]
 				if rideau.visible : 
 					scoreTotal += 2.5
 					remarques += "C'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\n"
@@ -188,7 +187,7 @@ func _calcul_score() ->void :
 					remarques += "Durant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n"
 			elif saison == 1 : 
 				#vérifier si la lampe/lumière est visible
-				var lampe = objects["Lampe"]
+				var lampe = objects["lampe"]
 				if lampe.visible : 
 					scoreTotal += 2.5
 					remarques += "C'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n"

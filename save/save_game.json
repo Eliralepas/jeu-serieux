@@ -1,0 +1,28 @@
+{
+	"budget": 49128,
+	"cuisine": {
+		"nom": "cuisine",
+		"remarques": "",
+		"saison": 0.0,
+		"score": 0
+	},
+	"dortoir": {
+		"nom": "dortoir",
+		"remarques": "",
+		"saison": 1.0,
+		"score": 0
+	},
+	"salle_de_bain": {
+		"nom": "salle_de_bain",
+		"remarques": "",
+		"saison": 0.0,
+		"score": 0
+	},
+	"salon": {
+		"nom": "salon",
+		"remarques": "",
+		"saison": 1.0,
+		"score": 0
+	},
+	"tour": 0
+}

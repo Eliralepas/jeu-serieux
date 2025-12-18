@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cemopexgp5ubb"]
 
-[ext_resource type="Script" uid="uid://bdo6eitawlnbg" path="res://scripts/menu_principale.gd" id="1_ccts7"]
-[ext_resource type="Texture2D" uid="uid://ca21gl0j0krsu" path="res://readme/archi_pole_sud.png" id="2_rhrkc"]
-[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_7w7dl"]
+[ext_resource type="Script" uid="uid://ddgotr4vmmcfs" path="res://scripts/menu_principale.gd" id="1_ccts7"]
+[ext_resource type="Texture2D" uid="uid://jlqkj2gdecf4" path="res://readme/archi_pole_sud.png" id="2_rhrkc"]
+[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/police/ConnectionII.otf" id="3_7w7dl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wba1"]
 content_margin_left = 5.0

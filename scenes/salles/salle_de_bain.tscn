@@ -1,72 +1,71 @@
-[gd_scene load_steps=56 format=4 uid="uid://cfgro3wgf6ytq"]
+[gd_scene load_steps=55 format=4 uid="uid://cfgro3wgf6ytq"]
 
-[ext_resource type="Script" uid="uid://bl0o2w56k0rk5" path="res://scripts/salle_de_bain/salle_de_bain.gd" id="1_omtnp"]
-[ext_resource type="Script" uid="uid://86xs8jxdfdb4" path="res://scripts/murs.gd" id="2_3ss8u"]
-[ext_resource type="Texture2D" uid="uid://bppd31wut5xla" path="res://assets/mur/mur_bleu.png" id="3_dvelx"]
-[ext_resource type="Texture2D" uid="uid://do5mew8c5n6q" path="res://assets/mur/mur_rouge.png" id="4_lhdko"]
-[ext_resource type="Texture2D" uid="uid://cvgp3svwl2wo0" path="res://assets/mur/mur_vert.png" id="5_5wnuk"]
-[ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="6_lnvww"]
-[ext_resource type="Texture2D" uid="uid://biihxfugstveu" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart.png" id="7_0m18k"]
-[ext_resource type="Texture2D" uid="uid://fm5bui5nacmc" path="res://assets/sol/parquet-brun-clair-pixilart(1).png" id="8_xwt65"]
-[ext_resource type="Texture2D" uid="uid://trxci3tyhtj6" path="res://assets/sol/parquet-brun-clair-pixilart(2).png" id="9_ld0y5"]
-[ext_resource type="Texture2D" uid="uid://bdkow7n0au8bv" path="res://assets/sol/parquet-brun-clair-pixilart.png" id="10_ib8vx"]
-[ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="11_dl1tu"]
-[ext_resource type="Texture2D" uid="uid://dce8rsvn1suq2" path="res://assets/meubles/salle_de_bain/fenetre.png" id="12_ys5ic"]
-[ext_resource type="Texture2D" uid="uid://dwexpua6rwbib" path="res://assets/meubles/salle_de_bain/toilettes.png" id="13_fyvtg"]
-[ext_resource type="Texture2D" uid="uid://byfq5joavh7oe" path="res://assets/meubles/salle_de_bain/lavabo.png" id="14_31ka2"]
-[ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/menu.tscn" id="15_nop7e"]
-[ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="17_8ypqi"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="18_usgjb"]
-[ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="19_d0dd5"]
-[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="20_v0etd"]
-[ext_resource type="Script" uid="uid://ci6e1yq5r3qrp" path="res://scripts/liste_objets.gd" id="21_a4yn2"]
-[ext_resource type="Texture2D" uid="uid://dpmqku2qp157x" path="res://assets/meubles/salle_de_bain/tapis.png" id="22_iu7gj"]
-[ext_resource type="Script" uid="uid://boujxh0nhxyey" path="res://scripts/object.gd" id="23_jjl5w"]
-[ext_resource type="Texture2D" uid="uid://ds4tn47qtq5re" path="res://assets/meubles/salle_de_bain/baignoire.png" id="24_jkjd7"]
-[ext_resource type="Texture2D" uid="uid://b0dxoihc3xbe6" path="res://assets/meubles/salle_de_bain/cadre.png" id="25_hyscj"]
-[ext_resource type="Texture2D" uid="uid://dcrv1b3d43r4l" path="res://assets/meubles/salle_de_bain/douche.png" id="26_tmjlu"]
-[ext_resource type="Texture2D" uid="uid://b0h0tx7n5alhq" path="res://assets/meubles/salle_de_bain/etagere.png" id="27_uyhqi"]
-[ext_resource type="Texture2D" uid="uid://gdhmctyinih" path="res://assets/meubles/salle_de_bain/miroir.png" id="28_jgky0"]
-[ext_resource type="Texture2D" uid="uid://dbgia2fhr6o8l" path="res://assets/meubles/salle_de_bain/panierMetal.png" id="29_ly0l8"]
-[ext_resource type="Texture2D" uid="uid://np8prax2x8ux" path="res://assets/meubles/salle_de_bain/panierPlastique.png" id="30_16knf"]
-[ext_resource type="Texture2D" uid="uid://djx2y11xlkht2" path="res://assets/meubles/salle_de_bain/poubelle.png" id="31_c7upi"]
-[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="32_xko66"]
-[ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/magasin.tscn" id="34_uuws4"]
-[ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://magasin.gd" id="35_74b0d"]
-[ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/perso_1.tscn" id="36_3vwv8"]
-[ext_resource type="Script" uid="uid://bgujil4oqkot6" path="res://scripts/broken_object.gd" id="37_tunpb"]
-[ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://assets/temp/broken_washingMachine.png" id="38_dolul"]
-[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="39_4tnsf"]
-[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="40_tij40"]
-[ext_resource type="Texture2D" uid="uid://cwaed2qcy08uy" path="res://assets/temp/washingMachine.png" id="41_2g6md"]
+[ext_resource type="Script" uid="uid://dfv1eyjlx4mnb" path="res://scripts/salle_de_bain/salle_de_bain.gd" id="1_gftd5"]
+[ext_resource type="Script" uid="uid://k7olj3l2d60x" path="res://scripts/murs.gd" id="2_3k1xi"]
+[ext_resource type="Texture2D" uid="uid://d3jfmht23pnfs" path="res://assets/mur/mur_bleu.png" id="3_iqw53"]
+[ext_resource type="Texture2D" uid="uid://bmi5rsuq4q5pc" path="res://assets/mur/mur_rouge.png" id="4_ct6m4"]
+[ext_resource type="Texture2D" uid="uid://d72mh557jpog" path="res://assets/mur/mur_vert.png" id="5_fc42i"]
+[ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="6_wiuqd"]
+[ext_resource type="Texture2D" uid="uid://biihxfugstveu" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart.png" id="7_2jt3a"]
+[ext_resource type="Texture2D" uid="uid://fm5bui5nacmc" path="res://assets/sol/parquet-brun-clair-pixilart(1).png" id="8_3hpeo"]
+[ext_resource type="Texture2D" uid="uid://trxci3tyhtj6" path="res://assets/sol/parquet-brun-clair-pixilart(2).png" id="9_l3dv1"]
+[ext_resource type="Texture2D" uid="uid://bdkow7n0au8bv" path="res://assets/sol/parquet-brun-clair-pixilart.png" id="10_4475g"]
+[ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="11_l3kmi"]
+[ext_resource type="Texture2D" uid="uid://cb2k2uw7phjp7" path="res://assets/meubles/salle_de_bain/fenetre.png" id="12_r4e0d"]
+[ext_resource type="Texture2D" uid="uid://tlmx4u18wa44" path="res://assets/meubles/salle_de_bain/toilettes.png" id="13_xhtir"]
+[ext_resource type="Texture2D" uid="uid://bfmeklam7fxe8" path="res://assets/meubles/salle_de_bain/lavabo.png" id="14_432u0"]
+[ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/salles/menu.tscn" id="15_ikart"]
+[ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="16_mwycu"]
+[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="17_0nkk2"]
+[ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="18_3l0iv"]
+[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="19_bnth3"]
+[ext_resource type="Script" uid="uid://djon206v104w1" path="res://scripts/liste_objets.gd" id="20_trf8k"]
+[ext_resource type="Texture2D" uid="uid://fpfxk4kl1d22" path="res://assets/meubles/salle_de_bain/tapis.png" id="21_y4dqp"]
+[ext_resource type="Script" uid="uid://bv1edvx7phtyi" path="res://scripts/object.gd" id="22_jh5jd"]
+[ext_resource type="Texture2D" uid="uid://doreip5if8txi" path="res://assets/meubles/salle_de_bain/baignoire.png" id="23_q8e83"]
+[ext_resource type="Texture2D" uid="uid://d0q0hxptg77gj" path="res://assets/meubles/salle_de_bain/cadre.png" id="24_qce5k"]
+[ext_resource type="Texture2D" uid="uid://bxlv041qunsoc" path="res://assets/meubles/salle_de_bain/douche.png" id="25_nnaob"]
+[ext_resource type="Texture2D" uid="uid://cvrnf4lo8fwn5" path="res://assets/meubles/salle_de_bain/etagere.png" id="26_s8mc3"]
+[ext_resource type="Texture2D" uid="uid://dw4mm6ob3dqlx" path="res://assets/meubles/salle_de_bain/miroir.png" id="27_qkv8e"]
+[ext_resource type="Texture2D" uid="uid://bvdajtdb1qvnk" path="res://assets/meubles/salle_de_bain/panierMetal.png" id="28_0yqfc"]
+[ext_resource type="Texture2D" uid="uid://cenw1hvkcwchg" path="res://assets/meubles/salle_de_bain/panierPlastique.png" id="29_lfm11"]
+[ext_resource type="Texture2D" uid="uid://soykxqig2bee" path="res://assets/meubles/salle_de_bain/poubelle.png" id="30_vhcnt"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="31_edomr"]
+[ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/magasin/magasin.tscn" id="32_ks3bv"]
+[ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/salles/perso_1.tscn" id="33_p53d6"]
+[ext_resource type="Script" uid="uid://uxmk26odp7sp" path="res://scripts/broken_object.gd" id="34_dxgww"]
+[ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://assets/temp/broken_washingMachine.png" id="35_x3nwk"]
+[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="36_dho6o"]
+[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="37_rel6p"]
+[ext_resource type="Texture2D" uid="uid://cwaed2qcy08uy" path="res://assets/temp/washingMachine.png" id="38_4e3rn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
-texture = ExtResource("6_lnvww")
+texture = ExtResource("6_wiuqd")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avpxn"]
-texture = ExtResource("7_0m18k")
+texture = ExtResource("7_2jt3a")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itmto"]
-texture = ExtResource("8_xwt65")
+texture = ExtResource("8_3hpeo")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4ikx"]
-texture = ExtResource("9_ld0y5")
+texture = ExtResource("9_l3dv1")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3i8f6"]
-texture = ExtResource("10_ib8vx")
+texture = ExtResource("10_4475g")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g4tk"]
-texture = ExtResource("11_dl1tu")
+texture = ExtResource("11_l3kmi")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
@@ -104,7 +103,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("38_dolul")]
+"values": [ExtResource("35_x3nwk")]
 }
 
 [sub_resource type="Animation" id="Animation_i3j5g"]
@@ -121,7 +120,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("39_4tnsf"), ExtResource("40_tij40"), ExtResource("39_4tnsf"), ExtResource("41_2g6md")]
+"values": [ExtResource("36_dho6o"), ExtResource("37_rel6p"), ExtResource("36_dho6o"), ExtResource("38_4e3rn")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gghgv"]
@@ -131,31 +130,31 @@ _data = {
 }
 
 [node name="salleDeBain" type="Node2D" node_paths=PackedStringArray("Personnages")]
-script = ExtResource("1_omtnp")
+script = ExtResource("1_gftd5")
 Personnages = NodePath("perso")
 
 [node name="murs" type="Node2D" parent="."]
-script = ExtResource("2_3ss8u")
+script = ExtResource("2_3k1xi")
 
 [node name="mur1" type="Sprite2D" parent="murs"]
 z_index = -3
 position = Vector2(37.5, -169.5)
 scale = Vector2(1.99595, 0.951737)
-texture = ExtResource("3_dvelx")
+texture = ExtResource("3_iqw53")
 
 [node name="mur2" type="Sprite2D" parent="murs"]
 visible = false
 z_index = -3
 position = Vector2(32.4999, -270)
 scale = Vector2(0.764062, 0.259259)
-texture = ExtResource("4_lhdko")
+texture = ExtResource("4_ct6m4")
 
 [node name="mur3" type="Sprite2D" parent="murs"]
 visible = false
 z_index = -3
 position = Vector2(37.5, -270)
 scale = Vector2(0.984667, 0.186667)
-texture = ExtResource("5_5wnuk")
+texture = ExtResource("5_fc42i")
 
 [node name="sol" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD2////AgAAAAAAAAD2/wAAAgAAAAAAAAD2/wEAAgAAAAAAAAD2/wIAAgAAAAAAAAD2/wMAAgAAAAAAAAD2/wQAAgAAAAAAAAD2/wUAAgAAAAAAAAD3////BQAAAAAAAAD3/wAABQAAAAAAAAD3/wEABQAAAAAAAAD3/wIABQAAAAAAAAD3/wMABQAAAAAAAAD3/wQABQAAAAAAAAD3/wUABQAAAAAAAAD4////BQAAAAAAAAD4/wAABQAAAAAAAAD4/wEABQAAAAAAAAD4/wIABQAAAAAAAAD4/wMABQAAAAAAAAD4/wQABQAAAAAAAAD4/wUABQAAAAAAAAD5////BQAAAAAAAAD5/wAABQAAAAAAAAD5/wEABQAAAAAAAAD5/wIABQAAAAAAAAD5/wMABQAAAAAAAAD5/wQABQAAAAAAAAD5/wUABQAAAAAAAAD6////BQAAAAAAAAD6/wAABQAAAAAAAAD6/wEABQAAAAAAAAD6/wIABQAAAAAAAAD6/wMABQAAAAAAAAD6/wQABQAAAAAAAAD6/wUABQAAAAAAAAD7////BQAAAAAAAAD7/wAABQAAAAAAAAD7/wEABQAAAAAAAAD7/wIABQAAAAAAAAD7/wMABQAAAAAAAAD7/wQABQAAAAAAAAD7/wUABQAAAAAAAAD8////BQAAAAAAAAD8/wAABQAAAAAAAAD8/wEABQAAAAAAAAD8/wIABQAAAAAAAAD8/wMABQAAAAAAAAD8/wQABQAAAAAAAAD8/wUABQAAAAAAAAD9////BQAAAAAAAAD9/wAABQAAAAAAAAD9/wEABQAAAAAAAAD9/wIABQAAAAAAAAD9/wMABQAAAAAAAAD9/wQABQAAAAAAAAD9/wUABQAAAAAAAAD+////BQAAAAAAAAD+/wAABQAAAAAAAAD+/wEABQAAAAAAAAD+/wIABQAAAAAAAAD+/wMABQAAAAAAAAD+/wQABQAAAAAAAAD+/wUABQAAAAAAAAD/////BQAAAAAAAAD//wAABQAAAAAAAAD//wEABQAAAAAAAAD//wIABQAAAAAAAAD//wMABQAAAAAAAAD//wQABQAAAAAAAAD//wUABQAAAAAAAAAAAP//BQAAAAAAAAAAAAAABQAAAAAAAAAAAAEABQAAAAAAAAAAAAIABQAAAAAAAAAAAAMABQAAAAAAAAAAAAQABQAAAAAAAAAAAAUABQAAAAAAAAABAP//BQAAAAAAAAABAAAABQAAAAAAAAABAAEABQAAAAAAAAABAAIABQAAAAAAAAABAAMABQAAAAAAAAABAAQABQAAAAAAAAABAAUABQAAAAAAAAACAP//BQAAAAAAAAACAAAABQAAAAAAAAACAAEABQAAAAAAAAACAAIABQAAAAAAAAACAAMABQAAAAAAAAACAAQABQAAAAAAAAACAAUABQAAAAAAAAADAP//BQAAAAAAAAADAAAABQAAAAAAAAADAAEABQAAAAAAAAADAAIABQAAAAAAAAADAAMABQAAAAAAAAADAAQABQAAAAAAAAADAAUABQAAAAAAAAAEAP//BQAAAAAAAAAEAAAABQAAAAAAAAAEAAEABQAAAAAAAAAEAAIABQAAAAAAAAAEAAMABQAAAAAAAAAEAAQABQAAAAAAAAAEAAUABQAAAAAAAAAFAP//BQAAAAAAAAAFAAAABQAAAAAAAAAFAAEABQAAAAAAAAAFAAIABQAAAAAAAAAFAAMABQAAAAAAAAAFAAQABQAAAAAAAAAFAAUABQAAAAAAAAAGAP//BQAAAAAAAAAGAAAABQAAAAAAAAAGAAEABQAAAAAAAAAGAAIABQAAAAAAAAAGAAMABQAAAAAAAAAGAAQABQAAAAAAAAAGAAUABQAAAAAAAAAHAP//BQAAAAAAAAAHAAAABQAAAAAAAAAHAAEABQAAAAAAAAAHAAIABQAAAAAAAAAHAAMABQAAAAAAAAAHAAQABQAAAAAAAAAHAAUABQAAAAAAAAAIAP//BQAAAAAAAAAIAAAABQAAAAAAAAAIAAEABQAAAAAAAAAIAAIABQAAAAAAAAAIAAMABQAAAAAAAAAIAAQABQAAAAAAAAAIAAUABQAAAAAAAAAJAP//BQAAAAAAAAAJAAAABQAAAAAAAAAJAAEABQAAAAAAAAAJAAIABQAAAAAAAAAJAAMABQAAAAAAAAAJAAQABQAAAAAAAAAJAAUABQAAAAAAAAAKAP7/AAAAAAAAAAAKAP//AwAAAAAAAAAKAAAAAwAAAAAAAAAKAAEAAwAAAAAAAAAKAAIAAwAAAAAAAAAKAAMAAwAAAAAAAAAKAAQAAwAAAAAAAAAKAAUAAwAAAAAAAAADAP7/BAAAAAAAAAAEAP7/BAAAAAAAAAAFAP7/BAAAAAAAAAAGAP7/BAAAAAAAAAAHAP7/BAAAAAAAAAAIAP7/BAAAAAAAAAAJAP7/BAAAAAAAAAD2//7/AQAAAAAAAAD3//7/BAAAAAAAAAD4//7/BAAAAAAAAAD5//7/BAAAAAAAAAD6//7/BAAAAAAAAAD7//7/BAAAAAAAAAD8//7/BAAAAAAAAAD9//7/BAAAAAAAAAD+//7/BAAAAAAAAAD///7/BAAAAAAAAAAAAP7/BAAAAAAAAAABAP7/BAAAAAAAAAACAP7/BAAAAAAAAAA=")
@@ -166,23 +165,23 @@ tile_set = SubResource("TileSet_duoh5")
 [node name="fenêtre" type="Sprite2D" parent="sol/objetBase"]
 position = Vector2(238, -351)
 scale = Vector2(0.16861, 0.148087)
-texture = ExtResource("12_ys5ic")
+texture = ExtResource("12_r4e0d")
 
 [node name="toilettes" type="Sprite2D" parent="sol/objetBase"]
 position = Vector2(-181, -166)
 scale = Vector2(5.10133, 4.54865)
-texture = ExtResource("13_fyvtg")
+texture = ExtResource("13_xhtir")
 
 [node name="lavabo" type="Sprite2D" parent="sol/objetBase"]
 position = Vector2(47, -210)
 scale = Vector2(4.32057, 3.82786)
-texture = ExtResource("14_31ka2")
+texture = ExtResource("14_432u0")
 
 [node name="camera2D" type="Camera2D" parent="."]
 position = Vector2(34, 0)
 zoom = Vector2(0.78, 0.78)
 
-[node name="menu" parent="." instance=ExtResource("15_nop7e")]
+[node name="menu" parent="." instance=ExtResource("15_ikart")]
 offset_left = 361.0
 offset_top = -402.0
 offset_right = 361.0
@@ -191,112 +190,111 @@ offset_bottom = -402.0
 [node name="songs" type="Node" parent="."]
 
 [node name="porte" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("17_8ypqi")
+stream = ExtResource("16_mwycu")
 
 [node name="magasinBackground" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("18_usgjb")
+stream = ExtResource("17_0nkk2")
 
 [node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("19_d0dd5")
+stream = ExtResource("18_3l0iv")
 
 [node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("20_v0etd")
+stream = ExtResource("19_bnth3")
 autoplay = true
 
 [node name="listeObjets" type="Node2D" parent="."]
-script = ExtResource("21_a4yn2")
+script = ExtResource("20_trf8k")
 
 [node name="tapis" type="Sprite2D" parent="listeObjets"]
 position = Vector2(-155, 124)
 scale = Vector2(34.1267, 27.8308)
-texture = ExtResource("22_iu7gj")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("21_y4dqp")
+script = ExtResource("22_jh5jd")
 
 [node name="baignoire" type="Sprite2D" parent="listeObjets"]
 position = Vector2(246, -174)
 scale = Vector2(4.03247, 3.84654)
-texture = ExtResource("24_jkjd7")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("23_q8e83")
+script = ExtResource("22_jh5jd")
 
 [node name="cadre" type="Sprite2D" parent="listeObjets"]
 position = Vector2(-113, -326)
 scale = Vector2(7.36611, 7.24864)
-texture = ExtResource("25_hyscj")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("24_qce5k")
+script = ExtResource("22_jh5jd")
 
 [node name="douche" type="Sprite2D" parent="listeObjets"]
 position = Vector2(-532, -263)
 scale = Vector2(6.06268, 5.73921)
-texture = ExtResource("26_tmjlu")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("25_nnaob")
+script = ExtResource("22_jh5jd")
 
 [node name="etagere" type="Sprite2D" parent="listeObjets"]
 position = Vector2(-277, -316)
 scale = Vector2(7.08281, 6.38501)
-texture = ExtResource("27_uyhqi")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("26_s8mc3")
+script = ExtResource("22_jh5jd")
 
 [node name="miroir" type="Sprite2D" parent="listeObjets"]
 position = Vector2(46, -320)
 scale = Vector2(6.14708, 5.26788)
-texture = ExtResource("28_jgky0")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("27_qkv8e")
+script = ExtResource("22_jh5jd")
 
 [node name="panierMetal" type="Sprite2D" parent="listeObjets"]
 position = Vector2(-352, -162)
 scale = Vector2(4.13711, 3.37908)
-texture = ExtResource("29_ly0l8")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("28_0yqfc")
+script = ExtResource("22_jh5jd")
 
 [node name="panierPlastique" type="Sprite2D" parent="listeObjets"]
 position = Vector2(-647, -152)
 scale = Vector2(3.7807, 3.59647)
-texture = ExtResource("30_16knf")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("29_lfm11")
+script = ExtResource("22_jh5jd")
 
 [node name="poubelle" type="Sprite2D" parent="listeObjets"]
 position = Vector2(279.689, 302.213)
 scale = Vector2(3.31352, 3.74894)
-texture = ExtResource("31_c7upi")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("30_vhcnt")
+script = ExtResource("22_jh5jd")
 
 [node name="lampe" type="Sprite2D" parent="listeObjets"]
 visible = false
 position = Vector2(-129, 311)
 scale = Vector2(3.31352, 3.74894)
-texture = ExtResource("32_xko66")
-script = ExtResource("23_jjl5w")
+texture = ExtResource("31_edomr")
+script = ExtResource("22_jh5jd")
 
 [node name="rideaux" type="Sprite2D" parent="listeObjets"]
 visible = false
 position = Vector2(240.946, -330)
 scale = Vector2(0.937075, 0.652211)
 texture = SubResource("CompressedTexture2D_6j4ok")
-script = ExtResource("23_jjl5w")
+script = ExtResource("22_jh5jd")
 
-[node name="store" parent="." instance=ExtResource("34_uuws4")]
+[node name="store" parent="." instance=ExtResource("32_ks3bv")]
 visible = false
 z_index = 2
 position = Vector2(-691, -415)
-script = ExtResource("35_74b0d")
 
 [node name="perso" type="Node2D" parent="."]
 
-[node name="perso" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("36_3vwv8")]
+[node name="perso" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-366, -61)
 ListeObjets = NodePath("../../listeObjets")
 
-[node name="perso2" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("36_3vwv8")]
+[node name="perso2" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(10, 123)
 ListeObjets = NodePath("../../listeObjets")
 
-[node name="perso3" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("36_3vwv8")]
+[node name="perso3" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-338, 237)
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="brokenObject" type="Node2D" parent="."]
 position = Vector2(-685, 208)
-script = ExtResource("37_tunpb")
+script = ExtResource("34_dxgww")
 
 [node name="objetCasse" type="Button" parent="brokenObject"]
 z_index = 1
@@ -330,7 +328,7 @@ mouse_filter = 2
 [node name="textureRect" type="TextureRect" parent="brokenObject/marginContainer"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("38_dolul")
+texture = ExtResource("35_x3nwk")
 stretch_mode = 5
 
 [node name="animationRepare" type="AnimationPlayer" parent="brokenObject/marginContainer/textureRect"]

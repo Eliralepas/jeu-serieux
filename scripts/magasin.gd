@@ -2,7 +2,7 @@
 class_name Magasin
 extends checkBtn
 
-@onready var scene_cadre: PackedScene = preload("res://scenes/cadre.tscn")
+@onready var scene_cadre: PackedScene = preload("res://scenes/magasin/cadre.tscn")
 
 @onready var parle = $dialogue
 @onready var area = $area2D

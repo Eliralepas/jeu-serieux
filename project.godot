@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 project/assembly_name="Archi Pole Sud"
 
+[gui]
+
+theme/custom_font="uid://dl7maqvwcshc1"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3

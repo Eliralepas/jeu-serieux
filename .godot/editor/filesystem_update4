@@ -1,1 +1,11 @@
-res://scenes/dortoir.tscn
+res://scenes/magasin/magasin.tscn
+res://save/save_game.json
+res://scenes/magasin/cadre.tscn
+res://scenes/menu_principale.tscn
+res://scenes/hall/dialog.tscn
+res://scripts/hall/hall.gd
+res://scripts/hall/dialog_box.gd
+res://scenes/hall/hall.tscn
+res://scripts/hall/button_etat.gd
+res://scenes/hall/room_button.tscn
+res://scenes/salles/salon.tscn

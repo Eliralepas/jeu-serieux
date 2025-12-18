@@ -1,5 +1,7 @@
 extends Control
 
+class_name SalleEtat
+
 @onready var animation_player: AnimationPlayer = $room/animationLock
 @onready var room: TextureButton = $room
 
@@ -13,8 +15,12 @@ func unlock() -> void:
 	animation_player.play("deverouiller")
 	room.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
+func lock() -> void:
+	animation_player.play("verouiller")
+	room.mouse_default_cursor_shape = Control.CURSOR_ARROW
+
 func _on_room_pressed() -> void:
-	var scene_path = "res://scenes/" + name.to_lower() + ".tscn"
+	var scene_path = "res://scenes/salles/" + name.to_lower() + ".tscn"
 	print(scene_path)
 
 	if FileAccess.file_exists(scene_path):

@@ -6,7 +6,7 @@ class_name Cuisine
 #(adaptez les chemins si besoin)
 
 # pour la gestion du JSON (adaptez les chemins si besoin)
-const PATH : String = "res://save_game.json"
+const PATH : String = "res://save/save_game.json"
 const NOM_SALLE : String = "cuisine"
 
 @onready var porte= $songs/porte
@@ -44,7 +44,7 @@ var budget := 0 : #A lire depuis le Json
 		$store.budget = val
 		print(budget)
 		
-var stock :Array= ["rideaux", "lampe", "radiateur"] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
+var stock :Array= ["rideaux", "lampe"] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
 
 func _ready() -> void:
@@ -90,7 +90,8 @@ func setup() -> void:
 	["micro_ondes",40],
 	["cafetiere",50],
 	["four", 10],
-	["poubelle", 12]
+	["poubelle", 12],
+	["radiateur", 50]
 	]
 
 	store.set_items(objets)
