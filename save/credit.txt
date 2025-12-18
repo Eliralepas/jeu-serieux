@@ -1,1 +1,8 @@
-oui
+Créer par l'équipe Concor'dev dans le cadre du projet T3 de 2ème année de BUT Informatique.
+
+Membres de l'équipe Concor'dev :
+
+- MERAL Elif
+- BENNOUNAS Fella
+- BOUDRAA Diya
+- FENARD Aymeric
