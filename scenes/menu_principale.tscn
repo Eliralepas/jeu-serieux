@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://cemopexgp5ubb"]
+
+[ext_resource type="Script" uid="uid://bdo6eitawlnbg" path="res://scripts/menu_principale.gd" id="1_ccts7"]
+[ext_resource type="Texture2D" uid="uid://ca21gl0j0krsu" path="res://readme/archi_pole_sud.png" id="2_rhrkc"]
+[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/connection_ii/ConnectionII.otf" id="3_7w7dl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wba1"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.34173536, 0.59223497, 0.75918496, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.08235294, 0.08235294, 0.5294118, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="menuPrincipale" type="Node2D"]
+script = ExtResource("1_ccts7")
+
+[node name="image" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(1.5491786, 1.4883397)
+texture = ExtResource("2_rhrkc")
+
+[node name="vBoxContainer" type="VBoxContainer" parent="image"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -350.0
+offset_right = -376.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="buttonJouer" type="Button" parent="image/vBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.77083945, 0.7708394, 0.77084005, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8175215, 0.81752115, 0.81752115, 1)
+theme_override_fonts/font = ExtResource("3_7w7dl")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wba1")
+text = "JOUER"
+
+[node name="buttonCredits" type="Button" parent="image/vBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.77083945, 0.7708394, 0.77084005, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8175215, 0.81752115, 0.81752115, 1)
+theme_override_fonts/font = ExtResource("3_7w7dl")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wba1")
+text = "CREDITS"
+
+[node name="buttonQuitter" type="Button" parent="image/vBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.77083945, 0.7708394, 0.77084005, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8175215, 0.81752115, 0.81752115, 1)
+theme_override_fonts/font = ExtResource("3_7w7dl")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wba1")
+text = "QUITTER
+"
+
+[node name="camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.78, 0.78)
+
+[connection signal="pressed" from="image/vBoxContainer/buttonJouer" to="." method="_on_button_jouer_pressed"]
+[connection signal="pressed" from="image/vBoxContainer/buttonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="image/vBoxContainer/buttonQuitter" to="." method="_on_button_quitter_pressed"]

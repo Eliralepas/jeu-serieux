@@ -1,1 +1,2 @@
-res://scenes/cuisine.tscn
+res://scenes/menu_principale.tscn
+res://scripts/menu_principale.gd
