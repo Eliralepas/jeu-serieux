@@ -31,9 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://bxodl4f0c5x3e" path="res://assets/mur/mur_vert1.png" id="26_u7km5"]
 [ext_resource type="Script" uid="uid://bgujil4oqkot6" path="res://scripts/broken_object.gd" id="27_sn8n4"]
 [ext_resource type="Script" uid="uid://dami3u2og2fjb" path="res://magasin.gd" id="31_j5h6y"]
+[ext_resource type="Texture2D" uid="uid://bx436t0o824jd" path="res://assets/temp/broken_clock.png" id="32_0i7ja"]
 [ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="32_j5h6y"]
 [ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="33_0i7ja"]
-[ext_resource type="Texture2D" uid="uid://2ukl7jojfy5x" path="res://assets/meubles/salon/clock.png" id="35_0i7ja"]
+[ext_resource type="Texture2D" uid="uid://2ukl7jojfy5x" path="res://assets/temp/clock.png" id="35_0i7ja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnvgm"]
 texture = ExtResource("2_r2ubq")
@@ -54,9 +55,6 @@ sources/0 = SubResource("TileSetAtlasSource_mnvgm")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43rvo"]
 
-[sub_resource type="Resource" id="Resource_0xx1l"]
-metadata/__load_path__ = "res://assets/meubles/broken_clock.png"
-
 [sub_resource type="Animation" id="Animation_8l67y"]
 resource_name = "RESET"
 tracks/0/type = "value"
@@ -69,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("Resource_0xx1l")]
+"values": [ExtResource("32_0i7ja")]
 }
 
 [sub_resource type="Animation" id="Animation_e7jy0"]
@@ -296,6 +294,7 @@ mouse_filter = 2
 z_index = -3
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("32_0i7ja")
 
 [node name="animationRepare" type="AnimationPlayer" parent="brokenObject/marginContainer/textureRect"]
 unique_name_in_owner = true

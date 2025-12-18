@@ -7,3 +7,6 @@ res://scripts/elem_menu.gd
 res://scripts/check_buttons.gd
 res://scenes/menu.tscn
 res://scenes/magasin.tscn
+res://scenes/cuisine.tscn
+res://scripts/cuisine.gd
+res://scripts/cuisine/cuisine.gd
