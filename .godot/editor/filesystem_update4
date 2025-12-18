@@ -1,12 +1,1 @@
-res://scenes/salon.tscn
-res://scripts/salon/salon.gd
-res://scenes/salle_de_bain.tscn
-res://scenes/dortoir.tscn
-res://scripts/hall/hall.gd
-res://scripts/elem_menu.gd
-res://scripts/check_buttons.gd
-res://scenes/menu.tscn
-res://scenes/magasin.tscn
 res://scenes/cuisine.tscn
-res://scripts/cuisine.gd
-res://scripts/cuisine/cuisine.gd

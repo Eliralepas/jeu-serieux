@@ -10,14 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Archi Pole Nord"
+config/name="Archi Pole Sud"
 run/main_scene="res://scenes/hall/hall.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Archi Pole Nord"
+project/assembly_name="Archi Pole Sud"
 
 [rendering]
 
