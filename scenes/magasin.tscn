@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2h71"]
 size = Vector2(853, 136)
 
-[node name="Store" type="Node2D"]
+[node name="store" type="Node2D"]
 
 [node name="magazin" type="Sprite2D" parent="."]
 position = Vector2(727, 419)
@@ -39,7 +39,7 @@ offset_top = 40.0
 offset_right = 1435.0
 offset_bottom = 596.0
 scale = Vector2(0.959938, 0.862741)
-theme_override_constants/h_separation = 200
+theme_override_constants/h_separation = 290
 theme_override_constants/v_separation = 230
 
 [node name="btnSortir" type="Button" parent="."]

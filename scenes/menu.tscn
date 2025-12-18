@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bidemcih0p3dj"]
+[gd_scene load_steps=20 format=3 uid="uid://bidemcih0p3dj"]
 
+[ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/elem_menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://k4cd8iggfe7e" path="res://assets/menu_decorer/decorer_background.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://b310o0x5hb00i" path="res://assets/mur/paint-pixilart.png" id="2_vjb58"]
 
@@ -54,6 +55,7 @@ offset_right = -1152.0
 offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_con2f")
 
 [node name="panel" type="Panel" parent="."]
 layout_mode = 0
