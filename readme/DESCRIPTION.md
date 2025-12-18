@@ -1,11 +1,11 @@
 # Archi Pole Sud - Description du jeu
 
 
-[Accueil](../README.md) <br>
-[Installation](INSTALL.md)
+### [Accueil](../README.md) <br>
+### [Installation](./INSTALL.md)
 
 ---
-
+  
 **Bienvenue jeune architecte ! Ta mission et tu ne peux que l'accepeter c'est d'agencer cette enorme station dans le pôle sud**
 
 Archi Pole Sud est un simulateur où tu incarnes l’architecte de la station polaire Concordia, au pôle Sud. Ton objectif : transformer les espaces de vie pour améliorer le bien-être des résidents dans un environnement extrême.

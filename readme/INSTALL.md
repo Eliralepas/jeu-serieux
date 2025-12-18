@@ -1,6 +1,12 @@
-# Installation et exécution
+# Archi Pole Sud - Installation et exécution
 
-## Windows
+
+### [Accueil](../README.md) <br>
+### [Description](./DESCRIPTION.md)
+
+---
+
+## 🪟 Windows
 
 1. **Téléchargement**
 
@@ -13,7 +19,7 @@
 
 <!---
 
-## Linux
+## 🐧 Linux
 
 1. **Téléchargement**
 
@@ -24,10 +30,3 @@
     - 🚀 Lancer le fichier `ArchiPoleSud.x86_64` 🧊
 --->
 
----
-
-<p align="center">
-    <strong>
-        👉 Retour à <a href="https://https://gitlab.unistra.fr/sci25-b/T3"> ArchiPoleSud </a>
-    </strong>
-</p>
