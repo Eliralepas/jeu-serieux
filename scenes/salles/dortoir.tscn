@@ -243,7 +243,7 @@ script = ExtResource("19_5w1rt")
 
 [node name="perso" type="Node2D" parent="."]
 
-[node name="perso" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("27_bk1o1")]
+[node name="perso1" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("27_bk1o1")]
 position = Vector2(-137, 71)
 ListeObjets = NodePath("../../listeObjets")
 
@@ -253,6 +253,10 @@ ListeObjets = NodePath("../../listeObjets")
 
 [node name="perso3" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("27_bk1o1")]
 position = Vector2(-456, -181)
+ListeObjets = NodePath("../../listeObjets")
+
+[node name="perso4" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("27_bk1o1")]
+position = Vector2(-352, 109)
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="brokenObject" type="Node2D" parent="."]

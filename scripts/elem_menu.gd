@@ -41,7 +41,6 @@ func _on_menu_mur_color_pressed() -> void:
 
 	
 func _on_mur_color_selected(id: int) -> void:
-	print("Couleur choisie:", id)
 	var mur1 = murs.get_node("mur1")
 	var mur2 = murs.get_node("mur2")
 	var mur3 = murs.get_node("mur3")

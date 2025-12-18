@@ -172,7 +172,7 @@ func _on_button_acheter_pressed() -> void:
 
 
 	else:
-		parle.text = "Haha dans tes rêves, t'as pas l'argent"
+		parle.text = "Haha dans tes rêves, t'as pas l'argent."
 
 
 

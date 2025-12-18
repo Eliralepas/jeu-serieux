@@ -1,5 +1,5 @@
-res://scenes/salles/salon.tscn
-res://scripts/hall/dialog_box.gd
-res://save/save_game.json
+res://scenes/menu_principale.tscn
 res://scripts/hall/hall.gd
-res://scenes/hall/room_button.tscn
+res://save/save_game.json
+res://scripts/hall/dialog_box.gd
+res://scripts/magasin.gd

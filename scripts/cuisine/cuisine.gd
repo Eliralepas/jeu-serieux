@@ -57,6 +57,7 @@ func get_objects() -> Dictionary:
 	return objects
 	#cette fonction pourra etre utiliser dans tous les ready
 func setup() -> void:
+	broken_object.set_cout(90)
 	add_check_button(stock, objects, conteneur) #on lui donne ce qu'on a et TOUS les objets possibles
 	connect_the_check_boxs(objects) #on lui donne tous les objets possible, elle gere pour trier
 	for obj : ObjectPiece in objects.values():
@@ -86,11 +87,11 @@ func setup() -> void:
 	
 	# ajout des objets dans le magasin avec le prix
 	var objets = [
-	["bouilloire",10],
-	["micro_ondes",40],
-	["cafetiere",50],
-	["four", 10],
-	["poubelle", 12],
+	["bouilloire",20],
+	["micro_ondes",60],
+	["cafetiere",35],
+	["four", 140],
+	["poubelle", 15],
 	["radiateur", 50]
 	]
 
@@ -129,47 +130,13 @@ func _finaliser_pressed():
 	$menu._on_finaliser_pressed()
 
 # on calculer un certain score qu'on le stocke dans le json
-# | 	les besoins humains : 40%
-# | 	l'adaptation au saison : 25%
-# | 	la réparation d'un objet : 15%
-# | 	choix de la bonne couleur du mur : 20%
+# | 	l'adaptation au saison : 5
+# | 	la réparation d'un objet : 3
+# | 	choix de la bonne couleur du mur : 4
 func _calcul_score() ->void :
-	#on vérifie si tout d'abord nous avons écouter l'avis des résidents (40%)
-	#pour chaque résident satisfait on donne +1
-	var remarques : String = ""
-	var nbContent : int = 0
-	for perso : Personnage in Personnages.get_children() :
-		if perso.is_content() :
-			nbContent = nbContent + 1
-	
-	if nbContent == 3 : 
-		remarques += "Et bien, tout les résidents ont été satisfait !\n"
-	elif nbContent == 2:
-		remarques += "On ne peut pas satisfaire tout le monde.\n"
-	elif nbContent == 1 : 
-		remarques += "Tu aurais pu faire mieux, j'ai eu deux plaintes.\n"
-	else : 
-		remarques += "Bon là... Tu fais aucun effort, tout le monde est de mauvaise humeur.\n"
-	
-	#Avec 3 résidents = 3 points max, on normalise
 	var scoreTotal : float = 0
-	scoreTotal += nbContent/3.0 * 4.0
-	
-	#si l'objet a été réparé (15%)
-	var repare : bool = broken_object.est_repare()
-	if repare :
-		scoreTotal += 1.5
-		remarques += "C'est bien que tu aies pu réparer l'objet cassé, merci.\n"
-	else : 
-		remarques += "Ça aurait été bien de pouvoir réparer cet objet.\n"
-	
-	#vérifier si la bonne couleur de mur a été choisie (20%)
-	if murs.bonne_couleur_choisie() :
-		scoreTotal += 2
-		remarques += "D'ailleurs, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\n"
-	else :
-		remarques += "Bon, au niveau de la couleur du mur tu aurais pu faire plus d'effort.\n"
-	print(murs.bonne_couleur_choisie())
+	var remarques : String = ""
+	#on vérifie si tout d'abord nous avons écouter l'avis des résidents (40%)
 	
 	#pour le calcul de l'adaptation au saison (on récupère la saison du json)
 	var file = FileAccess.open(PATH, FileAccess.READ_WRITE)
@@ -178,13 +145,36 @@ func _calcul_score() ->void :
 		var json = JSON.parse_string(content)
 		
 		if json!=null:
-			# 0 si été, 1 si hiver
+			# compter le nombre de résidents sont satisfaits
+			var nbContent : int = 0
+			for perso : Personnage in Personnages.get_children() :
+				if perso.is_content() :
+					nbContent+=1
+					var jauge = json["personnages"][perso.name]
+					json["personnages"][perso.name] = jauge + 1
+				else :
+					var jauge = json["personnages"][perso.name]
+					json["personnages"][perso.name] = jauge - 1
+			
+			# remarque vis-à-vis du nombre de résidents contents
+			if nbContent == 4 : 
+				remarques += "Et bien, tout les résidents ont été satisfait !\n"
+			elif nbContent == 2 || nbContent == 3:
+				remarques += "On ne peut pas satisfaire tout le monde.\n"
+			elif nbContent == 1 : 
+				remarques += "Tu aurais pu faire mieux, j'ai eu beaucoup de plaintes.\n"
+			else : 
+				remarques += "Bon là... Tu fais aucun effort, tout le monde est de mauvaise humeur.\n"
+			
+			# contrainte au niveau du saison
+			# vérifier si un certain item est posé qui influe le score de la pièce 
+			# (change en focntion de la saison)
 			var saison : int = json[NOM_SALLE]["saison"]
 			if saison == 0 : #si été
 				#vérifier si le rideau est visible
 				var rideau = objects["rideaux"]
 				if rideau.visible : 
-					scoreTotal += 2.5
+					scoreTotal += 5
 					remarques += "C'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\n"
 				else : 
 					remarques += "Durant cette saison, il fait tout le temps jour...Des rideaux n'auraient fait de mal à personne.\n"
@@ -192,11 +182,27 @@ func _calcul_score() ->void :
 				#vérifier si la lampe/lumière est visible
 				var lampe = objects["lampe"]
 				if lampe.visible : 
-					scoreTotal += 2.5
+					scoreTotal += 5
 					remarques += "C'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\n"
 				else : 
 					remarques += "Durant cette saison, il fait tout le temps nuit...On aurait aimé voir plus de lumière.\n"
+			
+			# vérifier si l'objet a été réparé (si celui est réparé, cela lui rajoute des points)
+			var repare : bool = broken_object.est_repare()
+			if repare :
+				scoreTotal += 3
+				remarques += "C'est bien que tu aies pu réparer l'objet cassé, merci.\n"
+			else : 
+				remarques += "Ça aurait été bien de pouvoir réparer cet objet.\n"
 				
+			#vérifier si la bonne couleur de mur a été choisie
+			if murs.bonne_couleur_choisie() :
+				scoreTotal += 4
+				remarques += "Bon, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\n"
+			else :
+				remarques += "Bon, au niveau de la couleur du mur tu aurais pu faire plus d'effort.\n"
+			
+			# changement du json
 			json["budget"] = budget
 			json[NOM_SALLE]["remarques"] = remarques
 			json[NOM_SALLE]["score"] = scoreTotal
@@ -206,6 +212,7 @@ func _calcul_score() ->void :
 	else : 
 		print("Erreur sur la lecture du fichier json.")
 		push_error("JSON")
+
 
 func _change_json(json) :
 	var file_write := FileAccess.open(PATH, FileAccess.WRITE)

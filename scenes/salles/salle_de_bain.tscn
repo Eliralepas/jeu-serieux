@@ -280,7 +280,7 @@ position = Vector2(-691, -415)
 
 [node name="perso" type="Node2D" parent="."]
 
-[node name="perso" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
+[node name="perso1" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-366, -61)
 ListeObjets = NodePath("../../listeObjets")
 
@@ -290,6 +290,10 @@ ListeObjets = NodePath("../../listeObjets")
 
 [node name="perso3" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-338, 237)
+ListeObjets = NodePath("../../listeObjets")
+
+[node name="perso4" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
+position = Vector2(-588, 128)
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="brokenObject" type="Node2D" parent="."]

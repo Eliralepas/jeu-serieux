@@ -5,7 +5,11 @@ class_name ObjetCasse
 @onready var btn_reparer: Button = $objetCasse/btnReparer
 
 var repare : bool = false
-var _cout : int = 120
+var _cout : int = 60
+
+func set_cout(c : int):
+	_cout = c
+	btn_reparer.text = "Réparer pour : " + str(_cout) + "$"
 
 func _ready() -> void:
 	btn_reparer.text = "Réparer pour : " + str(_cout) + "$"

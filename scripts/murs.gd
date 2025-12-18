@@ -13,11 +13,9 @@ func set_bonne_couleur(couleur : String) :
 
 func change_couleur(couleur : Sprite2D) : 
 	couleur_choisie.visible = false
-	print(couleur_choisie.name +" : "+couleur.name)
 	
 	couleur_choisie = couleur
 	couleur_choisie.visible = true
-	print(couleur_choisie.name +" : "+couleur.name)
 	
 
 func bonne_couleur_choisie() ->bool :

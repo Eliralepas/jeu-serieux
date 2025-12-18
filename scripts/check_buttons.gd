@@ -53,8 +53,8 @@ func connect_the_check_boxs(objects:Dictionary)->void:
 			var button = get_node(button_path)
 			button.connect("toggled", Callable(self, "_on_any_check_toggled").bind(objects, button_name))
 			
-			var target = objects.get(button_name) 
-			target.visible = false
+			var target : ObjectPiece = objects.get(button_name) 
+			target.set_visibility(false)
 		else:
 			print("Bouton introuvable:", button_path)
 

@@ -6,8 +6,9 @@ signal on_dialog_end
 var dialog : Array = ["..."]
 
 var saison_dialogue = [
-	"Nous sommes rentré en pleine saison d'été.\nN'oublie pas qu'il fait donc tout le temps jour.",
-	"Nous sommes rentré en pleine saison d'hiver.\nN'oublie pas qu'il fait donc tout le temps nuit."
+	"Nous sommes rentrés en pleine saison d'été.\nN'oublie pas qu'il fait tout le temps jour.",
+	"Nous sommes rentrés en pleine saison d'hiver.\nN'oublie pas qu'il fait tout le temps nuit.",
+	""
 ]
 
 var saison = 0
