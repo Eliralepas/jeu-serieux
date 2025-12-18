@@ -3,7 +3,7 @@ class_name Dialogue
 
 signal on_dialog_end
 
-var dialog : Array = ["Bienvenue à Concordia !"]
+var dialog : Array = ["..."]
 
 var saison_dialogue = [
 	"Nous sommes rentré en pleine saison d'été.\nN'oublie pas qu'il fait donc tout le temps jour.",

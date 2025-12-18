@@ -28,7 +28,9 @@ func _ready() -> void:
 			# changer le dialogue
 			if numero_tour == 0:
 				var dialog : Array = [
-					"Notre équipage n'attendait plus que toi.",
+					"Bienvenue à Concordia !",
+					"On m'a dit que tu étais THE BEST archiecte !",
+					"En plus de ça, notre équipage n'attendait plus que toi pour les rénovations.",
 					"Vite, familiarise toi avec les lieux et commence ton travail !"
 				]
 				dialog_box.set_dialog(dialog)
@@ -104,7 +106,7 @@ func _ready() -> void:
 		print("Fichier créé avec contenu par défaut :", default_data)
 
 func _lock_salle() -> void:
-	if numero_tour != 0 :
+	if numero_tour < 5:
 		salles[str(numero_tour)].lock()
 
 func _on_dialog_box_on_dialog_end() -> void:
