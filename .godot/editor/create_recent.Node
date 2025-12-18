@@ -1,3 +1,8 @@
+Camera2D
+Timer
+Label
+Sprite2D
+VideoStreamPlayer
 Node
 MenuButton
 GridContainer
@@ -7,8 +12,4 @@ CheckBox
 Node2D
 ScrollContainer
 Panel
-Sprite2D
 PanelContainer
-HFlowContainer
-Control
-TextureRect

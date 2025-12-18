@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq205xo5kmtto"]
+
+[ext_resource type="VideoStream" uid="uid://cufg6gn5ksqw4" path="res://images/fin.ogv" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://dmwmjjo6x82u7" path="res://fin.gd" id="1_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://bs1mjxkadekbb" path="res://images/happyEnd.jpg" id="3_kbped"]
+[ext_resource type="Texture2D" uid="uid://dv2aegsxyp5v6" path="res://images/badEnd.jpg" id="4_fj5cn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ee4bf")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -732.0
+offset_top = -424.0
+offset_right = 728.0
+offset_bottom = 413.0
+stream = ExtResource("1_0fbet")
+volume_db = -2.2000003
+autoplay = true
+expand = true
+
+[node name="sceneJoyeuse" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(-1.999974, -5.500029)
+scale = Vector2(0.6347826, 0.6458333)
+texture = ExtResource("3_kbped")
+
+[node name="sceneTriste" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(2.9998016, -11.000061)
+scale = Vector2(0.6304349, 0.6543211)
+texture = ExtResource("4_fj5cn")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.22800002
+anchor_bottom = 0.15900001
+offset_left = -294.0
+offset_top = 163.0
+offset_right = -452.656
+offset_bottom = 101.967995
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Score : "
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 13.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.78, 0.78)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
