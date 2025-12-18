@@ -1,10 +1,10 @@
-# Archi Pole Nord ![Statut](https://img.shields.io/badge/Statut-En%20cours-yellow)
+# Archi Pole Sud ![Statut](https://img.shields.io/badge/Statut-En%20cours-yellow)
 
-Pour notre projet T3 (2e année de BUT Informatique), nous avons développé un **jeu sérieux** intitulé **ArchiPoleNord**.  
+Pour notre projet T3 (2e année de BUT Informatique), nous avons développé un **jeu sérieux** intitulé **ArchiPoleSud**.  
 Un jeu sérieux en **2D** où le joueur incarne un architecte chargé de rénover la **station polaire Concordia**. Il doit concevoir des espaces adaptés à un **environnement extrême, confiné et multinational** (français, italien etc.).
 
 <p align="center"> 
-  <img src="./readme/archipolenord.png" alt="Aperçu du jeu Archi Pole Nord"/> 
+  <img src="./readme/archi_pole_sud.png" alt="Aperçu du jeu Archi Pole Sud"/> 
 </p>
 
 ---
@@ -14,15 +14,6 @@ Un jeu sérieux en **2D** où le joueur incarne un architecte chargé de rénove
 - **GDScript**
 - **Pixel Art** pour les sprites et interfaces
 - **GitHub/GitLab** pour la gestion de tâches et le développement collaboratif (projet en miroir)
-
----
-
-## Installation et exécution
-1. **Téléchargement**  
-    Télécharger le fichier .exe qui se trouve dans la section release
-
-2. **Lancement le projet**  
-    Lancez l'éxécutable `ArchiPoleNord.exe`
 
 ---
 
