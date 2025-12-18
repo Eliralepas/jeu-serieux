@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://djcqdhafrd6lm" path="res://scripts/salon/salon.gd" id="1_fnx75"]
 [ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="2_vngit"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="3_vrhtw"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="4_qh071"]
+[ext_resource type="AudioStream" uid="uid://cr2kumhram588" path="res://musique/magasin_background.mp3" id="4_qh071"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_mwvcc"]
-[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="6_wgwyt"]
+[ext_resource type="AudioStream" uid="uid://c6xe5cdopi804" path="res://musique/piece_background.mp3" id="6_fnx75"]
 [ext_resource type="Texture2D" uid="uid://bn4v44g7kdewg" path="res://assets/meubles/salon/table_basse.png" id="7_lpn8u"]
 [ext_resource type="Texture2D" uid="uid://ba0hnkoiij3yw" path="res://assets/meubles/salon/TV.png" id="8_kyy8o"]
 [ext_resource type="Texture2D" uid="uid://b6s1phpdy8c5l" path="res://assets/meubles/salon/canape_salon.png" id="9_cak6w"]
@@ -115,9 +115,11 @@ stream = ExtResource("4_qh071")
 
 [node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
 stream = ExtResource("5_mwvcc")
+volume_db = -30.0
 
 [node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("6_wgwyt")
+stream = ExtResource("6_fnx75")
+autoplay = true
 
 [node name="meublesBase" type="Node" parent="."]
 

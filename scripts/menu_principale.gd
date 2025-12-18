@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var Vbox : VBoxContainer = $image/vBoxContainer
 const FILE_PATH := "res://save/save_game.json"
+@onready var credit: Control = $credit
 
 func _on_button_jouer_pressed() -> void:
 	if FileAccess.file_exists(FILE_PATH):
@@ -58,7 +59,7 @@ func _on_button_reprendre_pressed() -> void:
 
 
 func _on_button_credits_pressed() -> void:
-	print("Crédits")
+	credit.visible = true
 
 
 func _on_button_quitter_pressed() -> void:

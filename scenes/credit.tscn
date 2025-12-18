@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7d7aytnq4nfb"]
+
+[ext_resource type="Script" uid="uid://d1m66d4xot6pu" path="res://scripts/credit.gd" id="1_5egdn"]
+[ext_resource type="Texture2D" uid="uid://jlqkj2gdecf4" path="res://readme/archi_pole_sud.png" id="1_kmqx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_st0h4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5egdn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32mfc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mkchp"]
+
+[node name="credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5egdn")
+
+[node name="textureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.2267639, 0.2614057, 0.31894395, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kmqx5")
+
+[node name="Button" type="Button" parent="textureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -60.0
+offset_right = -50.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Fermer"
+
+[node name="richTextLabel" type="RichTextLabel" parent="textureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.7125
+offset_top = -250.0
+offset_right = 264.71252
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_st0h4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5egdn")
+theme_override_styles/background = SubResource("StyleBoxEmpty_32mfc")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_mkchp")
+text = "oui"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="pressed" from="textureRect/Button" to="." method="_on_button_pressed"]

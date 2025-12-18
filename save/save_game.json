@@ -1,1 +1,35 @@
-{"budget":1100,"cuisine":{"nom":"cuisine","remarques":"","saison":0,"score":0},"dortoir":{"nom":"dortoir","remarques":"","saison":1,"score":0},"personnages":{"perso1":4,"perso2":4,"perso3":4,"perso4":4},"salle_de_bain":{"nom":"salle_de_bain","remarques":"","saison":0,"score":0},"salon":{"nom":"salon","remarques":"","saison":1,"score":0},"score_total":0,"tour":0}
+{
+	"budget": 345.0,
+	"cuisine": {
+		"nom": "cuisine",
+		"remarques": "On ne peut pas satisfaire tout le monde.\nC'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nBon, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\n",
+		"saison": 0.0,
+		"score": 12.0
+	},
+	"dortoir": {
+		"nom": "dortoir",
+		"remarques": "On ne peut pas satisfaire tout le monde.\nC'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nBon, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\n",
+		"saison": 1.0,
+		"score": 12.0
+	},
+	"personnages": {
+		"perso1": 8.0,
+		"perso2": 4.0,
+		"perso3": 8.0,
+		"perso4": 8.0
+	},
+	"salle_de_bain": {
+		"nom": "salle_de_bain",
+		"remarques": "Et bien, tout les résidents ont été satisfait !\nC'est une superbe idée d'avoir mis les rideaux, puisqu'il fait tout le temps jour durant cette saison.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nBon, au niveau de la couleur du mur tu aurais pu faire plus d'effort.\n",
+		"saison": 0.0,
+		"score": 8.0
+	},
+	"salon": {
+		"nom": "salon",
+		"remarques": "Et bien, tout les résidents ont été satisfait !\nC'est une superbe idée d'avoir mis la lampe, il fait tout le temps nuit durant cette saison.\nC'est bien que tu aies pu réparer l'objet cassé, merci.\nBon, la couleur du mur plait à tout le monde, pas trop clair ni trop foncé.\n",
+		"saison": 1.0,
+		"score": 12.0
+	},
+	"score_total": 72,
+	"tour": 4.0
+}

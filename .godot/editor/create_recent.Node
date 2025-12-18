@@ -1,14 +1,14 @@
+Button
+RichTextLabel
+Camera2D
+TextureRect
+TextureButton
+AudioStreamPlayer2D
+AudioStreamPlayer2D      - Matches the "sound" keyword.
 Node2D
 Sprite2D
 ItemList
 ColorPickerButton
 Control
 MarginContainer
-TextureRect
 AnimationPlayer
-Button
-CollisionShape2D
-Area2D
-AnimatedSprite2D
-Node
-Control

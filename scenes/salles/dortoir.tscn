@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="11_ol77h"]
 [ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/salles/menu.tscn" id="12_8bwnl"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="13_vu7u3"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="14_4fekk"]
+[ext_resource type="AudioStream" uid="uid://cr2kumhram588" path="res://musique/magasin_background.mp3" id="14_4fekk"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="15_dh3wr"]
-[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="16_nmv4e"]
+[ext_resource type="AudioStream" uid="uid://c6xe5cdopi804" path="res://musique/piece_background.mp3" id="16_22j5c"]
 [ext_resource type="Script" uid="uid://djon206v104w1" path="res://scripts/liste_objets.gd" id="17_epgp7"]
 [ext_resource type="Texture2D" uid="uid://dnnlob4ekrujw" path="res://assets/meubles/dortoir/cadres.png" id="18_36uti"]
 [ext_resource type="Script" uid="uid://bv1edvx7phtyi" path="res://scripts/object.gd" id="19_5w1rt"]
@@ -184,9 +184,10 @@ stream = ExtResource("14_4fekk")
 
 [node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
 stream = ExtResource("15_dh3wr")
+volume_db = -30.0
 
 [node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("16_nmv4e")
+stream = ExtResource("16_22j5c")
 autoplay = true
 
 [node name="listeObjets" type="Node2D" parent="."]

@@ -16,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://bfmeklam7fxe8" path="res://assets/meubles/salle_de_bain/lavabo.png" id="14_432u0"]
 [ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/salles/menu.tscn" id="15_ikart"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="16_mwycu"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="17_0nkk2"]
+[ext_resource type="AudioStream" uid="uid://cr2kumhram588" path="res://musique/magasin_background.mp3" id="17_0nkk2"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="18_3l0iv"]
-[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="19_bnth3"]
+[ext_resource type="AudioStream" uid="uid://c6xe5cdopi804" path="res://musique/piece_background.mp3" id="19_gftd5"]
 [ext_resource type="Script" uid="uid://djon206v104w1" path="res://scripts/liste_objets.gd" id="20_trf8k"]
 [ext_resource type="Texture2D" uid="uid://fpfxk4kl1d22" path="res://assets/meubles/salle_de_bain/tapis.png" id="21_y4dqp"]
 [ext_resource type="Script" uid="uid://bv1edvx7phtyi" path="res://scripts/object.gd" id="22_jh5jd"]
@@ -197,9 +197,10 @@ stream = ExtResource("17_0nkk2")
 
 [node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
 stream = ExtResource("18_3l0iv")
+volume_db = -30.0
 
 [node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("19_bnth3")
+stream = ExtResource("19_gftd5")
 autoplay = true
 
 [node name="listeObjets" type="Node2D" parent="."]

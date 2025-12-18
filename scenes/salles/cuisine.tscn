@@ -18,9 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://cb2k2uw7phjp7" path="res://assets/meubles/salle_de_bain/fenetre.png" id="16_2srlg"]
 [ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/salles/menu.tscn" id="17_ifbmg"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="18_uutg6"]
-[ext_resource type="AudioStream" uid="uid://johqbx3tpyhk" path="res://musique/magasin_background.mp3" id="19_we427"]
+[ext_resource type="AudioStream" uid="uid://cr2kumhram588" path="res://musique/magasin_background.mp3" id="19_we427"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="20_bpb2k"]
-[ext_resource type="AudioStream" uid="uid://dioknkfs7vb5c" path="res://musique/background.mp3" id="21_nk0v1"]
+[ext_resource type="AudioStream" uid="uid://c6xe5cdopi804" path="res://musique/piece_background.mp3" id="21_eervu"]
 [ext_resource type="Script" uid="uid://djon206v104w1" path="res://scripts/liste_objets.gd" id="22_nhxou"]
 [ext_resource type="Texture2D" uid="uid://bx4qe35a0d58u" path="res://assets/meubles/cuisine/radiateur.png" id="23_fsf0p"]
 [ext_resource type="Script" uid="uid://bv1edvx7phtyi" path="res://scripts/object.gd" id="24_wr3it"]
@@ -202,9 +202,10 @@ stream = ExtResource("19_we427")
 
 [node name="talkingPeople" type="AudioStreamPlayer2D" parent="songs"]
 stream = ExtResource("20_bpb2k")
+volume_db = -30.0
 
 [node name="mainBackground" type="AudioStreamPlayer2D" parent="songs"]
-stream = ExtResource("21_nk0v1")
+stream = ExtResource("21_eervu")
 autoplay = true
 
 [node name="listeObjets" type="Node2D" parent="."]

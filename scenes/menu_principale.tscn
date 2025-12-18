@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cemopexgp5ubb"]
+[gd_scene load_steps=7 format=3 uid="uid://cemopexgp5ubb"]
 
 [ext_resource type="Script" uid="uid://ddgotr4vmmcfs" path="res://scripts/menu_principale.gd" id="1_ccts7"]
 [ext_resource type="Texture2D" uid="uid://jlqkj2gdecf4" path="res://readme/archi_pole_sud.png" id="2_rhrkc"]
 [ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/police/ConnectionII.otf" id="3_7w7dl"]
+[ext_resource type="AudioStream" uid="uid://0skhge0a1a68" path="res://musique/menu_background.mp3" id="4_rhrkc"]
+[ext_resource type="PackedScene" uid="uid://c7d7aytnq4nfb" path="res://scenes/credit.tscn" id="5_7w7dl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wba1"]
 content_margin_left = 5.0
@@ -24,8 +26,7 @@ corner_radius_bottom_left = 5
 script = ExtResource("1_ccts7")
 
 [node name="image" type="Sprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(1.5491786, 1.4883397)
+scale = Vector2(1.54, 1.479)
 texture = ExtResource("2_rhrkc")
 
 [node name="vBoxContainer" type="VBoxContainer" parent="image"]
@@ -84,6 +85,19 @@ text = "QUITTER
 
 [node name="camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.78, 0.78)
+
+[node name="menuBackground" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(674, 380)
+stream = ExtResource("4_rhrkc")
+autoplay = true
+
+[node name="credit" parent="." instance=ExtResource("5_7w7dl")]
+visible = false
+offset_left = -742.0
+offset_top = -420.0
+offset_right = -742.0
+offset_bottom = -420.0
+scale = Vector2(1.5491786, 1.4883397)
 
 [connection signal="pressed" from="image/vBoxContainer/buttonJouer" to="." method="_on_button_jouer_pressed"]
 [connection signal="pressed" from="image/vBoxContainer/buttonCredits" to="." method="_on_button_credits_pressed"]

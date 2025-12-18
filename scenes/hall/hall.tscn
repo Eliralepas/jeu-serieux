@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bufnswpw7si0k"]
+[gd_scene load_steps=32 format=4 uid="uid://bufnswpw7si0k"]
 
 [ext_resource type="Script" uid="uid://yi07w7s28uxv" path="res://scripts/hall/hall.gd" id="1_j2h53"]
 [ext_resource type="Texture2D" uid="uid://byyhqj5wg0v32" path="res://assets/sol/fin-parquet-brun-clair-(milieu)-pixilart(1).png" id="2_2x4b0"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b527rikoxwpl" path="res://assets/autres/salle_de_bain.png" id="17_xabks"]
 [ext_resource type="Texture2D" uid="uid://dbt3ybh1n4pbt" path="res://assets/autres/dortoir.png" id="18_pk1sp"]
 [ext_resource type="PackedScene" uid="uid://dk70484371esh" path="res://scenes/hall/dialog.tscn" id="19_s8cf7"]
+[ext_resource type="AudioStream" uid="uid://m4ompdd81px7" path="res://musique/hall_background.mp3" id="20_l20mb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k255s"]
 texture = ExtResource("2_2x4b0")
@@ -199,6 +200,10 @@ offset_top = 78.0
 offset_right = -723.0
 offset_bottom = 118.0
 scale = Vector2(1.2, 1.2)
+
+[node name="backgroundHall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_l20mb")
+autoplay = true
 
 [connection signal="on_dialog_end" from="dialogBox" to="." method="_on_dialog_box_on_dialog_end"]
 
