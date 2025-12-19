@@ -1,49 +1,110 @@
-	#A remplacer par sa propre scene!!!!
+## @class_doc
+## @description Manages the store (magasin) interface and logic.
+## Handles displaying items, processing purchases, budget management, and interactions with the shopkeeper.
+## @tags ui, store, economy, gameloop
+
+## @depends CadreObjet: creates Instantiates UI frames for items in the shop.
+## @depends CheckBtn: extends Inherits check button management functionality.
 class_name Magasin
 extends checkBtn
 
+## @onready_doc
+## @description The packed scene for the item display frame.
+## @tags resources, scene
 @onready var scene_cadre: PackedScene = preload("res://scenes/magasin/cadre.tscn")
 
+## @onready_doc
+## @description Label for shopkeeper dialogue.
+## @tags nodes, ui
 @onready var parle = $dialogue
+
+## @onready_doc
+## @description Area for shopkeeper interaction events.
+## @tags nodes, physics
 @onready var area = $area2D
+
+## @onready_doc
+## @description Container for arranging shop items.
+## @tags nodes, ui
 @onready var h_flow_container: HFlowContainer = $hFlowContainer
 
-@onready var caisse:= $songs/purchase 
+## @onready_doc
+## @description Audio player for the purchase sound effect.
+## @tags nodes, audio
+@onready var caisse:= $songs/purchase
 
+## @onready_doc
+## @description Current available budget for the player.
+## @tags data, economy
 @onready var budget = 0
+
+## @onready_doc
+## @description Counter for objects currently purchased in the session.
+## @tags data, state
 @onready var objets_achetes=0;
 
+## @var_doc
+## @description The name of the current room/salle associated with the shop.
+## @tags data, context
 var salle : String = ""
 
+## @onready_doc
+## @description Reference to the parent menu container (for testing/access).
+## @tags nodes, reference
 @onready var test=get_parent().get_node("menu/panel/vBoxContainer")
 
+## @onready_doc
+## @description Reference to the player's current stock (retrieved from parent).
+## @tags data, inventory
 @onready var stock = get_parent().get_stock()
+## @onready_doc
+## @description Reference to the game objects available in the context (retrieved from parent).
+## @tags data, objects
 @onready var stuff
-			#les differentes phrases
+
+## @var_doc
+## @description Array of dialogue strings for the shopkeeper.
+## @tags data, text
 var dialogues = [
 	"Me dévalise pas ! Pas plus de quatres articles.\nOn est au Pole Sud ici !",
 	"Qu'est-ce que tu veux ?",
 	"Accélère, j'ai d'autres clients !" # dernière phrase normale
 ]
 
-		#objets du magasin
-		#tab de listes["nom", prix]
-		#! chaque piece a des objets differents
+## @var_doc
+## @description List of items available in the shop. Each item is an array [name, price].
+## @tags data, inventory
 var objets = []
 
-
+## @var_doc
+## @description Tracks the number of clicks on the shopkeeper for dialogue progression.
+## @tags data, state
 var index = 0 #pour avoir le nb de clicks sur le dialogue
+
+## @var_doc
+## @description Helper counter for bought objects (internal).
+## @tags data, state
 var nb_objet=0 #pour compter les objets deja achetes
 
 #####################################################################################
 
+## @func_doc
+## @description Sets the list of items available for sale.
+## @param obj: Array Array of item arrays [name, price].
+## @tags setup, data
 func set_items(obj : Array) :
 	objets = obj
 	
-
+## @func_doc
+## @description Sets the current room context for the shop.
+## @param piece: String Name of the room.
+## @tags setup, data
 func set_salle(piece : String):
 	salle = piece
 
+## @func_doc
+## @description Initializes the shop, retrieves parent data, and populates the item list.
+## @tags life_cycle, initialization
 func _ready():
 	print("///////////////////////////////////////////////////////////")
 	await get_tree().process_frame #temps pour que le parent fasse son ready
@@ -57,10 +118,19 @@ func _ready():
 	#$Btn_Sortir.connect("pressed", Callable(self, "_on_btn_sortir_pressed"))
 
 ###########################################################################
+## @func_doc
+## @description Dynamically adds an item to the shop inventory.
+## @param nom: String Name of the item.
+## @param prix: int Price of the item.
+## @tags logic, inventory
 func ajouter_obj_au_magasin(nom: String, prix: int) -> void: #si on voudra ajouter un item au magasin apres 
 	var element = [nom, prix] # pas necessairement utile mais elle existe 
 	objets.append(element)
 ###########################################################################
+## @func_doc
+## @description Instantiates and configures UI elements (CadreObjet) for all items in the `objets` list.
+## Loads images, sets prices, and connects selection signals.
+## @tags ui, factory
 func remplir_magasin() -> void:
 	#remplir le magasin avec les différents objets (prix, button, image, nom)
 	for obj in objets:
@@ -105,7 +175,12 @@ func remplir_magasin() -> void:
 
 		h_flow_container.add_child(cadre)
 
-	#LA FCT QUI GERE LE MAX: 4 CHECKBOX CHOISIES		
+## @func_doc
+## @description Enforces the maximum selection limit (4 items).
+## Unchecks the newly clicked box if the limit is exceeded.
+## @param button_pressed: bool State of the toggled button.
+## @param toggled_checkbox: CheckBox The checkbox instance being toggled.
+## @tags event_handler, logic, validation		
 func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void:
 	var checked_count = 0 #compteur de nb de checkbox deja cliquee
 	
@@ -121,12 +196,17 @@ func _check_a_checkbox(button_pressed: bool, toggled_checkbox: CheckBox) -> void
 
 #############################################################################
 
+## @func_doc
+## @description Handles closing the shop without purchasing. Resets selections and hides the view.
+## @tags event_handler, navigation
 func _on_btn_sortir_pressed() -> void:
 	decoche_tout()
 	magasin_non_visible()
 
-	#LORSQUE LE BOUTON ACHETER EST CLICK
-	
+## @func_doc
+## @description Processes the purchase of selected items.
+## Validates budget, stock duplication, and item limits. Updates parent state upon success.
+## @tags event_handler, economy, logic
 func _on_button_acheter_pressed() -> void:
 	var total = 0
 	var checked_objects = []
@@ -176,7 +256,9 @@ func _on_button_acheter_pressed() -> void:
 
 
 
-	#utilise pour que lorsq'on revient dans le magasin les checkbox d'avant ne seront plus cochees
+## @func_doc
+## @description Deselects all checkboxes in the shop.
+## @tags ui, reset
 func decoche_tout() -> void:
 	for obj in objets: #parcours de la liste d'objets
 		var gr : CadreObjet = h_flow_container.get_node("GRILLE" + obj[0]) #on recup la grille (image+checkbox)
@@ -185,7 +267,9 @@ func decoche_tout() -> void:
 		if check.button_pressed: #si la checkbox est click on incremente checked_count
 			check.button_pressed=false
 
-
+## @func_doc
+## @description Hides the shop UI and restores the main game environment (music, background).
+## @tags ui, navigation, audio
 func magasin_non_visible() -> void:
 # récupère le node du magasin explicitement
 	var magasin_node = get_parent().get_node("store")  
@@ -203,7 +287,13 @@ func magasin_non_visible() -> void:
 	
 	get_parent().get_node("menu").change_budget(budget);
 
-
+## @func_doc
+## @description Handles interactions with the shopkeeper sprite (Area2D).
+## Cycles through dialogues and hidden interactions based on click count.
+## @param _viewport: Node unused.
+## @param event: InputEvent Input event.
+## @param _shape_idx: int unused.
+## @tags event_handler, easter_egg, interaction
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed: #si l'evenemt est un clique
 		index += 1 #l'indice augmente de 1

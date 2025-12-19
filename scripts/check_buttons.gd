@@ -1,8 +1,19 @@
+## @class_doc
+## @description Manages the creation and behavior of check buttons used for inventory items.
+## Extends the Stock functionality to handle UI representations of stock items.
+## @tags ui, inventory, interaction
+
+## @depends ObjectPiece: uses Toggles visibility of scene objects based on button state.
 extends Stock
 class_name checkBtn
 
-	#fonction a appeler apres l'achat dans le magasin
-	#ou au commencement du jeu pour mettre les objets par defauts
+## @func_doc
+## @description Creates CheckButtons for items in the stock and adds them to the UI.
+## Connects buttons to their corresponding 3D/2D objects to toggle visibility.
+## @param stock: Array List of item names currently owned.
+## @param objects: Dictionary Mapping of item names to actual game objects (ObjectPiece).
+## @param node: Control The parent container where buttons will be added.
+## @tags ui, factory, connection
 func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 	for item in stock: 
 		var check = CheckButton.new()
@@ -34,9 +45,10 @@ func add_check_button(stock:Array, objects:Dictionary, node:Control)->void:
 		
 		
 		
-		#Vide les elem du menu
-		# ! NE VIDE PAS LE STOCK!!!!! ((il faudrait appeler la fct dans baseStock)
-		#A appeler avant le add_check_button pour ne pas avoir le meme btn 2 fois
+## @func_doc
+## @description Removes all existing check buttons from the menu container.
+## Should be called before repopulating the list to avoid duplicates.
+## @tags ui, cleanup
 func clear_check_boxes() -> void:
 	var grille : VBoxContainer = $menu/panel/vBoxContainer  # conteneur qui contient les checkbuttons
 	if grille:
@@ -44,8 +56,11 @@ func clear_check_boxes() -> void:
 			child.queue_free()
 
 		
-		#Ajoute aux checkbutton du menu un event "_on_any_check_toggled" au moment du click
-		#a appeler dans le ready ou apres avoir acheter un objet 
+## @func_doc
+## @description Re-establishes connections between existing menu check buttons and their corresponding objects.
+## Used when reloading or updating the menu state.
+## @param objects: Dictionary Mapping of item names to game objects.
+## @tags connection, event_handler
 func connect_the_check_boxs(objects:Dictionary)->void:
 	for button_name in objects.keys():
 		var button_path = "menu/panel/vBoxContainer/%s" % button_name
@@ -58,7 +73,13 @@ func connect_the_check_boxs(objects:Dictionary)->void:
 		else:
 			print("Bouton introuvable:", button_path)
 
-
+## @func_doc
+## @description Callback for when any inventory check button is toggled.
+## Updates the visibility of the corresponding object.
+## @param toggled_on: bool New state of the button.
+## @param objects: Dictionary Reference to the object map.
+## @param button_name: String Name of the button/object.
+## @tags event_handler, logic
 func _on_any_check_toggled(toggled_on: bool, objects: Dictionary, button_name: String) -> void:
 	print("Signal reçu:", button_name, toggled_on)
 	var target = objects.get(button_name)

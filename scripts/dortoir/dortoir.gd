@@ -1,11 +1,20 @@
-extends checkBtn
+## @class_doc
+## @description Manages the logic for the "Dortoir" (Dormitory) room.
+## Handles room setup, stock management, score calculation based on player choices (budget, objects, wall color), and interaction with the store and menu.
+## @tags game_logic, room, level
 
+## @depends CheckBtn: extends Inherits check button management for inventory.
+## @depends ObjetCasse: manages Controls the broken object in the room.
+## @depends Menu: manages Handles the UI menu for the room.
+## @depends Magasin: manages Controls the shop specific to this room.
+## @depends Mur: manages Controls the wall visuals and logic.
+## @depends Personnage: uses Interacts with characters to determine satisfaction.
+extends checkBtn
 class_name Dortoir
 
-#les attributs que chaque piece doit avoir: 
-#(adaptez les chemins si besoin)
-
-# pour la gestion du JSON (adaptez les chemins si besoin)
+## @const_doc
+## @description Path to the save game JSON file.
+## @tags config, data
 const PATH : String = "res://save/save_game.json"
 const NOM_SALLE : String = "dortoir"
 
@@ -23,6 +32,11 @@ const NOM_SALLE : String = "dortoir"
 @onready var murs: Mur = $murs
 
 @onready var conteneur=$menu/panel/vBoxContainer
+
+## @onready_doc
+## @description Dictionary mapping object names to their scene nodes.
+## Defines all buyable/placeable items in the room.
+## @tags data, configuration
 @onready var objects := { #tous les elements possible dans la piece(donc achetable depuis le magasin)
 	#"nom": $cheminImage,
 	"cadres": $listeObjets/cadres,
@@ -37,24 +51,44 @@ const NOM_SALLE : String = "dortoir"
 
 @export var Personnages : Node2D
 
+## @var_doc
+## @description The current budget available for the room.
+## syncing with the store budget when set.
+## @tags state, economy
 var budget := 0 : #A lire depuis le Json
 	set(val) :
 		budget = val
 		$store.budget = val
 		print(budget)
-		
+
+
 var stock :Array= ["lampe", "rideaux"] #Les objets qu'on a (soit des qu'on entre dans la piece soit qu'on achete du magasin)
 						#JUSTE LE NOM
 
+## @func_doc
+## @description Initializes the room, setting up objects, budget, and UI connections.
+## @tags life_cycle, initialization
 func _ready() -> void:
 	setup();
 
+## @func_doc
+## @description Retrieves the current stock list.
+## @return Array The list of object names in stock.
+## @tags getter, inventory
 func get_stock() ->Array:
 	return stock
 
+## @func_doc
+## @description Retrieves the dictionary of available objects.
+## @return Dictionary Map of object names to nodes.
+## @tags getter, configuration
 func get_objects() -> Dictionary:
 	return objects
 	#cette fonction pourra etre utiliser dans tous les ready
+	
+## @func_doc
+## @description Main setup function. Instantiates buttons, configures visibility, loads data from JSON, and connects signals.
+## @tags initialization, logic, file_io
 func setup() -> void:
 	broken_object.set_cout(15)
 	add_check_button(stock, objects, conteneur) #on lui donne ce qu'on a et TOUS les objets possibles
@@ -105,14 +139,25 @@ func setup() -> void:
 	murs.set_bonne_couleur("bleu")
 
 
-	#cette fonction est utile si on a un stock par defaut 
+## @func_doc
+## @description Overwrites the current stock with a default list.
+## @param stk: Array The new stock list.
+## @tags inventory, setup
 func default_stock(stk: Array)->void:
 	stock=stk
 
+## @func_doc
+## @description Adds multiple objects to the stock.
+## @param obj: Dictionary Dictionary of objects to add (values are added).
+## @tags inventory, logic
 func ajout_obj(obj: Dictionary) -> void:
 	for key in obj.keys():
 		stock.append(obj[key]) 
 
+## @func_doc
+## @description Handles the "Magasin" (Store) button press.
+## Opens the store interface and hides characters/interactions.
+## @tags event_handler, ui_transition
 func _magasin_pressed():
 	$menu._on_magasin_pressed($store,porte, magasinBackground, talkingPeople, mainBackground)
 	
@@ -122,6 +167,10 @@ func _magasin_pressed():
 	objet_casse.visible = false
 	btn_reparer.visible = false
 
+## @func_doc
+## @description Handles the "Finaliser" (Finalize) button press.
+## Calculates the score and triggers the menu finalization.
+## @tags event_handler, gameloop
 func _finaliser_pressed():
 	_calcul_score()
 	$menu._on_finaliser_pressed()
@@ -130,6 +179,11 @@ func _finaliser_pressed():
 # | 	l'adaptation au saison : 5
 # | 	la réparation d'un objet : 3
 # | 	choix de la bonne couleur du mur : 4
+
+## @func_doc
+## @description Computes the player's score based on seasonality, repairs, wall color, and character satisfaction.
+## Updates the save file with the results.
+## @tags logic, scoring, file_io
 func _calcul_score() ->void :
 	var scoreTotal : float = 0
 	var remarques : String = ""
@@ -210,7 +264,10 @@ func _calcul_score() ->void :
 		print("Erreur sur la lecture du fichier json.")
 		push_error("JSON")
 
-
+## @func_doc
+## @description Writes the updated game data to the JSON save file.
+## @param json: Dictionary The data to serialize and save.
+## @tags file_io, save_system
 func _change_json(json) :
 	var file_write := FileAccess.open(PATH, FileAccess.WRITE)
 	if file_write:
@@ -219,9 +276,16 @@ func _change_json(json) :
 	else:
 		push_error("Impossible d'écrire le fichier JSON.")
 
+## @func_doc
+## @description Sets the budget explicitly.
+## @param _budget: int/float The new budget value.
+## @tags setter, economy
 func set_budget(_budget) :
 	budget = _budget
 
+## @func_doc
+## @description Re-establishes signal connections for the menu buttons.
+## @tags connection, ui
 func reconnect_menu_buttons():
 	var btnMag = $menu/panel/btnMagasin
 	var btnFin = $menu/panel/btnFinaliser
@@ -231,19 +295,29 @@ func reconnect_menu_buttons():
 
 	if not btnFin.is_connected("pressed", Callable(self, "_finaliser_pressed")):
 		btnFin.connect("pressed", Callable(self, "_finaliser_pressed"))
-		
+
+## @func_doc
+## @description Callback for the buy button. Shows characters and the broken object again, then delegates to the store.
+## @tags event_handler, ui
 func _on_button_acheter() :
 	for perso : Personnage in Personnages.get_children() :
 		perso.visible = true
 	objet_casse.visible = true
 	$store._on_button_acheter_pressed()
 	
+## @func_doc
+## @description Callback for the exit button. Shows characters and the broken object again, then delegates to the store.
+## @tags event_handler, ui
 func _on_btn_sortir() :
 	for perso : Personnage in Personnages.get_children() :
 		perso.visible = true
 	objet_casse.visible = true
 	$store._on_btn_sortir_pressed()
 
+## @func_doc
+## @description Handles the broken object repair button press.
+## Checks budget, plays animation, and updates state.
+## @tags event_handler, interaction, gameplay
 func _on_btn_reparer_pressed() -> void:
 	var cout : int = broken_object.get_cout()
 	if cout > budget :

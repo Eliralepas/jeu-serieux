@@ -1,5 +1,10 @@
-extends Sprite2D
+## @class_doc
+## @description Controls a character's behavior, including displaying emotions (content/not content) and assigning random preferences for objects.
+## @tags character, game_logic, ui
 
+## @depends ListeObjet: uses Retrieves random objects to determine preference.
+## @depends ObjectPiece: uses Interacts with object pieces to register likes/dislikes.
+extends Sprite2D
 class_name Personnage
 
 @export var ListeObjets : ListeObjet
@@ -8,6 +13,10 @@ class_name Personnage
 @onready var content: TextureRect = $emotion/content
 @onready var pas_content: TextureRect = $emotion/pasContent
 
+
+## @func_doc
+## @description Initializes character preferences. Picks a random object and decides if the character likes it or not.
+## @tags life_cycle, initialization, rng
 func _ready() -> void:
 	if !ListeObjets:
 		push_error("%s : @export var ListeObjet est null" % name)
@@ -40,6 +49,12 @@ func _ready() -> void:
 	
 	bulle.visible = false
 
+
+## @func_doc
+## @description Resizes a sprite to fit within a texture rect, maintaining aspect ratio.
+## @param sprite: Sprite2D The sprite to resize.
+## @param texture: TextureRect The container to fit into.
+## @tags utility, visual
 func resize(sprite : Sprite2D, texture : TextureRect) :
 	var size : Vector2 = sprite.texture.get_size()
 	var x: float = size.x
@@ -52,10 +67,17 @@ func resize(sprite : Sprite2D, texture : TextureRect) :
 	texture.add_child(sprite)
 	sprite.position = texture.size/2
 
+## @func_doc
+## @description Toggles the thought bubble visibility.
+## @tags event_handler, ui
 func _on_button_pressed() -> void:
 	bulle.visible = not bulle.visible
 	pass # Replace with function body.
 
+## @func_doc
+## @description Sets the visible emotion based on contentment.
+## @param est_content: bool True if content, False otherwise.
+## @tags visual, logic
 func visible_emotion(estcontent : bool) -> void:
 	if estcontent :
 		content.visible = true
@@ -64,7 +86,10 @@ func visible_emotion(estcontent : bool) -> void:
 		content.visible = false
 		pas_content.visible = true
 
-#retroune si le personnage est content ou non
+## @func_doc
+## @description Checks if the character is currently content (based on visual state).
+## @return bool True if content.
+## @tags state, getter
 func is_content() -> bool : 
 	if content.visible && !pas_content.visible : 
 		return true

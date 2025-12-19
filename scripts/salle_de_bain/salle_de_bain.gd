@@ -1,5 +1,15 @@
-extends checkBtn
+## @class_doc
+## @description Manages the logic for the "Salle de Bain" (Bathroom) room.
+## Handles setup, store, objects, and scoring.
+## @tags game_logic, room, level
 
+## @depends CheckBtn: extends Inherits check button management.
+## @depends ObjetCasse: manages Controls the broken object.
+## @depends Menu: manages Handles the room menu.
+## @depends Magasin: manages Controls the shop.
+## @depends Mur: manages Controls walls.
+## @depends Personnage: uses Interacts with characters.
+extends checkBtn
 class_name SalleDeBain
 
 #les attributs que chaque piece doit avoir: 
@@ -61,6 +71,9 @@ func get_stock() ->Array:
 func get_objects() -> Dictionary:
 	return objects
 	#cette fonction pourra etre utiliser dans tous les ready
+	
+## setup() is the main function in every room.
+## It instanciates every object and thing the player can interact with in the room
 func setup() -> void:
 	broken_object.set_cout(100)
 	add_check_button(stock, objects, conteneur) #on lui donne ce qu'on a et TOUS les objets possibles
@@ -123,6 +136,7 @@ func ajout_obj(obj: Dictionary) -> void:
 	for key in obj.keys():
 		stock.append(obj[key]) 
 
+## Used in every room, transfers player to the store scene
 func _magasin_pressed():
 	$menu._on_magasin_pressed($store,porte, magasinBackground, talkingPeople, mainBackground)
 	
@@ -140,6 +154,8 @@ func _finaliser_pressed():
 # | 	l'adaptation au saison : 5
 # | 	la réparation d'un objet : 3
 # | 	choix de la bonne couleur du mur : 4
+
+## Present in every room, used to compute player score and decides what dialogue to show
 func _calcul_score() ->void :
 	var scoreTotal : float = 0
 	var remarques : String = ""
@@ -220,7 +236,7 @@ func _calcul_score() ->void :
 		print("Erreur sur la lecture du fichier json.")
 		push_error("JSON")
 
-
+## Writes changes to the save_game.json file
 func _change_json(json) :
 	var file_write := FileAccess.open(PATH, FileAccess.WRITE)
 	if file_write:
@@ -254,6 +270,7 @@ func _on_btn_sortir() :
 	objet_casse.visible = true
 	$store._on_btn_sortir_pressed()
 
+## Repare the broken object present in the room
 func _on_btn_reparer_pressed() -> void:
 	var cout : int = broken_object.get_cout()
 	if cout > budget :
