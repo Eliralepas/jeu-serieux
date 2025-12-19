@@ -253,7 +253,7 @@ texture = ExtResource("30_lpn8u")
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="perso4" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("27_jvptq")]
-position = Vector2(-588, 128)
+position = Vector2(92, -110)
 texture = ExtResource("31_kyy8o")
 ListeObjets = NodePath("../../listeObjets")
 

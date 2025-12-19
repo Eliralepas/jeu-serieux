@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://2o2fcgqquha4" path="res://scripts/cuisine/cuisine.gd" id="1_eervu"]
 [ext_resource type="Script" uid="uid://k7olj3l2d60x" path="res://scripts/murs.gd" id="2_mvorq"]
-[ext_resource type="Texture2D" uid="uid://d3jfmht23pnfs" path="res://assets/mur/mur_bleu.png" id="3_0gwwf"]
-[ext_resource type="Texture2D" uid="uid://bmi5rsuq4q5pc" path="res://assets/mur/mur_rouge.png" id="4_rc038"]
+[ext_resource type="Texture2D" uid="uid://djfqkv7robb1s" path="res://assets/mur/mur_rouge_brique.png" id="3_yrxc4"]
+[ext_resource type="Texture2D" uid="uid://cywhwurpmtxw0" path="res://assets/mur/mur_viloet.png" id="4_134hu"]
 [ext_resource type="Texture2D" uid="uid://d72mh557jpog" path="res://assets/mur/mur_vert.png" id="5_yrxc4"]
 [ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="6_134hu"]
 [ext_resource type="Texture2D" uid="uid://biihxfugstveu" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart.png" id="7_cxhfl"]
@@ -139,16 +139,16 @@ script = ExtResource("2_mvorq")
 
 [node name="mur1" type="Sprite2D" parent="murs"]
 z_index = -3
-position = Vector2(37.5, -169.5)
-scale = Vector2(1.99595, 0.951737)
-texture = ExtResource("3_0gwwf")
+position = Vector2(35.54677, -167.99998)
+scale = Vector2(2.7123532, 0.951737)
+texture = ExtResource("3_yrxc4")
 
 [node name="mur2" type="Sprite2D" parent="murs"]
 visible = false
 z_index = -3
-position = Vector2(32.4999, -270)
-scale = Vector2(0.764062, 0.259259)
-texture = ExtResource("4_rc038")
+position = Vector2(39.500008, -157)
+scale = Vector2(2.7314816, 1)
+texture = ExtResource("4_134hu")
 
 [node name="mur3" type="Sprite2D" parent="murs"]
 visible = false

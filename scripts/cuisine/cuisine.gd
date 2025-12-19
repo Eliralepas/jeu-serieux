@@ -100,8 +100,8 @@ func setup() -> void:
 	
 	# ajout des murs dans le menu murs
 	var _murs : Dictionary = {
-		"bleu" = $murs/mur1,
-		"rouge" = $murs/mur2,
+		"brique" = $murs/mur1,
+		"violet" = $murs/mur2,
 		"vert" = $murs/mur3
 	}
 	murs.set_murs(_murs)

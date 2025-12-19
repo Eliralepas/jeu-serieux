@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://bidemcih0p3dj"]
 
-[ext_resource type="Script" uid="uid://gj3dmu2eaytl" path="res://scripts/elem_menu.gd" id="1_con2f"]
-[ext_resource type="Texture2D" uid="uid://k4cd8iggfe7e" path="res://menu_decorer/decorer_background.png" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://b310o0x5hb00i" path="res://mur/paint-pixilart.png" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://bfg3qvmdub4dp" path="res://scripts/elem_menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://k4cd8iggfe7e" path="res://assets/menu_decorer/decorer_background.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://b310o0x5hb00i" path="res://assets/mur/paint-pixilart.png" id="2_vjb58"]
 
 [sub_resource type="Theme" id="Theme_g3eks"]
 
@@ -117,22 +117,20 @@ text = "Finaliser"
 
 [node name="label" type="Label" parent="panel"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 111.0
-offset_right = 147.0
-offset_bottom = 141.0
+offset_left = 67.0
+offset_top = 114.0
+offset_right = 172.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "BUDGET"
 
 [node name="menuMurColor" type="MenuButton" parent="panel"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 148.0
-offset_right = 266.0
-offset_bottom = 186.0
+offset_left = 47.0
+offset_top = 161.0
+offset_right = 332.0
+offset_bottom = 199.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -143,13 +141,13 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 0.666667)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.666667)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 0.666667)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0.666667)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_con2f")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mhnvy")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_4ytvr")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3eks")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v86rl")
-text = "Couleur Mur "
+text = "Couleur du mur"
 icon = ExtResource("2_vjb58")
 
 [connection signal="pressed" from="panel/btnMagasin" to="panel" method="_on_btn_magasin_pressed"]

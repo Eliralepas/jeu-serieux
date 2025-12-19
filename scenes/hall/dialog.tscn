@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk70484371esh"]
+[gd_scene load_steps=8 format=3 uid="uid://dk70484371esh"]
 
-[ext_resource type="Script" uid="uid://brupkrcomisrj" path="res://scripts/hall/dialog_box.gd" id="1_4uc3s"]
-[ext_resource type="Texture2D" uid="uid://drpoqt51q55x8" path="res://dialogue/rpg_box.webp" id="1_5wlj5"]
-[ext_resource type="Texture2D" uid="uid://2xdwjtsvp8bu" path="res://dialogue/next-indicator-dialogic-1.png" id="4_rxi5t"]
-[ext_resource type="Texture2D" uid="uid://c20xw2wulxx4l" path="res://assets/perso/z_idle.png" id="5_rxi5t"]
+[ext_resource type="Script" uid="uid://c5vfnl5gltsne" path="res://scripts/hall/dialog_box.gd" id="1_4uc3s"]
+[ext_resource type="Texture2D" uid="uid://drpoqt51q55x8" path="res://assets/dialogue/rpg_box.webp" id="1_5wlj5"]
+[ext_resource type="Texture2D" uid="uid://2xdwjtsvp8bu" path="res://assets/dialogue/next-indicator-dialogic-1.png" id="4_rxi5t"]
+[ext_resource type="Texture2D" uid="uid://d3ydvyfa3ug52" path="res://assets/perso/z_idle.png" id="5_rxi5t"]
 
 [sub_resource type="Animation" id="Animation_37fld"]
 resource_name = "IDLE"
@@ -42,22 +42,12 @@ _data = {
 &"RESET": SubResource("Animation_3kgf7")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_37fld"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_rxi5t")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="dialogBox" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_4uc3s")
 
 [node name="textureRect" type="TextureRect" parent="."]
@@ -73,6 +63,7 @@ offset_left = 265.0
 offset_top = 19.0
 offset_right = 765.0
 offset_bottom = 59.0
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
@@ -91,6 +82,11 @@ libraries = {
 }
 autoplay = "IDLE"
 
-[node name="animatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(124, 134)
-sprite_frames = SubResource("SpriteFrames_37fld")
+[node name="animatedSprite2D" type="Sprite2D" parent="."]
+position = Vector2(131.25, 132.75)
+scale = Vector2(1.9453782, 1.9297521)
+texture = ExtResource("5_rxi5t")
+region_enabled = true
+region_rect = Rect2(0, 0, 119.5, 121.5)
+
+[connection signal="gui_input" from="textureRect" to="." method="_on_texture_rect_gui_input"]

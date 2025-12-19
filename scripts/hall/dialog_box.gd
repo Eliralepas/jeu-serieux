@@ -27,10 +27,6 @@ func set_dialog(dialogue : Array) :
 func _ready() -> void:
 	load_dialog()
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		load_dialog()
-
 func load_dialog():
 	if dialog_index<dialog.size():
 		if dialog[dialog_index] != "" :
@@ -42,3 +38,8 @@ func load_dialog():
 		queue_free()
 		on_dialog_end.emit()
 	dialog_index+=1
+
+
+func _on_texture_rect_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		load_dialog()

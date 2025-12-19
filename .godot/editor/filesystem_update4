@@ -1,10 +1,7 @@
-res://scenes/salles/perso_1.tscn
+res://scripts/hall/dialog_box.gd
+res://scenes/hall/dialog.tscn
 res://scenes/salles/salon.tscn
-res://scenes/salles/cuisine.tscn
-res://scenes/salles/dortoir.tscn
-res://scenes/salles/salle_de_bain.tscn
 res://save/save_game.json
-res://scripts/perso.gd
-res://scripts/menu_principale.gd
-res://scenes/magasin/cadre.tscn
+res://scenes/salles/menu.tscn
+res://scenes/salles/cuisine.tscn
 res://scripts/cuisine/cuisine.gd
