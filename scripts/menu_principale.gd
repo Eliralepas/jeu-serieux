@@ -19,7 +19,7 @@ func _on_button_jouer_pressed() -> void:
 			dir.remove(FILE_PATH)
 	
 	var default_data = {
-		"budget": 1100,
+		"budget": 500,
 		  "cuisine": {
 			"nom": "cuisine",
 			"remarques": "",

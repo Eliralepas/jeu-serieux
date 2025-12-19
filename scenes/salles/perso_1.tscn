@@ -1,25 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjqgfx63o5avc"]
+[gd_scene load_steps=10 format=3 uid="uid://bjqgfx63o5avc"]
 
-[ext_resource type="Texture2D" uid="uid://dpbyhlffuqqsu" path="res://assets/perso/perso1_idle.png" id="1_8mo0j"]
-[ext_resource type="Texture2D" uid="uid://dltgrmq0g2idq" path="res://assets/perso/sc-fou-2-pixilart.png" id="2_6qkav"]
 [ext_resource type="Texture2D" uid="uid://ct27v3r8dcadf" path="res://assets/bulle/bulle.png" id="2_36lil"]
 [ext_resource type="Script" uid="uid://duklr45yqxr4m" path="res://scripts/perso.gd" id="3_cspy0"]
 [ext_resource type="Texture2D" uid="uid://csxsi53gvq802" path="res://assets/bulle/pas_content.png" id="5_cspy0"]
 [ext_resource type="Texture2D" uid="uid://cqihnnuc8c3ne" path="res://assets/bulle/content.png" id="6_v4it8"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_36lil"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_8mo0j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_6qkav")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 0.7
-}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8c8k"]
 
@@ -31,16 +15,13 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85450"]
 
-[node name="perso" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_36lil")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.9355993
+[node name="perso" type="Sprite2D"]
 script = ExtResource("3_cspy0")
 
 [node name="bulle" type="Sprite2D" parent="."]
 position = Vector2(100, -121)
-scale = Vector2(-1.55961, 1.38039)
+rotation = -3.1415927
+scale = Vector2(1.55961, -1.38039)
 texture = ExtResource("2_36lil")
 
 [node name="avis" type="TextureRect" parent="bulle"]

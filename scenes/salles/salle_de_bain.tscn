@@ -1,43 +1,47 @@
-[gd_scene load_steps=55 format=4 uid="uid://cfgro3wgf6ytq"]
+[gd_scene load_steps=59 format=4 uid="uid://cfgro3wgf6ytq"]
 
-[ext_resource type="Script" uid="uid://bk6qcv474l0gl" path="res://scripts/salle_de_bain/salle_de_bain.gd" id="1_gftd5"]
-[ext_resource type="Script" uid="uid://b8pak57hfn6k2" path="res://scripts/murs.gd" id="2_3k1xi"]
-[ext_resource type="Texture2D" uid="uid://6d36h7qncyvf" path="res://assets/mur/mur_bleu.png" id="3_iqw53"]
-[ext_resource type="Texture2D" uid="uid://bt6q178aqcjq" path="res://assets/mur/mur_rouge.png" id="4_ct6m4"]
-[ext_resource type="Texture2D" uid="uid://denrvt3168w3q" path="res://assets/mur/mur_vert.png" id="5_fc42i"]
-[ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="6_wiuqd"]
-[ext_resource type="Texture2D" uid="uid://biihxfugstveu" path="res://sol/parquet-brun-clair-fin-(milieu)-pixilart.png" id="7_2jt3a"]
-[ext_resource type="Texture2D" uid="uid://fm5bui5nacmc" path="res://sol/parquet-brun-clair-pixilart(1).png" id="8_3hpeo"]
-[ext_resource type="Texture2D" uid="uid://trxci3tyhtj6" path="res://sol/parquet-brun-clair-pixilart(2).png" id="9_l3dv1"]
-[ext_resource type="Texture2D" uid="uid://bdkow7n0au8bv" path="res://sol/parquet-brun-clair-pixilart.png" id="10_4475g"]
-[ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://sol/pixilart-drawing(2).png" id="11_l3kmi"]
-[ext_resource type="Texture2D" uid="uid://bwsmuhcbuofkt" path="res://assets/meubles/dortoir/fenetres.png" id="12_gftd5"]
-[ext_resource type="Texture2D" uid="uid://bd588elwro642" path="res://assets/meubles/salle_de_bain/toilettes.png" id="13_xhtir"]
-[ext_resource type="Texture2D" uid="uid://dqqiqvkujmc2y" path="res://assets/meubles/salle_de_bain/lavabo.png" id="14_432u0"]
+[ext_resource type="Script" uid="uid://dfv1eyjlx4mnb" path="res://scripts/salle_de_bain/salle_de_bain.gd" id="1_gftd5"]
+[ext_resource type="Script" uid="uid://k7olj3l2d60x" path="res://scripts/murs.gd" id="2_3k1xi"]
+[ext_resource type="Texture2D" uid="uid://d3jfmht23pnfs" path="res://assets/mur/mur_bleu.png" id="3_iqw53"]
+[ext_resource type="Texture2D" uid="uid://bmi5rsuq4q5pc" path="res://assets/mur/mur_rouge.png" id="4_ct6m4"]
+[ext_resource type="Texture2D" uid="uid://d72mh557jpog" path="res://assets/mur/mur_vert.png" id="5_fc42i"]
+[ext_resource type="Texture2D" uid="uid://l8snwins3xjd" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart(1).png" id="6_wiuqd"]
+[ext_resource type="Texture2D" uid="uid://biihxfugstveu" path="res://assets/sol/parquet-brun-clair-fin-(milieu)-pixilart.png" id="7_2jt3a"]
+[ext_resource type="Texture2D" uid="uid://fm5bui5nacmc" path="res://assets/sol/parquet-brun-clair-pixilart(1).png" id="8_3hpeo"]
+[ext_resource type="Texture2D" uid="uid://trxci3tyhtj6" path="res://assets/sol/parquet-brun-clair-pixilart(2).png" id="9_l3dv1"]
+[ext_resource type="Texture2D" uid="uid://bdkow7n0au8bv" path="res://assets/sol/parquet-brun-clair-pixilart.png" id="10_4475g"]
+[ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="11_l3kmi"]
+[ext_resource type="Texture2D" uid="uid://cwvgqmnbmguow" path="res://assets/meubles/dortoir/fenetres.png" id="12_gftd5"]
+[ext_resource type="Texture2D" uid="uid://tlmx4u18wa44" path="res://assets/meubles/salle_de_bain/toilettes.png" id="13_xhtir"]
+[ext_resource type="Texture2D" uid="uid://bfmeklam7fxe8" path="res://assets/meubles/salle_de_bain/lavabo.png" id="14_432u0"]
 [ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/salles/menu.tscn" id="15_ikart"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="16_mwycu"]
 [ext_resource type="AudioStream" uid="uid://cr2kumhram588" path="res://musique/magasin_background.mp3" id="17_0nkk2"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="18_3l0iv"]
-[ext_resource type="AudioStream" uid="uid://dy2fgb1xrufnu" path="res://musique/piece_background.mp3" id="19_gftd5"]
+[ext_resource type="AudioStream" uid="uid://c6xe5cdopi804" path="res://musique/piece_background.mp3" id="19_gftd5"]
 [ext_resource type="Script" uid="uid://djon206v104w1" path="res://scripts/liste_objets.gd" id="20_trf8k"]
-[ext_resource type="Texture2D" uid="uid://2hoctweset2l" path="res://assets/meubles/salle_de_bain/tapis.png" id="21_y4dqp"]
+[ext_resource type="Texture2D" uid="uid://fpfxk4kl1d22" path="res://assets/meubles/salle_de_bain/tapis.png" id="21_y4dqp"]
 [ext_resource type="Script" uid="uid://bv1edvx7phtyi" path="res://scripts/object.gd" id="22_jh5jd"]
-[ext_resource type="Texture2D" uid="uid://dw7frmrfx3n14" path="res://assets/meubles/salle_de_bain/baignoire.png" id="23_q8e83"]
-[ext_resource type="Texture2D" uid="uid://be3s1wulp1xwt" path="res://assets/meubles/salle_de_bain/cadre.png" id="24_qce5k"]
-[ext_resource type="Texture2D" uid="uid://l1v0a03v20mb" path="res://assets/meubles/salle_de_bain/douche.png" id="25_nnaob"]
-[ext_resource type="Texture2D" uid="uid://bx4lfpviv58b8" path="res://assets/meubles/salle_de_bain/etagere.png" id="26_s8mc3"]
-[ext_resource type="Texture2D" uid="uid://c2w4pmmy1twwc" path="res://assets/meubles/salle_de_bain/miroir.png" id="27_qkv8e"]
-[ext_resource type="Texture2D" uid="uid://hyp5er77j3g6" path="res://assets/meubles/salle_de_bain/panierMetal.png" id="28_0yqfc"]
-[ext_resource type="Texture2D" uid="uid://d3lxlhxxj43pg" path="res://assets/meubles/salle_de_bain/panierPlastique.png" id="29_lfm11"]
-[ext_resource type="Texture2D" uid="uid://cfxbfi0sln86j" path="res://assets/meubles/salle_de_bain/poubelle.png" id="30_vhcnt"]
-[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://temp/lamp.png" id="31_edomr"]
+[ext_resource type="Texture2D" uid="uid://doreip5if8txi" path="res://assets/meubles/salle_de_bain/baignoire.png" id="23_q8e83"]
+[ext_resource type="Texture2D" uid="uid://d0q0hxptg77gj" path="res://assets/meubles/salle_de_bain/cadre.png" id="24_qce5k"]
+[ext_resource type="Texture2D" uid="uid://bxlv041qunsoc" path="res://assets/meubles/salle_de_bain/douche.png" id="25_nnaob"]
+[ext_resource type="Texture2D" uid="uid://cvrnf4lo8fwn5" path="res://assets/meubles/salle_de_bain/etagere.png" id="26_s8mc3"]
+[ext_resource type="Texture2D" uid="uid://dw4mm6ob3dqlx" path="res://assets/meubles/salle_de_bain/miroir.png" id="27_qkv8e"]
+[ext_resource type="Texture2D" uid="uid://bvdajtdb1qvnk" path="res://assets/meubles/salle_de_bain/panierMetal.png" id="28_0yqfc"]
+[ext_resource type="Texture2D" uid="uid://cenw1hvkcwchg" path="res://assets/meubles/salle_de_bain/panierPlastique.png" id="29_lfm11"]
+[ext_resource type="Texture2D" uid="uid://soykxqig2bee" path="res://assets/meubles/salle_de_bain/poubelle.png" id="30_vhcnt"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="31_edomr"]
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/magasin/magasin.tscn" id="32_ks3bv"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/salles/perso_1.tscn" id="33_p53d6"]
-[ext_resource type="Script" uid="uid://bp1e5vkybbp4w" path="res://scripts/broken_object.gd" id="34_dxgww"]
-[ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://temp/broken_washingMachine.png" id="35_x3nwk"]
-[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://temp/dust1.png" id="36_dho6o"]
-[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://temp/dust2.png" id="37_rel6p"]
-[ext_resource type="Texture2D" uid="uid://cwaed2qcy08uy" path="res://temp/washingMachine.png" id="38_4e3rn"]
+[ext_resource type="Script" uid="uid://uxmk26odp7sp" path="res://scripts/broken_object.gd" id="34_dxgww"]
+[ext_resource type="Texture2D" uid="uid://dcpjoxwlkdxyd" path="res://assets/perso/elif.png" id="34_fc42i"]
+[ext_resource type="Texture2D" uid="uid://mtk4veul3bhw" path="res://assets/perso/fella.png" id="35_wiuqd"]
+[ext_resource type="Texture2D" uid="uid://821byo2hhr53" path="res://assets/temp/broken_washingMachine.png" id="35_x3nwk"]
+[ext_resource type="Texture2D" uid="uid://bbq8v2abn2fqx" path="res://assets/perso/diya.png" id="36_2jt3a"]
+[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="36_dho6o"]
+[ext_resource type="Texture2D" uid="uid://hxipxnta73ih" path="res://assets/perso/aymeric.png" id="37_3hpeo"]
+[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="37_rel6p"]
+[ext_resource type="Texture2D" uid="uid://cwaed2qcy08uy" path="res://assets/temp/washingMachine.png" id="38_4e3rn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip76g"]
 texture = ExtResource("6_wiuqd")
@@ -287,18 +291,22 @@ scale = Vector2(1.4472657, 1.22474)
 
 [node name="perso1" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-366, -61)
+texture = ExtResource("34_fc42i")
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="perso2" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(10, 123)
+texture = ExtResource("35_wiuqd")
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="perso3" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-338, 237)
+texture = ExtResource("36_2jt3a")
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="perso4" parent="perso" node_paths=PackedStringArray("ListeObjets") instance=ExtResource("33_p53d6")]
 position = Vector2(-588, 128)
+texture = ExtResource("37_3hpeo")
 ListeObjets = NodePath("../../listeObjets")
 
 [node name="brokenObject" type="Node2D" parent="."]
