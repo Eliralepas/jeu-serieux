@@ -1,14 +1,14 @@
 Button
+AudioStreamPlayer2D
+Sprite2D
+Label
+Timer
+VideoStreamPlayer
+VisibleOnScreenEnabler2D
 RichTextLabel
 Camera2D
 TextureRect
 TextureButton
-AudioStreamPlayer2D
 AudioStreamPlayer2D      - Matches the "sound" keyword.
 Node2D
-Sprite2D
 ItemList
-ColorPickerButton
-Control
-MarginContainer
-AnimationPlayer

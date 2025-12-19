@@ -49,8 +49,9 @@ func _ready() -> void:
 				dialog_box.set_saison(2)
 				dialog_box.set_dialog(dialogue)
 				
-				# SCENE FINALE
-				# get_tree().change_scene_to_file()
+				 # connecter le signal pour lancer la scène finale après le dernier dialogue
+				dialog_box.connect("on_dialog_end", Callable(self, "_on_dialogues_fin"))
+
 				
 			elif numero_tour < 4:
 				#fermer la salle
@@ -79,6 +80,7 @@ func _ready() -> void:
 				dialog_box.set_dialog(dialogue)
 			else :
 				pass
+				
 		else:
 			print("Erreur de parsing JSON")
 		
@@ -127,3 +129,7 @@ func _on_dialog_box_on_dialog_end() -> void:
 	#lock l'autre puis unlock la actuelle
 	if prochaine != null :
 		prochaine.unlock()
+		
+func _on_dialogues_fin():
+	# Scene finale
+	get_tree().change_scene_to_file("res://scenes/fin.tscn")

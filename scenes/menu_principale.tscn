@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cemopexgp5ubb"]
+[gd_scene load_steps=8 format=3 uid="uid://cemopexgp5ubb"]
 
-[ext_resource type="Script" uid="uid://ddgotr4vmmcfs" path="res://scripts/menu_principale.gd" id="1_ccts7"]
-[ext_resource type="Texture2D" uid="uid://jlqkj2gdecf4" path="res://readme/archi_pole_sud.png" id="2_rhrkc"]
-[ext_resource type="FontFile" uid="uid://bybv0or3wpnw7" path="res://assets/police/ConnectionII.otf" id="3_7w7dl"]
-[ext_resource type="AudioStream" uid="uid://0skhge0a1a68" path="res://musique/menu_background.mp3" id="4_rhrkc"]
+[ext_resource type="Script" uid="uid://csvnuxtw27hl0" path="res://scripts/menu_principale.gd" id="1_ccts7"]
+[ext_resource type="Texture2D" uid="uid://qslxil6puckh" path="res://readme/archi_pole_sud.png" id="2_rhrkc"]
+[ext_resource type="FontFile" uid="uid://c3yo7n0x05cma" path="res://assets/police/ConnectionII.otf" id="3_7w7dl"]
+[ext_resource type="AudioStream" uid="uid://d1abucwmnwvnh" path="res://musique/menu_background.mp3" id="4_rhrkc"]
 [ext_resource type="PackedScene" uid="uid://c7d7aytnq4nfb" path="res://scenes/credit.tscn" id="5_7w7dl"]
+[ext_resource type="Texture2D" uid="uid://cta4uuh3dgbxw" path="res://autres/noMute.png" id="6_j6rkp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wba1"]
 content_margin_left = 5.0
@@ -99,6 +100,16 @@ offset_right = -742.0
 offset_bottom = -420.0
 scale = Vector2(1.5491786, 1.4883397)
 
+[node name="muteButton" type="Button" parent="."]
+offset_left = -728.0
+offset_top = -407.0
+offset_right = -575.0
+offset_bottom = -248.0
+icon = ExtResource("6_j6rkp")
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="image/vBoxContainer/buttonJouer" to="." method="_on_button_jouer_pressed"]
 [connection signal="pressed" from="image/vBoxContainer/buttonCredits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="image/vBoxContainer/buttonQuitter" to="." method="_on_button_quitter_pressed"]
+[connection signal="pressed" from="muteButton" to="." method="_on_mute_button_pressed"]

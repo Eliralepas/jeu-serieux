@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://bidemcih0p3dj"]
 
-[ext_resource type="Script" uid="uid://dcpbiu0wbk62p" path="res://scripts/elem_menu.gd" id="1_con2f"]
-[ext_resource type="Texture2D" uid="uid://k4cd8iggfe7e" path="res://assets/menu_decorer/decorer_background.png" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://b310o0x5hb00i" path="res://assets/mur/paint-pixilart.png" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://gj3dmu2eaytl" path="res://scripts/elem_menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://k4cd8iggfe7e" path="res://menu_decorer/decorer_background.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://b310o0x5hb00i" path="res://mur/paint-pixilart.png" id="2_vjb58"]
 
 [sub_resource type="Theme" id="Theme_g3eks"]
 

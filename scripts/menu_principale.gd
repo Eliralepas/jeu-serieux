@@ -4,6 +4,9 @@ extends Node2D
 const FILE_PATH := "res://save/save_game.json"
 @onready var credit: Control = $credit
 
+var sound_off = preload("res://assets/autres/mute.png")
+var sound_on = preload("res://assets/autres/noMute.png")
+
 func _on_button_jouer_pressed() -> void:
 	if FileAccess.file_exists(FILE_PATH):
 		# Supprime le fichier existant
@@ -64,3 +67,17 @@ func _on_button_credits_pressed() -> void:
 
 func _on_button_quitter_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_mute_button_pressed() -> void:
+	var bus = AudioServer.get_bus_index("Master")
+	var muted = AudioServer.is_bus_mute(bus)
+	AudioServer.set_bus_mute(bus, !muted)
+	update_icon()
+
+func update_icon():
+	var bus = AudioServer.get_bus_index("Master")
+	if AudioServer.is_bus_mute(bus):
+		$muteButton.icon = sound_off
+	else:
+		$muteButton.icon= sound_on

@@ -1,39 +1,39 @@
 [gd_scene load_steps=45 format=4 uid="uid://bjxart0083r2e"]
 
-[ext_resource type="Script" uid="uid://djcqdhafrd6lm" path="res://scripts/salon/salon.gd" id="1_fnx75"]
-[ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://assets/sol/pixilart-drawing(2).png" id="2_vngit"]
+[ext_resource type="Script" uid="uid://ryy1mpet8lnt" path="res://scripts/salon/salon.gd" id="1_fnx75"]
+[ext_resource type="Texture2D" uid="uid://e41tvwpti1lr" path="res://sol/pixilart-drawing(2).png" id="2_vngit"]
 [ext_resource type="AudioStream" uid="uid://db351d17gu0mw" path="res://musique/door_opening.ogg" id="3_vrhtw"]
 [ext_resource type="AudioStream" uid="uid://cr2kumhram588" path="res://musique/magasin_background.mp3" id="4_qh071"]
 [ext_resource type="AudioStream" uid="uid://2cgu5caxdtib" path="res://musique/people_talking.mp3" id="5_mwvcc"]
-[ext_resource type="AudioStream" uid="uid://c6xe5cdopi804" path="res://musique/piece_background.mp3" id="6_fnx75"]
-[ext_resource type="Texture2D" uid="uid://bn4v44g7kdewg" path="res://assets/meubles/salon/table_basse.png" id="7_lpn8u"]
-[ext_resource type="Texture2D" uid="uid://ba0hnkoiij3yw" path="res://assets/meubles/salon/TV.png" id="8_kyy8o"]
-[ext_resource type="Texture2D" uid="uid://b6s1phpdy8c5l" path="res://assets/meubles/salon/canape_salon.png" id="9_cak6w"]
-[ext_resource type="Texture2D" uid="uid://cb2k2uw7phjp7" path="res://assets/meubles/salle_de_bain/fenetre.png" id="10_yu7kq"]
+[ext_resource type="AudioStream" uid="uid://dy2fgb1xrufnu" path="res://musique/piece_background.mp3" id="6_fnx75"]
+[ext_resource type="Texture2D" uid="uid://eqauota6paqy" path="res://assets/meubles/salon/table_basse.png" id="7_lpn8u"]
+[ext_resource type="Texture2D" uid="uid://bkshwrf1alti1" path="res://assets/meubles/salon/TV.png" id="8_kyy8o"]
+[ext_resource type="Texture2D" uid="uid://cnf5lgl673euq" path="res://assets/meubles/salon/canape_salon.png" id="9_cak6w"]
+[ext_resource type="Texture2D" uid="uid://b6w4x7ymk5lr5" path="res://assets/meubles/cuisine/fenetre.png" id="10_fnx75"]
 [ext_resource type="Script" uid="uid://djon206v104w1" path="res://scripts/liste_objets.gd" id="11_e315g"]
-[ext_resource type="Texture2D" uid="uid://cqaojgvyvsh7c" path="res://assets/meubles/salon/grand_tableau.png" id="12_iihro"]
+[ext_resource type="Texture2D" uid="uid://rwe0kyi4qsw1" path="res://assets/meubles/salon/grand_tableau.png" id="12_iihro"]
 [ext_resource type="Script" uid="uid://bv1edvx7phtyi" path="res://scripts/object.gd" id="13_omj8k"]
-[ext_resource type="Texture2D" uid="uid://la7rj8qb6ys0" path="res://assets/meubles/salon/grande_lampe.png" id="14_v5sui"]
-[ext_resource type="Texture2D" uid="uid://djn1tav54nn4q" path="res://assets/meubles/salon/bibliotheque.png" id="15_k87nv"]
-[ext_resource type="Texture2D" uid="uid://wf5e2584hbv" path="res://assets/meubles/salon/petit_tableau1.png" id="16_xk0ci"]
-[ext_resource type="Texture2D" uid="uid://dkjppo7uchpxm" path="res://assets/meubles/salon/petit_tableau2.png" id="17_gem8t"]
-[ext_resource type="Texture2D" uid="uid://celypis5dtpv4" path="res://assets/meubles/salon/tapis.png" id="18_fimpp"]
-[ext_resource type="Texture2D" uid="uid://dajdi6yg151m3" path="res://assets/meubles/salon/plante.png" id="19_acktk"]
-[ext_resource type="Texture2D" uid="uid://4ho47f7131y" path="res://assets/meubles/salon/fauteuil.png" id="20_1y4bm"]
-[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://assets/temp/lamp.png" id="21_xx1yi"]
-[ext_resource type="Texture2D" uid="uid://cc1aet06olucy" path="res://assets/meubles/salle_de_bain/rideaux.png" id="22_tcaxv"]
-[ext_resource type="Script" uid="uid://k7olj3l2d60x" path="res://scripts/murs.gd" id="23_dgvk3"]
-[ext_resource type="Texture2D" uid="uid://wuy3b3fefh6t" path="res://assets/mur/mur_beige.png" id="24_d36wb"]
-[ext_resource type="Texture2D" uid="uid://c34o36qdxukyy" path="res://assets/mur/mur_bordeaux.png" id="25_kq447"]
-[ext_resource type="Texture2D" uid="uid://dskn4x0lvssvn" path="res://assets/mur/mur_vert1.png" id="26_qbn3a"]
+[ext_resource type="Texture2D" uid="uid://d3uslph2fmj6j" path="res://assets/meubles/salon/grande_lampe.png" id="14_v5sui"]
+[ext_resource type="Texture2D" uid="uid://kmkficvaft5q" path="res://assets/meubles/salon/bibliotheque.png" id="15_k87nv"]
+[ext_resource type="Texture2D" uid="uid://ch40le7sqvywy" path="res://assets/meubles/salon/petit_tableau1.png" id="16_xk0ci"]
+[ext_resource type="Texture2D" uid="uid://8urlskyst6ui" path="res://assets/meubles/salon/petit_tableau2.png" id="17_gem8t"]
+[ext_resource type="Texture2D" uid="uid://bfm3im11eku7s" path="res://assets/meubles/salon/tapis.png" id="18_fimpp"]
+[ext_resource type="Texture2D" uid="uid://bynajl6hxt6dk" path="res://assets/meubles/salon/plante.png" id="19_acktk"]
+[ext_resource type="Texture2D" uid="uid://qf5u4ukqvsas" path="res://assets/meubles/salon/fauteuil.png" id="20_1y4bm"]
+[ext_resource type="Texture2D" uid="uid://1qsqbymmy0m7" path="res://temp/lamp.png" id="21_xx1yi"]
+[ext_resource type="Texture2D" uid="uid://dbr4v0sq6owf4" path="res://assets/meubles/salle_de_bain/rideaux.png" id="22_tcaxv"]
+[ext_resource type="Script" uid="uid://b8pak57hfn6k2" path="res://scripts/murs.gd" id="23_dgvk3"]
+[ext_resource type="Texture2D" uid="uid://vjij61hdhkr1" path="res://assets/mur/mur_beige.png" id="24_d36wb"]
+[ext_resource type="Texture2D" uid="uid://ce2qesigaloqs" path="res://assets/mur/mur_bordeaux.png" id="25_kq447"]
+[ext_resource type="Texture2D" uid="uid://d2gfwtr3uv54l" path="res://assets/mur/mur_vert1.png" id="26_qbn3a"]
 [ext_resource type="PackedScene" uid="uid://bjqgfx63o5avc" path="res://scenes/salles/perso_1.tscn" id="27_jvptq"]
 [ext_resource type="PackedScene" uid="uid://bidemcih0p3dj" path="res://scenes/salles/menu.tscn" id="28_30n4g"]
 [ext_resource type="PackedScene" uid="uid://1slb4ng5gwih" path="res://scenes/magasin/magasin.tscn" id="29_rjay8"]
-[ext_resource type="Script" uid="uid://uxmk26odp7sp" path="res://scripts/broken_object.gd" id="30_trmo2"]
-[ext_resource type="Texture2D" uid="uid://jf5hpnlw6q03" path="res://assets/temp/broken_clock.png" id="31_dgk6v"]
-[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://assets/temp/dust1.png" id="32_3vp82"]
-[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://assets/temp/dust2.png" id="33_s45qj"]
-[ext_resource type="Texture2D" uid="uid://bffpmu5nl37v2" path="res://assets/temp/clock.png" id="34_3qd8m"]
+[ext_resource type="Script" uid="uid://bp1e5vkybbp4w" path="res://scripts/broken_object.gd" id="30_trmo2"]
+[ext_resource type="Texture2D" uid="uid://qirgdn4mqw6w" path="res://assets/temp/broken_clock.png" id="31_dgk6v"]
+[ext_resource type="Texture2D" uid="uid://djw3gqbcyhoau" path="res://temp/dust1.png" id="32_3vp82"]
+[ext_resource type="Texture2D" uid="uid://dos3isfllrblk" path="res://temp/dust2.png" id="33_s45qj"]
+[ext_resource type="Texture2D" uid="uid://blkv3fg0byr5v" path="res://assets/temp/clock.png" id="34_3qd8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnvgm"]
 texture = ExtResource("2_vngit")
@@ -141,9 +141,9 @@ scale = Vector2(4.55714, 4.55714)
 texture = ExtResource("9_cak6w")
 
 [node name="fenetre" type="Sprite2D" parent="meublesBase"]
-position = Vector2(-312, -361)
-scale = Vector2(0.15462185, 0.15462185)
-texture = ExtResource("10_yu7kq")
+position = Vector2(-310, -360)
+scale = Vector2(1.7428567, 1.614286)
+texture = ExtResource("10_fnx75")
 
 [node name="listeObjets" type="Node2D" parent="."]
 script = ExtResource("11_e315g")
@@ -259,7 +259,8 @@ offset_bottom = -402.0
 [node name="store" parent="." instance=ExtResource("29_rjay8")]
 visible = false
 z_index = 10
-position = Vector2(-689, -419)
+position = Vector2(-721, -424.00003)
+scale = Vector2(1.0400013, 1.0400007)
 
 [node name="brokenObject" type="Node2D" parent="."]
 z_index = 3
