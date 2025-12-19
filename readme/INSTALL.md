@@ -10,7 +10,7 @@
 
 1. **Téléchargement**
 
-    - ⬇️ Télécharger le fichier [ArchiPoleSud_setup.msi] (mettre le lien).
+    - ⬇️ Télécharger le fichier [ArchiPoleSud_setup.msi](https://ug.link/DXP4800P-FENARD/filemgr/share-download/?id=4fbada44e471475ea355050ab354ecc5).
     - 👉 Lancer l'installateur.
 
 2. **Lancement du jeu**
