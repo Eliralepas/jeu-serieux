@@ -21,8 +21,9 @@ func _on_timer_timeout():
 	if score > 60 && score <= 80:
 		$fin60.visible = true
 
-	$lblScore.text = $lblScore.text + str(score)
+	$lblScore.text = $lblScore.text + " " + str(score) + "/80"
 	$lblScore.visible = true
+	$Timer.stop()
 
 		
 		
