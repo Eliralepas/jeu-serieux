@@ -7,6 +7,10 @@ const FILE_PATH := "res://save/save_game.json"
 var sound_off = preload("res://assets/autres/mute.png")
 var sound_on = preload("res://assets/autres/noMute.png")
 
+func _ready():
+	update_icon()  # initialise l’icône au lancement
+
+
 func _on_button_jouer_pressed() -> void:
 	if FileAccess.file_exists(FILE_PATH):
 		# Supprime le fichier existant

@@ -35,7 +35,7 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_36lil")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.887315
+frame_progress = 0.9355993
 script = ExtResource("3_cspy0")
 
 [node name="bulle" type="Sprite2D" parent="."]

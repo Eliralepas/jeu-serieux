@@ -1,12 +1,3 @@
 res://scenes/menu_principale.tscn
-res://scripts/menu_principale.gd
 res://save/save_game.json
-res://scenes/fin.tscn
-res://scripts/finale.gd
-res://scripts/hall/hall.gd
-res://scenes/hall/dialog.tscn
-res://scenes/salles/salle_de_bain.tscn
-res://scenes/salles/salon.tscn
-res://scenes/salles/cuisine.tscn
-res://scenes/salles/dortoir.tscn
-res://scenes/salles/menu.tscn
+res://scenes/salles/perso_1.tscn

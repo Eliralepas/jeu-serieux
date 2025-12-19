@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c3yo7n0x05cma" path="res://assets/police/ConnectionII.otf" id="3_7w7dl"]
 [ext_resource type="AudioStream" uid="uid://d1abucwmnwvnh" path="res://musique/menu_background.mp3" id="4_rhrkc"]
 [ext_resource type="PackedScene" uid="uid://c7d7aytnq4nfb" path="res://scenes/credit.tscn" id="5_7w7dl"]
-[ext_resource type="Texture2D" uid="uid://cta4uuh3dgbxw" path="res://autres/noMute.png" id="6_j6rkp"]
+[ext_resource type="Texture2D" uid="uid://cj0bfppmtepdv" path="res://assets/autres/noMute.png" id="6_j6rkp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wba1"]
 content_margin_left = 5.0
