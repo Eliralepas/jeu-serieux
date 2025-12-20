@@ -46,7 +46,8 @@ Pour plus de détails, consultez le fichier [LICENSE](LICENSE).
 
 ## Crédits
 - **Sprites & Pixel Art** : réalisés par l’équipe  
-- **Moteur de jeu** : [Godot Engine](https://godotengine.org)  
+- **Moteur de jeu** : [Godot Engine](https://godotengine.org) 
+- **Musiques** : [Towball's Crossing Deluxe](https://towball.itch.io/towballs-crossing-deluxe) 
 - **Inspiration** : Station polaire Concordia T4 2025
 - **Sujet** : Gossa Julien (professeur) 
 
